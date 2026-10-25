@@ -1,0 +1,3400 @@
+== code <module> line 1 args=()
+    0 RESUME                     
+    2 LOAD_CONST                 0
+    4 LOAD_CONST                 None
+    6 IMPORT_NAME                subprocess
+    8 STORE_NAME                 subprocess
+   10 LOAD_CONST                 0
+   12 LOAD_CONST                 None
+   14 IMPORT_NAME                sys
+   16 STORE_NAME                 sys
+   18 LOAD_CONST                 0
+   20 LOAD_CONST                 None
+   22 IMPORT_NAME                threading
+   24 STORE_NAME                 threading
+   26 LOAD_CONST                 0
+   28 LOAD_CONST                 ('QWidget', 'QVBoxLayout')
+   30 IMPORT_NAME                PySide6.QtWidgets
+   32 IMPORT_FROM                QWidget
+   34 STORE_NAME                 QWidget
+   36 IMPORT_FROM                QVBoxLayout
+   38 STORE_NAME                 QVBoxLayout
+   40 POP_TOP                    
+   42 LOAD_CONST                 0
+   44 LOAD_CONST                 ('ScrollArea', 'Dialog')
+   46 IMPORT_NAME                qfluentwidgets
+   48 IMPORT_FROM                ScrollArea
+   50 STORE_NAME                 ScrollArea
+   52 IMPORT_FROM                Dialog
+   54 STORE_NAME                 Dialog
+   56 POP_TOP                    
+   58 LOAD_CONST                 1
+   60 LOAD_CONST                 ('DevMainWindow',)
+   62 IMPORT_NAME                nollie_device
+   64 IMPORT_FROM                DevMainWindow
+   66 STORE_NAME                 DevMainWindow
+   68 POP_TOP                    
+   70 LOAD_CONST                 1
+   72 LOAD_CONST                 ('UpdateWindow', 'BootloaderFirmwareSelector')
+   74 IMPORT_NAME                update_windows
+   76 IMPORT_FROM                UpdateWindow
+   78 STORE_NAME                 UpdateWindow
+   80 IMPORT_FROM                BootloaderFirmwareSelector
+   82 STORE_NAME                 BootloaderFirmwareSelector
+   84 POP_TOP                    
+   86 LOAD_CONST                 1
+   88 LOAD_CONST                 ('InternalToolsWindow',)
+   90 IMPORT_NAME                internal_tools
+   92 IMPORT_FROM                InternalToolsWindow
+   94 STORE_NAME                 InternalToolsWindow
+   96 POP_TOP                    
+   98 LOAD_CONST                 2
+  100 LOAD_CONST                 ('cli',)
+  102 IMPORT_NAME                common.cli_args
+  104 IMPORT_FROM                cli
+  106 STORE_NAME                 cli
+  108 POP_TOP                    
+  110 LOAD_CONST                 2
+  112 LOAD_CONST                 ('StyleSheet',)
+  114 IMPORT_NAME                common.style_sheet
+  116 IMPORT_FROM                StyleSheet
+  118 STORE_NAME                 StyleSheet
+  120 POP_TOP                    
+  122 LOAD_CONST                 2
+  124 LOAD_CONST                 ('NDevCardView',)
+  126 IMPORT_NAME                components.n_dev_card
+  128 IMPORT_FROM                NDevCardView
+  130 STORE_NAME                 NDevCardView
+  132 POP_TOP                    
+  134 LOAD_CONST                 2
+  136 LOAD_CONST                 ('UsbDevFind',)
+  138 IMPORT_NAME                core_driver.n_usb_dev_find
+  140 IMPORT_FROM                UsbDevFind
+  142 STORE_NAME                 UsbDevFind
+  144 POP_TOP                    
+  146 LOAD_CONST                 2
+  148 LOAD_CONST                 ('log',)
+  150 IMPORT_NAME                log.n_log
+  152 IMPORT_FROM                log
+  154 STORE_NAME                 log
+  156 POP_TOP                    
+  158 LOAD_CONST                 2
+  160 LOAD_CONST                 ('DeviceProbeWorker', 'LaunchKind')
+  162 IMPORT_NAME                services.device_flow
+  164 IMPORT_FROM                DeviceProbeWorker
+  166 STORE_NAME                 DeviceProbeWorker
+  168 IMPORT_FROM                LaunchKind
+  170 STORE_NAME                 LaunchKind
+  172 POP_TOP                    
+  174 LOAD_CONST                 ('signalrgb.exe', 'openrgb.exe')
+  176 STORE_NAME                 _COMPETING_RGB_PROCESSES
+  178 LOAD_CONST                 <Code311 code object _running_competing_processes at 0x2601300c9d0, file app\view\home_interface.py>, line 29
+  180 MAKE_FUNCTION              No arguments
+  182 STORE_NAME                 _running_competing_processes
+  184 PUSH_NULL                  
+  186 LOAD_BUILD_CLASS           
+  188 LOAD_CONST                 <Code311 code object HomeInterface at 0x26012f8fdf0, file app\view\home_interface.py>, line 71
+  190 MAKE_FUNCTION              No arguments
+  192 LOAD_CONST                 "HomeInterface"
+  194 LOAD_NAME                  ScrollArea
+  196 PRECALL                    
+  198 CACHE                      
+  200 CALL                       
+  202 CACHE                      
+  204 CACHE                      
+  206 CACHE                      
+  208 CACHE                      
+  210 STORE_NAME                 HomeInterface
+  212 LOAD_CONST                 None
+  214 RETURN_VALUE               
+  == code _running_competing_processes line 29 args=()
+      0 MAKE_CELL                  running
+      2 RESUME                     
+      4 LOAD_CONST                 <Code311 code object <setcomp> at 0x26012f84ec0, file app\view\home_interface.py>, line 36
+      6 MAKE_FUNCTION              No arguments
+      8 LOAD_GLOBAL                _COMPETING_RGB_PROCESSES
+     10 CACHE                      
+     12 CACHE                      
+     14 CACHE                      
+     16 CACHE                      
+     18 CACHE                      
+     20 GET_ITER                   
+     22 PRECALL                    
+     24 CACHE                      
+     26 CALL                       
+     28 CACHE                      
+     30 CACHE                      
+     32 CACHE                      
+     34 CACHE                      
+     36 STORE_FAST                 targets
+     38 NOP                        
+     40 LOAD_GLOBAL                sys
+     42 CACHE                      
+     44 CACHE                      
+     46 CACHE                      
+     48 CACHE                      
+     50 CACHE                      
+     52 LOAD_ATTR                  platform
+     54 CACHE                      
+     56 CACHE                      
+     58 CACHE                      
+     60 CACHE                      
+     62 LOAD_METHOD                startswith
+     64 CACHE                      
+     66 CACHE                      
+     68 CACHE                      
+     70 CACHE                      
+     72 CACHE                      
+     74 CACHE                      
+     76 CACHE                      
+     78 CACHE                      
+     80 CACHE                      
+     82 CACHE                      
+     84 LOAD_CONST                 "win"
+     86 PRECALL                    
+     88 CACHE                      
+     90 CALL                       
+     92 CACHE                      
+     94 CACHE                      
+     96 CACHE                      
+     98 CACHE                      
+    100 POP_JUMP_FORWARD_IF_FALSE  to 568
+    102 LOAD_GLOBAL                NULL + subprocess
+    104 CACHE                      
+    106 CACHE                      
+    108 CACHE                      
+    110 CACHE                      
+    112 CACHE                      
+    114 LOAD_ATTR                  run
+    116 CACHE                      
+    118 CACHE                      
+    120 CACHE                      
+    122 CACHE                      
+    124 BUILD_LIST                 
+    126 LOAD_CONST                 ('tasklist', '/FO', 'CSV', '/NH')
+    128 LIST_EXTEND                
+    130 LOAD_CONST                 True
+    132 LOAD_CONST                 True
+    134 LOAD_CONST                 3
+    136 LOAD_GLOBAL                NULL + getattr
+    138 CACHE                      
+    140 CACHE                      
+    142 CACHE                      
+    144 CACHE                      
+    146 CACHE                      
+    148 LOAD_GLOBAL                subprocess
+    150 CACHE                      
+    152 CACHE                      
+    154 CACHE                      
+    156 CACHE                      
+    158 CACHE                      
+    160 LOAD_CONST                 "CREATE_NO_WINDOW"
+    162 LOAD_CONST                 0
+    164 PRECALL                    
+    166 CACHE                      
+    168 CALL                       
+    170 CACHE                      
+    172 CACHE                      
+    174 CACHE                      
+    176 CACHE                      
+    178 KW_NAMES                   ('capture_output', 'text', 'timeout', 'creationflags')
+    180 PRECALL                    
+    182 CACHE                      
+    184 CALL                       
+    186 CACHE                      
+    188 CACHE                      
+    190 CACHE                      
+    192 CACHE                      
+    194 STORE_FAST                 out
+    196 LOAD_FAST                  out
+    198 LOAD_ATTR                  returncode
+    200 CACHE                      
+    202 CACHE                      
+    204 CACHE                      
+    206 CACHE                      
+    208 LOAD_CONST                 0
+    210 COMPARE_OP                 !=
+    212 CACHE                      
+    214 CACHE                      
+    216 POP_JUMP_FORWARD_IF_FALSE  to 222
+    218 BUILD_LIST                 
+    220 RETURN_VALUE               
+    222 LOAD_GLOBAL                NULL + set
+    224 CACHE                      
+    226 CACHE                      
+    228 CACHE                      
+    230 CACHE                      
+    232 CACHE                      
+    234 PRECALL                    
+    236 CACHE                      
+    238 CALL                       
+    240 CACHE                      
+    242 CACHE                      
+    244 CACHE                      
+    246 CACHE                      
+    248 STORE_DEREF                running
+    250 LOAD_FAST                  out
+    252 LOAD_ATTR                  stdout
+    254 CACHE                      
+    256 CACHE                      
+    258 CACHE                      
+    260 CACHE                      
+    262 LOAD_METHOD                splitlines
+    264 CACHE                      
+    266 CACHE                      
+    268 CACHE                      
+    270 CACHE                      
+    272 CACHE                      
+    274 CACHE                      
+    276 CACHE                      
+    278 CACHE                      
+    280 CACHE                      
+    282 CACHE                      
+    284 PRECALL                    
+    286 CACHE                      
+    288 CALL                       
+    290 CACHE                      
+    292 CACHE                      
+    294 CACHE                      
+    296 CACHE                      
+    298 GET_ITER                   
+    300 FOR_ITER                   to 530
+    302 STORE_FAST                 line
+    304 LOAD_FAST                  line
+    306 LOAD_METHOD                startswith
+    308 CACHE                      
+    310 CACHE                      
+    312 CACHE                      
+    314 CACHE                      
+    316 CACHE                      
+    318 CACHE                      
+    320 CACHE                      
+    322 CACHE                      
+    324 CACHE                      
+    326 CACHE                      
+    328 LOAD_CONST                 '"'
+    330 PRECALL                    
+    332 CACHE                      
+    334 CALL                       
+    336 CACHE                      
+    338 CACHE                      
+    340 CACHE                      
+    342 CACHE                      
+    344 POP_JUMP_FORWARD_IF_TRUE   to 348
+    346 JUMP_BACKWARD              to 300
+    348 LOAD_FAST                  line
+    350 LOAD_METHOD                split
+    352 CACHE                      
+    354 CACHE                      
+    356 CACHE                      
+    358 CACHE                      
+    360 CACHE                      
+    362 CACHE                      
+    364 CACHE                      
+    366 CACHE                      
+    368 CACHE                      
+    370 CACHE                      
+    372 LOAD_CONST                 ","
+    374 LOAD_CONST                 1
+    376 PRECALL                    
+    378 CACHE                      
+    380 CALL                       
+    382 CACHE                      
+    384 CACHE                      
+    386 CACHE                      
+    388 CACHE                      
+    390 LOAD_CONST                 0
+    392 BINARY_SUBSCR              
+    394 CACHE                      
+    396 CACHE                      
+    398 CACHE                      
+    400 CACHE                      
+    402 LOAD_METHOD                strip
+    404 CACHE                      
+    406 CACHE                      
+    408 CACHE                      
+    410 CACHE                      
+    412 CACHE                      
+    414 CACHE                      
+    416 CACHE                      
+    418 CACHE                      
+    420 CACHE                      
+    422 CACHE                      
+    424 LOAD_CONST                 '"'
+    426 PRECALL                    
+    428 CACHE                      
+    430 CALL                       
+    432 CACHE                      
+    434 CACHE                      
+    436 CACHE                      
+    438 CACHE                      
+    440 LOAD_METHOD                lower
+    442 CACHE                      
+    444 CACHE                      
+    446 CACHE                      
+    448 CACHE                      
+    450 CACHE                      
+    452 CACHE                      
+    454 CACHE                      
+    456 CACHE                      
+    458 CACHE                      
+    460 CACHE                      
+    462 PRECALL                    
+    464 CACHE                      
+    466 CALL                       
+    468 CACHE                      
+    470 CACHE                      
+    472 CACHE                      
+    474 CACHE                      
+    476 STORE_FAST                 name
+    478 LOAD_FAST                  name
+    480 LOAD_FAST                  targets
+    482 CONTAINS_OP                in
+    484 POP_JUMP_FORWARD_IF_FALSE  to 528
+    486 LOAD_DEREF                 running
+    488 LOAD_METHOD                add
+    490 CACHE                      
+    492 CACHE                      
+    494 CACHE                      
+    496 CACHE                      
+    498 CACHE                      
+    500 CACHE                      
+    502 CACHE                      
+    504 CACHE                      
+    506 CACHE                      
+    508 CACHE                      
+    510 LOAD_FAST                  name
+    512 PRECALL                    
+    514 CACHE                      
+    516 CALL                       
+    518 CACHE                      
+    520 CACHE                      
+    522 CACHE                      
+    524 CACHE                      
+    526 POP_TOP                    
+    528 JUMP_BACKWARD              to 300
+    530 LOAD_CLOSURE               running
+    532 BUILD_TUPLE                
+    534 LOAD_CONST                 <Code311 code object <listcomp> at 0x26012fd5a90, file app\view\home_interface.py>, line 56
+    536 MAKE_FUNCTION              closure
+    538 LOAD_GLOBAL                _COMPETING_RGB_PROCESSES
+    540 CACHE                      
+    542 CACHE                      
+    544 CACHE                      
+    546 CACHE                      
+    548 CACHE                      
+    550 GET_ITER                   
+    552 PRECALL                    
+    554 CACHE                      
+    556 CALL                       
+    558 CACHE                      
+    560 CACHE                      
+    562 CACHE                      
+    564 CACHE                      
+    566 RETURN_VALUE               
+    568 LOAD_GLOBAL                NULL + subprocess
+    570 CACHE                      
+    572 CACHE                      
+    574 CACHE                      
+    576 CACHE                      
+    578 CACHE                      
+    580 LOAD_ATTR                  run
+    582 CACHE                      
+    584 CACHE                      
+    586 CACHE                      
+    588 CACHE                      
+    590 BUILD_LIST                 
+    592 LOAD_CONST                 ('ps', '-A', '-o', 'comm=')
+    594 LIST_EXTEND                
+    596 LOAD_CONST                 True
+    598 LOAD_CONST                 True
+    600 LOAD_CONST                 3
+    602 KW_NAMES                   ('capture_output', 'text', 'timeout')
+    604 PRECALL                    
+    606 CACHE                      
+    608 CALL                       
+    610 CACHE                      
+    612 CACHE                      
+    614 CACHE                      
+    616 CACHE                      
+    618 STORE_FAST                 out
+    620 LOAD_FAST                  out
+    622 LOAD_ATTR                  returncode
+    624 CACHE                      
+    626 CACHE                      
+    628 CACHE                      
+    630 CACHE                      
+    632 LOAD_CONST                 0
+    634 COMPARE_OP                 !=
+    636 CACHE                      
+    638 CACHE                      
+    640 POP_JUMP_FORWARD_IF_FALSE  to 646
+    642 BUILD_LIST                 
+    644 RETURN_VALUE               
+    646 LOAD_CONST                 <Code311 code object <setcomp> at 0x26012fd5bd0, file app\view\home_interface.py>, line 65
+    648 MAKE_FUNCTION              No arguments
+    650 LOAD_FAST                  out
+    652 LOAD_ATTR                  stdout
+    654 CACHE                      
+    656 CACHE                      
+    658 CACHE                      
+    660 CACHE                      
+    662 LOAD_METHOD                splitlines
+    664 CACHE                      
+    666 CACHE                      
+    668 CACHE                      
+    670 CACHE                      
+    672 CACHE                      
+    674 CACHE                      
+    676 CACHE                      
+    678 CACHE                      
+    680 CACHE                      
+    682 CACHE                      
+    684 PRECALL                    
+    686 CACHE                      
+    688 CALL                       
+    690 CACHE                      
+    692 CACHE                      
+    694 CACHE                      
+    696 CACHE                      
+    698 GET_ITER                   
+    700 PRECALL                    
+    702 CACHE                      
+    704 CALL                       
+    706 CACHE                      
+    708 CACHE                      
+    710 CACHE                      
+    712 CACHE                      
+    714 STORE_DEREF                running
+    716 LOAD_CLOSURE               running
+    718 BUILD_TUPLE                
+    720 LOAD_CONST                 <Code311 code object <listcomp> at 0x2601300c8a0, file app\view\home_interface.py>, line 66
+    722 MAKE_FUNCTION              closure
+    724 LOAD_GLOBAL                _COMPETING_RGB_PROCESSES
+    726 CACHE                      
+    728 CACHE                      
+    730 CACHE                      
+    732 CACHE                      
+    734 CACHE                      
+    736 GET_ITER                   
+    738 PRECALL                    
+    740 CACHE                      
+    742 CALL                       
+    744 CACHE                      
+    746 CACHE                      
+    748 CACHE                      
+    750 CACHE                      
+    752 RETURN_VALUE               
+    754 PUSH_EXC_INFO              
+    756 LOAD_GLOBAL                OSError
+    758 CACHE                      
+    760 CACHE                      
+    762 CACHE                      
+    764 CACHE                      
+    766 CACHE                      
+    768 LOAD_GLOBAL                subprocess
+    770 CACHE                      
+    772 CACHE                      
+    774 CACHE                      
+    776 CACHE                      
+    778 CACHE                      
+    780 LOAD_ATTR                  TimeoutExpired
+    782 CACHE                      
+    784 CACHE                      
+    786 CACHE                      
+    788 CACHE                      
+    790 BUILD_TUPLE                
+    792 CHECK_EXC_MATCH            
+    794 POP_JUMP_FORWARD_IF_FALSE  to 806
+    796 POP_TOP                    
+    798 BUILD_LIST                 
+    800 SWAP                       TOS <-> TOS1
+    802 POP_EXCEPT                 
+    804 RETURN_VALUE               
+    806 RERAISE                    
+    808 COPY                       
+    810 POP_EXCEPT                 
+    812 RERAISE                    
+    == code <setcomp> line 36 args=('.0',)
+        0 RESUME                     
+        2 BUILD_SET                  
+        4 LOAD_FAST                  .0
+        6 FOR_ITER                   to 52
+        8 STORE_FAST                 name
+       10 LOAD_FAST                  name
+       12 LOAD_METHOD                lower
+       14 CACHE                      
+       16 CACHE                      
+       18 CACHE                      
+       20 CACHE                      
+       22 CACHE                      
+       24 CACHE                      
+       26 CACHE                      
+       28 CACHE                      
+       30 CACHE                      
+       32 CACHE                      
+       34 PRECALL                    
+       36 CACHE                      
+       38 CALL                       
+       40 CACHE                      
+       42 CACHE                      
+       44 CACHE                      
+       46 CACHE                      
+       48 SET_ADD                    
+       50 JUMP_BACKWARD              to 6
+       52 RETURN_VALUE               
+    == code <listcomp> line 56 args=('.0',)
+        0 COPY_FREE_VARS             
+        2 RESUME                     
+        4 BUILD_LIST                 
+        6 LOAD_FAST                  .0
+        8 FOR_ITER                   to 62
+       10 STORE_FAST                 n
+       12 LOAD_FAST                  n
+       14 LOAD_METHOD                lower
+       16 CACHE                      
+       18 CACHE                      
+       20 CACHE                      
+       22 CACHE                      
+       24 CACHE                      
+       26 CACHE                      
+       28 CACHE                      
+       30 CACHE                      
+       32 CACHE                      
+       34 CACHE                      
+       36 PRECALL                    
+       38 CACHE                      
+       40 CALL                       
+       42 CACHE                      
+       44 CACHE                      
+       46 CACHE                      
+       48 CACHE                      
+       50 LOAD_DEREF                 running
+       52 CONTAINS_OP                in
+       54 POP_JUMP_BACKWARD_IF_FALSE to 8
+       56 LOAD_FAST                  n
+       58 LIST_APPEND                
+       60 JUMP_BACKWARD              to 8
+       62 RETURN_VALUE               
+    == code <setcomp> line 65 args=('.0',)
+        0 RESUME                     
+        2 BUILD_SET                  
+        4 LOAD_FAST                  .0
+        6 FOR_ITER                   to 128
+        8 STORE_FAST                 line
+       10 LOAD_FAST                  line
+       12 LOAD_METHOD                strip
+       14 CACHE                      
+       16 CACHE                      
+       18 CACHE                      
+       20 CACHE                      
+       22 CACHE                      
+       24 CACHE                      
+       26 CACHE                      
+       28 CACHE                      
+       30 CACHE                      
+       32 CACHE                      
+       34 PRECALL                    
+       36 CACHE                      
+       38 CALL                       
+       40 CACHE                      
+       42 CACHE                      
+       44 CACHE                      
+       46 CACHE                      
+       48 POP_JUMP_BACKWARD_IF_FALSE to 6
+       50 LOAD_FAST                  line
+       52 LOAD_METHOD                strip
+       54 CACHE                      
+       56 CACHE                      
+       58 CACHE                      
+       60 CACHE                      
+       62 CACHE                      
+       64 CACHE                      
+       66 CACHE                      
+       68 CACHE                      
+       70 CACHE                      
+       72 CACHE                      
+       74 PRECALL                    
+       76 CACHE                      
+       78 CALL                       
+       80 CACHE                      
+       82 CACHE                      
+       84 CACHE                      
+       86 CACHE                      
+       88 LOAD_METHOD                lower
+       90 CACHE                      
+       92 CACHE                      
+       94 CACHE                      
+       96 CACHE                      
+       98 CACHE                      
+      100 CACHE                      
+      102 CACHE                      
+      104 CACHE                      
+      106 CACHE                      
+      108 CACHE                      
+      110 PRECALL                    
+      112 CACHE                      
+      114 CALL                       
+      116 CACHE                      
+      118 CACHE                      
+      120 CACHE                      
+      122 CACHE                      
+      124 SET_ADD                    
+      126 JUMP_BACKWARD              to 6
+      128 RETURN_VALUE               
+    == code <listcomp> line 66 args=('.0',)
+        0 COPY_FREE_VARS             
+        2 RESUME                     
+        4 BUILD_LIST                 
+        6 LOAD_FAST                  .0
+        8 FOR_ITER                   to 62
+       10 STORE_FAST                 n
+       12 LOAD_FAST                  n
+       14 LOAD_METHOD                lower
+       16 CACHE                      
+       18 CACHE                      
+       20 CACHE                      
+       22 CACHE                      
+       24 CACHE                      
+       26 CACHE                      
+       28 CACHE                      
+       30 CACHE                      
+       32 CACHE                      
+       34 CACHE                      
+       36 PRECALL                    
+       38 CACHE                      
+       40 CALL                       
+       42 CACHE                      
+       44 CACHE                      
+       46 CACHE                      
+       48 CACHE                      
+       50 LOAD_DEREF                 running
+       52 CONTAINS_OP                in
+       54 POP_JUMP_BACKWARD_IF_FALSE to 8
+       56 LOAD_FAST                  n
+       58 LIST_APPEND                
+       60 JUMP_BACKWARD              to 8
+       62 RETURN_VALUE               
+  == code HomeInterface line 71 args=()
+      0 MAKE_CELL                  __class__
+      2 RESUME                     
+      4 LOAD_NAME                  __name__
+      6 STORE_NAME                 __module__
+      8 LOAD_CONST                 "HomeInterface"
+     10 STORE_NAME                 __qualname__
+     12 LOAD_CONST                 " Home interface "
+     14 STORE_NAME                 __doc__
+     16 LOAD_CONST                 (None,)
+     18 LOAD_CLOSURE               __class__
+     20 BUILD_TUPLE                
+     22 LOAD_CONST                 <Code311 code object __init__ at 0x26012fee570, file app\view\home_interface.py>, line 74
+     24 MAKE_FUNCTION              default, closure
+     26 STORE_NAME                 __init__
+     28 LOAD_CONST                 <Code311 code object __initWidget at 0x26012f8f460, file app\view\home_interface.py>, line 86
+     30 MAKE_FUNCTION              No arguments
+     32 STORE_NAME                 _HomeInterface__initWidget
+     34 LOAD_CONST                 <Code311 code object clearLayout at 0x26012f8f350, file app\view\home_interface.py>, line 94
+     36 MAKE_FUNCTION              No arguments
+     38 STORE_NAME                 clearLayout
+     40 LOAD_CONST                 <Code311 code object onNdevLoaded at 0x26012f8f570, file app\view\home_interface.py>, line 107
+     42 MAKE_FUNCTION              No arguments
+     44 STORE_NAME                 onNdevLoaded
+     46 LOAD_CONST                 <Code311 code object n_dev_clicked at 0x26012f8f8a0, file app\view\home_interface.py>, line 125
+     48 MAKE_FUNCTION              No arguments
+     50 STORE_NAME                 n_dev_clicked
+     52 LOAD_CONST                 <Code311 code object _on_launch_decided at 0x26012f8fbd0, file app\view\home_interface.py>, line 167
+     54 MAKE_FUNCTION              No arguments
+     56 STORE_NAME                 _on_launch_decided
+     58 LOAD_CONST                 <Code311 code object onNdevWindowClosed at 0x26012f8fac0, file app\view\home_interface.py>, line 278
+     60 MAKE_FUNCTION              No arguments
+     62 STORE_NAME                 onNdevWindowClosed
+     64 LOAD_CONST                 <Code311 code object cleanup at 0x26012f8fce0, file app\view\home_interface.py>, line 283
+     66 MAKE_FUNCTION              No arguments
+     68 STORE_NAME                 cleanup
+     70 LOAD_CLOSURE               __class__
+     72 COPY                       
+     74 STORE_NAME                 __classcell__
+     76 RETURN_VALUE               
+    == code __init__ line 74 args=('self', 'parent')
+        0 COPY_FREE_VARS             
+        2 RESUME                     
+        4 LOAD_GLOBAL                NULL + super
+        6 CACHE                      
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 CACHE                      
+       16 PRECALL                    
+       18 CACHE                      
+       20 CALL                       
+       22 CACHE                      
+       24 CACHE                      
+       26 CACHE                      
+       28 CACHE                      
+       30 LOAD_METHOD                __init__
+       32 CACHE                      
+       34 CACHE                      
+       36 CACHE                      
+       38 CACHE                      
+       40 CACHE                      
+       42 CACHE                      
+       44 CACHE                      
+       46 CACHE                      
+       48 CACHE                      
+       50 CACHE                      
+       52 LOAD_FAST                  parent
+       54 KW_NAMES                   ('parent',)
+       56 PRECALL                    
+       58 CACHE                      
+       60 CALL                       
+       62 CACHE                      
+       64 CACHE                      
+       66 CACHE                      
+       68 CACHE                      
+       70 POP_TOP                    
+       72 LOAD_GLOBAL                NULL + set
+       74 CACHE                      
+       76 CACHE                      
+       78 CACHE                      
+       80 CACHE                      
+       82 CACHE                      
+       84 PRECALL                    
+       86 CACHE                      
+       88 CALL                       
+       90 CACHE                      
+       92 CACHE                      
+       94 CACHE                      
+       96 CACHE                      
+       98 LOAD_FAST                  self
+      100 STORE_ATTR                 _probing
+      102 CACHE                      
+      104 CACHE                      
+      106 CACHE                      
+      108 CACHE                      
+      110 BUILD_MAP                  
+      112 LOAD_FAST                  self
+      114 STORE_ATTR                 openWindows
+      116 CACHE                      
+      118 CACHE                      
+      120 CACHE                      
+      122 CACHE                      
+      124 LOAD_GLOBAL                NULL + QWidget
+      126 CACHE                      
+      128 CACHE                      
+      130 CACHE                      
+      132 CACHE                      
+      134 CACHE                      
+      136 LOAD_FAST                  self
+      138 PRECALL                    
+      140 CACHE                      
+      142 CALL                       
+      144 CACHE                      
+      146 CACHE                      
+      148 CACHE                      
+      150 CACHE                      
+      152 LOAD_FAST                  self
+      154 STORE_ATTR                 view
+      156 CACHE                      
+      158 CACHE                      
+      160 CACHE                      
+      162 CACHE                      
+      164 LOAD_GLOBAL                NULL + QVBoxLayout
+      166 CACHE                      
+      168 CACHE                      
+      170 CACHE                      
+      172 CACHE                      
+      174 CACHE                      
+      176 LOAD_FAST                  self
+      178 LOAD_ATTR                  view
+      180 CACHE                      
+      182 CACHE                      
+      184 CACHE                      
+      186 CACHE                      
+      188 PRECALL                    
+      190 CACHE                      
+      192 CALL                       
+      194 CACHE                      
+      196 CACHE                      
+      198 CACHE                      
+      200 CACHE                      
+      202 LOAD_FAST                  self
+      204 STORE_ATTR                 vBoxLayout
+      206 CACHE                      
+      208 CACHE                      
+      210 CACHE                      
+      212 CACHE                      
+      214 LOAD_FAST                  self
+      216 LOAD_METHOD                _HomeInterface__initWidget
+      218 CACHE                      
+      220 CACHE                      
+      222 CACHE                      
+      224 CACHE                      
+      226 CACHE                      
+      228 CACHE                      
+      230 CACHE                      
+      232 CACHE                      
+      234 CACHE                      
+      236 CACHE                      
+      238 PRECALL                    
+      240 CACHE                      
+      242 CALL                       
+      244 CACHE                      
+      246 CACHE                      
+      248 CACHE                      
+      250 CACHE                      
+      252 POP_TOP                    
+      254 LOAD_GLOBAL                NULL + UsbDevFind
+      256 CACHE                      
+      258 CACHE                      
+      260 CACHE                      
+      262 CACHE                      
+      264 CACHE                      
+      266 PRECALL                    
+      268 CACHE                      
+      270 CALL                       
+      272 CACHE                      
+      274 CACHE                      
+      276 CACHE                      
+      278 CACHE                      
+      280 LOAD_FAST                  self
+      282 STORE_ATTR                 dev_find
+      284 CACHE                      
+      286 CACHE                      
+      288 CACHE                      
+      290 CACHE                      
+      292 LOAD_FAST                  self
+      294 LOAD_ATTR                  dev_find
+      296 CACHE                      
+      298 CACHE                      
+      300 CACHE                      
+      302 CACHE                      
+      304 LOAD_ATTR                  device_signal
+      306 CACHE                      
+      308 CACHE                      
+      310 CACHE                      
+      312 CACHE                      
+      314 LOAD_METHOD                connect
+      316 CACHE                      
+      318 CACHE                      
+      320 CACHE                      
+      322 CACHE                      
+      324 CACHE                      
+      326 CACHE                      
+      328 CACHE                      
+      330 CACHE                      
+      332 CACHE                      
+      334 CACHE                      
+      336 LOAD_FAST                  self
+      338 LOAD_ATTR                  onNdevLoaded
+      340 CACHE                      
+      342 CACHE                      
+      344 CACHE                      
+      346 CACHE                      
+      348 PRECALL                    
+      350 CACHE                      
+      352 CALL                       
+      354 CACHE                      
+      356 CACHE                      
+      358 CACHE                      
+      360 CACHE                      
+      362 POP_TOP                    
+      364 LOAD_FAST                  self
+      366 LOAD_ATTR                  dev_find
+      368 CACHE                      
+      370 CACHE                      
+      372 CACHE                      
+      374 CACHE                      
+      376 LOAD_METHOD                start
+      378 CACHE                      
+      380 CACHE                      
+      382 CACHE                      
+      384 CACHE                      
+      386 CACHE                      
+      388 CACHE                      
+      390 CACHE                      
+      392 CACHE                      
+      394 CACHE                      
+      396 CACHE                      
+      398 PRECALL                    
+      400 CACHE                      
+      402 CALL                       
+      404 CACHE                      
+      406 CACHE                      
+      408 CACHE                      
+      410 CACHE                      
+      412 POP_TOP                    
+      414 LOAD_CONST                 None
+      416 RETURN_VALUE               
+    == code __initWidget line 86 args=('self',)
+        0 RESUME                     
+        2 LOAD_FAST                  self
+        4 LOAD_ATTR                  view
+        6 CACHE                      
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 LOAD_METHOD                setObjectName
+       16 CACHE                      
+       18 CACHE                      
+       20 CACHE                      
+       22 CACHE                      
+       24 CACHE                      
+       26 CACHE                      
+       28 CACHE                      
+       30 CACHE                      
+       32 CACHE                      
+       34 CACHE                      
+       36 LOAD_CONST                 "view"
+       38 PRECALL                    
+       40 CACHE                      
+       42 CALL                       
+       44 CACHE                      
+       46 CACHE                      
+       48 CACHE                      
+       50 CACHE                      
+       52 POP_TOP                    
+       54 LOAD_FAST                  self
+       56 LOAD_METHOD                setObjectName
+       58 CACHE                      
+       60 CACHE                      
+       62 CACHE                      
+       64 CACHE                      
+       66 CACHE                      
+       68 CACHE                      
+       70 CACHE                      
+       72 CACHE                      
+       74 CACHE                      
+       76 CACHE                      
+       78 LOAD_CONST                 "homeInterface"
+       80 PRECALL                    
+       82 CACHE                      
+       84 CALL                       
+       86 CACHE                      
+       88 CACHE                      
+       90 CACHE                      
+       92 CACHE                      
+       94 POP_TOP                    
+       96 LOAD_GLOBAL                StyleSheet
+       98 CACHE                      
+      100 CACHE                      
+      102 CACHE                      
+      104 CACHE                      
+      106 CACHE                      
+      108 LOAD_ATTR                  HOME_INTERFACE
+      110 CACHE                      
+      112 CACHE                      
+      114 CACHE                      
+      116 CACHE                      
+      118 LOAD_METHOD                apply
+      120 CACHE                      
+      122 CACHE                      
+      124 CACHE                      
+      126 CACHE                      
+      128 CACHE                      
+      130 CACHE                      
+      132 CACHE                      
+      134 CACHE                      
+      136 CACHE                      
+      138 CACHE                      
+      140 LOAD_FAST                  self
+      142 PRECALL                    
+      144 CACHE                      
+      146 CALL                       
+      148 CACHE                      
+      150 CACHE                      
+      152 CACHE                      
+      154 CACHE                      
+      156 POP_TOP                    
+      158 LOAD_FAST                  self
+      160 LOAD_METHOD                setWidget
+      162 CACHE                      
+      164 CACHE                      
+      166 CACHE                      
+      168 CACHE                      
+      170 CACHE                      
+      172 CACHE                      
+      174 CACHE                      
+      176 CACHE                      
+      178 CACHE                      
+      180 CACHE                      
+      182 LOAD_FAST                  self
+      184 LOAD_ATTR                  view
+      186 CACHE                      
+      188 CACHE                      
+      190 CACHE                      
+      192 CACHE                      
+      194 PRECALL                    
+      196 CACHE                      
+      198 CALL                       
+      200 CACHE                      
+      202 CACHE                      
+      204 CACHE                      
+      206 CACHE                      
+      208 POP_TOP                    
+      210 LOAD_FAST                  self
+      212 LOAD_METHOD                setWidgetResizable
+      214 CACHE                      
+      216 CACHE                      
+      218 CACHE                      
+      220 CACHE                      
+      222 CACHE                      
+      224 CACHE                      
+      226 CACHE                      
+      228 CACHE                      
+      230 CACHE                      
+      232 CACHE                      
+      234 LOAD_CONST                 True
+      236 PRECALL                    
+      238 CACHE                      
+      240 CALL                       
+      242 CACHE                      
+      244 CACHE                      
+      246 CACHE                      
+      248 CACHE                      
+      250 POP_TOP                    
+      252 LOAD_CONST                 None
+      254 RETURN_VALUE               
+    == code clearLayout line 94 args=('self', 'layout')
+        0 RESUME                     
+        2 LOAD_FAST                  layout
+        4 LOAD_METHOD                count
+        6 CACHE                      
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 CACHE                      
+       16 CACHE                      
+       18 CACHE                      
+       20 CACHE                      
+       22 CACHE                      
+       24 CACHE                      
+       26 PRECALL                    
+       28 CACHE                      
+       30 CALL                       
+       32 CACHE                      
+       34 CACHE                      
+       36 CACHE                      
+       38 CACHE                      
+       40 POP_JUMP_FORWARD_IF_FALSE  to 342
+       42 LOAD_FAST                  layout
+       44 LOAD_METHOD                takeAt
+       46 CACHE                      
+       48 CACHE                      
+       50 CACHE                      
+       52 CACHE                      
+       54 CACHE                      
+       56 CACHE                      
+       58 CACHE                      
+       60 CACHE                      
+       62 CACHE                      
+       64 CACHE                      
+       66 LOAD_CONST                 0
+       68 PRECALL                    
+       70 CACHE                      
+       72 CALL                       
+       74 CACHE                      
+       76 CACHE                      
+       78 CACHE                      
+       80 CACHE                      
+       82 STORE_FAST                 item
+       84 LOAD_FAST                  item
+       86 LOAD_METHOD                widget
+       88 CACHE                      
+       90 CACHE                      
+       92 CACHE                      
+       94 CACHE                      
+       96 CACHE                      
+       98 CACHE                      
+      100 CACHE                      
+      102 CACHE                      
+      104 CACHE                      
+      106 CACHE                      
+      108 PRECALL                    
+      110 CACHE                      
+      112 CALL                       
+      114 CACHE                      
+      116 CACHE                      
+      118 CACHE                      
+      120 CACHE                      
+      122 STORE_FAST                 widget
+      124 LOAD_FAST                  widget
+      126 POP_JUMP_FORWARD_IF_FALSE  to 212
+      128 LOAD_FAST                  widget
+      130 LOAD_METHOD                setParent
+      132 CACHE                      
+      134 CACHE                      
+      136 CACHE                      
+      138 CACHE                      
+      140 CACHE                      
+      142 CACHE                      
+      144 CACHE                      
+      146 CACHE                      
+      148 CACHE                      
+      150 CACHE                      
+      152 LOAD_CONST                 None
+      154 PRECALL                    
+      156 CACHE                      
+      158 CALL                       
+      160 CACHE                      
+      162 CACHE                      
+      164 CACHE                      
+      166 CACHE                      
+      168 POP_TOP                    
+      170 LOAD_FAST                  widget
+      172 LOAD_METHOD                deleteLater
+      174 CACHE                      
+      176 CACHE                      
+      178 CACHE                      
+      180 CACHE                      
+      182 CACHE                      
+      184 CACHE                      
+      186 CACHE                      
+      188 CACHE                      
+      190 CACHE                      
+      192 CACHE                      
+      194 PRECALL                    
+      196 CACHE                      
+      198 CALL                       
+      200 CACHE                      
+      202 CACHE                      
+      204 CACHE                      
+      206 CACHE                      
+      208 POP_TOP                    
+      210 JUMP_FORWARD               to 298
+      212 LOAD_FAST                  item
+      214 LOAD_METHOD                layout
+      216 CACHE                      
+      218 CACHE                      
+      220 CACHE                      
+      222 CACHE                      
+      224 CACHE                      
+      226 CACHE                      
+      228 CACHE                      
+      230 CACHE                      
+      232 CACHE                      
+      234 CACHE                      
+      236 PRECALL                    
+      238 CACHE                      
+      240 CALL                       
+      242 CACHE                      
+      244 CACHE                      
+      246 CACHE                      
+      248 CACHE                      
+      250 STORE_FAST                 child_layout
+      252 LOAD_FAST                  child_layout
+      254 POP_JUMP_FORWARD_IF_FALSE  to 298
+      256 LOAD_FAST                  self
+      258 LOAD_METHOD                clearLayout
+      260 CACHE                      
+      262 CACHE                      
+      264 CACHE                      
+      266 CACHE                      
+      268 CACHE                      
+      270 CACHE                      
+      272 CACHE                      
+      274 CACHE                      
+      276 CACHE                      
+      278 CACHE                      
+      280 LOAD_FAST                  child_layout
+      282 PRECALL                    
+      284 CACHE                      
+      286 CALL                       
+      288 CACHE                      
+      290 CACHE                      
+      292 CACHE                      
+      294 CACHE                      
+      296 POP_TOP                    
+      298 LOAD_FAST                  layout
+      300 LOAD_METHOD                count
+      302 CACHE                      
+      304 CACHE                      
+      306 CACHE                      
+      308 CACHE                      
+      310 CACHE                      
+      312 CACHE                      
+      314 CACHE                      
+      316 CACHE                      
+      318 CACHE                      
+      320 CACHE                      
+      322 PRECALL                    
+      324 CACHE                      
+      326 CALL                       
+      328 CACHE                      
+      330 CACHE                      
+      332 CACHE                      
+      334 CACHE                      
+      336 POP_JUMP_BACKWARD_IF_TRUE  to 42
+      338 LOAD_CONST                 None
+      340 RETURN_VALUE               
+      342 LOAD_CONST                 None
+      344 RETURN_VALUE               
+    == code onNdevLoaded line 107 args=('self', 'dev_list')
+        0 RESUME                     
+        2 LOAD_FAST                  self
+        4 LOAD_METHOD                clearLayout
+        6 CACHE                      
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 CACHE                      
+       16 CACHE                      
+       18 CACHE                      
+       20 CACHE                      
+       22 CACHE                      
+       24 CACHE                      
+       26 LOAD_FAST                  self
+       28 LOAD_ATTR                  vBoxLayout
+       30 CACHE                      
+       32 CACHE                      
+       34 CACHE                      
+       36 CACHE                      
+       38 PRECALL                    
+       40 CACHE                      
+       42 CALL                       
+       44 CACHE                      
+       46 CACHE                      
+       48 CACHE                      
+       50 CACHE                      
+       52 POP_TOP                    
+       54 LOAD_GLOBAL                NULL + NDevCardView
+       56 CACHE                      
+       58 CACHE                      
+       60 CACHE                      
+       62 CACHE                      
+       64 CACHE                      
+       66 PRECALL                    
+       68 CACHE                      
+       70 CALL                       
+       72 CACHE                      
+       74 CACHE                      
+       76 CACHE                      
+       78 CACHE                      
+       80 STORE_FAST                 n_dev_view
+       82 LOAD_FAST                  dev_list
+       84 GET_ITER                   
+       86 FOR_ITER                   to 398
+       88 STORE_FAST                 dev
+       90 LOAD_FAST                  n_dev_view
+       92 LOAD_METHOD                addNDevCard
+       94 CACHE                      
+       96 CACHE                      
+       98 CACHE                      
+      100 CACHE                      
+      102 CACHE                      
+      104 CACHE                      
+      106 CACHE                      
+      108 CACHE                      
+      110 CACHE                      
+      112 CACHE                      
+      114 LOAD_CONST                 "./app/images/png/"
+      116 LOAD_FAST                  dev
+      118 LOAD_CONST                 "device_name"
+      120 BINARY_SUBSCR              
+      122 CACHE                      
+      124 CACHE                      
+      126 CACHE                      
+      128 CACHE                      
+      130 FORMAT_VALUE               
+      132 LOAD_CONST                 ".png"
+      134 BUILD_STRING               
+      136 LOAD_CONST                 "./app/images/png/"
+      138 LOAD_FAST                  dev
+      140 LOAD_CONST                 "config"
+      142 BINARY_SUBSCR              
+      144 CACHE                      
+      146 CACHE                      
+      148 CACHE                      
+      150 CACHE                      
+      152 LOAD_CONST                 "connection"
+      154 BINARY_SUBSCR              
+      156 CACHE                      
+      158 CACHE                      
+      160 CACHE                      
+      162 CACHE                      
+      164 FORMAT_VALUE               
+      166 LOAD_CONST                 ".png"
+      168 BUILD_STRING               
+      170 LOAD_FAST                  dev
+      172 LOAD_METHOD                get
+      174 CACHE                      
+      176 CACHE                      
+      178 CACHE                      
+      180 CACHE                      
+      182 CACHE                      
+      184 CACHE                      
+      186 CACHE                      
+      188 CACHE                      
+      190 CACHE                      
+      192 CACHE                      
+      194 LOAD_CONST                 "config"
+      196 BUILD_MAP                  
+      198 PRECALL                    
+      200 CACHE                      
+      202 CALL                       
+      204 CACHE                      
+      206 CACHE                      
+      208 CACHE                      
+      210 CACHE                      
+      212 LOAD_METHOD                get
+      214 CACHE                      
+      216 CACHE                      
+      218 CACHE                      
+      220 CACHE                      
+      222 CACHE                      
+      224 CACHE                      
+      226 CACHE                      
+      228 CACHE                      
+      230 CACHE                      
+      232 CACHE                      
+      234 LOAD_CONST                 "display_name"
+      236 PRECALL                    
+      238 CACHE                      
+      240 CALL                       
+      242 CACHE                      
+      244 CACHE                      
+      246 CACHE                      
+      248 CACHE                      
+      250 JUMP_IF_TRUE_OR_POP        to 266
+      252 LOAD_FAST                  dev
+      254 LOAD_CONST                 "device_name"
+      256 BINARY_SUBSCR              
+      258 CACHE                      
+      260 CACHE                      
+      262 CACHE                      
+      264 CACHE                      
+      266 FORMAT_VALUE               
+      268 LOAD_FAST                  dev
+      270 LOAD_METHOD                get
+      272 CACHE                      
+      274 CACHE                      
+      276 CACHE                      
+      278 CACHE                      
+      280 CACHE                      
+      282 CACHE                      
+      284 CACHE                      
+      286 CACHE                      
+      288 CACHE                      
+      290 CACHE                      
+      292 LOAD_CONST                 "serial_number"
+      294 LOAD_CONST                 "N/A"
+      296 PRECALL                    
+      298 CACHE                      
+      300 CALL                       
+      302 CACHE                      
+      304 CACHE                      
+      306 CACHE                      
+      308 CACHE                      
+      310 FORMAT_VALUE               
+      312 LOAD_CONST                 True
+      314 LOAD_FAST                  dev
+      316 KW_NAMES                   ('icon_path', 'connection_icon', 'dev_name', 'dev_sn', 'online', 'dev_info')
+      318 PRECALL                    
+      320 CACHE                      
+      322 CALL                       
+      324 CACHE                      
+      326 CACHE                      
+      328 CACHE                      
+      330 CACHE                      
+      332 STORE_FAST                 card
+      334 LOAD_FAST                  card
+      336 LOAD_ATTR                  deviceClicked
+      338 CACHE                      
+      340 CACHE                      
+      342 CACHE                      
+      344 CACHE                      
+      346 LOAD_METHOD                connect
+      348 CACHE                      
+      350 CACHE                      
+      352 CACHE                      
+      354 CACHE                      
+      356 CACHE                      
+      358 CACHE                      
+      360 CACHE                      
+      362 CACHE                      
+      364 CACHE                      
+      366 CACHE                      
+      368 LOAD_FAST                  self
+      370 LOAD_ATTR                  n_dev_clicked
+      372 CACHE                      
+      374 CACHE                      
+      376 CACHE                      
+      378 CACHE                      
+      380 PRECALL                    
+      382 CACHE                      
+      384 CALL                       
+      386 CACHE                      
+      388 CACHE                      
+      390 CACHE                      
+      392 CACHE                      
+      394 POP_TOP                    
+      396 JUMP_BACKWARD              to 86
+      398 LOAD_FAST                  self
+      400 LOAD_ATTR                  vBoxLayout
+      402 CACHE                      
+      404 CACHE                      
+      406 CACHE                      
+      408 CACHE                      
+      410 LOAD_METHOD                addWidget
+      412 CACHE                      
+      414 CACHE                      
+      416 CACHE                      
+      418 CACHE                      
+      420 CACHE                      
+      422 CACHE                      
+      424 CACHE                      
+      426 CACHE                      
+      428 CACHE                      
+      430 CACHE                      
+      432 LOAD_FAST                  n_dev_view
+      434 PRECALL                    
+      436 CACHE                      
+      438 CALL                       
+      440 CACHE                      
+      442 CACHE                      
+      444 CACHE                      
+      446 CACHE                      
+      448 POP_TOP                    
+      450 LOAD_FAST                  self
+      452 LOAD_ATTR                  vBoxLayout
+      454 CACHE                      
+      456 CACHE                      
+      458 CACHE                      
+      460 CACHE                      
+      462 LOAD_METHOD                addStretch
+      464 CACHE                      
+      466 CACHE                      
+      468 CACHE                      
+      470 CACHE                      
+      472 CACHE                      
+      474 CACHE                      
+      476 CACHE                      
+      478 CACHE                      
+      480 CACHE                      
+      482 CACHE                      
+      484 LOAD_CONST                 1
+      486 PRECALL                    
+      488 CACHE                      
+      490 CALL                       
+      492 CACHE                      
+      494 CACHE                      
+      496 CACHE                      
+      498 CACHE                      
+      500 POP_TOP                    
+      502 LOAD_CONST                 None
+      504 RETURN_VALUE               
+    == code n_dev_clicked line 125 args=('self', 'dev_info')
+        0 MAKE_CELL                  self
+        2 MAKE_CELL                  dev_label
+        4 RESUME                     
+        6 LOAD_GLOBAL                NULL + log
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 CACHE                      
+       16 CACHE                      
+       18 LOAD_ATTR                  debug
+       20 CACHE                      
+       22 CACHE                      
+       24 CACHE                      
+       26 CACHE                      
+       28 LOAD_CONST                 "[n_dev_clicked] "
+       30 LOAD_FAST                  dev_info
+       32 LOAD_METHOD                get
+       34 CACHE                      
+       36 CACHE                      
+       38 CACHE                      
+       40 CACHE                      
+       42 CACHE                      
+       44 CACHE                      
+       46 CACHE                      
+       48 CACHE                      
+       50 CACHE                      
+       52 CACHE                      
+       54 LOAD_CONST                 "device_name"
+       56 LOAD_CONST                 ""
+       58 PRECALL                    
+       60 CACHE                      
+       62 CALL                       
+       64 CACHE                      
+       66 CACHE                      
+       68 CACHE                      
+       70 CACHE                      
+       72 FORMAT_VALUE               
+       74 BUILD_STRING               
+       76 PRECALL                    
+       78 CACHE                      
+       80 CALL                       
+       82 CACHE                      
+       84 CACHE                      
+       86 CACHE                      
+       88 CACHE                      
+       90 POP_TOP                    
+       92 LOAD_FAST                  dev_info
+       94 LOAD_METHOD                get
+       96 CACHE                      
+       98 CACHE                      
+      100 CACHE                      
+      102 CACHE                      
+      104 CACHE                      
+      106 CACHE                      
+      108 CACHE                      
+      110 CACHE                      
+      112 CACHE                      
+      114 CACHE                      
+      116 LOAD_CONST                 "device_name"
+      118 LOAD_CONST                 ""
+      120 PRECALL                    
+      122 CACHE                      
+      124 CALL                       
+      126 CACHE                      
+      128 CACHE                      
+      130 CACHE                      
+      132 CACHE                      
+      134 STORE_DEREF                dev_label
+      136 LOAD_CLOSURE               dev_label
+      138 BUILD_TUPLE                
+      140 LOAD_CONST                 <Code311 code object _probe_and_log at 0x26012f8f680, file app\view\home_interface.py>, line 136
+      142 MAKE_FUNCTION              closure
+      144 STORE_FAST                 _probe_and_log
+      146 LOAD_GLOBAL                NULL + threading
+      148 CACHE                      
+      150 CACHE                      
+      152 CACHE                      
+      154 CACHE                      
+      156 CACHE                      
+      158 LOAD_ATTR                  Thread
+      160 CACHE                      
+      162 CACHE                      
+      164 CACHE                      
+      166 CACHE                      
+      168 LOAD_FAST                  _probe_and_log
+      170 LOAD_CONST                 True
+      172 KW_NAMES                   ('target', 'daemon')
+      174 PRECALL                    
+      176 CACHE                      
+      178 CALL                       
+      180 CACHE                      
+      182 CACHE                      
+      184 CACHE                      
+      186 CACHE                      
+      188 LOAD_METHOD                start
+      190 CACHE                      
+      192 CACHE                      
+      194 CACHE                      
+      196 CACHE                      
+      198 CACHE                      
+      200 CACHE                      
+      202 CACHE                      
+      204 CACHE                      
+      206 CACHE                      
+      208 CACHE                      
+      210 PRECALL                    
+      212 CACHE                      
+      214 CALL                       
+      216 CACHE                      
+      218 CACHE                      
+      220 CACHE                      
+      222 CACHE                      
+      224 POP_TOP                    
+      226 LOAD_FAST                  dev_info
+      228 LOAD_METHOD                get
+      230 CACHE                      
+      232 CACHE                      
+      234 CACHE                      
+      236 CACHE                      
+      238 CACHE                      
+      240 CACHE                      
+      242 CACHE                      
+      244 CACHE                      
+      246 CACHE                      
+      248 CACHE                      
+      250 LOAD_CONST                 "serial_number"
+      252 LOAD_GLOBAL                NULL + str
+      254 CACHE                      
+      256 CACHE                      
+      258 CACHE                      
+      260 CACHE                      
+      262 CACHE                      
+      264 LOAD_FAST                  dev_info
+      266 PRECALL                    
+      268 CACHE                      
+      270 CALL                       
+      272 CACHE                      
+      274 CACHE                      
+      276 CACHE                      
+      278 CACHE                      
+      280 PRECALL                    
+      282 CACHE                      
+      284 CALL                       
+      286 CACHE                      
+      288 CACHE                      
+      290 CACHE                      
+      292 CACHE                      
+      294 STORE_FAST                 dev_sn
+      296 LOAD_FAST                  dev_sn
+      298 LOAD_DEREF                 self
+      300 LOAD_ATTR                  openWindows
+      302 CACHE                      
+      304 CACHE                      
+      306 CACHE                      
+      308 CACHE                      
+      310 CONTAINS_OP                in
+      312 POP_JUMP_FORWARD_IF_FALSE  to 480
+      314 LOAD_DEREF                 self
+      316 LOAD_ATTR                  openWindows
+      318 CACHE                      
+      320 CACHE                      
+      322 CACHE                      
+      324 CACHE                      
+      326 LOAD_FAST                  dev_sn
+      328 BINARY_SUBSCR              
+      330 CACHE                      
+      332 CACHE                      
+      334 CACHE                      
+      336 CACHE                      
+      338 STORE_FAST                 window
+      340 LOAD_FAST                  window
+      342 LOAD_METHOD                isVisible
+      344 CACHE                      
+      346 CACHE                      
+      348 CACHE                      
+      350 CACHE                      
+      352 CACHE                      
+      354 CACHE                      
+      356 CACHE                      
+      358 CACHE                      
+      360 CACHE                      
+      362 CACHE                      
+      364 PRECALL                    
+      366 CACHE                      
+      368 CALL                       
+      370 CACHE                      
+      372 CACHE                      
+      374 CACHE                      
+      376 CACHE                      
+      378 POP_JUMP_FORWARD_IF_FALSE  to 464
+      380 LOAD_FAST                  window
+      382 LOAD_METHOD                raise_
+      384 CACHE                      
+      386 CACHE                      
+      388 CACHE                      
+      390 CACHE                      
+      392 CACHE                      
+      394 CACHE                      
+      396 CACHE                      
+      398 CACHE                      
+      400 CACHE                      
+      402 CACHE                      
+      404 PRECALL                    
+      406 CACHE                      
+      408 CALL                       
+      410 CACHE                      
+      412 CACHE                      
+      414 CACHE                      
+      416 CACHE                      
+      418 POP_TOP                    
+      420 LOAD_FAST                  window
+      422 LOAD_METHOD                activateWindow
+      424 CACHE                      
+      426 CACHE                      
+      428 CACHE                      
+      430 CACHE                      
+      432 CACHE                      
+      434 CACHE                      
+      436 CACHE                      
+      438 CACHE                      
+      440 CACHE                      
+      442 CACHE                      
+      444 PRECALL                    
+      446 CACHE                      
+      448 CALL                       
+      450 CACHE                      
+      452 CACHE                      
+      454 CACHE                      
+      456 CACHE                      
+      458 POP_TOP                    
+      460 LOAD_CONST                 None
+      462 RETURN_VALUE               
+      464 LOAD_DEREF                 self
+      466 LOAD_ATTR                  openWindows
+      468 CACHE                      
+      470 CACHE                      
+      472 CACHE                      
+      474 CACHE                      
+      476 LOAD_FAST                  dev_sn
+      478 DELETE_SUBSCR              
+      480 LOAD_FAST                  dev_sn
+      482 LOAD_DEREF                 self
+      484 LOAD_ATTR                  _probing
+      486 CACHE                      
+      488 CACHE                      
+      490 CACHE                      
+      492 CACHE                      
+      494 CONTAINS_OP                in
+      496 POP_JUMP_FORWARD_IF_FALSE  to 550
+      498 LOAD_GLOBAL                NULL + log
+      500 CACHE                      
+      502 CACHE                      
+      504 CACHE                      
+      506 CACHE                      
+      508 CACHE                      
+      510 LOAD_ATTR                  debug
+      512 CACHE                      
+      514 CACHE                      
+      516 CACHE                      
+      518 CACHE                      
+      520 LOAD_CONST                 "[n_dev_clicked] "
+      522 LOAD_FAST                  dev_sn
+      524 FORMAT_VALUE               
+      526 LOAD_CONST                 " probe already in flight"
+      528 BUILD_STRING               
+      530 PRECALL                    
+      532 CACHE                      
+      534 CALL                       
+      536 CACHE                      
+      538 CACHE                      
+      540 CACHE                      
+      542 CACHE                      
+      544 POP_TOP                    
+      546 LOAD_CONST                 None
+      548 RETURN_VALUE               
+      550 LOAD_DEREF                 self
+      552 LOAD_ATTR                  _probing
+      554 CACHE                      
+      556 CACHE                      
+      558 CACHE                      
+      560 CACHE                      
+      562 LOAD_METHOD                add
+      564 CACHE                      
+      566 CACHE                      
+      568 CACHE                      
+      570 CACHE                      
+      572 CACHE                      
+      574 CACHE                      
+      576 CACHE                      
+      578 CACHE                      
+      580 CACHE                      
+      582 CACHE                      
+      584 LOAD_FAST                  dev_sn
+      586 PRECALL                    
+      588 CACHE                      
+      590 CALL                       
+      592 CACHE                      
+      594 CACHE                      
+      596 CACHE                      
+      598 CACHE                      
+      600 POP_TOP                    
+      602 LOAD_GLOBAL                NULL + DeviceProbeWorker
+      604 CACHE                      
+      606 CACHE                      
+      608 CACHE                      
+      610 CACHE                      
+      612 CACHE                      
+      614 LOAD_FAST                  dev_info
+      616 LOAD_GLOBAL                cli
+      618 CACHE                      
+      620 CACHE                      
+      622 CACHE                      
+      624 CACHE                      
+      626 CACHE                      
+      628 LOAD_ATTR                  internal
+      630 CACHE                      
+      632 CACHE                      
+      634 CACHE                      
+      636 CACHE                      
+      638 LOAD_DEREF                 self
+      640 PRECALL                    
+      642 CACHE                      
+      644 CALL                       
+      646 CACHE                      
+      648 CACHE                      
+      650 CACHE                      
+      652 CACHE                      
+      654 STORE_FAST                 worker
+      656 LOAD_FAST                  worker
+      658 LOAD_ATTR                  decided
+      660 CACHE                      
+      662 CACHE                      
+      664 CACHE                      
+      666 CACHE                      
+      668 LOAD_METHOD                connect
+      670 CACHE                      
+      672 CACHE                      
+      674 CACHE                      
+      676 CACHE                      
+      678 CACHE                      
+      680 CACHE                      
+      682 CACHE                      
+      684 CACHE                      
+      686 CACHE                      
+      688 CACHE                      
+      690 LOAD_FAST                  dev_sn
+      692 BUILD_TUPLE                
+      694 LOAD_CLOSURE               self
+      696 BUILD_TUPLE                
+      698 LOAD_CONST                 <Code311 code object <lambda> at 0x26012f8f790, file app\view\home_interface.py>, line 163
+      700 MAKE_FUNCTION              default, closure
+      702 PRECALL                    
+      704 CACHE                      
+      706 CALL                       
+      708 CACHE                      
+      710 CACHE                      
+      712 CACHE                      
+      714 CACHE                      
+      716 POP_TOP                    
+      718 LOAD_FAST                  worker
+      720 LOAD_ATTR                  finished
+      722 CACHE                      
+      724 CACHE                      
+      726 CACHE                      
+      728 CACHE                      
+      730 LOAD_METHOD                connect
+      732 CACHE                      
+      734 CACHE                      
+      736 CACHE                      
+      738 CACHE                      
+      740 CACHE                      
+      742 CACHE                      
+      744 CACHE                      
+      746 CACHE                      
+      748 CACHE                      
+      750 CACHE                      
+      752 LOAD_FAST                  worker
+      754 LOAD_ATTR                  deleteLater
+      756 CACHE                      
+      758 CACHE                      
+      760 CACHE                      
+      762 CACHE                      
+      764 PRECALL                    
+      766 CACHE                      
+      768 CALL                       
+      770 CACHE                      
+      772 CACHE                      
+      774 CACHE                      
+      776 CACHE                      
+      778 POP_TOP                    
+      780 LOAD_FAST                  worker
+      782 LOAD_METHOD                start
+      784 CACHE                      
+      786 CACHE                      
+      788 CACHE                      
+      790 CACHE                      
+      792 CACHE                      
+      794 CACHE                      
+      796 CACHE                      
+      798 CACHE                      
+      800 CACHE                      
+      802 CACHE                      
+      804 PRECALL                    
+      806 CACHE                      
+      808 CALL                       
+      810 CACHE                      
+      812 CACHE                      
+      814 CACHE                      
+      816 CACHE                      
+      818 POP_TOP                    
+      820 LOAD_CONST                 None
+      822 RETURN_VALUE               
+      == code _probe_and_log line 136 args=()
+          0 COPY_FREE_VARS             
+          2 RESUME                     
+          4 LOAD_GLOBAL                NULL + _running_competing_processes
+          6 CACHE                      
+          8 CACHE                      
+         10 CACHE                      
+         12 CACHE                      
+         14 CACHE                      
+         16 PRECALL                    
+         18 CACHE                      
+         20 CALL                       
+         22 CACHE                      
+         24 CACHE                      
+         26 CACHE                      
+         28 CACHE                      
+         30 STORE_FAST                 running
+         32 LOAD_FAST                  running
+         34 POP_JUMP_FORWARD_IF_FALSE  to 132
+         36 LOAD_GLOBAL                NULL + log
+         38 CACHE                      
+         40 CACHE                      
+         42 CACHE                      
+         44 CACHE                      
+         46 CACHE                      
+         48 LOAD_ATTR                  warning
+         50 CACHE                      
+         52 CACHE                      
+         54 CACHE                      
+         56 CACHE                      
+         58 LOAD_CONST                 "[n_dev_clicked] "
+         60 LOAD_DEREF                 dev_label
+         62 FORMAT_VALUE               
+         64 LOAD_CONST                 ": competing RGB process(es) running: "
+         66 LOAD_CONST                 ", "
+         68 LOAD_METHOD                join
+         70 CACHE                      
+         72 CACHE                      
+         74 CACHE                      
+         76 CACHE                      
+         78 CACHE                      
+         80 CACHE                      
+         82 CACHE                      
+         84 CACHE                      
+         86 CACHE                      
+         88 CACHE                      
+         90 LOAD_FAST                  running
+         92 PRECALL                    
+         94 CACHE                      
+         96 CALL                       
+         98 CACHE                      
+        100 CACHE                      
+        102 CACHE                      
+        104 CACHE                      
+        106 FORMAT_VALUE               
+        108 LOAD_CONST                 " — this may interfere with HID writes"
+        110 BUILD_STRING               
+        112 PRECALL                    
+        114 CACHE                      
+        116 CALL                       
+        118 CACHE                      
+        120 CACHE                      
+        122 CACHE                      
+        124 CACHE                      
+        126 POP_TOP                    
+        128 LOAD_CONST                 None
+        130 RETURN_VALUE               
+        132 LOAD_CONST                 None
+        134 RETURN_VALUE               
+      == code <lambda> line 163 args=('decision', 'sn')
+          0 COPY_FREE_VARS             
+          2 RESUME                     
+          4 LOAD_DEREF                 self
+          6 LOAD_METHOD                _on_launch_decided
+          8 CACHE                      
+         10 CACHE                      
+         12 CACHE                      
+         14 CACHE                      
+         16 CACHE                      
+         18 CACHE                      
+         20 CACHE                      
+         22 CACHE                      
+         24 CACHE                      
+         26 CACHE                      
+         28 LOAD_FAST                  sn
+         30 LOAD_FAST                  decision
+         32 PRECALL                    
+         34 CACHE                      
+         36 CALL                       
+         38 CACHE                      
+         40 CACHE                      
+         42 CACHE                      
+         44 CACHE                      
+         46 RETURN_VALUE               
+    == code _on_launch_decided line 167 args=('self', 'dev_sn', 'decision')
+        0 MAKE_CELL                  self
+        2 MAKE_CELL                  dev_sn
+        4 MAKE_CELL                  decision
+        6 MAKE_CELL                  dev_info
+        8 MAKE_CELL                  selector
+       10 RESUME                     
+       12 LOAD_DEREF                 self
+       14 LOAD_ATTR                  _probing
+       16 CACHE                      
+       18 CACHE                      
+       20 CACHE                      
+       22 CACHE                      
+       24 LOAD_METHOD                discard
+       26 CACHE                      
+       28 CACHE                      
+       30 CACHE                      
+       32 CACHE                      
+       34 CACHE                      
+       36 CACHE                      
+       38 CACHE                      
+       40 CACHE                      
+       42 CACHE                      
+       44 CACHE                      
+       46 LOAD_DEREF                 dev_sn
+       48 PRECALL                    
+       50 CACHE                      
+       52 CALL                       
+       54 CACHE                      
+       56 CACHE                      
+       58 CACHE                      
+       60 CACHE                      
+       62 POP_TOP                    
+       64 LOAD_DEREF                 decision
+       66 LOAD_ATTR                  dev_info
+       68 CACHE                      
+       70 CACHE                      
+       72 CACHE                      
+       74 CACHE                      
+       76 STORE_DEREF                dev_info
+       78 LOAD_DEREF                 decision
+       80 LOAD_ATTR                  kind
+       82 CACHE                      
+       84 CACHE                      
+       86 CACHE                      
+       88 CACHE                      
+       90 LOAD_GLOBAL                LaunchKind
+       92 CACHE                      
+       94 CACHE                      
+       96 CACHE                      
+       98 CACHE                      
+      100 CACHE                      
+      102 LOAD_ATTR                  INTERNAL_TOOLS
+      104 CACHE                      
+      106 CACHE                      
+      108 CACHE                      
+      110 CACHE                      
+      112 COMPARE_OP                 ==
+      114 CACHE                      
+      116 CACHE                      
+      118 POP_JUMP_FORWARD_IF_FALSE  to 214
+      120 LOAD_GLOBAL                NULL + InternalToolsWindow
+      122 CACHE                      
+      124 CACHE                      
+      126 CACHE                      
+      128 CACHE                      
+      130 CACHE                      
+      132 LOAD_DEREF                 dev_info
+      134 PRECALL                    
+      136 CACHE                      
+      138 CALL                       
+      140 CACHE                      
+      142 CACHE                      
+      144 CACHE                      
+      146 CACHE                      
+      148 STORE_FAST                 window
+      150 LOAD_FAST                  window
+      152 LOAD_DEREF                 self
+      154 LOAD_ATTR                  openWindows
+      156 CACHE                      
+      158 CACHE                      
+      160 CACHE                      
+      162 CACHE                      
+      164 LOAD_DEREF                 dev_sn
+      166 STORE_SUBSCR               
+      168 CACHE                      
+      170 LOAD_FAST                  window
+      172 LOAD_METHOD                show
+      174 CACHE                      
+      176 CACHE                      
+      178 CACHE                      
+      180 CACHE                      
+      182 CACHE                      
+      184 CACHE                      
+      186 CACHE                      
+      188 CACHE                      
+      190 CACHE                      
+      192 CACHE                      
+      194 PRECALL                    
+      196 CACHE                      
+      198 CALL                       
+      200 CACHE                      
+      202 CACHE                      
+      204 CACHE                      
+      206 CACHE                      
+      208 POP_TOP                    
+      210 LOAD_CONST                 None
+      212 RETURN_VALUE               
+      214 LOAD_DEREF                 decision
+      216 LOAD_ATTR                  kind
+      218 CACHE                      
+      220 CACHE                      
+      222 CACHE                      
+      224 CACHE                      
+      226 LOAD_GLOBAL                LaunchKind
+      228 CACHE                      
+      230 CACHE                      
+      232 CACHE                      
+      234 CACHE                      
+      236 CACHE                      
+      238 LOAD_ATTR                  OTA_UPDATE
+      240 CACHE                      
+      242 CACHE                      
+      244 CACHE                      
+      246 CACHE                      
+      248 COMPARE_OP                 ==
+      250 CACHE                      
+      252 CACHE                      
+      254 EXTENDED_ARG               256
+      256 POP_JUMP_FORWARD_IF_FALSE  to 912
+      258 LOAD_DEREF                 dev_info
+      260 LOAD_METHOD                get
+      262 CACHE                      
+      264 CACHE                      
+      266 CACHE                      
+      268 CACHE                      
+      270 CACHE                      
+      272 CACHE                      
+      274 CACHE                      
+      276 CACHE                      
+      278 CACHE                      
+      280 CACHE                      
+      282 LOAD_CONST                 "device_name"
+      284 LOAD_CONST                 ""
+      286 PRECALL                    
+      288 CACHE                      
+      290 CALL                       
+      292 CACHE                      
+      294 CACHE                      
+      296 CACHE                      
+      298 CACHE                      
+      300 STORE_FAST                 dev_name
+      302 LOAD_GLOBAL                NULL + Dialog
+      304 CACHE                      
+      306 CACHE                      
+      308 CACHE                      
+      310 CACHE                      
+      312 CACHE                      
+      314 LOAD_DEREF                 self
+      316 LOAD_METHOD                tr
+      318 CACHE                      
+      320 CACHE                      
+      322 CACHE                      
+      324 CACHE                      
+      326 CACHE                      
+      328 CACHE                      
+      330 CACHE                      
+      332 CACHE                      
+      334 CACHE                      
+      336 CACHE                      
+      338 LOAD_CONST                 "Firmware update"
+      340 PRECALL                    
+      342 CACHE                      
+      344 CALL                       
+      346 CACHE                      
+      348 CACHE                      
+      350 CACHE                      
+      352 CACHE                      
+      354 LOAD_DEREF                 self
+      356 LOAD_METHOD                tr
+      358 CACHE                      
+      360 CACHE                      
+      362 CACHE                      
+      364 CACHE                      
+      366 CACHE                      
+      368 CACHE                      
+      370 CACHE                      
+      372 CACHE                      
+      374 CACHE                      
+      376 CACHE                      
+      378 LOAD_CONST                 "A firmware update is available for {name}.\n\nThe device will reboot into update mode and be unusable for about 30 seconds. Do not unplug it during the update.\n\nUpdating will erase all settings stored on the device (channels, canvases, mappings).\n\nUpdate now?"
+      380 PRECALL                    
+      382 CACHE                      
+      384 CALL                       
+      386 CACHE                      
+      388 CACHE                      
+      390 CACHE                      
+      392 CACHE                      
+      394 LOAD_METHOD                format
+      396 CACHE                      
+      398 CACHE                      
+      400 CACHE                      
+      402 CACHE                      
+      404 CACHE                      
+      406 CACHE                      
+      408 CACHE                      
+      410 CACHE                      
+      412 CACHE                      
+      414 CACHE                      
+      416 LOAD_FAST                  dev_name
+      418 JUMP_IF_TRUE_OR_POP        to 422
+      420 LOAD_CONST                 "this device"
+      422 KW_NAMES                   ('name',)
+      424 PRECALL                    
+      426 CACHE                      
+      428 CALL                       
+      430 CACHE                      
+      432 CACHE                      
+      434 CACHE                      
+      436 CACHE                      
+      438 LOAD_DEREF                 self
+      440 PRECALL                    
+      442 CACHE                      
+      444 CALL                       
+      446 CACHE                      
+      448 CACHE                      
+      450 CACHE                      
+      452 CACHE                      
+      454 STORE_FAST                 confirm
+      456 LOAD_FAST                  confirm
+      458 LOAD_METHOD                exec
+      460 CACHE                      
+      462 CACHE                      
+      464 CACHE                      
+      466 CACHE                      
+      468 CACHE                      
+      470 CACHE                      
+      472 CACHE                      
+      474 CACHE                      
+      476 CACHE                      
+      478 CACHE                      
+      480 PRECALL                    
+      482 CACHE                      
+      484 CALL                       
+      486 CACHE                      
+      488 CACHE                      
+      490 CACHE                      
+      492 CACHE                      
+      494 POP_JUMP_FORWARD_IF_TRUE   to 548
+      496 LOAD_GLOBAL                NULL + log
+      498 CACHE                      
+      500 CACHE                      
+      502 CACHE                      
+      504 CACHE                      
+      506 CACHE                      
+      508 LOAD_ATTR                  info
+      510 CACHE                      
+      512 CACHE                      
+      514 CACHE                      
+      516 CACHE                      
+      518 LOAD_CONST                 "[n_dev_clicked] "
+      520 LOAD_FAST                  dev_name
+      522 FORMAT_VALUE               
+      524 LOAD_CONST                 " OTA_UPDATE cancelled by user"
+      526 BUILD_STRING               
+      528 PRECALL                    
+      530 CACHE                      
+      532 CALL                       
+      534 CACHE                      
+      536 CACHE                      
+      538 CACHE                      
+      540 CACHE                      
+      542 POP_TOP                    
+      544 LOAD_CONST                 None
+      546 RETURN_VALUE               
+      548 LOAD_DEREF                 self
+      550 LOAD_ATTR                  dev_find
+      552 CACHE                      
+      554 CACHE                      
+      556 CACHE                      
+      558 CACHE                      
+      560 LOAD_METHOD                stop
+      562 CACHE                      
+      564 CACHE                      
+      566 CACHE                      
+      568 CACHE                      
+      570 CACHE                      
+      572 CACHE                      
+      574 CACHE                      
+      576 CACHE                      
+      578 CACHE                      
+      580 CACHE                      
+      582 PRECALL                    
+      584 CACHE                      
+      586 CALL                       
+      588 CACHE                      
+      590 CACHE                      
+      592 CACHE                      
+      594 CACHE                      
+      596 POP_TOP                    
+      598 NOP                        
+      600 LOAD_GLOBAL                NULL + UpdateWindow
+      602 CACHE                      
+      604 CACHE                      
+      606 CACHE                      
+      608 CACHE                      
+      610 CACHE                      
+      612 LOAD_DEREF                 dev_info
+      614 PRECALL                    
+      616 CACHE                      
+      618 CALL                       
+      620 CACHE                      
+      622 CACHE                      
+      624 CACHE                      
+      626 CACHE                      
+      628 STORE_FAST                 window
+      630 JUMP_FORWARD               to 776
+      632 PUSH_EXC_INFO              
+      634 LOAD_GLOBAL                Exception
+      636 CACHE                      
+      638 CACHE                      
+      640 CACHE                      
+      642 CACHE                      
+      644 CACHE                      
+      646 CHECK_EXC_MATCH            
+      648 POP_JUMP_FORWARD_IF_FALSE  to 768
+      650 STORE_FAST                 e
+      652 LOAD_GLOBAL                NULL + log
+      654 CACHE                      
+      656 CACHE                      
+      658 CACHE                      
+      660 CACHE                      
+      662 CACHE                      
+      664 LOAD_ATTR                  error
+      666 CACHE                      
+      668 CACHE                      
+      670 CACHE                      
+      672 CACHE                      
+      674 LOAD_CONST                 "[n_dev_clicked] UpdateWindow init failed: "
+      676 LOAD_FAST                  e
+      678 FORMAT_VALUE               
+      680 BUILD_STRING               
+      682 PRECALL                    
+      684 CACHE                      
+      686 CALL                       
+      688 CACHE                      
+      690 CACHE                      
+      692 CACHE                      
+      694 CACHE                      
+      696 POP_TOP                    
+      698 LOAD_DEREF                 self
+      700 LOAD_ATTR                  dev_find
+      702 CACHE                      
+      704 CACHE                      
+      706 CACHE                      
+      708 CACHE                      
+      710 LOAD_METHOD                start
+      712 CACHE                      
+      714 CACHE                      
+      716 CACHE                      
+      718 CACHE                      
+      720 CACHE                      
+      722 CACHE                      
+      724 CACHE                      
+      726 CACHE                      
+      728 CACHE                      
+      730 CACHE                      
+      732 PRECALL                    
+      734 CACHE                      
+      736 CALL                       
+      738 CACHE                      
+      740 CACHE                      
+      742 CACHE                      
+      744 CACHE                      
+      746 POP_TOP                    
+      748 POP_EXCEPT                 
+      750 LOAD_CONST                 None
+      752 STORE_FAST                 e
+      754 DELETE_FAST                e
+      756 LOAD_CONST                 None
+      758 RETURN_VALUE               
+      760 LOAD_CONST                 None
+      762 STORE_FAST                 e
+      764 DELETE_FAST                e
+      766 RERAISE                    
+      768 RERAISE                    
+      770 COPY                       
+      772 POP_EXCEPT                 
+      774 RERAISE                    
+      776 LOAD_FAST                  window
+      778 LOAD_DEREF                 self
+      780 LOAD_ATTR                  openWindows
+      782 CACHE                      
+      784 CACHE                      
+      786 CACHE                      
+      788 CACHE                      
+      790 LOAD_DEREF                 dev_sn
+      792 STORE_SUBSCR               
+      794 CACHE                      
+      796 LOAD_FAST                  window
+      798 LOAD_ATTR                  updateFinished
+      800 CACHE                      
+      802 CACHE                      
+      804 CACHE                      
+      806 CACHE                      
+      808 LOAD_METHOD                connect
+      810 CACHE                      
+      812 CACHE                      
+      814 CACHE                      
+      816 CACHE                      
+      818 CACHE                      
+      820 CACHE                      
+      822 CACHE                      
+      824 CACHE                      
+      826 CACHE                      
+      828 CACHE                      
+      830 LOAD_DEREF                 self
+      832 LOAD_ATTR                  dev_find
+      834 CACHE                      
+      836 CACHE                      
+      838 CACHE                      
+      840 CACHE                      
+      842 LOAD_ATTR                  start
+      844 CACHE                      
+      846 CACHE                      
+      848 CACHE                      
+      850 CACHE                      
+      852 PRECALL                    
+      854 CACHE                      
+      856 CALL                       
+      858 CACHE                      
+      860 CACHE                      
+      862 CACHE                      
+      864 CACHE                      
+      866 POP_TOP                    
+      868 LOAD_FAST                  window
+      870 LOAD_METHOD                show
+      872 CACHE                      
+      874 CACHE                      
+      876 CACHE                      
+      878 CACHE                      
+      880 CACHE                      
+      882 CACHE                      
+      884 CACHE                      
+      886 CACHE                      
+      888 CACHE                      
+      890 CACHE                      
+      892 PRECALL                    
+      894 CACHE                      
+      896 CALL                       
+      898 CACHE                      
+      900 CACHE                      
+      902 CACHE                      
+      904 CACHE                      
+      906 POP_TOP                    
+      908 LOAD_CONST                 None
+      910 RETURN_VALUE               
+      912 LOAD_DEREF                 decision
+      914 LOAD_ATTR                  kind
+      916 CACHE                      
+      918 CACHE                      
+      920 CACHE                      
+      922 CACHE                      
+      924 LOAD_GLOBAL                LaunchKind
+      926 CACHE                      
+      928 CACHE                      
+      930 CACHE                      
+      932 CACHE                      
+      934 CACHE                      
+      936 LOAD_ATTR                  BOOTLOADER_SELECT_FIRMWARE
+      938 CACHE                      
+      940 CACHE                      
+      942 CACHE                      
+      944 CACHE                      
+      946 COMPARE_OP                 ==
+      948 CACHE                      
+      950 CACHE                      
+      952 POP_JUMP_FORWARD_IF_FALSE  to 1150
+      954 LOAD_GLOBAL                NULL + list
+      956 CACHE                      
+      958 CACHE                      
+      960 CACHE                      
+      962 CACHE                      
+      964 CACHE                      
+      966 LOAD_DEREF                 decision
+      968 LOAD_ATTR                  firmware_options
+      970 CACHE                      
+      972 CACHE                      
+      974 CACHE                      
+      976 CACHE                      
+      978 PRECALL                    
+      980 CACHE                      
+      982 CALL                       
+      984 CACHE                      
+      986 CACHE                      
+      988 CACHE                      
+      990 CACHE                      
+      992 STORE_FAST                 firmware_list
+      994 LOAD_GLOBAL                NULL + BootloaderFirmwareSelector
+      996 CACHE                      
+      998 CACHE                      
+     1000 CACHE                      
+     1002 CACHE                      
+     1004 CACHE                      
+     1006 LOAD_DEREF                 decision
+     1008 LOAD_ATTR                  bootloader_name
+     1010 CACHE                      
+     1012 CACHE                      
+     1014 CACHE                      
+     1016 CACHE                      
+     1018 LOAD_FAST                  firmware_list
+     1020 PRECALL                    
+     1022 CACHE                      
+     1024 CALL                       
+     1026 CACHE                      
+     1028 CACHE                      
+     1030 CACHE                      
+     1032 CACHE                      
+     1034 STORE_DEREF                selector
+     1036 LOAD_CLOSURE               decision
+     1038 LOAD_CLOSURE               dev_info
+     1040 LOAD_CLOSURE               dev_sn
+     1042 LOAD_CLOSURE               selector
+     1044 LOAD_CLOSURE               self
+     1046 BUILD_TUPLE                
+     1048 LOAD_CONST                 <Code311 code object on_firmware_selected at 0x26012f8f9b0, file app\view\home_interface.py>, line 216
+     1050 MAKE_FUNCTION              closure
+     1052 STORE_FAST                 on_firmware_selected
+     1054 LOAD_DEREF                 selector
+     1056 LOAD_ATTR                  firmwareSelected
+     1058 CACHE                      
+     1060 CACHE                      
+     1062 CACHE                      
+     1064 CACHE                      
+     1066 LOAD_METHOD                connect
+     1068 CACHE                      
+     1070 CACHE                      
+     1072 CACHE                      
+     1074 CACHE                      
+     1076 CACHE                      
+     1078 CACHE                      
+     1080 CACHE                      
+     1082 CACHE                      
+     1084 CACHE                      
+     1086 CACHE                      
+     1088 LOAD_FAST                  on_firmware_selected
+     1090 PRECALL                    
+     1092 CACHE                      
+     1094 CALL                       
+     1096 CACHE                      
+     1098 CACHE                      
+     1100 CACHE                      
+     1102 CACHE                      
+     1104 POP_TOP                    
+     1106 LOAD_DEREF                 selector
+     1108 LOAD_METHOD                exec
+     1110 CACHE                      
+     1112 CACHE                      
+     1114 CACHE                      
+     1116 CACHE                      
+     1118 CACHE                      
+     1120 CACHE                      
+     1122 CACHE                      
+     1124 CACHE                      
+     1126 CACHE                      
+     1128 CACHE                      
+     1130 PRECALL                    
+     1132 CACHE                      
+     1134 CALL                       
+     1136 CACHE                      
+     1138 CACHE                      
+     1140 CACHE                      
+     1142 CACHE                      
+     1144 POP_TOP                    
+     1146 LOAD_CONST                 None
+     1148 RETURN_VALUE               
+     1150 LOAD_DEREF                 decision
+     1152 LOAD_ATTR                  kind
+     1154 CACHE                      
+     1156 CACHE                      
+     1158 CACHE                      
+     1160 CACHE                      
+     1162 LOAD_GLOBAL                LaunchKind
+     1164 CACHE                      
+     1166 CACHE                      
+     1168 CACHE                      
+     1170 CACHE                      
+     1172 CACHE                      
+     1174 LOAD_ATTR                  MAIN_CONTROLLER
+     1176 CACHE                      
+     1178 CACHE                      
+     1180 CACHE                      
+     1182 CACHE                      
+     1184 COMPARE_OP                 ==
+     1186 CACHE                      
+     1188 CACHE                      
+     1190 POP_JUMP_FORWARD_IF_FALSE  to 1362
+     1192 LOAD_GLOBAL                NULL + DevMainWindow
+     1194 CACHE                      
+     1196 CACHE                      
+     1198 CACHE                      
+     1200 CACHE                      
+     1202 CACHE                      
+     1204 LOAD_DEREF                 dev_info
+     1206 LOAD_DEREF                 self
+     1208 LOAD_ATTR                  dev_find
+     1210 CACHE                      
+     1212 CACHE                      
+     1214 CACHE                      
+     1216 CACHE                      
+     1218 KW_NAMES                   ('usb_dev_find',)
+     1220 PRECALL                    
+     1222 CACHE                      
+     1224 CALL                       
+     1226 CACHE                      
+     1228 CACHE                      
+     1230 CACHE                      
+     1232 CACHE                      
+     1234 STORE_FAST                 window
+     1236 LOAD_FAST                  window
+     1238 LOAD_ATTR                  closed
+     1240 CACHE                      
+     1242 CACHE                      
+     1244 CACHE                      
+     1246 CACHE                      
+     1248 LOAD_METHOD                connect
+     1250 CACHE                      
+     1252 CACHE                      
+     1254 CACHE                      
+     1256 CACHE                      
+     1258 CACHE                      
+     1260 CACHE                      
+     1262 CACHE                      
+     1264 CACHE                      
+     1266 CACHE                      
+     1268 CACHE                      
+     1270 LOAD_DEREF                 self
+     1272 LOAD_ATTR                  onNdevWindowClosed
+     1274 CACHE                      
+     1276 CACHE                      
+     1278 CACHE                      
+     1280 CACHE                      
+     1282 PRECALL                    
+     1284 CACHE                      
+     1286 CALL                       
+     1288 CACHE                      
+     1290 CACHE                      
+     1292 CACHE                      
+     1294 CACHE                      
+     1296 POP_TOP                    
+     1298 LOAD_FAST                  window
+     1300 LOAD_DEREF                 self
+     1302 LOAD_ATTR                  openWindows
+     1304 CACHE                      
+     1306 CACHE                      
+     1308 CACHE                      
+     1310 CACHE                      
+     1312 LOAD_DEREF                 dev_sn
+     1314 STORE_SUBSCR               
+     1316 CACHE                      
+     1318 LOAD_FAST                  window
+     1320 LOAD_METHOD                show
+     1322 CACHE                      
+     1324 CACHE                      
+     1326 CACHE                      
+     1328 CACHE                      
+     1330 CACHE                      
+     1332 CACHE                      
+     1334 CACHE                      
+     1336 CACHE                      
+     1338 CACHE                      
+     1340 CACHE                      
+     1342 PRECALL                    
+     1344 CACHE                      
+     1346 CALL                       
+     1348 CACHE                      
+     1350 CACHE                      
+     1352 CACHE                      
+     1354 CACHE                      
+     1356 POP_TOP                    
+     1358 LOAD_CONST                 None
+     1360 RETURN_VALUE               
+     1362 LOAD_DEREF                 decision
+     1364 LOAD_ATTR                  reason
+     1366 CACHE                      
+     1368 CACHE                      
+     1370 CACHE                      
+     1372 CACHE                      
+     1374 POP_JUMP_FORWARD_IF_FALSE  to 1666
+     1376 LOAD_DEREF                 self
+     1378 LOAD_METHOD                tr
+     1380 CACHE                      
+     1382 CACHE                      
+     1384 CACHE                      
+     1386 CACHE                      
+     1388 CACHE                      
+     1390 CACHE                      
+     1392 CACHE                      
+     1394 CACHE                      
+     1396 CACHE                      
+     1398 CACHE                      
+     1400 LOAD_CONST                 "A firmware update is required, but the update package is missing. Please reinstall the application."
+     1402 PRECALL                    
+     1404 CACHE                      
+     1406 CALL                       
+     1408 CACHE                      
+     1410 CACHE                      
+     1412 CACHE                      
+     1414 CACHE                      
+     1416 LOAD_DEREF                 self
+     1418 LOAD_METHOD                tr
+     1420 CACHE                      
+     1422 CACHE                      
+     1424 CACHE                      
+     1426 CACHE                      
+     1428 CACHE                      
+     1430 CACHE                      
+     1432 CACHE                      
+     1434 CACHE                      
+     1436 CACHE                      
+     1438 CACHE                      
+     1440 LOAD_CONST                 "The device firmware is newer than this application. Please update the software."
+     1442 PRECALL                    
+     1444 CACHE                      
+     1446 CALL                       
+     1448 CACHE                      
+     1450 CACHE                      
+     1452 CACHE                      
+     1454 CACHE                      
+     1456 LOAD_CONST                 ('update_config_missing', 'client_outdated')
+     1458 BUILD_CONST_KEY_MAP        
+     1460 STORE_FAST                 messages
+     1462 LOAD_GLOBAL                NULL + Dialog
+     1464 CACHE                      
+     1466 CACHE                      
+     1468 CACHE                      
+     1470 CACHE                      
+     1472 CACHE                      
+     1474 LOAD_DEREF                 self
+     1476 LOAD_METHOD                tr
+     1478 CACHE                      
+     1480 CACHE                      
+     1482 CACHE                      
+     1484 CACHE                      
+     1486 CACHE                      
+     1488 CACHE                      
+     1490 CACHE                      
+     1492 CACHE                      
+     1494 CACHE                      
+     1496 CACHE                      
+     1498 LOAD_CONST                 "Note"
+     1500 PRECALL                    
+     1502 CACHE                      
+     1504 CALL                       
+     1506 CACHE                      
+     1508 CACHE                      
+     1510 CACHE                      
+     1512 CACHE                      
+     1514 LOAD_FAST                  messages
+     1516 LOAD_METHOD                get
+     1518 CACHE                      
+     1520 CACHE                      
+     1522 CACHE                      
+     1524 CACHE                      
+     1526 CACHE                      
+     1528 CACHE                      
+     1530 CACHE                      
+     1532 CACHE                      
+     1534 CACHE                      
+     1536 CACHE                      
+     1538 LOAD_DEREF                 decision
+     1540 LOAD_ATTR                  reason
+     1542 CACHE                      
+     1544 CACHE                      
+     1546 CACHE                      
+     1548 CACHE                      
+     1550 LOAD_DEREF                 self
+     1552 LOAD_METHOD                tr
+     1554 CACHE                      
+     1556 CACHE                      
+     1558 CACHE                      
+     1560 CACHE                      
+     1562 CACHE                      
+     1564 CACHE                      
+     1566 CACHE                      
+     1568 CACHE                      
+     1570 CACHE                      
+     1572 CACHE                      
+     1574 LOAD_CONST                 "Unable to connect this device. Please close other applications"
+     1576 PRECALL                    
+     1578 CACHE                      
+     1580 CALL                       
+     1582 CACHE                      
+     1584 CACHE                      
+     1586 CACHE                      
+     1588 CACHE                      
+     1590 PRECALL                    
+     1592 CACHE                      
+     1594 CALL                       
+     1596 CACHE                      
+     1598 CACHE                      
+     1600 CACHE                      
+     1602 CACHE                      
+     1604 LOAD_DEREF                 self
+     1606 PRECALL                    
+     1608 CACHE                      
+     1610 CALL                       
+     1612 CACHE                      
+     1614 CACHE                      
+     1616 CACHE                      
+     1618 CACHE                      
+     1620 STORE_FAST                 w
+     1622 LOAD_FAST                  w
+     1624 LOAD_METHOD                exec
+     1626 CACHE                      
+     1628 CACHE                      
+     1630 CACHE                      
+     1632 CACHE                      
+     1634 CACHE                      
+     1636 CACHE                      
+     1638 CACHE                      
+     1640 CACHE                      
+     1642 CACHE                      
+     1644 CACHE                      
+     1646 PRECALL                    
+     1648 CACHE                      
+     1650 CALL                       
+     1652 CACHE                      
+     1654 CACHE                      
+     1656 CACHE                      
+     1658 CACHE                      
+     1660 POP_TOP                    
+     1662 LOAD_CONST                 None
+     1664 RETURN_VALUE               
+     1666 LOAD_CONST                 None
+     1668 RETURN_VALUE               
+      == code on_firmware_selected line 216 args=('firmware_name',)
+          0 COPY_FREE_VARS             
+          2 RESUME                     
+          4 LOAD_DEREF                 selector
+          6 LOAD_METHOD                close
+          8 CACHE                      
+         10 CACHE                      
+         12 CACHE                      
+         14 CACHE                      
+         16 CACHE                      
+         18 CACHE                      
+         20 CACHE                      
+         22 CACHE                      
+         24 CACHE                      
+         26 CACHE                      
+         28 PRECALL                    
+         30 CACHE                      
+         32 CALL                       
+         34 CACHE                      
+         36 CACHE                      
+         38 CACHE                      
+         40 CACHE                      
+         42 POP_TOP                    
+         44 LOAD_GLOBAL                NULL + Dialog
+         46 CACHE                      
+         48 CACHE                      
+         50 CACHE                      
+         52 CACHE                      
+         54 CACHE                      
+         56 LOAD_DEREF                 self
+         58 LOAD_METHOD                tr
+         60 CACHE                      
+         62 CACHE                      
+         64 CACHE                      
+         66 CACHE                      
+         68 CACHE                      
+         70 CACHE                      
+         72 CACHE                      
+         74 CACHE                      
+         76 CACHE                      
+         78 CACHE                      
+         80 LOAD_CONST                 "Confirm firmware write"
+         82 PRECALL                    
+         84 CACHE                      
+         86 CALL                       
+         88 CACHE                      
+         90 CACHE                      
+         92 CACHE                      
+         94 CACHE                      
+         96 LOAD_DEREF                 self
+         98 LOAD_METHOD                tr
+        100 CACHE                      
+        102 CACHE                      
+        104 CACHE                      
+        106 CACHE                      
+        108 CACHE                      
+        110 CACHE                      
+        112 CACHE                      
+        114 CACHE                      
+        116 CACHE                      
+        118 CACHE                      
+        120 LOAD_CONST                 'About to flash "{fw}" onto {name}.\n\nThe device will be unusable for about 30 seconds. Do not unplug it during the update.\n\nContinue?'
+        122 PRECALL                    
+        124 CACHE                      
+        126 CALL                       
+        128 CACHE                      
+        130 CACHE                      
+        132 CACHE                      
+        134 CACHE                      
+        136 LOAD_METHOD                format
+        138 CACHE                      
+        140 CACHE                      
+        142 CACHE                      
+        144 CACHE                      
+        146 CACHE                      
+        148 CACHE                      
+        150 CACHE                      
+        152 CACHE                      
+        154 CACHE                      
+        156 CACHE                      
+        158 LOAD_FAST                  firmware_name
+        160 LOAD_DEREF                 decision
+        162 LOAD_ATTR                  bootloader_name
+        164 CACHE                      
+        166 CACHE                      
+        168 CACHE                      
+        170 CACHE                      
+        172 JUMP_IF_TRUE_OR_POP        to 214
+        174 LOAD_DEREF                 self
+        176 LOAD_METHOD                tr
+        178 CACHE                      
+        180 CACHE                      
+        182 CACHE                      
+        184 CACHE                      
+        186 CACHE                      
+        188 CACHE                      
+        190 CACHE                      
+        192 CACHE                      
+        194 CACHE                      
+        196 CACHE                      
+        198 LOAD_CONST                 "this device"
+        200 PRECALL                    
+        202 CACHE                      
+        204 CALL                       
+        206 CACHE                      
+        208 CACHE                      
+        210 CACHE                      
+        212 CACHE                      
+        214 KW_NAMES                   ('fw', 'name')
+        216 PRECALL                    
+        218 CACHE                      
+        220 CALL                       
+        222 CACHE                      
+        224 CACHE                      
+        226 CACHE                      
+        228 CACHE                      
+        230 LOAD_DEREF                 self
+        232 PRECALL                    
+        234 CACHE                      
+        236 CALL                       
+        238 CACHE                      
+        240 CACHE                      
+        242 CACHE                      
+        244 CACHE                      
+        246 STORE_FAST                 confirm
+        248 LOAD_FAST                  confirm
+        250 LOAD_METHOD                exec
+        252 CACHE                      
+        254 CACHE                      
+        256 CACHE                      
+        258 CACHE                      
+        260 CACHE                      
+        262 CACHE                      
+        264 CACHE                      
+        266 CACHE                      
+        268 CACHE                      
+        270 CACHE                      
+        272 PRECALL                    
+        274 CACHE                      
+        276 CALL                       
+        278 CACHE                      
+        280 CACHE                      
+        282 CACHE                      
+        284 CACHE                      
+        286 POP_JUMP_FORWARD_IF_TRUE   to 340
+        288 LOAD_GLOBAL                NULL + log
+        290 CACHE                      
+        292 CACHE                      
+        294 CACHE                      
+        296 CACHE                      
+        298 CACHE                      
+        300 LOAD_ATTR                  info
+        302 CACHE                      
+        304 CACHE                      
+        306 CACHE                      
+        308 CACHE                      
+        310 LOAD_CONST                 "[n_dev_clicked] bootloader firmware write '"
+        312 LOAD_FAST                  firmware_name
+        314 FORMAT_VALUE               
+        316 LOAD_CONST                 "' cancelled by user"
+        318 BUILD_STRING               
+        320 PRECALL                    
+        322 CACHE                      
+        324 CALL                       
+        326 CACHE                      
+        328 CACHE                      
+        330 CACHE                      
+        332 CACHE                      
+        334 POP_TOP                    
+        336 LOAD_CONST                 None
+        338 RETURN_VALUE               
+        340 LOAD_DEREF                 self
+        342 LOAD_ATTR                  dev_find
+        344 CACHE                      
+        346 CACHE                      
+        348 CACHE                      
+        350 CACHE                      
+        352 LOAD_METHOD                stop
+        354 CACHE                      
+        356 CACHE                      
+        358 CACHE                      
+        360 CACHE                      
+        362 CACHE                      
+        364 CACHE                      
+        366 CACHE                      
+        368 CACHE                      
+        370 CACHE                      
+        372 CACHE                      
+        374 PRECALL                    
+        376 CACHE                      
+        378 CALL                       
+        380 CACHE                      
+        382 CACHE                      
+        384 CACHE                      
+        386 CACHE                      
+        388 POP_TOP                    
+        390 NOP                        
+        392 LOAD_GLOBAL                NULL + UpdateWindow
+        394 CACHE                      
+        396 CACHE                      
+        398 CACHE                      
+        400 CACHE                      
+        402 CACHE                      
+        404 LOAD_DEREF                 dev_info
+        406 LOAD_CONST                 True
+        408 LOAD_FAST                  firmware_name
+        410 PRECALL                    
+        412 CACHE                      
+        414 CALL                       
+        416 CACHE                      
+        418 CACHE                      
+        420 CACHE                      
+        422 CACHE                      
+        424 STORE_FAST                 window
+        426 JUMP_FORWARD               to 572
+        428 PUSH_EXC_INFO              
+        430 LOAD_GLOBAL                Exception
+        432 CACHE                      
+        434 CACHE                      
+        436 CACHE                      
+        438 CACHE                      
+        440 CACHE                      
+        442 CHECK_EXC_MATCH            
+        444 POP_JUMP_FORWARD_IF_FALSE  to 564
+        446 STORE_FAST                 e
+        448 LOAD_GLOBAL                NULL + log
+        450 CACHE                      
+        452 CACHE                      
+        454 CACHE                      
+        456 CACHE                      
+        458 CACHE                      
+        460 LOAD_ATTR                  error
+        462 CACHE                      
+        464 CACHE                      
+        466 CACHE                      
+        468 CACHE                      
+        470 LOAD_CONST                 "[n_dev_clicked] UpdateWindow(BL) init failed: "
+        472 LOAD_FAST                  e
+        474 FORMAT_VALUE               
+        476 BUILD_STRING               
+        478 PRECALL                    
+        480 CACHE                      
+        482 CALL                       
+        484 CACHE                      
+        486 CACHE                      
+        488 CACHE                      
+        490 CACHE                      
+        492 POP_TOP                    
+        494 LOAD_DEREF                 self
+        496 LOAD_ATTR                  dev_find
+        498 CACHE                      
+        500 CACHE                      
+        502 CACHE                      
+        504 CACHE                      
+        506 LOAD_METHOD                start
+        508 CACHE                      
+        510 CACHE                      
+        512 CACHE                      
+        514 CACHE                      
+        516 CACHE                      
+        518 CACHE                      
+        520 CACHE                      
+        522 CACHE                      
+        524 CACHE                      
+        526 CACHE                      
+        528 PRECALL                    
+        530 CACHE                      
+        532 CALL                       
+        534 CACHE                      
+        536 CACHE                      
+        538 CACHE                      
+        540 CACHE                      
+        542 POP_TOP                    
+        544 POP_EXCEPT                 
+        546 LOAD_CONST                 None
+        548 STORE_FAST                 e
+        550 DELETE_FAST                e
+        552 LOAD_CONST                 None
+        554 RETURN_VALUE               
+        556 LOAD_CONST                 None
+        558 STORE_FAST                 e
+        560 DELETE_FAST                e
+        562 RERAISE                    
+        564 RERAISE                    
+        566 COPY                       
+        568 POP_EXCEPT                 
+        570 RERAISE                    
+        572 LOAD_FAST                  window
+        574 LOAD_DEREF                 self
+        576 LOAD_ATTR                  openWindows
+        578 CACHE                      
+        580 CACHE                      
+        582 CACHE                      
+        584 CACHE                      
+        586 LOAD_DEREF                 dev_sn
+        588 STORE_SUBSCR               
+        590 CACHE                      
+        592 LOAD_FAST                  window
+        594 LOAD_ATTR                  updateFinished
+        596 CACHE                      
+        598 CACHE                      
+        600 CACHE                      
+        602 CACHE                      
+        604 LOAD_METHOD                connect
+        606 CACHE                      
+        608 CACHE                      
+        610 CACHE                      
+        612 CACHE                      
+        614 CACHE                      
+        616 CACHE                      
+        618 CACHE                      
+        620 CACHE                      
+        622 CACHE                      
+        624 CACHE                      
+        626 LOAD_DEREF                 self
+        628 LOAD_ATTR                  dev_find
+        630 CACHE                      
+        632 CACHE                      
+        634 CACHE                      
+        636 CACHE                      
+        638 LOAD_ATTR                  start
+        640 CACHE                      
+        642 CACHE                      
+        644 CACHE                      
+        646 CACHE                      
+        648 PRECALL                    
+        650 CACHE                      
+        652 CALL                       
+        654 CACHE                      
+        656 CACHE                      
+        658 CACHE                      
+        660 CACHE                      
+        662 POP_TOP                    
+        664 LOAD_FAST                  window
+        666 LOAD_METHOD                show
+        668 CACHE                      
+        670 CACHE                      
+        672 CACHE                      
+        674 CACHE                      
+        676 CACHE                      
+        678 CACHE                      
+        680 CACHE                      
+        682 CACHE                      
+        684 CACHE                      
+        686 CACHE                      
+        688 PRECALL                    
+        690 CACHE                      
+        692 CALL                       
+        694 CACHE                      
+        696 CACHE                      
+        698 CACHE                      
+        700 CACHE                      
+        702 POP_TOP                    
+        704 LOAD_CONST                 None
+        706 RETURN_VALUE               
+    == code onNdevWindowClosed line 278 args=('self', 'dev_info')
+        0 RESUME                     
+        2 LOAD_FAST                  dev_info
+        4 LOAD_METHOD                get
+        6 CACHE                      
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 CACHE                      
+       16 CACHE                      
+       18 CACHE                      
+       20 CACHE                      
+       22 CACHE                      
+       24 CACHE                      
+       26 LOAD_CONST                 "serial_number"
+       28 LOAD_GLOBAL                NULL + str
+       30 CACHE                      
+       32 CACHE                      
+       34 CACHE                      
+       36 CACHE                      
+       38 CACHE                      
+       40 LOAD_FAST                  dev_info
+       42 PRECALL                    
+       44 CACHE                      
+       46 CALL                       
+       48 CACHE                      
+       50 CACHE                      
+       52 CACHE                      
+       54 CACHE                      
+       56 PRECALL                    
+       58 CACHE                      
+       60 CALL                       
+       62 CACHE                      
+       64 CACHE                      
+       66 CACHE                      
+       68 CACHE                      
+       70 STORE_FAST                 dev_sn
+       72 LOAD_FAST                  dev_sn
+       74 LOAD_FAST                  self
+       76 LOAD_ATTR                  openWindows
+       78 CACHE                      
+       80 CACHE                      
+       82 CACHE                      
+       84 CACHE                      
+       86 CONTAINS_OP                in
+       88 POP_JUMP_FORWARD_IF_FALSE  to 110
+       90 LOAD_FAST                  self
+       92 LOAD_ATTR                  openWindows
+       94 CACHE                      
+       96 CACHE                      
+       98 CACHE                      
+      100 CACHE                      
+      102 LOAD_FAST                  dev_sn
+      104 DELETE_SUBSCR              
+      106 LOAD_CONST                 None
+      108 RETURN_VALUE               
+      110 LOAD_CONST                 None
+      112 RETURN_VALUE               
+    == code cleanup line 283 args=('self',)
+        0 RESUME                     
+        2 LOAD_GLOBAL                NULL + list
+        4 CACHE                      
+        6 CACHE                      
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 LOAD_FAST                  self
+       16 LOAD_ATTR                  openWindows
+       18 CACHE                      
+       20 CACHE                      
+       22 CACHE                      
+       24 CACHE                      
+       26 LOAD_METHOD                values
+       28 CACHE                      
+       30 CACHE                      
+       32 CACHE                      
+       34 CACHE                      
+       36 CACHE                      
+       38 CACHE                      
+       40 CACHE                      
+       42 CACHE                      
+       44 CACHE                      
+       46 CACHE                      
+       48 PRECALL                    
+       50 CACHE                      
+       52 CALL                       
+       54 CACHE                      
+       56 CACHE                      
+       58 CACHE                      
+       60 CACHE                      
+       62 PRECALL                    
+       64 CACHE                      
+       66 CALL                       
+       68 CACHE                      
+       70 CACHE                      
+       72 CACHE                      
+       74 CACHE                      
+       76 GET_ITER                   
+       78 FOR_ITER                   to 124
+       80 STORE_FAST                 window
+       82 LOAD_FAST                  window
+       84 LOAD_METHOD                close
+       86 CACHE                      
+       88 CACHE                      
+       90 CACHE                      
+       92 CACHE                      
+       94 CACHE                      
+       96 CACHE                      
+       98 CACHE                      
+      100 CACHE                      
+      102 CACHE                      
+      104 CACHE                      
+      106 PRECALL                    
+      108 CACHE                      
+      110 CALL                       
+      112 CACHE                      
+      114 CACHE                      
+      116 CACHE                      
+      118 CACHE                      
+      120 POP_TOP                    
+      122 JUMP_BACKWARD              to 78
+      124 LOAD_FAST                  self
+      126 LOAD_ATTR                  openWindows
+      128 CACHE                      
+      130 CACHE                      
+      132 CACHE                      
+      134 CACHE                      
+      136 LOAD_METHOD                clear
+      138 CACHE                      
+      140 CACHE                      
+      142 CACHE                      
+      144 CACHE                      
+      146 CACHE                      
+      148 CACHE                      
+      150 CACHE                      
+      152 CACHE                      
+      154 CACHE                      
+      156 CACHE                      
+      158 PRECALL                    
+      160 CACHE                      
+      162 CALL                       
+      164 CACHE                      
+      166 CACHE                      
+      168 CACHE                      
+      170 CACHE                      
+      172 POP_TOP                    
+      174 LOAD_GLOBAL                NULL + hasattr
+      176 CACHE                      
+      178 CACHE                      
+      180 CACHE                      
+      182 CACHE                      
+      184 CACHE                      
+      186 LOAD_FAST                  self
+      188 LOAD_CONST                 "dev_find"
+      190 PRECALL                    
+      192 CACHE                      
+      194 CALL                       
+      196 CACHE                      
+      198 CACHE                      
+      200 CACHE                      
+      202 CACHE                      
+      204 POP_JUMP_FORWARD_IF_FALSE  to 310
+      206 LOAD_FAST                  self
+      208 LOAD_ATTR                  dev_find
+      210 CACHE                      
+      212 CACHE                      
+      214 CACHE                      
+      216 CACHE                      
+      218 LOAD_METHOD                isRunning
+      220 CACHE                      
+      222 CACHE                      
+      224 CACHE                      
+      226 CACHE                      
+      228 CACHE                      
+      230 CACHE                      
+      232 CACHE                      
+      234 CACHE                      
+      236 CACHE                      
+      238 CACHE                      
+      240 PRECALL                    
+      242 CACHE                      
+      244 CALL                       
+      246 CACHE                      
+      248 CACHE                      
+      250 CACHE                      
+      252 CACHE                      
+      254 POP_JUMP_FORWARD_IF_FALSE  to 314
+      256 LOAD_FAST                  self
+      258 LOAD_ATTR                  dev_find
+      260 CACHE                      
+      262 CACHE                      
+      264 CACHE                      
+      266 CACHE                      
+      268 LOAD_METHOD                stop
+      270 CACHE                      
+      272 CACHE                      
+      274 CACHE                      
+      276 CACHE                      
+      278 CACHE                      
+      280 CACHE                      
+      282 CACHE                      
+      284 CACHE                      
+      286 CACHE                      
+      288 CACHE                      
+      290 PRECALL                    
+      292 CACHE                      
+      294 CALL                       
+      296 CACHE                      
+      298 CACHE                      
+      300 CACHE                      
+      302 CACHE                      
+      304 POP_TOP                    
+      306 LOAD_CONST                 None
+      308 RETURN_VALUE               
+      310 LOAD_CONST                 None
+      312 RETURN_VALUE               
+      314 LOAD_CONST                 None
+      316 RETURN_VALUE               

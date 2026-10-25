@@ -1,0 +1,1484 @@
+== code <module> line 1 args=()
+    0 RESUME                     
+    2 LOAD_CONST                 '\nFSEQ V2.0 (xLights) 文件解析 —— 上位机侧，与固件 fseq_player.c 逐字节对齐。\n\n固件只吃 **未压缩** 的 V2 文件；帧数据要么覆盖全部通道(无 sparse range)，要么\n按 sparse range 顺序打包。本模块把 .fseq 头解析成 FseqInfo，并据此推导「逐通道\nLED 数」建议值(FSEQ_ch_Led_num)，供设备 build_map 校验通过。\n\nHeader（32 字节，小端）:\n    off  size  字段\n    0    4     magic "PSEQ"\n    4    2     channel_data_offset（帧数据起始）\n    6    1     minor version\n    7    1     major version（仅支持 2）\n    8    2     standard header length（V2 恒 32，固件忽略）\n    10   4     channel_count（每帧总通道字节数）\n    14   4     frame_count\n    18   1     step_ms（每帧毫秒）\n    19   1     flags\n    20   1     compression：低 4 位=类型(0=无,1=zstd,2=zlib)；高 4 位=压缩块数高位\n    21   1     compression block count 低字节\n    22   1     sparse range count\n    23   1     reserved\n    24   8     unique ID\n\n可变区（从 32 起）:\n    压缩块索引：每块 8 字节 { frame_index:4, block_size:4 }\n    sparse range：每条 6 字节 { start_channel:3(u24 LE), channel_count:3(u24 LE) }\n'
+    4 STORE_NAME                 __doc__
+    6 LOAD_CONST                 0
+    8 LOAD_CONST                 ('annotations',)
+   10 IMPORT_NAME                __future__
+   12 IMPORT_FROM                annotations
+   14 STORE_NAME                 annotations
+   16 POP_TOP                    
+   18 LOAD_CONST                 0
+   20 LOAD_CONST                 ('dataclass', 'field')
+   22 IMPORT_NAME                dataclasses
+   24 IMPORT_FROM                dataclass
+   26 STORE_NAME                 dataclass
+   28 IMPORT_FROM                field
+   30 STORE_NAME                 field
+   32 POP_TOP                    
+   34 LOAD_CONST                 b'PSEQ'
+   36 STORE_NAME                 FSEQ_MAGIC
+   38 LOAD_CONST                 32
+   40 STORE_NAME                 FSEQ_HEADER_LEN
+   42 LOAD_CONST                 32
+   44 STORE_NAME                 FSEQ_MAX_RANGES
+   46 LOAD_NAME                  dataclass
+   48 PUSH_NULL                  
+   50 LOAD_BUILD_CLASS           
+   52 LOAD_CONST                 <Code311 code object FseqRange at 0x259ed6ccec0, file app\core_driver\fseq_file.py>, line 40
+   54 MAKE_FUNCTION              No arguments
+   56 LOAD_CONST                 "FseqRange"
+   58 PRECALL                    
+   60 CACHE                      
+   62 CALL                       
+   64 CACHE                      
+   66 CACHE                      
+   68 CACHE                      
+   70 CACHE                      
+   72 PRECALL                    
+   74 CACHE                      
+   76 CALL                       
+   78 CACHE                      
+   80 CACHE                      
+   82 CACHE                      
+   84 CACHE                      
+   86 STORE_NAME                 FseqRange
+   88 LOAD_NAME                  dataclass
+   90 PUSH_NULL                  
+   92 LOAD_BUILD_CLASS           
+   94 LOAD_CONST                 <Code311 code object FseqInfo at 0x259ed7448a0, file app\core_driver\fseq_file.py>, line 46
+   96 MAKE_FUNCTION              No arguments
+   98 LOAD_CONST                 "FseqInfo"
+  100 PRECALL                    
+  102 CACHE                      
+  104 CALL                       
+  106 CACHE                      
+  108 CACHE                      
+  110 CACHE                      
+  112 CACHE                      
+  114 PRECALL                    
+  116 CACHE                      
+  118 CALL                       
+  120 CACHE                      
+  122 CACHE                      
+  124 CACHE                      
+  126 CACHE                      
+  128 STORE_NAME                 FseqInfo
+  130 LOAD_CONST                 ('b', 'bytes', 'o', 'int', 'return', 'int')
+  132 LOAD_CONST                 <Code311 code object _rd16 at 0x259ed7449d0, file app\core_driver\fseq_file.py>, line 70
+  134 MAKE_FUNCTION              annotation
+  136 STORE_NAME                 _rd16
+  138 LOAD_CONST                 ('b', 'bytes', 'o', 'int', 'return', 'int')
+  140 LOAD_CONST                 <Code311 code object _rd24 at 0x259ed755010, file app\core_driver\fseq_file.py>, line 74
+  142 MAKE_FUNCTION              annotation
+  144 STORE_NAME                 _rd24
+  146 LOAD_CONST                 ('b', 'bytes', 'o', 'int', 'return', 'int')
+  148 LOAD_CONST                 <Code311 code object _rd32 at 0x259ed729150, file app\core_driver\fseq_file.py>, line 78
+  150 MAKE_FUNCTION              annotation
+  152 STORE_NAME                 _rd32
+  154 LOAD_CONST                 ('data', 'bytes', 'return', 'FseqInfo')
+  156 LOAD_CONST                 <Code311 code object parse_fseq at 0x259ed729480, file app\core_driver\fseq_file.py>, line 82
+  158 MAKE_FUNCTION              annotation
+  160 STORE_NAME                 parse_fseq
+  162 LOAD_CONST                 ('info', 'FseqInfo', 'ch_len', 'int', 'ch_led_len', 'int')
+  164 LOAD_CONST                 <Code311 code object derive_led_map at 0x259ed729590, file app\core_driver\fseq_file.py>, line 151
+  166 MAKE_FUNCTION              annotation
+  168 STORE_NAME                 derive_led_map
+  170 LOAD_CONST                 ('info', 'FseqInfo', 'led_map', 'list[int]', 'return', 'tuple[bool, str]')
+  172 LOAD_CONST                 <Code311 code object validate_led_map at 0x259ed7297b0, file app\core_driver\fseq_file.py>, line 194
+  174 MAKE_FUNCTION              annotation
+  176 STORE_NAME                 validate_led_map
+  178 LOAD_CONST                 None
+  180 RETURN_VALUE               
+  == code FseqRange line 40 args=()
+      0 RESUME                     
+      2 LOAD_NAME                  __name__
+      4 STORE_NAME                 __module__
+      6 LOAD_CONST                 "FseqRange"
+      8 STORE_NAME                 __qualname__
+     10 SETUP_ANNOTATIONS          
+     12 LOAD_CONST                 "int"
+     14 LOAD_NAME                  __annotations__
+     16 LOAD_CONST                 "start"
+     18 STORE_SUBSCR               
+     20 CACHE                      
+     22 LOAD_CONST                 "int"
+     24 LOAD_NAME                  __annotations__
+     26 LOAD_CONST                 "count"
+     28 STORE_SUBSCR               
+     30 CACHE                      
+     32 LOAD_CONST                 None
+     34 RETURN_VALUE               
+  == code FseqInfo line 46 args=()
+      0 RESUME                     
+      2 LOAD_NAME                  __name__
+      4 STORE_NAME                 __module__
+      6 LOAD_CONST                 "FseqInfo"
+      8 STORE_NAME                 __qualname__
+     10 SETUP_ANNOTATIONS          
+     12 LOAD_CONST                 False
+     14 STORE_NAME                 ok
+     16 LOAD_CONST                 "bool"
+     18 LOAD_NAME                  __annotations__
+     20 LOAD_CONST                 "ok"
+     22 STORE_SUBSCR               
+     24 CACHE                      
+     26 LOAD_CONST                 ""
+     28 STORE_NAME                 error
+     30 LOAD_CONST                 "str"
+     32 LOAD_NAME                  __annotations__
+     34 LOAD_CONST                 "error"
+     36 STORE_SUBSCR               
+     38 CACHE                      
+     40 LOAD_CONST                 0
+     42 STORE_NAME                 channel_count
+     44 LOAD_CONST                 "int"
+     46 LOAD_NAME                  __annotations__
+     48 LOAD_CONST                 "channel_count"
+     50 STORE_SUBSCR               
+     52 CACHE                      
+     54 LOAD_CONST                 0
+     56 STORE_NAME                 frame_count
+     58 LOAD_CONST                 "int"
+     60 LOAD_NAME                  __annotations__
+     62 LOAD_CONST                 "frame_count"
+     64 STORE_SUBSCR               
+     66 CACHE                      
+     68 LOAD_CONST                 0
+     70 STORE_NAME                 step_ms
+     72 LOAD_CONST                 "int"
+     74 LOAD_NAME                  __annotations__
+     76 LOAD_CONST                 "step_ms"
+     78 STORE_SUBSCR               
+     80 CACHE                      
+     82 LOAD_CONST                 0
+     84 STORE_NAME                 data_offset
+     86 LOAD_CONST                 "int"
+     88 LOAD_NAME                  __annotations__
+     90 LOAD_CONST                 "data_offset"
+     92 STORE_SUBSCR               
+     94 CACHE                      
+     96 LOAD_CONST                 0
+     98 STORE_NAME                 frame_bytes
+    100 LOAD_CONST                 "int"
+    102 LOAD_NAME                  __annotations__
+    104 LOAD_CONST                 "frame_bytes"
+    106 STORE_SUBSCR               
+    108 CACHE                      
+    110 LOAD_CONST                 0
+    112 STORE_NAME                 compression_type
+    114 LOAD_CONST                 "int"
+    116 LOAD_NAME                  __annotations__
+    118 LOAD_CONST                 "compression_type"
+    120 STORE_SUBSCR               
+    122 CACHE                      
+    124 LOAD_CONST                 0
+    126 STORE_NAME                 range_count
+    128 LOAD_CONST                 "int"
+    130 LOAD_NAME                  __annotations__
+    132 LOAD_CONST                 "range_count"
+    134 STORE_SUBSCR               
+    136 CACHE                      
+    138 PUSH_NULL                  
+    140 LOAD_NAME                  field
+    142 LOAD_NAME                  list
+    144 KW_NAMES                   ('default_factory',)
+    146 PRECALL                    
+    148 CACHE                      
+    150 CALL                       
+    152 CACHE                      
+    154 CACHE                      
+    156 CACHE                      
+    158 CACHE                      
+    160 STORE_NAME                 ranges
+    162 LOAD_CONST                 "list[FseqRange]"
+    164 LOAD_NAME                  __annotations__
+    166 LOAD_CONST                 "ranges"
+    168 STORE_SUBSCR               
+    170 CACHE                      
+    172 LOAD_CONST                 0
+    174 STORE_NAME                 file_size
+    176 LOAD_CONST                 "int"
+    178 LOAD_NAME                  __annotations__
+    180 LOAD_CONST                 "file_size"
+    182 STORE_SUBSCR               
+    184 CACHE                      
+    186 LOAD_CONST                 0
+    188 STORE_NAME                 occupied_size
+    190 LOAD_CONST                 "int"
+    192 LOAD_NAME                  __annotations__
+    194 LOAD_CONST                 "occupied_size"
+    196 STORE_SUBSCR               
+    198 CACHE                      
+    200 LOAD_NAME                  property
+    202 LOAD_CONST                 ('return', 'int')
+    204 LOAD_CONST                 <Code311 code object duration_ms at 0x259ed719a90, file app\core_driver\fseq_file.py>, line 61
+    206 MAKE_FUNCTION              annotation
+    208 PRECALL                    
+    210 CACHE                      
+    212 CALL                       
+    214 CACHE                      
+    216 CACHE                      
+    218 CACHE                      
+    220 CACHE                      
+    222 STORE_NAME                 duration_ms
+    224 LOAD_NAME                  property
+    226 LOAD_CONST                 ('return', 'float')
+    228 LOAD_CONST                 <Code311 code object fps at 0x259ed719d10, file app\core_driver\fseq_file.py>, line 65
+    230 MAKE_FUNCTION              annotation
+    232 PRECALL                    
+    234 CACHE                      
+    236 CALL                       
+    238 CACHE                      
+    240 CACHE                      
+    242 CACHE                      
+    244 CACHE                      
+    246 STORE_NAME                 fps
+    248 LOAD_CONST                 None
+    250 RETURN_VALUE               
+    == code duration_ms line 61 args=('self',)
+        0 RESUME                     
+        2 LOAD_FAST                  self
+        4 LOAD_ATTR                  frame_count
+        6 CACHE                      
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 LOAD_FAST                  self
+       16 LOAD_ATTR                  step_ms
+       18 CACHE                      
+       20 CACHE                      
+       22 CACHE                      
+       24 CACHE                      
+       26 BINARY_OP                  *
+       28 CACHE                      
+       30 RETURN_VALUE               
+    == code fps line 65 args=('self',)
+        0 RESUME                     
+        2 LOAD_FAST                  self
+        4 LOAD_ATTR                  step_ms
+        6 CACHE                      
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 POP_JUMP_FORWARD_IF_FALSE  to 36
+       16 LOAD_CONST                 1000.0
+       18 LOAD_FAST                  self
+       20 LOAD_ATTR                  step_ms
+       22 CACHE                      
+       24 CACHE                      
+       26 CACHE                      
+       28 CACHE                      
+       30 BINARY_OP                  /
+       32 CACHE                      
+       34 JUMP_FORWARD               to 38
+       36 LOAD_CONST                 0.0
+       38 RETURN_VALUE               
+  == code _rd16 line 70 args=('b', 'o')
+      0 RESUME                     
+      2 LOAD_FAST                  b
+      4 LOAD_FAST                  o
+      6 BINARY_SUBSCR              
+      8 CACHE                      
+     10 CACHE                      
+     12 CACHE                      
+     14 CACHE                      
+     16 LOAD_FAST                  b
+     18 LOAD_FAST                  o
+     20 LOAD_CONST                 1
+     22 BINARY_OP                  +
+     24 CACHE                      
+     26 BINARY_SUBSCR              
+     28 CACHE                      
+     30 CACHE                      
+     32 CACHE                      
+     34 CACHE                      
+     36 LOAD_CONST                 8
+     38 BINARY_OP                  <<
+     40 CACHE                      
+     42 BINARY_OP                  |
+     44 CACHE                      
+     46 RETURN_VALUE               
+  == code _rd24 line 74 args=('b', 'o')
+      0 RESUME                     
+      2 LOAD_FAST                  b
+      4 LOAD_FAST                  o
+      6 BINARY_SUBSCR              
+      8 CACHE                      
+     10 CACHE                      
+     12 CACHE                      
+     14 CACHE                      
+     16 LOAD_FAST                  b
+     18 LOAD_FAST                  o
+     20 LOAD_CONST                 1
+     22 BINARY_OP                  +
+     24 CACHE                      
+     26 BINARY_SUBSCR              
+     28 CACHE                      
+     30 CACHE                      
+     32 CACHE                      
+     34 CACHE                      
+     36 LOAD_CONST                 8
+     38 BINARY_OP                  <<
+     40 CACHE                      
+     42 BINARY_OP                  |
+     44 CACHE                      
+     46 LOAD_FAST                  b
+     48 LOAD_FAST                  o
+     50 LOAD_CONST                 2
+     52 BINARY_OP                  +
+     54 CACHE                      
+     56 BINARY_SUBSCR              
+     58 CACHE                      
+     60 CACHE                      
+     62 CACHE                      
+     64 CACHE                      
+     66 LOAD_CONST                 16
+     68 BINARY_OP                  <<
+     70 CACHE                      
+     72 BINARY_OP                  |
+     74 CACHE                      
+     76 RETURN_VALUE               
+  == code _rd32 line 78 args=('b', 'o')
+      0 RESUME                     
+      2 LOAD_FAST                  b
+      4 LOAD_FAST                  o
+      6 BINARY_SUBSCR              
+      8 CACHE                      
+     10 CACHE                      
+     12 CACHE                      
+     14 CACHE                      
+     16 LOAD_FAST                  b
+     18 LOAD_FAST                  o
+     20 LOAD_CONST                 1
+     22 BINARY_OP                  +
+     24 CACHE                      
+     26 BINARY_SUBSCR              
+     28 CACHE                      
+     30 CACHE                      
+     32 CACHE                      
+     34 CACHE                      
+     36 LOAD_CONST                 8
+     38 BINARY_OP                  <<
+     40 CACHE                      
+     42 BINARY_OP                  |
+     44 CACHE                      
+     46 LOAD_FAST                  b
+     48 LOAD_FAST                  o
+     50 LOAD_CONST                 2
+     52 BINARY_OP                  +
+     54 CACHE                      
+     56 BINARY_SUBSCR              
+     58 CACHE                      
+     60 CACHE                      
+     62 CACHE                      
+     64 CACHE                      
+     66 LOAD_CONST                 16
+     68 BINARY_OP                  <<
+     70 CACHE                      
+     72 BINARY_OP                  |
+     74 CACHE                      
+     76 LOAD_FAST                  b
+     78 LOAD_FAST                  o
+     80 LOAD_CONST                 3
+     82 BINARY_OP                  +
+     84 CACHE                      
+     86 BINARY_SUBSCR              
+     88 CACHE                      
+     90 CACHE                      
+     92 CACHE                      
+     94 CACHE                      
+     96 LOAD_CONST                 24
+     98 BINARY_OP                  <<
+    100 CACHE                      
+    102 BINARY_OP                  |
+    104 CACHE                      
+    106 RETURN_VALUE               
+  == code parse_fseq line 82 args=('data',)
+      0 RESUME                     
+      2 LOAD_GLOBAL                NULL + FseqInfo
+      4 CACHE                      
+      6 CACHE                      
+      8 CACHE                      
+     10 CACHE                      
+     12 CACHE                      
+     14 PRECALL                    
+     16 CACHE                      
+     18 CALL                       
+     20 CACHE                      
+     22 CACHE                      
+     24 CACHE                      
+     26 CACHE                      
+     28 STORE_FAST                 info
+     30 LOAD_GLOBAL                NULL + len
+     32 CACHE                      
+     34 CACHE                      
+     36 CACHE                      
+     38 CACHE                      
+     40 CACHE                      
+     42 LOAD_FAST                  data
+     44 PRECALL                    
+     46 CACHE                      
+     48 CALL                       
+     50 CACHE                      
+     52 CACHE                      
+     54 CACHE                      
+     56 CACHE                      
+     58 LOAD_FAST                  info
+     60 STORE_ATTR                 file_size
+     62 CACHE                      
+     64 CACHE                      
+     66 CACHE                      
+     68 CACHE                      
+     70 LOAD_GLOBAL                NULL + len
+     72 CACHE                      
+     74 CACHE                      
+     76 CACHE                      
+     78 CACHE                      
+     80 CACHE                      
+     82 LOAD_FAST                  data
+     84 PRECALL                    
+     86 CACHE                      
+     88 CALL                       
+     90 CACHE                      
+     92 CACHE                      
+     94 CACHE                      
+     96 CACHE                      
+     98 LOAD_GLOBAL                FSEQ_HEADER_LEN
+    100 CACHE                      
+    102 CACHE                      
+    104 CACHE                      
+    106 CACHE                      
+    108 CACHE                      
+    110 COMPARE_OP                 <
+    112 CACHE                      
+    114 CACHE                      
+    116 POP_JUMP_FORWARD_IF_FALSE  to 136
+    118 LOAD_CONST                 "文件过小，不是有效的 FSEQ 文件"
+    120 LOAD_FAST                  info
+    122 STORE_ATTR                 error
+    124 CACHE                      
+    126 CACHE                      
+    128 CACHE                      
+    130 CACHE                      
+    132 LOAD_FAST                  info
+    134 RETURN_VALUE               
+    136 LOAD_FAST                  data
+    138 LOAD_CONST                 0
+    140 LOAD_CONST                 4
+    142 BUILD_SLICE                
+    144 BINARY_SUBSCR              
+    146 CACHE                      
+    148 CACHE                      
+    150 CACHE                      
+    152 CACHE                      
+    154 LOAD_GLOBAL                FSEQ_MAGIC
+    156 CACHE                      
+    158 CACHE                      
+    160 CACHE                      
+    162 CACHE                      
+    164 CACHE                      
+    166 COMPARE_OP                 !=
+    168 CACHE                      
+    170 CACHE                      
+    172 POP_JUMP_FORWARD_IF_FALSE  to 192
+    174 LOAD_CONST                 "文件头不是 'PSEQ'，不是 FSEQ 文件"
+    176 LOAD_FAST                  info
+    178 STORE_ATTR                 error
+    180 CACHE                      
+    182 CACHE                      
+    184 CACHE                      
+    186 CACHE                      
+    188 LOAD_FAST                  info
+    190 RETURN_VALUE               
+    192 LOAD_FAST                  data
+    194 LOAD_CONST                 7
+    196 BINARY_SUBSCR              
+    198 CACHE                      
+    200 CACHE                      
+    202 CACHE                      
+    204 CACHE                      
+    206 LOAD_CONST                 2
+    208 COMPARE_OP                 !=
+    210 CACHE                      
+    212 CACHE                      
+    214 POP_JUMP_FORWARD_IF_FALSE  to 252
+    216 LOAD_CONST                 "仅支持 FSEQ V2.0，当前主版本号为 "
+    218 LOAD_FAST                  data
+    220 LOAD_CONST                 7
+    222 BINARY_SUBSCR              
+    224 CACHE                      
+    226 CACHE                      
+    228 CACHE                      
+    230 CACHE                      
+    232 FORMAT_VALUE               
+    234 BUILD_STRING               
+    236 LOAD_FAST                  info
+    238 STORE_ATTR                 error
+    240 CACHE                      
+    242 CACHE                      
+    244 CACHE                      
+    246 CACHE                      
+    248 LOAD_FAST                  info
+    250 RETURN_VALUE               
+    252 LOAD_GLOBAL                NULL + _rd16
+    254 CACHE                      
+    256 CACHE                      
+    258 CACHE                      
+    260 CACHE                      
+    262 CACHE                      
+    264 LOAD_FAST                  data
+    266 LOAD_CONST                 4
+    268 PRECALL                    
+    270 CACHE                      
+    272 CALL                       
+    274 CACHE                      
+    276 CACHE                      
+    278 CACHE                      
+    280 CACHE                      
+    282 LOAD_FAST                  info
+    284 STORE_ATTR                 data_offset
+    286 CACHE                      
+    288 CACHE                      
+    290 CACHE                      
+    292 CACHE                      
+    294 LOAD_GLOBAL                NULL + _rd32
+    296 CACHE                      
+    298 CACHE                      
+    300 CACHE                      
+    302 CACHE                      
+    304 CACHE                      
+    306 LOAD_FAST                  data
+    308 LOAD_CONST                 10
+    310 PRECALL                    
+    312 CACHE                      
+    314 CALL                       
+    316 CACHE                      
+    318 CACHE                      
+    320 CACHE                      
+    322 CACHE                      
+    324 LOAD_FAST                  info
+    326 STORE_ATTR                 channel_count
+    328 CACHE                      
+    330 CACHE                      
+    332 CACHE                      
+    334 CACHE                      
+    336 LOAD_GLOBAL                NULL + _rd32
+    338 CACHE                      
+    340 CACHE                      
+    342 CACHE                      
+    344 CACHE                      
+    346 CACHE                      
+    348 LOAD_FAST                  data
+    350 LOAD_CONST                 14
+    352 PRECALL                    
+    354 CACHE                      
+    356 CALL                       
+    358 CACHE                      
+    360 CACHE                      
+    362 CACHE                      
+    364 CACHE                      
+    366 LOAD_FAST                  info
+    368 STORE_ATTR                 frame_count
+    370 CACHE                      
+    372 CACHE                      
+    374 CACHE                      
+    376 CACHE                      
+    378 LOAD_FAST                  data
+    380 LOAD_CONST                 18
+    382 BINARY_SUBSCR              
+    384 CACHE                      
+    386 CACHE                      
+    388 CACHE                      
+    390 CACHE                      
+    392 LOAD_FAST                  info
+    394 STORE_ATTR                 step_ms
+    396 CACHE                      
+    398 CACHE                      
+    400 CACHE                      
+    402 CACHE                      
+    404 LOAD_FAST                  data
+    406 LOAD_CONST                 20
+    408 BINARY_SUBSCR              
+    410 CACHE                      
+    412 CACHE                      
+    414 CACHE                      
+    416 CACHE                      
+    418 LOAD_CONST                 15
+    420 BINARY_OP                  &
+    422 CACHE                      
+    424 LOAD_FAST                  info
+    426 STORE_ATTR                 compression_type
+    428 CACHE                      
+    430 CACHE                      
+    432 CACHE                      
+    434 CACHE                      
+    436 LOAD_FAST                  data
+    438 LOAD_CONST                 20
+    440 BINARY_SUBSCR              
+    442 CACHE                      
+    444 CACHE                      
+    446 CACHE                      
+    448 CACHE                      
+    450 LOAD_CONST                 240
+    452 BINARY_OP                  &
+    454 CACHE                      
+    456 LOAD_CONST                 4
+    458 BINARY_OP                  <<
+    460 CACHE                      
+    462 LOAD_FAST                  data
+    464 LOAD_CONST                 21
+    466 BINARY_SUBSCR              
+    468 CACHE                      
+    470 CACHE                      
+    472 CACHE                      
+    474 CACHE                      
+    476 BINARY_OP                  |
+    478 CACHE                      
+    480 STORE_FAST                 comp_blocks
+    482 LOAD_FAST                  data
+    484 LOAD_CONST                 22
+    486 BINARY_SUBSCR              
+    488 CACHE                      
+    490 CACHE                      
+    492 CACHE                      
+    494 CACHE                      
+    496 LOAD_FAST                  info
+    498 STORE_ATTR                 range_count
+    500 CACHE                      
+    502 CACHE                      
+    504 CACHE                      
+    506 CACHE                      
+    508 LOAD_FAST                  info
+    510 LOAD_ATTR                  compression_type
+    512 CACHE                      
+    514 CACHE                      
+    516 CACHE                      
+    518 CACHE                      
+    520 LOAD_CONST                 0
+    522 COMPARE_OP                 !=
+    524 CACHE                      
+    526 CACHE                      
+    528 POP_JUMP_FORWARD_IF_FALSE  to 548
+    530 LOAD_CONST                 "文件已压缩，固件仅支持未压缩的 FSEQ（在 xLights 里导出时选 'Uncompressed'）"
+    532 LOAD_FAST                  info
+    534 STORE_ATTR                 error
+    536 CACHE                      
+    538 CACHE                      
+    540 CACHE                      
+    542 CACHE                      
+    544 LOAD_FAST                  info
+    546 RETURN_VALUE               
+    548 LOAD_FAST                  info
+    550 LOAD_ATTR                  frame_count
+    552 CACHE                      
+    554 CACHE                      
+    556 CACHE                      
+    558 CACHE                      
+    560 LOAD_CONST                 0
+    562 COMPARE_OP                 ==
+    564 CACHE                      
+    566 CACHE                      
+    568 POP_JUMP_FORWARD_IF_TRUE   to 592
+    570 LOAD_FAST                  info
+    572 LOAD_ATTR                  step_ms
+    574 CACHE                      
+    576 CACHE                      
+    578 CACHE                      
+    580 CACHE                      
+    582 LOAD_CONST                 0
+    584 COMPARE_OP                 ==
+    586 CACHE                      
+    588 CACHE                      
+    590 POP_JUMP_FORWARD_IF_FALSE  to 610
+    592 LOAD_CONST                 "帧数或步进时间为 0，文件无效"
+    594 LOAD_FAST                  info
+    596 STORE_ATTR                 error
+    598 CACHE                      
+    600 CACHE                      
+    602 CACHE                      
+    604 CACHE                      
+    606 LOAD_FAST                  info
+    608 RETURN_VALUE               
+    610 LOAD_FAST                  info
+    612 LOAD_ATTR                  range_count
+    614 CACHE                      
+    616 CACHE                      
+    618 CACHE                      
+    620 CACHE                      
+    622 LOAD_GLOBAL                FSEQ_MAX_RANGES
+    624 CACHE                      
+    626 CACHE                      
+    628 CACHE                      
+    630 CACHE                      
+    632 CACHE                      
+    634 COMPARE_OP                 >
+    636 CACHE                      
+    638 CACHE                      
+    640 POP_JUMP_FORWARD_IF_FALSE  to 692
+    642 LOAD_CONST                 "sparse range 数 "
+    644 LOAD_FAST                  info
+    646 LOAD_ATTR                  range_count
+    648 CACHE                      
+    650 CACHE                      
+    652 CACHE                      
+    654 CACHE                      
+    656 FORMAT_VALUE               
+    658 LOAD_CONST                 " 超过设备上限 "
+    660 LOAD_GLOBAL                FSEQ_MAX_RANGES
+    662 CACHE                      
+    664 CACHE                      
+    666 CACHE                      
+    668 CACHE                      
+    670 CACHE                      
+    672 FORMAT_VALUE               
+    674 BUILD_STRING               
+    676 LOAD_FAST                  info
+    678 STORE_ATTR                 error
+    680 CACHE                      
+    682 CACHE                      
+    684 CACHE                      
+    686 CACHE                      
+    688 LOAD_FAST                  info
+    690 RETURN_VALUE               
+    692 LOAD_GLOBAL                FSEQ_HEADER_LEN
+    694 CACHE                      
+    696 CACHE                      
+    698 CACHE                      
+    700 CACHE                      
+    702 CACHE                      
+    704 LOAD_FAST                  comp_blocks
+    706 LOAD_CONST                 8
+    708 BINARY_OP                  *
+    710 CACHE                      
+    712 BINARY_OP                  +
+    714 CACHE                      
+    716 STORE_FAST                 ranges_off
+    718 LOAD_FAST                  info
+    720 LOAD_ATTR                  range_count
+    722 CACHE                      
+    724 CACHE                      
+    726 CACHE                      
+    728 CACHE                      
+    730 LOAD_CONST                 0
+    732 COMPARE_OP                 ==
+    734 CACHE                      
+    736 CACHE                      
+    738 POP_JUMP_FORWARD_IF_FALSE  to 820
+    740 LOAD_GLOBAL                NULL + FseqRange
+    742 CACHE                      
+    744 CACHE                      
+    746 CACHE                      
+    748 CACHE                      
+    750 CACHE                      
+    752 LOAD_CONST                 0
+    754 LOAD_FAST                  info
+    756 LOAD_ATTR                  channel_count
+    758 CACHE                      
+    760 CACHE                      
+    762 CACHE                      
+    764 CACHE                      
+    766 PRECALL                    
+    768 CACHE                      
+    770 CALL                       
+    772 CACHE                      
+    774 CACHE                      
+    776 CACHE                      
+    778 CACHE                      
+    780 BUILD_LIST                 
+    782 LOAD_FAST                  info
+    784 STORE_ATTR                 ranges
+    786 CACHE                      
+    788 CACHE                      
+    790 CACHE                      
+    792 CACHE                      
+    794 LOAD_FAST                  info
+    796 LOAD_ATTR                  channel_count
+    798 CACHE                      
+    800 CACHE                      
+    802 CACHE                      
+    804 CACHE                      
+    806 LOAD_FAST                  info
+    808 STORE_ATTR                 frame_bytes
+    810 CACHE                      
+    812 CACHE                      
+    814 CACHE                      
+    816 CACHE                      
+    818 JUMP_FORWARD               to 1142
+    820 LOAD_FAST                  ranges_off
+    822 LOAD_FAST                  info
+    824 LOAD_ATTR                  range_count
+    826 CACHE                      
+    828 CACHE                      
+    830 CACHE                      
+    832 CACHE                      
+    834 LOAD_CONST                 6
+    836 BINARY_OP                  *
+    838 CACHE                      
+    840 BINARY_OP                  +
+    842 CACHE                      
+    844 STORE_FAST                 need
+    846 LOAD_GLOBAL                NULL + len
+    848 CACHE                      
+    850 CACHE                      
+    852 CACHE                      
+    854 CACHE                      
+    856 CACHE                      
+    858 LOAD_FAST                  data
+    860 PRECALL                    
+    862 CACHE                      
+    864 CALL                       
+    866 CACHE                      
+    868 CACHE                      
+    870 CACHE                      
+    872 CACHE                      
+    874 LOAD_FAST                  need
+    876 COMPARE_OP                 <
+    878 CACHE                      
+    880 CACHE                      
+    882 POP_JUMP_FORWARD_IF_FALSE  to 902
+    884 LOAD_CONST                 "文件被截断，读取 sparse range 表越界"
+    886 LOAD_FAST                  info
+    888 STORE_ATTR                 error
+    890 CACHE                      
+    892 CACHE                      
+    894 CACHE                      
+    896 CACHE                      
+    898 LOAD_FAST                  info
+    900 RETURN_VALUE               
+    902 LOAD_CONST                 0
+    904 STORE_FAST                 total
+    906 LOAD_GLOBAL                NULL + range
+    908 CACHE                      
+    910 CACHE                      
+    912 CACHE                      
+    914 CACHE                      
+    916 CACHE                      
+    918 LOAD_FAST                  info
+    920 LOAD_ATTR                  range_count
+    922 CACHE                      
+    924 CACHE                      
+    926 CACHE                      
+    928 CACHE                      
+    930 PRECALL                    
+    932 CACHE                      
+    934 CALL                       
+    936 CACHE                      
+    938 CACHE                      
+    940 CACHE                      
+    942 CACHE                      
+    944 GET_ITER                   
+    946 FOR_ITER                   to 1128
+    948 STORE_FAST                 i
+    950 LOAD_FAST                  ranges_off
+    952 LOAD_FAST                  i
+    954 LOAD_CONST                 6
+    956 BINARY_OP                  *
+    958 CACHE                      
+    960 BINARY_OP                  +
+    962 CACHE                      
+    964 STORE_FAST                 base
+    966 LOAD_GLOBAL                NULL + _rd24
+    968 CACHE                      
+    970 CACHE                      
+    972 CACHE                      
+    974 CACHE                      
+    976 CACHE                      
+    978 LOAD_FAST                  data
+    980 LOAD_FAST                  base
+    982 PRECALL                    
+    984 CACHE                      
+    986 CALL                       
+    988 CACHE                      
+    990 CACHE                      
+    992 CACHE                      
+    994 CACHE                      
+    996 STORE_FAST                 start
+    998 LOAD_GLOBAL                NULL + _rd24
+   1000 CACHE                      
+   1002 CACHE                      
+   1004 CACHE                      
+   1006 CACHE                      
+   1008 CACHE                      
+   1010 LOAD_FAST                  data
+   1012 LOAD_FAST                  base
+   1014 LOAD_CONST                 3
+   1016 BINARY_OP                  +
+   1018 CACHE                      
+   1020 PRECALL                    
+   1022 CACHE                      
+   1024 CALL                       
+   1026 CACHE                      
+   1028 CACHE                      
+   1030 CACHE                      
+   1032 CACHE                      
+   1034 STORE_FAST                 count
+   1036 LOAD_FAST                  info
+   1038 LOAD_ATTR                  ranges
+   1040 CACHE                      
+   1042 CACHE                      
+   1044 CACHE                      
+   1046 CACHE                      
+   1048 LOAD_METHOD                append
+   1050 CACHE                      
+   1052 CACHE                      
+   1054 CACHE                      
+   1056 CACHE                      
+   1058 CACHE                      
+   1060 CACHE                      
+   1062 CACHE                      
+   1064 CACHE                      
+   1066 CACHE                      
+   1068 CACHE                      
+   1070 LOAD_GLOBAL                NULL + FseqRange
+   1072 CACHE                      
+   1074 CACHE                      
+   1076 CACHE                      
+   1078 CACHE                      
+   1080 CACHE                      
+   1082 LOAD_FAST                  start
+   1084 LOAD_FAST                  count
+   1086 PRECALL                    
+   1088 CACHE                      
+   1090 CALL                       
+   1092 CACHE                      
+   1094 CACHE                      
+   1096 CACHE                      
+   1098 CACHE                      
+   1100 PRECALL                    
+   1102 CACHE                      
+   1104 CALL                       
+   1106 CACHE                      
+   1108 CACHE                      
+   1110 CACHE                      
+   1112 CACHE                      
+   1114 POP_TOP                    
+   1116 LOAD_FAST                  total
+   1118 LOAD_FAST                  count
+   1120 BINARY_OP                  +=
+   1122 CACHE                      
+   1124 STORE_FAST                 total
+   1126 JUMP_BACKWARD              to 946
+   1128 LOAD_FAST                  total
+   1130 LOAD_FAST                  info
+   1132 STORE_ATTR                 frame_bytes
+   1134 CACHE                      
+   1136 CACHE                      
+   1138 CACHE                      
+   1140 CACHE                      
+   1142 LOAD_FAST                  info
+   1144 LOAD_ATTR                  data_offset
+   1146 CACHE                      
+   1148 CACHE                      
+   1150 CACHE                      
+   1152 CACHE                      
+   1154 LOAD_FAST                  info
+   1156 LOAD_ATTR                  frame_count
+   1158 CACHE                      
+   1160 CACHE                      
+   1162 CACHE                      
+   1164 CACHE                      
+   1166 LOAD_FAST                  info
+   1168 LOAD_ATTR                  frame_bytes
+   1170 CACHE                      
+   1172 CACHE                      
+   1174 CACHE                      
+   1176 CACHE                      
+   1178 BINARY_OP                  *
+   1180 CACHE                      
+   1182 BINARY_OP                  +
+   1184 CACHE                      
+   1186 LOAD_FAST                  info
+   1188 STORE_ATTR                 occupied_size
+   1190 CACHE                      
+   1192 CACHE                      
+   1194 CACHE                      
+   1196 CACHE                      
+   1198 LOAD_GLOBAL                NULL + len
+   1200 CACHE                      
+   1202 CACHE                      
+   1204 CACHE                      
+   1206 CACHE                      
+   1208 CACHE                      
+   1210 LOAD_FAST                  data
+   1212 PRECALL                    
+   1214 CACHE                      
+   1216 CALL                       
+   1218 CACHE                      
+   1220 CACHE                      
+   1222 CACHE                      
+   1224 CACHE                      
+   1226 LOAD_FAST                  info
+   1228 LOAD_ATTR                  occupied_size
+   1230 CACHE                      
+   1232 CACHE                      
+   1234 CACHE                      
+   1236 CACHE                      
+   1238 COMPARE_OP                 <
+   1240 CACHE                      
+   1242 CACHE                      
+   1244 POP_JUMP_FORWARD_IF_FALSE  to 1314
+   1246 LOAD_CONST                 "文件长度 "
+   1248 LOAD_GLOBAL                NULL + len
+   1250 CACHE                      
+   1252 CACHE                      
+   1254 CACHE                      
+   1256 CACHE                      
+   1258 CACHE                      
+   1260 LOAD_FAST                  data
+   1262 PRECALL                    
+   1264 CACHE                      
+   1266 CALL                       
+   1268 CACHE                      
+   1270 CACHE                      
+   1272 CACHE                      
+   1274 CACHE                      
+   1276 FORMAT_VALUE               
+   1278 LOAD_CONST                 " 小于头部推算的占用 "
+   1280 LOAD_FAST                  info
+   1282 LOAD_ATTR                  occupied_size
+   1284 CACHE                      
+   1286 CACHE                      
+   1288 CACHE                      
+   1290 CACHE                      
+   1292 FORMAT_VALUE               
+   1294 LOAD_CONST                 "，文件可能损坏"
+   1296 BUILD_STRING               
+   1298 LOAD_FAST                  info
+   1300 STORE_ATTR                 error
+   1302 CACHE                      
+   1304 CACHE                      
+   1306 CACHE                      
+   1308 CACHE                      
+   1310 LOAD_FAST                  info
+   1312 RETURN_VALUE               
+   1314 LOAD_CONST                 True
+   1316 LOAD_FAST                  info
+   1318 STORE_ATTR                 ok
+   1320 CACHE                      
+   1322 CACHE                      
+   1324 CACHE                      
+   1326 CACHE                      
+   1328 LOAD_FAST                  info
+   1330 RETURN_VALUE               
+  == code derive_led_map line 151 args=('info', 'ch_len', 'ch_led_len')
+      0 RESUME                     
+      2 BUILD_LIST                 
+      4 STORE_FAST                 warnings
+      6 LOAD_CONST                 0
+      8 BUILD_LIST                 
+     10 LOAD_FAST                  ch_len
+     12 BINARY_OP                  *
+     14 CACHE                      
+     16 STORE_FAST                 led_map
+     18 LOAD_FAST                  info
+     20 LOAD_ATTR                  ranges
+     22 CACHE                      
+     24 CACHE                      
+     26 CACHE                      
+     28 CACHE                      
+     30 STORE_FAST                 ranges
+     32 LOAD_GLOBAL                NULL + len
+     34 CACHE                      
+     36 CACHE                      
+     38 CACHE                      
+     40 CACHE                      
+     42 CACHE                      
+     44 LOAD_FAST                  ranges
+     46 PRECALL                    
+     48 CACHE                      
+     50 CALL                       
+     52 CACHE                      
+     54 CACHE                      
+     56 CACHE                      
+     58 CACHE                      
+     60 LOAD_FAST                  ch_len
+     62 COMPARE_OP                 >
+     64 CACHE                      
+     66 CACHE                      
+     68 POP_JUMP_FORWARD_IF_FALSE  to 152
+     70 LOAD_FAST                  warnings
+     72 LOAD_METHOD                append
+     74 CACHE                      
+     76 CACHE                      
+     78 CACHE                      
+     80 CACHE                      
+     82 CACHE                      
+     84 CACHE                      
+     86 CACHE                      
+     88 CACHE                      
+     90 CACHE                      
+     92 CACHE                      
+     94 LOAD_CONST                 "文件有 "
+     96 LOAD_GLOBAL                NULL + len
+     98 CACHE                      
+    100 CACHE                      
+    102 CACHE                      
+    104 CACHE                      
+    106 CACHE                      
+    108 LOAD_FAST                  ranges
+    110 PRECALL                    
+    112 CACHE                      
+    114 CALL                       
+    116 CACHE                      
+    118 CACHE                      
+    120 CACHE                      
+    122 CACHE                      
+    124 FORMAT_VALUE               
+    126 LOAD_CONST                 " 条通道段，超过设备的 "
+    128 LOAD_FAST                  ch_len
+    130 FORMAT_VALUE               
+    132 LOAD_CONST                 " 个物理通道，多出的段无法映射"
+    134 BUILD_STRING               
+    136 PRECALL                    
+    138 CACHE                      
+    140 CALL                       
+    142 CACHE                      
+    144 CACHE                      
+    146 CACHE                      
+    148 CACHE                      
+    150 POP_TOP                    
+    152 LOAD_GLOBAL                NULL + enumerate
+    154 CACHE                      
+    156 CACHE                      
+    158 CACHE                      
+    160 CACHE                      
+    162 CACHE                      
+    164 LOAD_FAST                  ranges
+    166 PRECALL                    
+    168 CACHE                      
+    170 CALL                       
+    172 CACHE                      
+    174 CACHE                      
+    176 CACHE                      
+    178 CACHE                      
+    180 GET_ITER                   
+    182 FOR_ITER                   to 440
+    184 UNPACK_SEQUENCE            
+    186 CACHE                      
+    188 STORE_FAST                 i
+    190 STORE_FAST                 rng
+    192 LOAD_FAST                  i
+    194 LOAD_FAST                  ch_len
+    196 COMPARE_OP                 >=
+    198 CACHE                      
+    200 CACHE                      
+    202 POP_JUMP_FORWARD_IF_FALSE  to 208
+    204 POP_TOP                    
+    206 JUMP_FORWARD               to 440
+    208 LOAD_FAST                  rng
+    210 LOAD_ATTR                  count
+    212 CACHE                      
+    214 CACHE                      
+    216 CACHE                      
+    218 CACHE                      
+    220 LOAD_CONST                 3
+    222 BINARY_OP                  %
+    224 CACHE                      
+    226 LOAD_CONST                 0
+    228 COMPARE_OP                 !=
+    230 CACHE                      
+    232 CACHE                      
+    234 POP_JUMP_FORWARD_IF_FALSE  to 330
+    236 LOAD_FAST                  warnings
+    238 LOAD_METHOD                append
+    240 CACHE                      
+    242 CACHE                      
+    244 CACHE                      
+    246 CACHE                      
+    248 CACHE                      
+    250 CACHE                      
+    252 CACHE                      
+    254 CACHE                      
+    256 CACHE                      
+    258 CACHE                      
+    260 LOAD_CONST                 "第 "
+    262 LOAD_FAST                  i
+    264 LOAD_CONST                 1
+    266 BINARY_OP                  +
+    268 CACHE                      
+    270 FORMAT_VALUE               
+    272 LOAD_CONST                 " 段字节数 "
+    274 LOAD_FAST                  rng
+    276 LOAD_ATTR                  count
+    278 CACHE                      
+    280 CACHE                      
+    282 CACHE                      
+    284 CACHE                      
+    286 FORMAT_VALUE               
+    288 LOAD_CONST                 " 不是 3 的整数倍（非标准 RGB），无法换算为 LED 数"
+    290 BUILD_STRING               
+    292 PRECALL                    
+    294 CACHE                      
+    296 CALL                       
+    298 CACHE                      
+    300 CACHE                      
+    302 CACHE                      
+    304 CACHE                      
+    306 POP_TOP                    
+    308 LOAD_FAST                  rng
+    310 LOAD_ATTR                  count
+    312 CACHE                      
+    314 CACHE                      
+    316 CACHE                      
+    318 CACHE                      
+    320 LOAD_CONST                 3
+    322 BINARY_OP                  //
+    324 CACHE                      
+    326 STORE_FAST                 leds
+    328 JUMP_FORWARD               to 350
+    330 LOAD_FAST                  rng
+    332 LOAD_ATTR                  count
+    334 CACHE                      
+    336 CACHE                      
+    338 CACHE                      
+    340 CACHE                      
+    342 LOAD_CONST                 3
+    344 BINARY_OP                  //
+    346 CACHE                      
+    348 STORE_FAST                 leds
+    350 LOAD_FAST                  leds
+    352 LOAD_FAST                  ch_led_len
+    354 COMPARE_OP                 >
+    356 CACHE                      
+    358 CACHE                      
+    360 POP_JUMP_FORWARD_IF_FALSE  to 428
+    362 LOAD_FAST                  warnings
+    364 LOAD_METHOD                append
+    366 CACHE                      
+    368 CACHE                      
+    370 CACHE                      
+    372 CACHE                      
+    374 CACHE                      
+    376 CACHE                      
+    378 CACHE                      
+    380 CACHE                      
+    382 CACHE                      
+    384 CACHE                      
+    386 LOAD_CONST                 "第 "
+    388 LOAD_FAST                  i
+    390 LOAD_CONST                 1
+    392 BINARY_OP                  +
+    394 CACHE                      
+    396 FORMAT_VALUE               
+    398 LOAD_CONST                 " 段需要 "
+    400 LOAD_FAST                  leds
+    402 FORMAT_VALUE               
+    404 LOAD_CONST                 " 颗 LED，超过单通道上限 "
+    406 LOAD_FAST                  ch_led_len
+    408 FORMAT_VALUE               
+    410 BUILD_STRING               
+    412 PRECALL                    
+    414 CACHE                      
+    416 CALL                       
+    418 CACHE                      
+    420 CACHE                      
+    422 CACHE                      
+    424 CACHE                      
+    426 POP_TOP                    
+    428 LOAD_FAST                  leds
+    430 LOAD_FAST                  led_map
+    432 LOAD_FAST                  i
+    434 STORE_SUBSCR               
+    436 CACHE                      
+    438 JUMP_BACKWARD              to 182
+    440 LOAD_FAST                  led_map
+    442 LOAD_FAST                  warnings
+    444 BUILD_TUPLE                
+    446 RETURN_VALUE               
+  == code validate_led_map line 194 args=('info', 'led_map')
+      0 RESUME                     
+      2 LOAD_CONST                 <Code311 code object <listcomp> at 0x259ed7296a0, file app\core_driver\fseq_file.py>, line 202
+      4 MAKE_FUNCTION              No arguments
+      6 LOAD_FAST                  led_map
+      8 GET_ITER                   
+     10 PRECALL                    
+     12 CACHE                      
+     14 CALL                       
+     16 CACHE                      
+     18 CACHE                      
+     20 CACHE                      
+     22 CACHE                      
+     24 STORE_FAST                 active
+     26 LOAD_FAST                  info
+     28 LOAD_ATTR                  ranges
+     30 CACHE                      
+     32 CACHE                      
+     34 CACHE                      
+     36 CACHE                      
+     38 STORE_FAST                 ranges
+     40 LOAD_GLOBAL                NULL + len
+     42 CACHE                      
+     44 CACHE                      
+     46 CACHE                      
+     48 CACHE                      
+     50 CACHE                      
+     52 LOAD_FAST                  active
+     54 PRECALL                    
+     56 CACHE                      
+     58 CALL                       
+     60 CACHE                      
+     62 CACHE                      
+     64 CACHE                      
+     66 CACHE                      
+     68 LOAD_GLOBAL                NULL + len
+     70 CACHE                      
+     72 CACHE                      
+     74 CACHE                      
+     76 CACHE                      
+     78 CACHE                      
+     80 LOAD_FAST                  ranges
+     82 PRECALL                    
+     84 CACHE                      
+     86 CALL                       
+     88 CACHE                      
+     90 CACHE                      
+     92 CACHE                      
+     94 CACHE                      
+     96 COMPARE_OP                 !=
+     98 CACHE                      
+    100 CACHE                      
+    102 POP_JUMP_FORWARD_IF_FALSE  to 178
+    104 LOAD_CONST                 False
+    106 LOAD_CONST                 "已配置 "
+    108 LOAD_GLOBAL                NULL + len
+    110 CACHE                      
+    112 CACHE                      
+    114 CACHE                      
+    116 CACHE                      
+    118 CACHE                      
+    120 LOAD_FAST                  active
+    122 PRECALL                    
+    124 CACHE                      
+    126 CALL                       
+    128 CACHE                      
+    130 CACHE                      
+    132 CACHE                      
+    134 CACHE                      
+    136 FORMAT_VALUE               
+    138 LOAD_CONST                 " 个通道，但文件有 "
+    140 LOAD_GLOBAL                NULL + len
+    142 CACHE                      
+    144 CACHE                      
+    146 CACHE                      
+    148 CACHE                      
+    150 CACHE                      
+    152 LOAD_FAST                  ranges
+    154 PRECALL                    
+    156 CACHE                      
+    158 CALL                       
+    160 CACHE                      
+    162 CACHE                      
+    164 CACHE                      
+    166 CACHE                      
+    168 FORMAT_VALUE               
+    170 LOAD_CONST                 " 条通道段，数量须一致"
+    172 BUILD_STRING               
+    174 BUILD_TUPLE                
+    176 RETURN_VALUE               
+    178 LOAD_GLOBAL                NULL + enumerate
+    180 CACHE                      
+    182 CACHE                      
+    184 CACHE                      
+    186 CACHE                      
+    188 CACHE                      
+    190 LOAD_GLOBAL                NULL + zip
+    192 CACHE                      
+    194 CACHE                      
+    196 CACHE                      
+    198 CACHE                      
+    200 CACHE                      
+    202 LOAD_FAST                  active
+    204 LOAD_FAST                  ranges
+    206 PRECALL                    
+    208 CACHE                      
+    210 CALL                       
+    212 CACHE                      
+    214 CACHE                      
+    216 CACHE                      
+    218 CACHE                      
+    220 PRECALL                    
+    222 CACHE                      
+    224 CALL                       
+    226 CACHE                      
+    228 CACHE                      
+    230 CACHE                      
+    232 CACHE                      
+    234 GET_ITER                   
+    236 FOR_ITER                   to 354
+    238 UNPACK_SEQUENCE            
+    240 CACHE                      
+    242 STORE_FAST                 i
+    244 UNPACK_SEQUENCE            
+    246 CACHE                      
+    248 STORE_FAST                 leds
+    250 STORE_FAST                 rng
+    252 LOAD_FAST                  leds
+    254 LOAD_CONST                 3
+    256 BINARY_OP                  *
+    258 CACHE                      
+    260 LOAD_FAST                  rng
+    262 LOAD_ATTR                  count
+    264 CACHE                      
+    266 CACHE                      
+    268 CACHE                      
+    270 CACHE                      
+    272 COMPARE_OP                 !=
+    274 CACHE                      
+    276 CACHE                      
+    278 POP_JUMP_FORWARD_IF_FALSE  to 352
+    280 LOAD_CONST                 False
+    282 LOAD_CONST                 "第 "
+    284 LOAD_FAST                  i
+    286 LOAD_CONST                 1
+    288 BINARY_OP                  +
+    290 CACHE                      
+    292 FORMAT_VALUE               
+    294 LOAD_CONST                 " 个已配置通道 = "
+    296 LOAD_FAST                  leds
+    298 FORMAT_VALUE               
+    300 LOAD_CONST                 " LED（"
+    302 LOAD_FAST                  leds
+    304 LOAD_CONST                 3
+    306 BINARY_OP                  *
+    308 CACHE                      
+    310 FORMAT_VALUE               
+    312 LOAD_CONST                 " 字节），与文件第 "
+    314 LOAD_FAST                  i
+    316 LOAD_CONST                 1
+    318 BINARY_OP                  +
+    320 CACHE                      
+    322 FORMAT_VALUE               
+    324 LOAD_CONST                 " 段的 "
+    326 LOAD_FAST                  rng
+    328 LOAD_ATTR                  count
+    330 CACHE                      
+    332 CACHE                      
+    334 CACHE                      
+    336 CACHE                      
+    338 FORMAT_VALUE               
+    340 LOAD_CONST                 " 字节不符"
+    342 BUILD_STRING               
+    344 BUILD_TUPLE                
+    346 SWAP                       TOS <-> TOS1
+    348 POP_TOP                    
+    350 RETURN_VALUE               
+    352 JUMP_BACKWARD              to 236
+    354 LOAD_CONST                 (True, '')
+    356 RETURN_VALUE               
+    == code <listcomp> line 202 args=('.0',)
+        0 RESUME                     
+        2 BUILD_LIST                 
+        4 LOAD_FAST                  .0
+        6 FOR_ITER                   to 28
+        8 STORE_FAST                 leds
+       10 LOAD_FAST                  leds
+       12 LOAD_CONST                 0
+       14 COMPARE_OP                 >
+       16 CACHE                      
+       18 CACHE                      
+       20 POP_JUMP_BACKWARD_IF_FALSE to 6
+       22 LOAD_FAST                  leds
+       24 LIST_APPEND                
+       26 JUMP_BACKWARD              to 6
+       28 RETURN_VALUE               

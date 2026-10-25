@@ -35,6 +35,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Material de pesquisa (engenharia reversa da Nollie e do UMBRA): não faz parte do programa. -->
+    <Compile Remove="pesquisa\**" />
+    <None Remove="pesquisa\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <!-- SDK do chip MacroSilicon MS9132 (extraído do JONSBO-AIO). Depende só do libusb0.dll do driver. -->
     <None Include="lib\MSDISPLAYSDKWRRAPER.dll" CopyToOutputDirectory="PreserveNewest" Link="MSDISPLAYSDKWRRAPER.dll" />
     <None Include="themes\**\*" CopyToOutputDirectory="PreserveNewest" />

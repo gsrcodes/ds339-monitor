@@ -1,0 +1,3089 @@
+== code <module> line 1 args=()
+    0 RESUME                     
+    2 LOAD_CONST                 0
+    4 LOAD_CONST                 None
+    6 IMPORT_NAME                os
+    8 STORE_NAME                 os
+   10 LOAD_CONST                 0
+   12 LOAD_CONST                 ('QObject', 'Qt', 'Signal')
+   14 IMPORT_NAME                PySide6.QtCore
+   16 IMPORT_FROM                QObject
+   18 STORE_NAME                 QObject
+   20 IMPORT_FROM                Qt
+   22 STORE_NAME                 Qt
+   24 IMPORT_FROM                Signal
+   26 STORE_NAME                 Signal
+   28 POP_TOP                    
+   30 LOAD_CONST                 0
+   32 LOAD_CONST                 ('QColor', 'QPainter', 'QPainterPath', 'QPixmap')
+   34 IMPORT_NAME                PySide6.QtGui
+   36 IMPORT_FROM                QColor
+   38 STORE_NAME                 QColor
+   40 IMPORT_FROM                QPainter
+   42 STORE_NAME                 QPainter
+   44 IMPORT_FROM                QPainterPath
+   46 STORE_NAME                 QPainterPath
+   48 IMPORT_FROM                QPixmap
+   50 STORE_NAME                 QPixmap
+   52 POP_TOP                    
+   54 LOAD_CONST                 0
+   56 LOAD_CONST                 ('QWidget', 'QHBoxLayout', 'QVBoxLayout')
+   58 IMPORT_NAME                PySide6.QtWidgets
+   60 IMPORT_FROM                QWidget
+   62 STORE_NAME                 QWidget
+   64 IMPORT_FROM                QHBoxLayout
+   66 STORE_NAME                 QHBoxLayout
+   68 IMPORT_FROM                QVBoxLayout
+   70 STORE_NAME                 QVBoxLayout
+   72 POP_TOP                    
+   74 LOAD_CONST                 0
+   76 LOAD_CONST                 ('ScrollArea',)
+   78 IMPORT_NAME                qfluentwidgets
+   80 IMPORT_FROM                ScrollArea
+   82 STORE_NAME                 ScrollArea
+   84 POP_TOP                    
+   86 LOAD_CONST                 0
+   88 LOAD_CONST                 ('WaterfallLayout',)
+   90 IMPORT_NAME                qfluentwidgetspro
+   92 IMPORT_FROM                WaterfallLayout
+   94 STORE_NAME                 WaterfallLayout
+   96 POP_TOP                    
+   98 LOAD_CONST                 0
+  100 LOAD_CONST                 ('FramelessDialog',)
+  102 IMPORT_NAME                qframelesswindow
+  104 IMPORT_FROM                FramelessDialog
+  106 STORE_NAME                 FramelessDialog
+  108 POP_TOP                    
+  110 LOAD_CONST                 0
+  112 LOAD_CONST                 ('StyleSheet',)
+  114 IMPORT_NAME                app.common.style_sheet
+  116 IMPORT_FROM                StyleSheet
+  118 STORE_NAME                 StyleSheet
+  120 POP_TOP                    
+  122 LOAD_CONST                 0
+  124 LOAD_CONST                 ('NOLLIE_EFFECT_RAW', 'NOLLIE_START_EFFECT_RAW', 'EFFECT_WIDGET_VISIBILITY', 'ALL_EFFECT_WIDGETS')
+  126 IMPORT_NAME                app.core_driver.effect_catalog
+  128 IMPORT_FROM                NOLLIE_EFFECT_RAW
+  130 STORE_NAME                 NOLLIE_EFFECT_RAW
+  132 IMPORT_FROM                NOLLIE_START_EFFECT_RAW
+  134 STORE_NAME                 NOLLIE_START_EFFECT_RAW
+  136 IMPORT_FROM                EFFECT_WIDGET_VISIBILITY
+  138 STORE_NAME                 EFFECT_WIDGET_VISIBILITY
+  140 IMPORT_FROM                ALL_EFFECT_WIDGETS
+  142 STORE_NAME                 ALL_EFFECT_WIDGETS
+  144 POP_TOP                    
+  146 LOAD_NAME                  ALL_EFFECT_WIDGETS
+  148 STORE_NAME                 _ALL_WIDGETS
+  150 PUSH_NULL                  
+  152 LOAD_BUILD_CLASS           
+  154 LOAD_CONST                 <Code311 code object EffectName at 0x1bcb1759a90, file app\view\nollie_device\dev_effect_interface.py>, line 20
+  156 MAKE_FUNCTION              No arguments
+  158 LOAD_CONST                 "EffectName"
+  160 LOAD_NAME                  QObject
+  162 PRECALL                    
+  164 CACHE                      
+  166 CALL                       
+  168 CACHE                      
+  170 CACHE                      
+  172 CACHE                      
+  174 CACHE                      
+  176 STORE_NAME                 EffectName
+  178 PUSH_NULL                  
+  180 LOAD_BUILD_CLASS           
+  182 LOAD_CONST                 <Code311 code object EffectTile at 0x1bcb1769370, file app\view\nollie_device\dev_effect_interface.py>, line 54
+  184 MAKE_FUNCTION              No arguments
+  186 LOAD_CONST                 "EffectTile"
+  188 LOAD_NAME                  QWidget
+  190 PRECALL                    
+  192 CACHE                      
+  194 CALL                       
+  196 CACHE                      
+  198 CACHE                      
+  200 CACHE                      
+  202 CACHE                      
+  204 STORE_NAME                 EffectTile
+  206 PUSH_NULL                  
+  208 LOAD_BUILD_CLASS           
+  210 LOAD_CONST                 <Code311 code object EffectDialog at 0x1bcb1769d00, file app\view\nollie_device\dev_effect_interface.py>, line 138
+  212 MAKE_FUNCTION              No arguments
+  214 LOAD_CONST                 "EffectDialog"
+  216 LOAD_NAME                  FramelessDialog
+  218 PRECALL                    
+  220 CACHE                      
+  222 CALL                       
+  224 CACHE                      
+  226 CACHE                      
+  228 CACHE                      
+  230 CACHE                      
+  232 STORE_NAME                 EffectDialog
+  234 LOAD_CONST                 None
+  236 RETURN_VALUE               
+  == code EffectName line 20 args=()
+      0 MAKE_CELL                  __class__
+      2 RESUME                     
+      4 LOAD_NAME                  __name__
+      6 STORE_NAME                 __module__
+      8 LOAD_CONST                 "EffectName"
+     10 STORE_NAME                 __qualname__
+     12 LOAD_CONST                 (None,)
+     14 LOAD_CLOSURE               __class__
+     16 BUILD_TUPLE                
+     18 LOAD_CONST                 <Code311 code object __init__ at 0x1bcb170cec0, file app\view\nollie_device\dev_effect_interface.py>, line 21
+     20 MAKE_FUNCTION              default, closure
+     22 STORE_NAME                 __init__
+     24 LOAD_CLOSURE               __class__
+     26 COPY                       
+     28 STORE_NAME                 __classcell__
+     30 RETURN_VALUE               
+    == code __init__ line 21 args=('self', 'parent')
+        0 COPY_FREE_VARS             
+        2 RESUME                     
+        4 LOAD_GLOBAL                NULL + super
+        6 CACHE                      
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 CACHE                      
+       16 PRECALL                    
+       18 CACHE                      
+       20 CALL                       
+       22 CACHE                      
+       24 CACHE                      
+       26 CACHE                      
+       28 CACHE                      
+       30 LOAD_METHOD                __init__
+       32 CACHE                      
+       34 CACHE                      
+       36 CACHE                      
+       38 CACHE                      
+       40 CACHE                      
+       42 CACHE                      
+       44 CACHE                      
+       46 CACHE                      
+       48 CACHE                      
+       50 CACHE                      
+       52 LOAD_FAST                  parent
+       54 PRECALL                    
+       56 CACHE                      
+       58 CALL                       
+       60 CACHE                      
+       62 CACHE                      
+       64 CACHE                      
+       66 CACHE                      
+       68 POP_TOP                    
+       70 LOAD_FAST                  self
+       72 LOAD_METHOD                tr
+       74 CACHE                      
+       76 CACHE                      
+       78 CACHE                      
+       80 CACHE                      
+       82 CACHE                      
+       84 CACHE                      
+       86 CACHE                      
+       88 CACHE                      
+       90 CACHE                      
+       92 CACHE                      
+       94 LOAD_CONST                 "Off"
+       96 PRECALL                    
+       98 CACHE                      
+      100 CALL                       
+      102 CACHE                      
+      104 CACHE                      
+      106 CACHE                      
+      108 CACHE                      
+      110 LOAD_FAST                  self
+      112 LOAD_METHOD                tr
+      114 CACHE                      
+      116 CACHE                      
+      118 CACHE                      
+      120 CACHE                      
+      122 CACHE                      
+      124 CACHE                      
+      126 CACHE                      
+      128 CACHE                      
+      130 CACHE                      
+      132 CACHE                      
+      134 LOAD_CONST                 "Solid"
+      136 PRECALL                    
+      138 CACHE                      
+      140 CALL                       
+      142 CACHE                      
+      144 CACHE                      
+      146 CACHE                      
+      148 CACHE                      
+      150 LOAD_FAST                  self
+      152 LOAD_METHOD                tr
+      154 CACHE                      
+      156 CACHE                      
+      158 CACHE                      
+      160 CACHE                      
+      162 CACHE                      
+      164 CACHE                      
+      166 CACHE                      
+      168 CACHE                      
+      170 CACHE                      
+      172 CACHE                      
+      174 LOAD_CONST                 "Breath"
+      176 PRECALL                    
+      178 CACHE                      
+      180 CALL                       
+      182 CACHE                      
+      184 CACHE                      
+      186 CACHE                      
+      188 CACHE                      
+      190 LOAD_FAST                  self
+      192 LOAD_METHOD                tr
+      194 CACHE                      
+      196 CACHE                      
+      198 CACHE                      
+      200 CACHE                      
+      202 CACHE                      
+      204 CACHE                      
+      206 CACHE                      
+      208 CACHE                      
+      210 CACHE                      
+      212 CACHE                      
+      214 LOAD_CONST                 "Scanning"
+      216 PRECALL                    
+      218 CACHE                      
+      220 CALL                       
+      222 CACHE                      
+      224 CACHE                      
+      226 CACHE                      
+      228 CACHE                      
+      230 LOAD_FAST                  self
+      232 LOAD_METHOD                tr
+      234 CACHE                      
+      236 CACHE                      
+      238 CACHE                      
+      240 CACHE                      
+      242 CACHE                      
+      244 CACHE                      
+      246 CACHE                      
+      248 CACHE                      
+      250 CACHE                      
+      252 CACHE                      
+      254 LOAD_CONST                 "Rainbow"
+      256 PRECALL                    
+      258 CACHE                      
+      260 CALL                       
+      262 CACHE                      
+      264 CACHE                      
+      266 CACHE                      
+      268 CACHE                      
+      270 LOAD_FAST                  self
+      272 LOAD_METHOD                tr
+      274 CACHE                      
+      276 CACHE                      
+      278 CACHE                      
+      280 CACHE                      
+      282 CACHE                      
+      284 CACHE                      
+      286 CACHE                      
+      288 CACHE                      
+      290 CACHE                      
+      292 CACHE                      
+      294 LOAD_CONST                 "Rainbow cycle"
+      296 PRECALL                    
+      298 CACHE                      
+      300 CALL                       
+      302 CACHE                      
+      304 CACHE                      
+      306 CACHE                      
+      308 CACHE                      
+      310 LOAD_FAST                  self
+      312 LOAD_METHOD                tr
+      314 CACHE                      
+      316 CACHE                      
+      318 CACHE                      
+      320 CACHE                      
+      322 CACHE                      
+      324 CACHE                      
+      326 CACHE                      
+      328 CACHE                      
+      330 CACHE                      
+      332 CACHE                      
+      334 LOAD_CONST                 "Meteor"
+      336 PRECALL                    
+      338 CACHE                      
+      340 CALL                       
+      342 CACHE                      
+      344 CACHE                      
+      346 CACHE                      
+      348 CACHE                      
+      350 LOAD_FAST                  self
+      352 LOAD_METHOD                tr
+      354 CACHE                      
+      356 CACHE                      
+      358 CACHE                      
+      360 CACHE                      
+      362 CACHE                      
+      364 CACHE                      
+      366 CACHE                      
+      368 CACHE                      
+      370 CACHE                      
+      372 CACHE                      
+      374 LOAD_CONST                 "Shake"
+      376 PRECALL                    
+      378 CACHE                      
+      380 CALL                       
+      382 CACHE                      
+      384 CACHE                      
+      386 CACHE                      
+      388 CACHE                      
+      390 LOAD_FAST                  self
+      392 LOAD_METHOD                tr
+      394 CACHE                      
+      396 CACHE                      
+      398 CACHE                      
+      400 CACHE                      
+      402 CACHE                      
+      404 CACHE                      
+      406 CACHE                      
+      408 CACHE                      
+      410 CACHE                      
+      412 CACHE                      
+      414 LOAD_CONST                 "Slowly wipe"
+      416 PRECALL                    
+      418 CACHE                      
+      420 CALL                       
+      422 CACHE                      
+      424 CACHE                      
+      426 CACHE                      
+      428 CACHE                      
+      430 LOAD_FAST                  self
+      432 LOAD_METHOD                tr
+      434 CACHE                      
+      436 CACHE                      
+      438 CACHE                      
+      440 CACHE                      
+      442 CACHE                      
+      444 CACHE                      
+      446 CACHE                      
+      448 CACHE                      
+      450 CACHE                      
+      452 CACHE                      
+      454 LOAD_CONST                 "Color wipe"
+      456 PRECALL                    
+      458 CACHE                      
+      460 CALL                       
+      462 CACHE                      
+      464 CACHE                      
+      466 CACHE                      
+      468 CACHE                      
+      470 LOAD_FAST                  self
+      472 LOAD_METHOD                tr
+      474 CACHE                      
+      476 CACHE                      
+      478 CACHE                      
+      480 CACHE                      
+      482 CACHE                      
+      484 CACHE                      
+      486 CACHE                      
+      488 CACHE                      
+      490 CACHE                      
+      492 CACHE                      
+      494 LOAD_CONST                 "Rainbow strip"
+      496 PRECALL                    
+      498 CACHE                      
+      500 CALL                       
+      502 CACHE                      
+      504 CACHE                      
+      506 CACHE                      
+      508 CACHE                      
+      510 LOAD_FAST                  self
+      512 LOAD_METHOD                tr
+      514 CACHE                      
+      516 CACHE                      
+      518 CACHE                      
+      520 CACHE                      
+      522 CACHE                      
+      524 CACHE                      
+      526 CACHE                      
+      528 CACHE                      
+      530 CACHE                      
+      532 CACHE                      
+      534 LOAD_CONST                 "Rainbow strip l"
+      536 PRECALL                    
+      538 CACHE                      
+      540 CALL                       
+      542 CACHE                      
+      544 CACHE                      
+      546 CACHE                      
+      548 CACHE                      
+      550 LOAD_FAST                  self
+      552 LOAD_METHOD                tr
+      554 CACHE                      
+      556 CACHE                      
+      558 CACHE                      
+      560 CACHE                      
+      562 CACHE                      
+      564 CACHE                      
+      566 CACHE                      
+      568 CACHE                      
+      570 CACHE                      
+      572 CACHE                      
+      574 LOAD_CONST                 "Wave"
+      576 PRECALL                    
+      578 CACHE                      
+      580 CALL                       
+      582 CACHE                      
+      584 CACHE                      
+      586 CACHE                      
+      588 CACHE                      
+      590 LOAD_FAST                  self
+      592 LOAD_METHOD                tr
+      594 CACHE                      
+      596 CACHE                      
+      598 CACHE                      
+      600 CACHE                      
+      602 CACHE                      
+      604 CACHE                      
+      606 CACHE                      
+      608 CACHE                      
+      610 CACHE                      
+      612 CACHE                      
+      614 LOAD_CONST                 "Sunny"
+      616 PRECALL                    
+      618 CACHE                      
+      620 CALL                       
+      622 CACHE                      
+      624 CACHE                      
+      626 CACHE                      
+      628 CACHE                      
+      630 LOAD_FAST                  self
+      632 LOAD_METHOD                tr
+      634 CACHE                      
+      636 CACHE                      
+      638 CACHE                      
+      640 CACHE                      
+      642 CACHE                      
+      644 CACHE                      
+      646 CACHE                      
+      648 CACHE                      
+      650 CACHE                      
+      652 CACHE                      
+      654 LOAD_CONST                 "Pull flower"
+      656 PRECALL                    
+      658 CACHE                      
+      660 CALL                       
+      662 CACHE                      
+      664 CACHE                      
+      666 CACHE                      
+      668 CACHE                      
+      670 LOAD_FAST                  self
+      672 LOAD_METHOD                tr
+      674 CACHE                      
+      676 CACHE                      
+      678 CACHE                      
+      680 CACHE                      
+      682 CACHE                      
+      684 CACHE                      
+      686 CACHE                      
+      688 CACHE                      
+      690 CACHE                      
+      692 CACHE                      
+      694 LOAD_CONST                 "Stackab1"
+      696 PRECALL                    
+      698 CACHE                      
+      700 CALL                       
+      702 CACHE                      
+      704 CACHE                      
+      706 CACHE                      
+      708 CACHE                      
+      710 LOAD_FAST                  self
+      712 LOAD_METHOD                tr
+      714 CACHE                      
+      716 CACHE                      
+      718 CACHE                      
+      720 CACHE                      
+      722 CACHE                      
+      724 CACHE                      
+      726 CACHE                      
+      728 CACHE                      
+      730 CACHE                      
+      732 CACHE                      
+      734 LOAD_CONST                 "Stackab2"
+      736 PRECALL                    
+      738 CACHE                      
+      740 CALL                       
+      742 CACHE                      
+      744 CACHE                      
+      746 CACHE                      
+      748 CACHE                      
+      750 LOAD_FAST                  self
+      752 LOAD_METHOD                tr
+      754 CACHE                      
+      756 CACHE                      
+      758 CACHE                      
+      760 CACHE                      
+      762 CACHE                      
+      764 CACHE                      
+      766 CACHE                      
+      768 CACHE                      
+      770 CACHE                      
+      772 CACHE                      
+      774 LOAD_CONST                 "Stackab3"
+      776 PRECALL                    
+      778 CACHE                      
+      780 CALL                       
+      782 CACHE                      
+      784 CACHE                      
+      786 CACHE                      
+      788 CACHE                      
+      790 LOAD_FAST                  self
+      792 LOAD_METHOD                tr
+      794 CACHE                      
+      796 CACHE                      
+      798 CACHE                      
+      800 CACHE                      
+      802 CACHE                      
+      804 CACHE                      
+      806 CACHE                      
+      808 CACHE                      
+      810 CACHE                      
+      812 CACHE                      
+      814 LOAD_CONST                 "Integration1"
+      816 PRECALL                    
+      818 CACHE                      
+      820 CALL                       
+      822 CACHE                      
+      824 CACHE                      
+      826 CACHE                      
+      828 CACHE                      
+      830 LOAD_FAST                  self
+      832 LOAD_METHOD                tr
+      834 CACHE                      
+      836 CACHE                      
+      838 CACHE                      
+      840 CACHE                      
+      842 CACHE                      
+      844 CACHE                      
+      846 CACHE                      
+      848 CACHE                      
+      850 CACHE                      
+      852 CACHE                      
+      854 LOAD_CONST                 "Integration2"
+      856 PRECALL                    
+      858 CACHE                      
+      860 CALL                       
+      862 CACHE                      
+      864 CACHE                      
+      866 CACHE                      
+      868 CACHE                      
+      870 LOAD_FAST                  self
+      872 LOAD_METHOD                tr
+      874 CACHE                      
+      876 CACHE                      
+      878 CACHE                      
+      880 CACHE                      
+      882 CACHE                      
+      884 CACHE                      
+      886 CACHE                      
+      888 CACHE                      
+      890 CACHE                      
+      892 CACHE                      
+      894 LOAD_CONST                 "Interchange"
+      896 PRECALL                    
+      898 CACHE                      
+      900 CALL                       
+      902 CACHE                      
+      904 CACHE                      
+      906 CACHE                      
+      908 CACHE                      
+      910 LOAD_FAST                  self
+      912 LOAD_METHOD                tr
+      914 CACHE                      
+      916 CACHE                      
+      918 CACHE                      
+      920 CACHE                      
+      922 CACHE                      
+      924 CACHE                      
+      926 CACHE                      
+      928 CACHE                      
+      930 CACHE                      
+      932 CACHE                      
+      934 LOAD_CONST                 "Bullets"
+      936 PRECALL                    
+      938 CACHE                      
+      940 CALL                       
+      942 CACHE                      
+      944 CACHE                      
+      946 CACHE                      
+      948 CACHE                      
+      950 LOAD_FAST                  self
+      952 LOAD_METHOD                tr
+      954 CACHE                      
+      956 CACHE                      
+      958 CACHE                      
+      960 CACHE                      
+      962 CACHE                      
+      964 CACHE                      
+      966 CACHE                      
+      968 CACHE                      
+      970 CACHE                      
+      972 CACHE                      
+      974 LOAD_CONST                 "Sequence"
+      976 PRECALL                    
+      978 CACHE                      
+      980 CALL                       
+      982 CACHE                      
+      984 CACHE                      
+      986 CACHE                      
+      988 CACHE                      
+      990 LOAD_FAST                  self
+      992 LOAD_METHOD                tr
+      994 CACHE                      
+      996 CACHE                      
+      998 CACHE                      
+     1000 CACHE                      
+     1002 CACHE                      
+     1004 CACHE                      
+     1006 CACHE                      
+     1008 CACHE                      
+     1010 CACHE                      
+     1012 CACHE                      
+     1014 LOAD_CONST                 "Color From Palette"
+     1016 PRECALL                    
+     1018 CACHE                      
+     1020 CALL                       
+     1022 CACHE                      
+     1024 CACHE                      
+     1026 CACHE                      
+     1028 CACHE                      
+     1030 BUILD_LIST                 
+     1032 LOAD_FAST                  self
+     1034 STORE_ATTR                 nollie_effect
+     1036 CACHE                      
+     1038 CACHE                      
+     1040 CACHE                      
+     1042 CACHE                      
+     1044 LOAD_GLOBAL                NULL + list
+     1046 CACHE                      
+     1048 CACHE                      
+     1050 CACHE                      
+     1052 CACHE                      
+     1054 CACHE                      
+     1056 LOAD_GLOBAL                NOLLIE_EFFECT_RAW
+     1058 CACHE                      
+     1060 CACHE                      
+     1062 CACHE                      
+     1064 CACHE                      
+     1066 CACHE                      
+     1068 PRECALL                    
+     1070 CACHE                      
+     1072 CALL                       
+     1074 CACHE                      
+     1076 CACHE                      
+     1078 CACHE                      
+     1080 CACHE                      
+     1082 LOAD_FAST                  self
+     1084 STORE_ATTR                 nollie_effect_raw
+     1086 CACHE                      
+     1088 CACHE                      
+     1090 CACHE                      
+     1092 CACHE                      
+     1094 LOAD_FAST                  self
+     1096 LOAD_METHOD                tr
+     1098 CACHE                      
+     1100 CACHE                      
+     1102 CACHE                      
+     1104 CACHE                      
+     1106 CACHE                      
+     1108 CACHE                      
+     1110 CACHE                      
+     1112 CACHE                      
+     1114 CACHE                      
+     1116 CACHE                      
+     1118 LOAD_CONST                 "Light up"
+     1120 PRECALL                    
+     1122 CACHE                      
+     1124 CALL                       
+     1126 CACHE                      
+     1128 CACHE                      
+     1130 CACHE                      
+     1132 CACHE                      
+     1134 LOAD_FAST                  self
+     1136 LOAD_METHOD                tr
+     1138 CACHE                      
+     1140 CACHE                      
+     1142 CACHE                      
+     1144 CACHE                      
+     1146 CACHE                      
+     1148 CACHE                      
+     1150 CACHE                      
+     1152 CACHE                      
+     1154 CACHE                      
+     1156 CACHE                      
+     1158 LOAD_CONST                 "Color wipe"
+     1160 PRECALL                    
+     1162 CACHE                      
+     1164 CALL                       
+     1166 CACHE                      
+     1168 CACHE                      
+     1170 CACHE                      
+     1172 CACHE                      
+     1174 LOAD_FAST                  self
+     1176 LOAD_METHOD                tr
+     1178 CACHE                      
+     1180 CACHE                      
+     1182 CACHE                      
+     1184 CACHE                      
+     1186 CACHE                      
+     1188 CACHE                      
+     1190 CACHE                      
+     1192 CACHE                      
+     1194 CACHE                      
+     1196 CACHE                      
+     1198 LOAD_CONST                 "Slowly wipe"
+     1200 PRECALL                    
+     1202 CACHE                      
+     1204 CALL                       
+     1206 CACHE                      
+     1208 CACHE                      
+     1210 CACHE                      
+     1212 CACHE                      
+     1214 LOAD_FAST                  self
+     1216 LOAD_METHOD                tr
+     1218 CACHE                      
+     1220 CACHE                      
+     1222 CACHE                      
+     1224 CACHE                      
+     1226 CACHE                      
+     1228 CACHE                      
+     1230 CACHE                      
+     1232 CACHE                      
+     1234 CACHE                      
+     1236 CACHE                      
+     1238 LOAD_CONST                 "Pull flower"
+     1240 PRECALL                    
+     1242 CACHE                      
+     1244 CALL                       
+     1246 CACHE                      
+     1248 CACHE                      
+     1250 CACHE                      
+     1252 CACHE                      
+     1254 LOAD_FAST                  self
+     1256 LOAD_METHOD                tr
+     1258 CACHE                      
+     1260 CACHE                      
+     1262 CACHE                      
+     1264 CACHE                      
+     1266 CACHE                      
+     1268 CACHE                      
+     1270 CACHE                      
+     1272 CACHE                      
+     1274 CACHE                      
+     1276 CACHE                      
+     1278 LOAD_CONST                 "Stackab1"
+     1280 PRECALL                    
+     1282 CACHE                      
+     1284 CALL                       
+     1286 CACHE                      
+     1288 CACHE                      
+     1290 CACHE                      
+     1292 CACHE                      
+     1294 LOAD_FAST                  self
+     1296 LOAD_METHOD                tr
+     1298 CACHE                      
+     1300 CACHE                      
+     1302 CACHE                      
+     1304 CACHE                      
+     1306 CACHE                      
+     1308 CACHE                      
+     1310 CACHE                      
+     1312 CACHE                      
+     1314 CACHE                      
+     1316 CACHE                      
+     1318 LOAD_CONST                 "Stackab2"
+     1320 PRECALL                    
+     1322 CACHE                      
+     1324 CALL                       
+     1326 CACHE                      
+     1328 CACHE                      
+     1330 CACHE                      
+     1332 CACHE                      
+     1334 LOAD_FAST                  self
+     1336 LOAD_METHOD                tr
+     1338 CACHE                      
+     1340 CACHE                      
+     1342 CACHE                      
+     1344 CACHE                      
+     1346 CACHE                      
+     1348 CACHE                      
+     1350 CACHE                      
+     1352 CACHE                      
+     1354 CACHE                      
+     1356 CACHE                      
+     1358 LOAD_CONST                 "Stackab3"
+     1360 PRECALL                    
+     1362 CACHE                      
+     1364 CALL                       
+     1366 CACHE                      
+     1368 CACHE                      
+     1370 CACHE                      
+     1372 CACHE                      
+     1374 LOAD_FAST                  self
+     1376 LOAD_METHOD                tr
+     1378 CACHE                      
+     1380 CACHE                      
+     1382 CACHE                      
+     1384 CACHE                      
+     1386 CACHE                      
+     1388 CACHE                      
+     1390 CACHE                      
+     1392 CACHE                      
+     1394 CACHE                      
+     1396 CACHE                      
+     1398 LOAD_CONST                 "Bullets"
+     1400 PRECALL                    
+     1402 CACHE                      
+     1404 CALL                       
+     1406 CACHE                      
+     1408 CACHE                      
+     1410 CACHE                      
+     1412 CACHE                      
+     1414 BUILD_LIST                 
+     1416 LOAD_FAST                  self
+     1418 STORE_ATTR                 nollie_start_effect
+     1420 CACHE                      
+     1422 CACHE                      
+     1424 CACHE                      
+     1426 CACHE                      
+     1428 LOAD_GLOBAL                NULL + list
+     1430 CACHE                      
+     1432 CACHE                      
+     1434 CACHE                      
+     1436 CACHE                      
+     1438 CACHE                      
+     1440 LOAD_GLOBAL                NOLLIE_START_EFFECT_RAW
+     1442 CACHE                      
+     1444 CACHE                      
+     1446 CACHE                      
+     1448 CACHE                      
+     1450 CACHE                      
+     1452 PRECALL                    
+     1454 CACHE                      
+     1456 CALL                       
+     1458 CACHE                      
+     1460 CACHE                      
+     1462 CACHE                      
+     1464 CACHE                      
+     1466 LOAD_FAST                  self
+     1468 STORE_ATTR                 nollie_start_effect_raw
+     1470 CACHE                      
+     1472 CACHE                      
+     1474 CACHE                      
+     1476 CACHE                      
+     1478 LOAD_CONST                 None
+     1480 RETURN_VALUE               
+  == code EffectTile line 54 args=()
+      0 MAKE_CELL                  __class__
+      2 RESUME                     
+      4 LOAD_NAME                  __name__
+      6 STORE_NAME                 __module__
+      8 LOAD_CONST                 "EffectTile"
+     10 STORE_NAME                 __qualname__
+     12 SETUP_ANNOTATIONS          
+     14 LOAD_CONST                 "单个效果缩略图。图像、字幕、选中标记全在 paintEvent 中绘制。"
+     16 STORE_NAME                 __doc__
+     18 PUSH_NULL                  
+     20 LOAD_NAME                  Signal
+     22 PRECALL                    
+     24 CACHE                      
+     26 CALL                       
+     28 CACHE                      
+     30 CACHE                      
+     32 CACHE                      
+     34 CACHE                      
+     36 STORE_NAME                 clicked
+     38 LOAD_CONST                 250
+     40 STORE_NAME                 _TILE_WIDTH
+     42 LOAD_CONST                 8
+     44 STORE_NAME                 _CORNER_R
+     46 LOAD_CONST                 28
+     48 STORE_NAME                 _STRIP_HEIGHT
+     50 PUSH_NULL                  
+     52 LOAD_NAME                  QColor
+     54 LOAD_CONST                 0
+     56 LOAD_CONST                 0
+     58 LOAD_CONST                 0
+     60 LOAD_CONST                 140
+     62 PRECALL                    
+     64 CACHE                      
+     66 CALL                       
+     68 CACHE                      
+     70 CACHE                      
+     72 CACHE                      
+     74 CACHE                      
+     76 STORE_NAME                 _STRIP_COLOR
+     78 LOAD_CONST                 None
+     80 STORE_NAME                 _ok_pixmap_cache
+     82 LOAD_NAME                  QPixmap
+     84 LOAD_CONST                 None
+     86 BINARY_OP                  |
+     88 CACHE                      
+     90 LOAD_NAME                  __annotations__
+     92 LOAD_CONST                 "_ok_pixmap_cache"
+     94 STORE_SUBSCR               
+     96 CACHE                      
+     98 LOAD_CONST                 (None,)
+    100 LOAD_CONST                 "pixmap"
+    102 LOAD_NAME                  QPixmap
+    104 LOAD_CONST                 "text"
+    106 LOAD_NAME                  str
+    108 BUILD_TUPLE                
+    110 LOAD_CLOSURE               __class__
+    112 BUILD_TUPLE                
+    114 LOAD_CONST                 <Code311 code object __init__ at 0x1bcb1759bd0, file app\view\nollie_device\dev_effect_interface.py>, line 66
+    116 MAKE_FUNCTION              default, annotation, closure
+    118 STORE_NAME                 __init__
+    120 LOAD_NAME                  classmethod
+    122 LOAD_CONST                 "return"
+    124 LOAD_NAME                  QPixmap
+    126 BUILD_TUPLE                
+    128 LOAD_CONST                 <Code311 code object _ok_pixmap at 0x1bcb17848a0, file app\view\nollie_device\dev_effect_interface.py>, line 80
+    130 MAKE_FUNCTION              annotation
+    132 PRECALL                    
+    134 CACHE                      
+    136 CALL                       
+    138 CACHE                      
+    140 CACHE                      
+    142 CACHE                      
+    144 CACHE                      
+    146 STORE_NAME                 _ok_pixmap
+    148 LOAD_CONST                 "on"
+    150 LOAD_NAME                  bool
+    152 LOAD_CONST                 "return"
+    154 LOAD_CONST                 None
+    156 BUILD_TUPLE                
+    158 LOAD_CONST                 <Code311 code object setSelected at 0x1bcb17849d0, file app\view\nollie_device\dev_effect_interface.py>, line 86
+    160 MAKE_FUNCTION              annotation
+    162 STORE_NAME                 setSelected
+    164 LOAD_CONST                 "text"
+    166 LOAD_NAME                  str
+    168 LOAD_CONST                 "return"
+    170 LOAD_CONST                 None
+    172 BUILD_TUPLE                
+    174 LOAD_CONST                 <Code311 code object setText at 0x1bcb17b9130, file app\view\nollie_device\dev_effect_interface.py>, line 91
+    176 MAKE_FUNCTION              annotation
+    178 STORE_NAME                 setText
+    180 LOAD_CONST                 ('return', None)
+    182 LOAD_CLOSURE               __class__
+    184 BUILD_TUPLE                
+    186 LOAD_CONST                 <Code311 code object mousePressEvent at 0x1bcb1769150, file app\view\nollie_device\dev_effect_interface.py>, line 96
+    188 MAKE_FUNCTION              annotation, closure
+    190 STORE_NAME                 mousePressEvent
+    192 LOAD_CONST                 ('return', None)
+    194 LOAD_CONST                 <Code311 code object paintEvent at 0x1bcb1769480, file app\view\nollie_device\dev_effect_interface.py>, line 101
+    196 MAKE_FUNCTION              annotation
+    198 STORE_NAME                 paintEvent
+    200 LOAD_CLOSURE               __class__
+    202 COPY                       
+    204 STORE_NAME                 __classcell__
+    206 RETURN_VALUE               
+    == code __init__ line 66 args=('self', 'pixmap', 'text', 'parent')
+        0 COPY_FREE_VARS             
+        2 RESUME                     
+        4 LOAD_GLOBAL                NULL + super
+        6 CACHE                      
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 CACHE                      
+       16 PRECALL                    
+       18 CACHE                      
+       20 CALL                       
+       22 CACHE                      
+       24 CACHE                      
+       26 CACHE                      
+       28 CACHE                      
+       30 LOAD_METHOD                __init__
+       32 CACHE                      
+       34 CACHE                      
+       36 CACHE                      
+       38 CACHE                      
+       40 CACHE                      
+       42 CACHE                      
+       44 CACHE                      
+       46 CACHE                      
+       48 CACHE                      
+       50 CACHE                      
+       52 LOAD_FAST                  parent
+       54 PRECALL                    
+       56 CACHE                      
+       58 CALL                       
+       60 CACHE                      
+       62 CACHE                      
+       64 CACHE                      
+       66 CACHE                      
+       68 POP_TOP                    
+       70 LOAD_FAST                  pixmap
+       72 LOAD_FAST                  self
+       74 STORE_ATTR                 _pixmap
+       76 CACHE                      
+       78 CACHE                      
+       80 CACHE                      
+       82 CACHE                      
+       84 LOAD_FAST                  text
+       86 LOAD_FAST                  self
+       88 STORE_ATTR                 _text
+       90 CACHE                      
+       92 CACHE                      
+       94 CACHE                      
+       96 CACHE                      
+       98 LOAD_CONST                 False
+      100 LOAD_FAST                  self
+      102 STORE_ATTR                 _selected
+      104 CACHE                      
+      106 CACHE                      
+      108 CACHE                      
+      110 CACHE                      
+      112 LOAD_FAST                  pixmap
+      114 LOAD_METHOD                isNull
+      116 CACHE                      
+      118 CACHE                      
+      120 CACHE                      
+      122 CACHE                      
+      124 CACHE                      
+      126 CACHE                      
+      128 CACHE                      
+      130 CACHE                      
+      132 CACHE                      
+      134 CACHE                      
+      136 PRECALL                    
+      138 CACHE                      
+      140 CALL                       
+      142 CACHE                      
+      144 CACHE                      
+      146 CACHE                      
+      148 CACHE                      
+      150 POP_JUMP_FORWARD_IF_TRUE   to 326
+      152 LOAD_FAST                  pixmap
+      154 LOAD_METHOD                width
+      156 CACHE                      
+      158 CACHE                      
+      160 CACHE                      
+      162 CACHE                      
+      164 CACHE                      
+      166 CACHE                      
+      168 CACHE                      
+      170 CACHE                      
+      172 CACHE                      
+      174 CACHE                      
+      176 PRECALL                    
+      178 CACHE                      
+      180 CALL                       
+      182 CACHE                      
+      184 CACHE                      
+      186 CACHE                      
+      188 CACHE                      
+      190 LOAD_CONST                 0
+      192 COMPARE_OP                 >
+      194 CACHE                      
+      196 CACHE                      
+      198 POP_JUMP_FORWARD_IF_FALSE  to 326
+      200 LOAD_GLOBAL                NULL + round
+      202 CACHE                      
+      204 CACHE                      
+      206 CACHE                      
+      208 CACHE                      
+      210 CACHE                      
+      212 LOAD_FAST                  pixmap
+      214 LOAD_METHOD                height
+      216 CACHE                      
+      218 CACHE                      
+      220 CACHE                      
+      222 CACHE                      
+      224 CACHE                      
+      226 CACHE                      
+      228 CACHE                      
+      230 CACHE                      
+      232 CACHE                      
+      234 CACHE                      
+      236 PRECALL                    
+      238 CACHE                      
+      240 CALL                       
+      242 CACHE                      
+      244 CACHE                      
+      246 CACHE                      
+      248 CACHE                      
+      250 LOAD_FAST                  self
+      252 LOAD_ATTR                  _TILE_WIDTH
+      254 CACHE                      
+      256 CACHE                      
+      258 CACHE                      
+      260 CACHE                      
+      262 BINARY_OP                  *
+      264 CACHE                      
+      266 LOAD_FAST                  pixmap
+      268 LOAD_METHOD                width
+      270 CACHE                      
+      272 CACHE                      
+      274 CACHE                      
+      276 CACHE                      
+      278 CACHE                      
+      280 CACHE                      
+      282 CACHE                      
+      284 CACHE                      
+      286 CACHE                      
+      288 CACHE                      
+      290 PRECALL                    
+      292 CACHE                      
+      294 CALL                       
+      296 CACHE                      
+      298 CACHE                      
+      300 CACHE                      
+      302 CACHE                      
+      304 BINARY_OP                  /
+      306 CACHE                      
+      308 PRECALL                    
+      310 CACHE                      
+      312 CALL                       
+      314 CACHE                      
+      316 CACHE                      
+      318 CACHE                      
+      320 CACHE                      
+      322 STORE_FAST                 h
+      324 JUMP_FORWARD               to 346
+      326 LOAD_FAST                  self
+      328 LOAD_ATTR                  _TILE_WIDTH
+      330 CACHE                      
+      332 CACHE                      
+      334 CACHE                      
+      336 CACHE                      
+      338 LOAD_CONST                 2
+      340 BINARY_OP                  //
+      342 CACHE                      
+      344 STORE_FAST                 h
+      346 LOAD_FAST                  self
+      348 LOAD_METHOD                setFixedSize
+      350 CACHE                      
+      352 CACHE                      
+      354 CACHE                      
+      356 CACHE                      
+      358 CACHE                      
+      360 CACHE                      
+      362 CACHE                      
+      364 CACHE                      
+      366 CACHE                      
+      368 CACHE                      
+      370 LOAD_FAST                  self
+      372 LOAD_ATTR                  _TILE_WIDTH
+      374 CACHE                      
+      376 CACHE                      
+      378 CACHE                      
+      380 CACHE                      
+      382 LOAD_FAST                  h
+      384 PRECALL                    
+      386 CACHE                      
+      388 CALL                       
+      390 CACHE                      
+      392 CACHE                      
+      394 CACHE                      
+      396 CACHE                      
+      398 POP_TOP                    
+      400 LOAD_FAST                  self
+      402 LOAD_METHOD                setCursor
+      404 CACHE                      
+      406 CACHE                      
+      408 CACHE                      
+      410 CACHE                      
+      412 CACHE                      
+      414 CACHE                      
+      416 CACHE                      
+      418 CACHE                      
+      420 CACHE                      
+      422 CACHE                      
+      424 LOAD_GLOBAL                Qt
+      426 CACHE                      
+      428 CACHE                      
+      430 CACHE                      
+      432 CACHE                      
+      434 CACHE                      
+      436 LOAD_ATTR                  PointingHandCursor
+      438 CACHE                      
+      440 CACHE                      
+      442 CACHE                      
+      444 CACHE                      
+      446 PRECALL                    
+      448 CACHE                      
+      450 CALL                       
+      452 CACHE                      
+      454 CACHE                      
+      456 CACHE                      
+      458 CACHE                      
+      460 POP_TOP                    
+      462 LOAD_CONST                 None
+      464 RETURN_VALUE               
+    == code _ok_pixmap line 80 args=('cls',)
+        0 RESUME                     
+        2 LOAD_FAST                  cls
+        4 LOAD_ATTR                  _ok_pixmap_cache
+        6 CACHE                      
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 POP_JUMP_FORWARD_IF_NOT_NONE to 56
+       16 LOAD_GLOBAL                NULL + QPixmap
+       18 CACHE                      
+       20 CACHE                      
+       22 CACHE                      
+       24 CACHE                      
+       26 CACHE                      
+       28 LOAD_CONST                 "./app/images/effect/ok.png"
+       30 PRECALL                    
+       32 CACHE                      
+       34 CALL                       
+       36 CACHE                      
+       38 CACHE                      
+       40 CACHE                      
+       42 CACHE                      
+       44 LOAD_FAST                  cls
+       46 STORE_ATTR                 _ok_pixmap_cache
+       48 CACHE                      
+       50 CACHE                      
+       52 CACHE                      
+       54 CACHE                      
+       56 LOAD_FAST                  cls
+       58 LOAD_ATTR                  _ok_pixmap_cache
+       60 CACHE                      
+       62 CACHE                      
+       64 CACHE                      
+       66 CACHE                      
+       68 RETURN_VALUE               
+    == code setSelected line 86 args=('self', 'on')
+        0 RESUME                     
+        2 LOAD_FAST                  self
+        4 LOAD_ATTR                  _selected
+        6 CACHE                      
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 LOAD_FAST                  on
+       16 COMPARE_OP                 !=
+       18 CACHE                      
+       20 CACHE                      
+       22 POP_JUMP_FORWARD_IF_FALSE  to 82
+       24 LOAD_FAST                  on
+       26 LOAD_FAST                  self
+       28 STORE_ATTR                 _selected
+       30 CACHE                      
+       32 CACHE                      
+       34 CACHE                      
+       36 CACHE                      
+       38 LOAD_FAST                  self
+       40 LOAD_METHOD                update
+       42 CACHE                      
+       44 CACHE                      
+       46 CACHE                      
+       48 CACHE                      
+       50 CACHE                      
+       52 CACHE                      
+       54 CACHE                      
+       56 CACHE                      
+       58 CACHE                      
+       60 CACHE                      
+       62 PRECALL                    
+       64 CACHE                      
+       66 CALL                       
+       68 CACHE                      
+       70 CACHE                      
+       72 CACHE                      
+       74 CACHE                      
+       76 POP_TOP                    
+       78 LOAD_CONST                 None
+       80 RETURN_VALUE               
+       82 LOAD_CONST                 None
+       84 RETURN_VALUE               
+    == code setText line 91 args=('self', 'text')
+        0 RESUME                     
+        2 LOAD_FAST                  self
+        4 LOAD_ATTR                  _text
+        6 CACHE                      
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 LOAD_FAST                  text
+       16 COMPARE_OP                 !=
+       18 CACHE                      
+       20 CACHE                      
+       22 POP_JUMP_FORWARD_IF_FALSE  to 82
+       24 LOAD_FAST                  text
+       26 LOAD_FAST                  self
+       28 STORE_ATTR                 _text
+       30 CACHE                      
+       32 CACHE                      
+       34 CACHE                      
+       36 CACHE                      
+       38 LOAD_FAST                  self
+       40 LOAD_METHOD                update
+       42 CACHE                      
+       44 CACHE                      
+       46 CACHE                      
+       48 CACHE                      
+       50 CACHE                      
+       52 CACHE                      
+       54 CACHE                      
+       56 CACHE                      
+       58 CACHE                      
+       60 CACHE                      
+       62 PRECALL                    
+       64 CACHE                      
+       66 CALL                       
+       68 CACHE                      
+       70 CACHE                      
+       72 CACHE                      
+       74 CACHE                      
+       76 POP_TOP                    
+       78 LOAD_CONST                 None
+       80 RETURN_VALUE               
+       82 LOAD_CONST                 None
+       84 RETURN_VALUE               
+    == code mousePressEvent line 96 args=('self', 'event')
+        0 COPY_FREE_VARS             
+        2 RESUME                     
+        4 LOAD_FAST                  event
+        6 LOAD_METHOD                button
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 CACHE                      
+       16 CACHE                      
+       18 CACHE                      
+       20 CACHE                      
+       22 CACHE                      
+       24 CACHE                      
+       26 CACHE                      
+       28 PRECALL                    
+       30 CACHE                      
+       32 CALL                       
+       34 CACHE                      
+       36 CACHE                      
+       38 CACHE                      
+       40 CACHE                      
+       42 LOAD_GLOBAL                Qt
+       44 CACHE                      
+       46 CACHE                      
+       48 CACHE                      
+       50 CACHE                      
+       52 CACHE                      
+       54 LOAD_ATTR                  LeftButton
+       56 CACHE                      
+       58 CACHE                      
+       60 CACHE                      
+       62 CACHE                      
+       64 COMPARE_OP                 ==
+       66 CACHE                      
+       68 CACHE                      
+       70 POP_JUMP_FORWARD_IF_FALSE  to 122
+       72 LOAD_FAST                  self
+       74 LOAD_ATTR                  clicked
+       76 CACHE                      
+       78 CACHE                      
+       80 CACHE                      
+       82 CACHE                      
+       84 LOAD_METHOD                emit
+       86 CACHE                      
+       88 CACHE                      
+       90 CACHE                      
+       92 CACHE                      
+       94 CACHE                      
+       96 CACHE                      
+       98 CACHE                      
+      100 CACHE                      
+      102 CACHE                      
+      104 CACHE                      
+      106 PRECALL                    
+      108 CACHE                      
+      110 CALL                       
+      112 CACHE                      
+      114 CACHE                      
+      116 CACHE                      
+      118 CACHE                      
+      120 POP_TOP                    
+      122 LOAD_GLOBAL                NULL + super
+      124 CACHE                      
+      126 CACHE                      
+      128 CACHE                      
+      130 CACHE                      
+      132 CACHE                      
+      134 PRECALL                    
+      136 CACHE                      
+      138 CALL                       
+      140 CACHE                      
+      142 CACHE                      
+      144 CACHE                      
+      146 CACHE                      
+      148 LOAD_METHOD                mousePressEvent
+      150 CACHE                      
+      152 CACHE                      
+      154 CACHE                      
+      156 CACHE                      
+      158 CACHE                      
+      160 CACHE                      
+      162 CACHE                      
+      164 CACHE                      
+      166 CACHE                      
+      168 CACHE                      
+      170 LOAD_FAST                  event
+      172 PRECALL                    
+      174 CACHE                      
+      176 CALL                       
+      178 CACHE                      
+      180 CACHE                      
+      182 CACHE                      
+      184 CACHE                      
+      186 POP_TOP                    
+      188 LOAD_CONST                 None
+      190 RETURN_VALUE               
+    == code paintEvent line 101 args=('self', '_event')
+        0 RESUME                     
+        2 LOAD_GLOBAL                NULL + QPainter
+        4 CACHE                      
+        6 CACHE                      
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 LOAD_FAST                  self
+       16 PRECALL                    
+       18 CACHE                      
+       20 CALL                       
+       22 CACHE                      
+       24 CACHE                      
+       26 CACHE                      
+       28 CACHE                      
+       30 STORE_FAST                 p
+       32 LOAD_FAST                  p
+       34 LOAD_METHOD                setRenderHint
+       36 CACHE                      
+       38 CACHE                      
+       40 CACHE                      
+       42 CACHE                      
+       44 CACHE                      
+       46 CACHE                      
+       48 CACHE                      
+       50 CACHE                      
+       52 CACHE                      
+       54 CACHE                      
+       56 LOAD_GLOBAL                QPainter
+       58 CACHE                      
+       60 CACHE                      
+       62 CACHE                      
+       64 CACHE                      
+       66 CACHE                      
+       68 LOAD_ATTR                  SmoothPixmapTransform
+       70 CACHE                      
+       72 CACHE                      
+       74 CACHE                      
+       76 CACHE                      
+       78 PRECALL                    
+       80 CACHE                      
+       82 CALL                       
+       84 CACHE                      
+       86 CACHE                      
+       88 CACHE                      
+       90 CACHE                      
+       92 POP_TOP                    
+       94 LOAD_FAST                  p
+       96 LOAD_METHOD                setRenderHint
+       98 CACHE                      
+      100 CACHE                      
+      102 CACHE                      
+      104 CACHE                      
+      106 CACHE                      
+      108 CACHE                      
+      110 CACHE                      
+      112 CACHE                      
+      114 CACHE                      
+      116 CACHE                      
+      118 LOAD_GLOBAL                QPainter
+      120 CACHE                      
+      122 CACHE                      
+      124 CACHE                      
+      126 CACHE                      
+      128 CACHE                      
+      130 LOAD_ATTR                  Antialiasing
+      132 CACHE                      
+      134 CACHE                      
+      136 CACHE                      
+      138 CACHE                      
+      140 PRECALL                    
+      142 CACHE                      
+      144 CALL                       
+      146 CACHE                      
+      148 CACHE                      
+      150 CACHE                      
+      152 CACHE                      
+      154 POP_TOP                    
+      156 LOAD_FAST                  p
+      158 LOAD_METHOD                setRenderHint
+      160 CACHE                      
+      162 CACHE                      
+      164 CACHE                      
+      166 CACHE                      
+      168 CACHE                      
+      170 CACHE                      
+      172 CACHE                      
+      174 CACHE                      
+      176 CACHE                      
+      178 CACHE                      
+      180 LOAD_GLOBAL                QPainter
+      182 CACHE                      
+      184 CACHE                      
+      186 CACHE                      
+      188 CACHE                      
+      190 CACHE                      
+      192 LOAD_ATTR                  TextAntialiasing
+      194 CACHE                      
+      196 CACHE                      
+      198 CACHE                      
+      200 CACHE                      
+      202 PRECALL                    
+      204 CACHE                      
+      206 CALL                       
+      208 CACHE                      
+      210 CACHE                      
+      212 CACHE                      
+      214 CACHE                      
+      216 POP_TOP                    
+      218 LOAD_FAST                  self
+      220 LOAD_METHOD                rect
+      222 CACHE                      
+      224 CACHE                      
+      226 CACHE                      
+      228 CACHE                      
+      230 CACHE                      
+      232 CACHE                      
+      234 CACHE                      
+      236 CACHE                      
+      238 CACHE                      
+      240 CACHE                      
+      242 PRECALL                    
+      244 CACHE                      
+      246 CALL                       
+      248 CACHE                      
+      250 CACHE                      
+      252 CACHE                      
+      254 CACHE                      
+      256 STORE_FAST                 rect
+      258 LOAD_GLOBAL                NULL + QPainterPath
+      260 CACHE                      
+      262 CACHE                      
+      264 CACHE                      
+      266 CACHE                      
+      268 CACHE                      
+      270 PRECALL                    
+      272 CACHE                      
+      274 CALL                       
+      276 CACHE                      
+      278 CACHE                      
+      280 CACHE                      
+      282 CACHE                      
+      284 STORE_FAST                 path
+      286 LOAD_FAST                  path
+      288 LOAD_METHOD                addRoundedRect
+      290 CACHE                      
+      292 CACHE                      
+      294 CACHE                      
+      296 CACHE                      
+      298 CACHE                      
+      300 CACHE                      
+      302 CACHE                      
+      304 CACHE                      
+      306 CACHE                      
+      308 CACHE                      
+      310 LOAD_FAST                  rect
+      312 LOAD_FAST                  self
+      314 LOAD_ATTR                  _CORNER_R
+      316 CACHE                      
+      318 CACHE                      
+      320 CACHE                      
+      322 CACHE                      
+      324 LOAD_FAST                  self
+      326 LOAD_ATTR                  _CORNER_R
+      328 CACHE                      
+      330 CACHE                      
+      332 CACHE                      
+      334 CACHE                      
+      336 PRECALL                    
+      338 CACHE                      
+      340 CALL                       
+      342 CACHE                      
+      344 CACHE                      
+      346 CACHE                      
+      348 CACHE                      
+      350 POP_TOP                    
+      352 LOAD_FAST                  p
+      354 LOAD_METHOD                setClipPath
+      356 CACHE                      
+      358 CACHE                      
+      360 CACHE                      
+      362 CACHE                      
+      364 CACHE                      
+      366 CACHE                      
+      368 CACHE                      
+      370 CACHE                      
+      372 CACHE                      
+      374 CACHE                      
+      376 LOAD_FAST                  path
+      378 PRECALL                    
+      380 CACHE                      
+      382 CALL                       
+      384 CACHE                      
+      386 CACHE                      
+      388 CACHE                      
+      390 CACHE                      
+      392 POP_TOP                    
+      394 LOAD_FAST                  self
+      396 LOAD_ATTR                  _pixmap
+      398 CACHE                      
+      400 CACHE                      
+      402 CACHE                      
+      404 CACHE                      
+      406 LOAD_METHOD                isNull
+      408 CACHE                      
+      410 CACHE                      
+      412 CACHE                      
+      414 CACHE                      
+      416 CACHE                      
+      418 CACHE                      
+      420 CACHE                      
+      422 CACHE                      
+      424 CACHE                      
+      426 CACHE                      
+      428 PRECALL                    
+      430 CACHE                      
+      432 CALL                       
+      434 CACHE                      
+      436 CACHE                      
+      438 CACHE                      
+      440 CACHE                      
+      442 POP_JUMP_FORWARD_IF_TRUE   to 546
+      444 LOAD_FAST                  p
+      446 LOAD_METHOD                drawPixmap
+      448 CACHE                      
+      450 CACHE                      
+      452 CACHE                      
+      454 CACHE                      
+      456 CACHE                      
+      458 CACHE                      
+      460 CACHE                      
+      462 CACHE                      
+      464 CACHE                      
+      466 CACHE                      
+      468 LOAD_FAST                  rect
+      470 LOAD_FAST                  self
+      472 LOAD_ATTR                  _pixmap
+      474 CACHE                      
+      476 CACHE                      
+      478 CACHE                      
+      480 CACHE                      
+      482 LOAD_FAST                  self
+      484 LOAD_ATTR                  _pixmap
+      486 CACHE                      
+      488 CACHE                      
+      490 CACHE                      
+      492 CACHE                      
+      494 LOAD_METHOD                rect
+      496 CACHE                      
+      498 CACHE                      
+      500 CACHE                      
+      502 CACHE                      
+      504 CACHE                      
+      506 CACHE                      
+      508 CACHE                      
+      510 CACHE                      
+      512 CACHE                      
+      514 CACHE                      
+      516 PRECALL                    
+      518 CACHE                      
+      520 CALL                       
+      522 CACHE                      
+      524 CACHE                      
+      526 CACHE                      
+      528 CACHE                      
+      530 PRECALL                    
+      532 CACHE                      
+      534 CALL                       
+      536 CACHE                      
+      538 CACHE                      
+      540 CACHE                      
+      542 CACHE                      
+      544 POP_TOP                    
+      546 LOAD_FAST                  rect
+      548 LOAD_METHOD                adjusted
+      550 CACHE                      
+      552 CACHE                      
+      554 CACHE                      
+      556 CACHE                      
+      558 CACHE                      
+      560 CACHE                      
+      562 CACHE                      
+      564 CACHE                      
+      566 CACHE                      
+      568 CACHE                      
+      570 LOAD_CONST                 0
+      572 LOAD_FAST                  rect
+      574 LOAD_METHOD                height
+      576 CACHE                      
+      578 CACHE                      
+      580 CACHE                      
+      582 CACHE                      
+      584 CACHE                      
+      586 CACHE                      
+      588 CACHE                      
+      590 CACHE                      
+      592 CACHE                      
+      594 CACHE                      
+      596 PRECALL                    
+      598 CACHE                      
+      600 CALL                       
+      602 CACHE                      
+      604 CACHE                      
+      606 CACHE                      
+      608 CACHE                      
+      610 LOAD_FAST                  self
+      612 LOAD_ATTR                  _STRIP_HEIGHT
+      614 CACHE                      
+      616 CACHE                      
+      618 CACHE                      
+      620 CACHE                      
+      622 BINARY_OP                  -
+      624 CACHE                      
+      626 LOAD_CONST                 0
+      628 LOAD_CONST                 0
+      630 PRECALL                    
+      632 CACHE                      
+      634 CALL                       
+      636 CACHE                      
+      638 CACHE                      
+      640 CACHE                      
+      642 CACHE                      
+      644 STORE_FAST                 strip
+      646 LOAD_FAST                  p
+      648 LOAD_METHOD                fillRect
+      650 CACHE                      
+      652 CACHE                      
+      654 CACHE                      
+      656 CACHE                      
+      658 CACHE                      
+      660 CACHE                      
+      662 CACHE                      
+      664 CACHE                      
+      666 CACHE                      
+      668 CACHE                      
+      670 LOAD_FAST                  strip
+      672 LOAD_FAST                  self
+      674 LOAD_ATTR                  _STRIP_COLOR
+      676 CACHE                      
+      678 CACHE                      
+      680 CACHE                      
+      682 CACHE                      
+      684 PRECALL                    
+      686 CACHE                      
+      688 CALL                       
+      690 CACHE                      
+      692 CACHE                      
+      694 CACHE                      
+      696 CACHE                      
+      698 POP_TOP                    
+      700 LOAD_FAST                  self
+      702 LOAD_METHOD                font
+      704 CACHE                      
+      706 CACHE                      
+      708 CACHE                      
+      710 CACHE                      
+      712 CACHE                      
+      714 CACHE                      
+      716 CACHE                      
+      718 CACHE                      
+      720 CACHE                      
+      722 CACHE                      
+      724 PRECALL                    
+      726 CACHE                      
+      728 CALL                       
+      730 CACHE                      
+      732 CACHE                      
+      734 CACHE                      
+      736 CACHE                      
+      738 STORE_FAST                 font
+      740 LOAD_FAST                  font
+      742 LOAD_METHOD                setPointSize
+      744 CACHE                      
+      746 CACHE                      
+      748 CACHE                      
+      750 CACHE                      
+      752 CACHE                      
+      754 CACHE                      
+      756 CACHE                      
+      758 CACHE                      
+      760 CACHE                      
+      762 CACHE                      
+      764 LOAD_CONST                 10
+      766 PRECALL                    
+      768 CACHE                      
+      770 CALL                       
+      772 CACHE                      
+      774 CACHE                      
+      776 CACHE                      
+      778 CACHE                      
+      780 POP_TOP                    
+      782 LOAD_FAST                  font
+      784 LOAD_METHOD                setBold
+      786 CACHE                      
+      788 CACHE                      
+      790 CACHE                      
+      792 CACHE                      
+      794 CACHE                      
+      796 CACHE                      
+      798 CACHE                      
+      800 CACHE                      
+      802 CACHE                      
+      804 CACHE                      
+      806 LOAD_CONST                 True
+      808 PRECALL                    
+      810 CACHE                      
+      812 CALL                       
+      814 CACHE                      
+      816 CACHE                      
+      818 CACHE                      
+      820 CACHE                      
+      822 POP_TOP                    
+      824 LOAD_FAST                  p
+      826 LOAD_METHOD                setFont
+      828 CACHE                      
+      830 CACHE                      
+      832 CACHE                      
+      834 CACHE                      
+      836 CACHE                      
+      838 CACHE                      
+      840 CACHE                      
+      842 CACHE                      
+      844 CACHE                      
+      846 CACHE                      
+      848 LOAD_FAST                  font
+      850 PRECALL                    
+      852 CACHE                      
+      854 CALL                       
+      856 CACHE                      
+      858 CACHE                      
+      860 CACHE                      
+      862 CACHE                      
+      864 POP_TOP                    
+      866 LOAD_FAST                  p
+      868 LOAD_METHOD                setPen
+      870 CACHE                      
+      872 CACHE                      
+      874 CACHE                      
+      876 CACHE                      
+      878 CACHE                      
+      880 CACHE                      
+      882 CACHE                      
+      884 CACHE                      
+      886 CACHE                      
+      888 CACHE                      
+      890 LOAD_GLOBAL                Qt
+      892 CACHE                      
+      894 CACHE                      
+      896 CACHE                      
+      898 CACHE                      
+      900 CACHE                      
+      902 LOAD_ATTR                  white
+      904 CACHE                      
+      906 CACHE                      
+      908 CACHE                      
+      910 CACHE                      
+      912 PRECALL                    
+      914 CACHE                      
+      916 CALL                       
+      918 CACHE                      
+      920 CACHE                      
+      922 CACHE                      
+      924 CACHE                      
+      926 POP_TOP                    
+      928 LOAD_FAST                  p
+      930 LOAD_METHOD                drawText
+      932 CACHE                      
+      934 CACHE                      
+      936 CACHE                      
+      938 CACHE                      
+      940 CACHE                      
+      942 CACHE                      
+      944 CACHE                      
+      946 CACHE                      
+      948 CACHE                      
+      950 CACHE                      
+      952 LOAD_FAST                  strip
+      954 LOAD_GLOBAL                Qt
+      956 CACHE                      
+      958 CACHE                      
+      960 CACHE                      
+      962 CACHE                      
+      964 CACHE                      
+      966 LOAD_ATTR                  AlignCenter
+      968 CACHE                      
+      970 CACHE                      
+      972 CACHE                      
+      974 CACHE                      
+      976 LOAD_FAST                  self
+      978 LOAD_ATTR                  _text
+      980 CACHE                      
+      982 CACHE                      
+      984 CACHE                      
+      986 CACHE                      
+      988 PRECALL                    
+      990 CACHE                      
+      992 CALL                       
+      994 CACHE                      
+      996 CACHE                      
+      998 CACHE                      
+     1000 CACHE                      
+     1002 POP_TOP                    
+     1004 LOAD_FAST                  self
+     1006 LOAD_ATTR                  _selected
+     1008 CACHE                      
+     1010 CACHE                      
+     1012 CACHE                      
+     1014 CACHE                      
+     1016 POP_JUMP_FORWARD_IF_FALSE  to 1184
+     1018 LOAD_FAST                  self
+     1020 LOAD_METHOD                _ok_pixmap
+     1022 CACHE                      
+     1024 CACHE                      
+     1026 CACHE                      
+     1028 CACHE                      
+     1030 CACHE                      
+     1032 CACHE                      
+     1034 CACHE                      
+     1036 CACHE                      
+     1038 CACHE                      
+     1040 CACHE                      
+     1042 PRECALL                    
+     1044 CACHE                      
+     1046 CALL                       
+     1048 CACHE                      
+     1050 CACHE                      
+     1052 CACHE                      
+     1054 CACHE                      
+     1056 STORE_FAST                 ok
+     1058 LOAD_FAST                  ok
+     1060 LOAD_METHOD                isNull
+     1062 CACHE                      
+     1064 CACHE                      
+     1066 CACHE                      
+     1068 CACHE                      
+     1070 CACHE                      
+     1072 CACHE                      
+     1074 CACHE                      
+     1076 CACHE                      
+     1078 CACHE                      
+     1080 CACHE                      
+     1082 PRECALL                    
+     1084 CACHE                      
+     1086 CALL                       
+     1088 CACHE                      
+     1090 CACHE                      
+     1092 CACHE                      
+     1094 CACHE                      
+     1096 POP_JUMP_FORWARD_IF_TRUE   to 1188
+     1098 LOAD_FAST                  p
+     1100 LOAD_METHOD                drawPixmap
+     1102 CACHE                      
+     1104 CACHE                      
+     1106 CACHE                      
+     1108 CACHE                      
+     1110 CACHE                      
+     1112 CACHE                      
+     1114 CACHE                      
+     1116 CACHE                      
+     1118 CACHE                      
+     1120 CACHE                      
+     1122 LOAD_FAST                  rect
+     1124 LOAD_FAST                  ok
+     1126 LOAD_FAST                  ok
+     1128 LOAD_METHOD                rect
+     1130 CACHE                      
+     1132 CACHE                      
+     1134 CACHE                      
+     1136 CACHE                      
+     1138 CACHE                      
+     1140 CACHE                      
+     1142 CACHE                      
+     1144 CACHE                      
+     1146 CACHE                      
+     1148 CACHE                      
+     1150 PRECALL                    
+     1152 CACHE                      
+     1154 CALL                       
+     1156 CACHE                      
+     1158 CACHE                      
+     1160 CACHE                      
+     1162 CACHE                      
+     1164 PRECALL                    
+     1166 CACHE                      
+     1168 CALL                       
+     1170 CACHE                      
+     1172 CACHE                      
+     1174 CACHE                      
+     1176 CACHE                      
+     1178 POP_TOP                    
+     1180 LOAD_CONST                 None
+     1182 RETURN_VALUE               
+     1184 LOAD_CONST                 None
+     1186 RETURN_VALUE               
+     1188 LOAD_CONST                 None
+     1190 RETURN_VALUE               
+  == code EffectDialog line 138 args=()
+      0 MAKE_CELL                  __class__
+      2 RESUME                     
+      4 LOAD_NAME                  __name__
+      6 STORE_NAME                 __module__
+      8 LOAD_CONST                 "EffectDialog"
+     10 STORE_NAME                 __qualname__
+     12 PUSH_NULL                  
+     14 LOAD_NAME                  Signal
+     16 LOAD_NAME                  int
+     18 PRECALL                    
+     20 CACHE                      
+     22 CALL                       
+     24 CACHE                      
+     26 CACHE                      
+     28 CACHE                      
+     30 CACHE                      
+     32 STORE_NAME                 effectSelected
+     34 LOAD_CONST                 (None,)
+     36 LOAD_CLOSURE               __class__
+     38 BUILD_TUPLE                
+     40 LOAD_CONST                 <Code311 code object __init__ at 0x1bcb17696a0, file app\view\nollie_device\dev_effect_interface.py>, line 142
+     42 MAKE_FUNCTION              default, closure
+     44 STORE_NAME                 __init__
+     46 LOAD_CONST                 <Code311 code object createWaterfall at 0x1bcb17698c0, file app\view\nollie_device\dev_effect_interface.py>, line 177
+     48 MAKE_FUNCTION              No arguments
+     50 STORE_NAME                 createWaterfall
+     52 LOAD_NAME                  staticmethod
+     54 LOAD_CONST                 "raw"
+     56 LOAD_NAME                  str
+     58 LOAD_CONST                 "return"
+     60 LOAD_NAME                  QPixmap
+     62 BUILD_TUPLE                
+     64 LOAD_CONST                 <Code311 code object _load_pixmap at 0x1bcb17699d0, file app\view\nollie_device\dev_effect_interface.py>, line 192
+     66 MAKE_FUNCTION              annotation
+     68 PRECALL                    
+     70 CACHE                      
+     72 CALL                       
+     74 CACHE                      
+     76 CACHE                      
+     78 CACHE                      
+     80 CACHE                      
+     82 STORE_NAME                 _load_pixmap
+     84 LOAD_CONST                 "raw"
+     86 LOAD_NAME                  str
+     88 LOAD_CONST                 "return"
+     90 LOAD_CONST                 None
+     92 BUILD_TUPLE                
+     94 LOAD_CONST                 <Code311 code object _on_tile_clicked at 0x1bcb1769ae0, file app\view\nollie_device\dev_effect_interface.py>, line 199
+     96 MAKE_FUNCTION              annotation
+     98 STORE_NAME                 _on_tile_clicked
+    100 LOAD_CONST                 "raw"
+    102 LOAD_NAME                  str
+    104 LOAD_CONST                 "return"
+    106 LOAD_CONST                 None
+    108 BUILD_TUPLE                
+    110 LOAD_CONST                 <Code311 code object _set_selected at 0x1bcb1769bf0, file app\view\nollie_device\dev_effect_interface.py>, line 207
+    112 MAKE_FUNCTION              annotation
+    114 STORE_NAME                 _set_selected
+    116 LOAD_CLOSURE               __class__
+    118 COPY                       
+    120 STORE_NAME                 __classcell__
+    122 RETURN_VALUE               
+    == code __init__ line 142 args=('self', 'effect_name_list', 'effect_raw_list', 'pix_flag_index', 'parent')
+        0 COPY_FREE_VARS             
+        2 RESUME                     
+        4 LOAD_GLOBAL                NULL + super
+        6 CACHE                      
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 CACHE                      
+       16 PRECALL                    
+       18 CACHE                      
+       20 CALL                       
+       22 CACHE                      
+       24 CACHE                      
+       26 CACHE                      
+       28 CACHE                      
+       30 LOAD_METHOD                __init__
+       32 CACHE                      
+       34 CACHE                      
+       36 CACHE                      
+       38 CACHE                      
+       40 CACHE                      
+       42 CACHE                      
+       44 CACHE                      
+       46 CACHE                      
+       48 CACHE                      
+       50 CACHE                      
+       52 LOAD_FAST                  parent
+       54 PRECALL                    
+       56 CACHE                      
+       58 CALL                       
+       60 CACHE                      
+       62 CACHE                      
+       64 CACHE                      
+       66 CACHE                      
+       68 POP_TOP                    
+       70 LOAD_FAST                  self
+       72 LOAD_METHOD                resize
+       74 CACHE                      
+       76 CACHE                      
+       78 CACHE                      
+       80 CACHE                      
+       82 CACHE                      
+       84 CACHE                      
+       86 CACHE                      
+       88 CACHE                      
+       90 CACHE                      
+       92 CACHE                      
+       94 LOAD_CONST                 950
+       96 LOAD_CONST                 800
+       98 PRECALL                    
+      100 CACHE                      
+      102 CALL                       
+      104 CACHE                      
+      106 CACHE                      
+      108 CACHE                      
+      110 CACHE                      
+      112 POP_TOP                    
+      114 LOAD_GLOBAL                NULL + ScrollArea
+      116 CACHE                      
+      118 CACHE                      
+      120 CACHE                      
+      122 CACHE                      
+      124 CACHE                      
+      126 LOAD_FAST                  self
+      128 PRECALL                    
+      130 CACHE                      
+      132 CALL                       
+      134 CACHE                      
+      136 CACHE                      
+      138 CACHE                      
+      140 CACHE                      
+      142 LOAD_FAST                  self
+      144 STORE_ATTR                 scrollArea
+      146 CACHE                      
+      148 CACHE                      
+      150 CACHE                      
+      152 CACHE                      
+      154 LOAD_FAST                  self
+      156 LOAD_ATTR                  scrollArea
+      158 CACHE                      
+      160 CACHE                      
+      162 CACHE                      
+      164 CACHE                      
+      166 LOAD_METHOD                setWidgetResizable
+      168 CACHE                      
+      170 CACHE                      
+      172 CACHE                      
+      174 CACHE                      
+      176 CACHE                      
+      178 CACHE                      
+      180 CACHE                      
+      182 CACHE                      
+      184 CACHE                      
+      186 CACHE                      
+      188 LOAD_CONST                 True
+      190 PRECALL                    
+      192 CACHE                      
+      194 CALL                       
+      196 CACHE                      
+      198 CACHE                      
+      200 CACHE                      
+      202 CACHE                      
+      204 POP_TOP                    
+      206 LOAD_FAST                  effect_name_list
+      208 LOAD_FAST                  self
+      210 STORE_ATTR                 effect_name_list
+      212 CACHE                      
+      214 CACHE                      
+      216 CACHE                      
+      218 CACHE                      
+      220 LOAD_FAST                  effect_raw_list
+      222 LOAD_FAST                  self
+      224 STORE_ATTR                 effect_raw_list
+      226 CACHE                      
+      228 CACHE                      
+      230 CACHE                      
+      232 CACHE                      
+      234 LOAD_FAST                  pix_flag_index
+      236 LOAD_FAST                  self
+      238 STORE_ATTR                 pix_flag_index
+      240 CACHE                      
+      242 CACHE                      
+      244 CACHE                      
+      246 CACHE                      
+      248 LOAD_GLOBAL                NULL + QWidget
+      250 CACHE                      
+      252 CACHE                      
+      254 CACHE                      
+      256 CACHE                      
+      258 CACHE                      
+      260 PRECALL                    
+      262 CACHE                      
+      264 CALL                       
+      266 CACHE                      
+      268 CACHE                      
+      270 CACHE                      
+      272 CACHE                      
+      274 LOAD_FAST                  self
+      276 STORE_ATTR                 scrollContent
+      278 CACHE                      
+      280 CACHE                      
+      282 CACHE                      
+      284 CACHE                      
+      286 LOAD_GLOBAL                NULL + QHBoxLayout
+      288 CACHE                      
+      290 CACHE                      
+      292 CACHE                      
+      294 CACHE                      
+      296 CACHE                      
+      298 LOAD_FAST                  self
+      300 LOAD_ATTR                  scrollContent
+      302 CACHE                      
+      304 CACHE                      
+      306 CACHE                      
+      308 CACHE                      
+      310 PRECALL                    
+      312 CACHE                      
+      314 CALL                       
+      316 CACHE                      
+      318 CACHE                      
+      320 CACHE                      
+      322 CACHE                      
+      324 LOAD_FAST                  self
+      326 STORE_ATTR                 scrollLayout
+      328 CACHE                      
+      330 CACHE                      
+      332 CACHE                      
+      334 CACHE                      
+      336 LOAD_FAST                  self
+      338 LOAD_ATTR                  scrollArea
+      340 CACHE                      
+      342 CACHE                      
+      344 CACHE                      
+      346 CACHE                      
+      348 LOAD_METHOD                setWidget
+      350 CACHE                      
+      352 CACHE                      
+      354 CACHE                      
+      356 CACHE                      
+      358 CACHE                      
+      360 CACHE                      
+      362 CACHE                      
+      364 CACHE                      
+      366 CACHE                      
+      368 CACHE                      
+      370 LOAD_FAST                  self
+      372 LOAD_ATTR                  scrollContent
+      374 CACHE                      
+      376 CACHE                      
+      378 CACHE                      
+      380 CACHE                      
+      382 PRECALL                    
+      384 CACHE                      
+      386 CALL                       
+      388 CACHE                      
+      390 CACHE                      
+      392 CACHE                      
+      394 CACHE                      
+      396 POP_TOP                    
+      398 BUILD_MAP                  
+      400 LOAD_FAST                  self
+      402 STORE_ATTR                 _tiles
+      404 CACHE                      
+      406 CACHE                      
+      408 CACHE                      
+      410 CACHE                      
+      412 LOAD_FAST                  self
+      414 LOAD_ATTR                  scrollLayout
+      416 CACHE                      
+      418 CACHE                      
+      420 CACHE                      
+      422 CACHE                      
+      424 LOAD_METHOD                addWidget
+      426 CACHE                      
+      428 CACHE                      
+      430 CACHE                      
+      432 CACHE                      
+      434 CACHE                      
+      436 CACHE                      
+      438 CACHE                      
+      440 CACHE                      
+      442 CACHE                      
+      444 CACHE                      
+      446 LOAD_FAST                  self
+      448 LOAD_METHOD                createWaterfall
+      450 CACHE                      
+      452 CACHE                      
+      454 CACHE                      
+      456 CACHE                      
+      458 CACHE                      
+      460 CACHE                      
+      462 CACHE                      
+      464 CACHE                      
+      466 CACHE                      
+      468 CACHE                      
+      470 PRECALL                    
+      472 CACHE                      
+      474 CALL                       
+      476 CACHE                      
+      478 CACHE                      
+      480 CACHE                      
+      482 CACHE                      
+      484 PRECALL                    
+      486 CACHE                      
+      488 CALL                       
+      490 CACHE                      
+      492 CACHE                      
+      494 CACHE                      
+      496 CACHE                      
+      498 POP_TOP                    
+      500 LOAD_GLOBAL                NULL + QVBoxLayout
+      502 CACHE                      
+      504 CACHE                      
+      506 CACHE                      
+      508 CACHE                      
+      510 CACHE                      
+      512 LOAD_FAST                  self
+      514 PRECALL                    
+      516 CACHE                      
+      518 CALL                       
+      520 CACHE                      
+      522 CACHE                      
+      524 CACHE                      
+      526 CACHE                      
+      528 LOAD_FAST                  self
+      530 STORE_ATTR                 vBoxLayout
+      532 CACHE                      
+      534 CACHE                      
+      536 CACHE                      
+      538 CACHE                      
+      540 LOAD_FAST                  self
+      542 LOAD_ATTR                  vBoxLayout
+      544 CACHE                      
+      546 CACHE                      
+      548 CACHE                      
+      550 CACHE                      
+      552 LOAD_METHOD                addWidget
+      554 CACHE                      
+      556 CACHE                      
+      558 CACHE                      
+      560 CACHE                      
+      562 CACHE                      
+      564 CACHE                      
+      566 CACHE                      
+      568 CACHE                      
+      570 CACHE                      
+      572 CACHE                      
+      574 LOAD_FAST                  self
+      576 LOAD_ATTR                  scrollArea
+      578 CACHE                      
+      580 CACHE                      
+      582 CACHE                      
+      584 CACHE                      
+      586 PRECALL                    
+      588 CACHE                      
+      590 CALL                       
+      592 CACHE                      
+      594 CACHE                      
+      596 CACHE                      
+      598 CACHE                      
+      600 POP_TOP                    
+      602 LOAD_FAST                  self
+      604 LOAD_ATTR                  vBoxLayout
+      606 CACHE                      
+      608 CACHE                      
+      610 CACHE                      
+      612 CACHE                      
+      614 LOAD_METHOD                setContentsMargins
+      616 CACHE                      
+      618 CACHE                      
+      620 CACHE                      
+      622 CACHE                      
+      624 CACHE                      
+      626 CACHE                      
+      628 CACHE                      
+      630 CACHE                      
+      632 CACHE                      
+      634 CACHE                      
+      636 LOAD_CONST                 50
+      638 LOAD_CONST                 50
+      640 LOAD_CONST                 50
+      642 LOAD_CONST                 50
+      644 PRECALL                    
+      646 CACHE                      
+      648 CALL                       
+      650 CACHE                      
+      652 CACHE                      
+      654 CACHE                      
+      656 CACHE                      
+      658 POP_TOP                    
+      660 LOAD_FAST                  self
+      662 LOAD_ATTR                  vBoxLayout
+      664 CACHE                      
+      666 CACHE                      
+      668 CACHE                      
+      670 CACHE                      
+      672 LOAD_METHOD                setSpacing
+      674 CACHE                      
+      676 CACHE                      
+      678 CACHE                      
+      680 CACHE                      
+      682 CACHE                      
+      684 CACHE                      
+      686 CACHE                      
+      688 CACHE                      
+      690 CACHE                      
+      692 CACHE                      
+      694 LOAD_CONST                 50
+      696 PRECALL                    
+      698 CACHE                      
+      700 CALL                       
+      702 CACHE                      
+      704 CACHE                      
+      706 CACHE                      
+      708 CACHE                      
+      710 POP_TOP                    
+      712 LOAD_FAST                  self
+      714 LOAD_METHOD                _set_selected
+      716 CACHE                      
+      718 CACHE                      
+      720 CACHE                      
+      722 CACHE                      
+      724 CACHE                      
+      726 CACHE                      
+      728 CACHE                      
+      730 CACHE                      
+      732 CACHE                      
+      734 CACHE                      
+      736 LOAD_FAST                  self
+      738 LOAD_ATTR                  effect_raw_list
+      740 CACHE                      
+      742 CACHE                      
+      744 CACHE                      
+      746 CACHE                      
+      748 LOAD_FAST                  pix_flag_index
+      750 BINARY_SUBSCR              
+      752 CACHE                      
+      754 CACHE                      
+      756 CACHE                      
+      758 CACHE                      
+      760 PRECALL                    
+      762 CACHE                      
+      764 CALL                       
+      766 CACHE                      
+      768 CACHE                      
+      770 CACHE                      
+      772 CACHE                      
+      774 POP_TOP                    
+      776 LOAD_FAST                  self
+      778 LOAD_METHOD                setObjectName
+      780 CACHE                      
+      782 CACHE                      
+      784 CACHE                      
+      786 CACHE                      
+      788 CACHE                      
+      790 CACHE                      
+      792 CACHE                      
+      794 CACHE                      
+      796 CACHE                      
+      798 CACHE                      
+      800 LOAD_CONST                 "effect_dialog"
+      802 PRECALL                    
+      804 CACHE                      
+      806 CALL                       
+      808 CACHE                      
+      810 CACHE                      
+      812 CACHE                      
+      814 CACHE                      
+      816 POP_TOP                    
+      818 LOAD_GLOBAL                StyleSheet
+      820 CACHE                      
+      822 CACHE                      
+      824 CACHE                      
+      826 CACHE                      
+      828 CACHE                      
+      830 LOAD_ATTR                  EFFECT_DIALOG
+      832 CACHE                      
+      834 CACHE                      
+      836 CACHE                      
+      838 CACHE                      
+      840 LOAD_METHOD                apply
+      842 CACHE                      
+      844 CACHE                      
+      846 CACHE                      
+      848 CACHE                      
+      850 CACHE                      
+      852 CACHE                      
+      854 CACHE                      
+      856 CACHE                      
+      858 CACHE                      
+      860 CACHE                      
+      862 LOAD_FAST                  self
+      864 PRECALL                    
+      866 CACHE                      
+      868 CALL                       
+      870 CACHE                      
+      872 CACHE                      
+      874 CACHE                      
+      876 CACHE                      
+      878 POP_TOP                    
+      880 LOAD_FAST                  self
+      882 LOAD_METHOD                setWindowTitle
+      884 CACHE                      
+      886 CACHE                      
+      888 CACHE                      
+      890 CACHE                      
+      892 CACHE                      
+      894 CACHE                      
+      896 CACHE                      
+      898 CACHE                      
+      900 CACHE                      
+      902 CACHE                      
+      904 LOAD_FAST                  self
+      906 LOAD_METHOD                tr
+      908 CACHE                      
+      910 CACHE                      
+      912 CACHE                      
+      914 CACHE                      
+      916 CACHE                      
+      918 CACHE                      
+      920 CACHE                      
+      922 CACHE                      
+      924 CACHE                      
+      926 CACHE                      
+      928 LOAD_CONST                 "Nollie Effect"
+      930 PRECALL                    
+      932 CACHE                      
+      934 CALL                       
+      936 CACHE                      
+      938 CACHE                      
+      940 CACHE                      
+      942 CACHE                      
+      944 PRECALL                    
+      946 CACHE                      
+      948 CALL                       
+      950 CACHE                      
+      952 CACHE                      
+      954 CACHE                      
+      956 CACHE                      
+      958 POP_TOP                    
+      960 LOAD_CONST                 None
+      962 RETURN_VALUE               
+    == code createWaterfall line 177 args=('self',)
+        0 MAKE_CELL                  self
+        2 RESUME                     
+        4 LOAD_GLOBAL                NULL + QWidget
+        6 CACHE                      
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 CACHE                      
+       16 PRECALL                    
+       18 CACHE                      
+       20 CALL                       
+       22 CACHE                      
+       24 CACHE                      
+       26 CACHE                      
+       28 CACHE                      
+       30 STORE_FAST                 w
+       32 LOAD_GLOBAL                NULL + WaterfallLayout
+       34 CACHE                      
+       36 CACHE                      
+       38 CACHE                      
+       40 CACHE                      
+       42 CACHE                      
+       44 LOAD_FAST                  w
+       46 LOAD_CONST                 True
+       48 PRECALL                    
+       50 CACHE                      
+       52 CALL                       
+       54 CACHE                      
+       56 CACHE                      
+       58 CACHE                      
+       60 CACHE                      
+       62 STORE_FAST                 layout
+       64 LOAD_FAST                  layout
+       66 LOAD_METHOD                setHorizontalSpacing
+       68 CACHE                      
+       70 CACHE                      
+       72 CACHE                      
+       74 CACHE                      
+       76 CACHE                      
+       78 CACHE                      
+       80 CACHE                      
+       82 CACHE                      
+       84 CACHE                      
+       86 CACHE                      
+       88 LOAD_CONST                 16
+       90 PRECALL                    
+       92 CACHE                      
+       94 CALL                       
+       96 CACHE                      
+       98 CACHE                      
+      100 CACHE                      
+      102 CACHE                      
+      104 POP_TOP                    
+      106 LOAD_FAST                  layout
+      108 LOAD_METHOD                setVerticalSpacing
+      110 CACHE                      
+      112 CACHE                      
+      114 CACHE                      
+      116 CACHE                      
+      118 CACHE                      
+      120 CACHE                      
+      122 CACHE                      
+      124 CACHE                      
+      126 CACHE                      
+      128 CACHE                      
+      130 LOAD_CONST                 16
+      132 PRECALL                    
+      134 CACHE                      
+      136 CALL                       
+      138 CACHE                      
+      140 CACHE                      
+      142 CACHE                      
+      144 CACHE                      
+      146 POP_TOP                    
+      148 LOAD_FAST                  layout
+      150 LOAD_METHOD                setContentsMargins
+      152 CACHE                      
+      154 CACHE                      
+      156 CACHE                      
+      158 CACHE                      
+      160 CACHE                      
+      162 CACHE                      
+      164 CACHE                      
+      166 CACHE                      
+      168 CACHE                      
+      170 CACHE                      
+      172 LOAD_CONST                 0
+      174 LOAD_CONST                 0
+      176 LOAD_CONST                 0
+      178 LOAD_CONST                 0
+      180 PRECALL                    
+      182 CACHE                      
+      184 CALL                       
+      186 CACHE                      
+      188 CACHE                      
+      190 CACHE                      
+      192 CACHE                      
+      194 POP_TOP                    
+      196 LOAD_GLOBAL                NULL + enumerate
+      198 CACHE                      
+      200 CACHE                      
+      202 CACHE                      
+      204 CACHE                      
+      206 CACHE                      
+      208 LOAD_DEREF                 self
+      210 LOAD_ATTR                  effect_raw_list
+      212 CACHE                      
+      214 CACHE                      
+      216 CACHE                      
+      218 CACHE                      
+      220 PRECALL                    
+      222 CACHE                      
+      224 CALL                       
+      226 CACHE                      
+      228 CACHE                      
+      230 CACHE                      
+      232 CACHE                      
+      234 GET_ITER                   
+      236 FOR_ITER                   to 506
+      238 UNPACK_SEQUENCE            
+      240 CACHE                      
+      242 STORE_FAST                 idx
+      244 STORE_FAST                 raw
+      246 LOAD_GLOBAL                NULL + EffectTile
+      248 CACHE                      
+      250 CACHE                      
+      252 CACHE                      
+      254 CACHE                      
+      256 CACHE                      
+      258 LOAD_DEREF                 self
+      260 LOAD_METHOD                _load_pixmap
+      262 CACHE                      
+      264 CACHE                      
+      266 CACHE                      
+      268 CACHE                      
+      270 CACHE                      
+      272 CACHE                      
+      274 CACHE                      
+      276 CACHE                      
+      278 CACHE                      
+      280 CACHE                      
+      282 LOAD_FAST                  raw
+      284 PRECALL                    
+      286 CACHE                      
+      288 CALL                       
+      290 CACHE                      
+      292 CACHE                      
+      294 CACHE                      
+      296 CACHE                      
+      298 LOAD_DEREF                 self
+      300 LOAD_ATTR                  effect_name_list
+      302 CACHE                      
+      304 CACHE                      
+      306 CACHE                      
+      308 CACHE                      
+      310 LOAD_FAST                  idx
+      312 BINARY_SUBSCR              
+      314 CACHE                      
+      316 CACHE                      
+      318 CACHE                      
+      320 CACHE                      
+      322 PRECALL                    
+      324 CACHE                      
+      326 CALL                       
+      328 CACHE                      
+      330 CACHE                      
+      332 CACHE                      
+      334 CACHE                      
+      336 STORE_FAST                 tile
+      338 LOAD_FAST                  tile
+      340 LOAD_METHOD                setObjectName
+      342 CACHE                      
+      344 CACHE                      
+      346 CACHE                      
+      348 CACHE                      
+      350 CACHE                      
+      352 CACHE                      
+      354 CACHE                      
+      356 CACHE                      
+      358 CACHE                      
+      360 CACHE                      
+      362 LOAD_FAST                  raw
+      364 PRECALL                    
+      366 CACHE                      
+      368 CALL                       
+      370 CACHE                      
+      372 CACHE                      
+      374 CACHE                      
+      376 CACHE                      
+      378 POP_TOP                    
+      380 LOAD_FAST                  tile
+      382 LOAD_ATTR                  clicked
+      384 CACHE                      
+      386 CACHE                      
+      388 CACHE                      
+      390 CACHE                      
+      392 LOAD_METHOD                connect
+      394 CACHE                      
+      396 CACHE                      
+      398 CACHE                      
+      400 CACHE                      
+      402 CACHE                      
+      404 CACHE                      
+      406 CACHE                      
+      408 CACHE                      
+      410 CACHE                      
+      412 CACHE                      
+      414 LOAD_FAST                  raw
+      416 BUILD_TUPLE                
+      418 LOAD_CLOSURE               self
+      420 BUILD_TUPLE                
+      422 LOAD_CONST                 <Code311 code object <lambda> at 0x1bcb17697b0, file app\view\nollie_device\dev_effect_interface.py>, line 187
+      424 MAKE_FUNCTION              default, closure
+      426 PRECALL                    
+      428 CACHE                      
+      430 CALL                       
+      432 CACHE                      
+      434 CACHE                      
+      436 CACHE                      
+      438 CACHE                      
+      440 POP_TOP                    
+      442 LOAD_FAST                  tile
+      444 LOAD_DEREF                 self
+      446 LOAD_ATTR                  _tiles
+      448 CACHE                      
+      450 CACHE                      
+      452 CACHE                      
+      454 CACHE                      
+      456 LOAD_FAST                  raw
+      458 STORE_SUBSCR               
+      460 CACHE                      
+      462 LOAD_FAST                  layout
+      464 LOAD_METHOD                addWidget
+      466 CACHE                      
+      468 CACHE                      
+      470 CACHE                      
+      472 CACHE                      
+      474 CACHE                      
+      476 CACHE                      
+      478 CACHE                      
+      480 CACHE                      
+      482 CACHE                      
+      484 CACHE                      
+      486 LOAD_FAST                  tile
+      488 PRECALL                    
+      490 CACHE                      
+      492 CALL                       
+      494 CACHE                      
+      496 CACHE                      
+      498 CACHE                      
+      500 CACHE                      
+      502 POP_TOP                    
+      504 JUMP_BACKWARD              to 236
+      506 LOAD_FAST                  w
+      508 RETURN_VALUE               
+      == code <lambda> line 187 args=('raw',)
+          0 COPY_FREE_VARS             
+          2 RESUME                     
+          4 LOAD_DEREF                 self
+          6 LOAD_METHOD                _on_tile_clicked
+          8 CACHE                      
+         10 CACHE                      
+         12 CACHE                      
+         14 CACHE                      
+         16 CACHE                      
+         18 CACHE                      
+         20 CACHE                      
+         22 CACHE                      
+         24 CACHE                      
+         26 CACHE                      
+         28 LOAD_FAST                  raw
+         30 PRECALL                    
+         32 CACHE                      
+         34 CALL                       
+         36 CACHE                      
+         38 CACHE                      
+         40 CACHE                      
+         42 CACHE                      
+         44 RETURN_VALUE               
+    == code _load_pixmap line 192 args=('raw',)
+        0 RESUME                     
+        2 LOAD_CONST                 "./app/images/effect/"
+        4 LOAD_FAST                  raw
+        6 FORMAT_VALUE               
+        8 LOAD_CONST                 ".png"
+       10 BUILD_STRING               
+       12 STORE_FAST                 path
+       14 LOAD_GLOBAL                os
+       16 CACHE                      
+       18 CACHE                      
+       20 CACHE                      
+       22 CACHE                      
+       24 CACHE                      
+       26 LOAD_ATTR                  path
+       28 CACHE                      
+       30 CACHE                      
+       32 CACHE                      
+       34 CACHE                      
+       36 LOAD_METHOD                exists
+       38 CACHE                      
+       40 CACHE                      
+       42 CACHE                      
+       44 CACHE                      
+       46 CACHE                      
+       48 CACHE                      
+       50 CACHE                      
+       52 CACHE                      
+       54 CACHE                      
+       56 CACHE                      
+       58 LOAD_FAST                  path
+       60 PRECALL                    
+       62 CACHE                      
+       64 CALL                       
+       66 CACHE                      
+       68 CACHE                      
+       70 CACHE                      
+       72 CACHE                      
+       74 POP_JUMP_FORWARD_IF_TRUE   to 80
+       76 LOAD_CONST                 "./app/images/effect/default.png"
+       78 STORE_FAST                 path
+       80 LOAD_GLOBAL                NULL + QPixmap
+       82 CACHE                      
+       84 CACHE                      
+       86 CACHE                      
+       88 CACHE                      
+       90 CACHE                      
+       92 LOAD_FAST                  path
+       94 PRECALL                    
+       96 CACHE                      
+       98 CALL                       
+      100 CACHE                      
+      102 CACHE                      
+      104 CACHE                      
+      106 CACHE                      
+      108 RETURN_VALUE               
+    == code _on_tile_clicked line 199 args=('self', 'raw')
+        0 RESUME                     
+        2 LOAD_FAST                  raw
+        4 LOAD_FAST                  self
+        6 LOAD_ATTR                  effect_raw_list
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 CACHE                      
+       16 LOAD_FAST                  self
+       18 LOAD_ATTR                  pix_flag_index
+       20 CACHE                      
+       22 CACHE                      
+       24 CACHE                      
+       26 CACHE                      
+       28 BINARY_SUBSCR              
+       30 CACHE                      
+       32 CACHE                      
+       34 CACHE                      
+       36 CACHE                      
+       38 COMPARE_OP                 ==
+       40 CACHE                      
+       42 CACHE                      
+       44 POP_JUMP_FORWARD_IF_FALSE  to 50
+       46 LOAD_CONST                 None
+       48 RETURN_VALUE               
+       50 LOAD_FAST                  self
+       52 LOAD_ATTR                  effect_raw_list
+       54 CACHE                      
+       56 CACHE                      
+       58 CACHE                      
+       60 CACHE                      
+       62 LOAD_METHOD                index
+       64 CACHE                      
+       66 CACHE                      
+       68 CACHE                      
+       70 CACHE                      
+       72 CACHE                      
+       74 CACHE                      
+       76 CACHE                      
+       78 CACHE                      
+       80 CACHE                      
+       82 CACHE                      
+       84 LOAD_FAST                  raw
+       86 PRECALL                    
+       88 CACHE                      
+       90 CALL                       
+       92 CACHE                      
+       94 CACHE                      
+       96 CACHE                      
+       98 CACHE                      
+      100 LOAD_FAST                  self
+      102 STORE_ATTR                 pix_flag_index
+      104 CACHE                      
+      106 CACHE                      
+      108 CACHE                      
+      110 CACHE                      
+      112 LOAD_FAST                  self
+      114 LOAD_METHOD                _set_selected
+      116 CACHE                      
+      118 CACHE                      
+      120 CACHE                      
+      122 CACHE                      
+      124 CACHE                      
+      126 CACHE                      
+      128 CACHE                      
+      130 CACHE                      
+      132 CACHE                      
+      134 CACHE                      
+      136 LOAD_FAST                  raw
+      138 PRECALL                    
+      140 CACHE                      
+      142 CALL                       
+      144 CACHE                      
+      146 CACHE                      
+      148 CACHE                      
+      150 CACHE                      
+      152 POP_TOP                    
+      154 LOAD_FAST                  self
+      156 LOAD_ATTR                  effectSelected
+      158 CACHE                      
+      160 CACHE                      
+      162 CACHE                      
+      164 CACHE                      
+      166 LOAD_METHOD                emit
+      168 CACHE                      
+      170 CACHE                      
+      172 CACHE                      
+      174 CACHE                      
+      176 CACHE                      
+      178 CACHE                      
+      180 CACHE                      
+      182 CACHE                      
+      184 CACHE                      
+      186 CACHE                      
+      188 LOAD_FAST                  self
+      190 LOAD_ATTR                  pix_flag_index
+      192 CACHE                      
+      194 CACHE                      
+      196 CACHE                      
+      198 CACHE                      
+      200 PRECALL                    
+      202 CACHE                      
+      204 CALL                       
+      206 CACHE                      
+      208 CACHE                      
+      210 CACHE                      
+      212 CACHE                      
+      214 POP_TOP                    
+      216 LOAD_CONST                 None
+      218 RETURN_VALUE               
+    == code _set_selected line 207 args=('self', 'raw')
+        0 RESUME                     
+        2 LOAD_FAST                  self
+        4 LOAD_ATTR                  _tiles
+        6 CACHE                      
+        8 CACHE                      
+       10 CACHE                      
+       12 CACHE                      
+       14 LOAD_METHOD                items
+       16 CACHE                      
+       18 CACHE                      
+       20 CACHE                      
+       22 CACHE                      
+       24 CACHE                      
+       26 CACHE                      
+       28 CACHE                      
+       30 CACHE                      
+       32 CACHE                      
+       34 CACHE                      
+       36 PRECALL                    
+       38 CACHE                      
+       40 CALL                       
+       42 CACHE                      
+       44 CACHE                      
+       46 CACHE                      
+       48 CACHE                      
+       50 GET_ITER                   
+       52 FOR_ITER                   to 114
+       54 UNPACK_SEQUENCE            
+       56 CACHE                      
+       58 STORE_FAST                 name
+       60 STORE_FAST                 tile
+       62 LOAD_FAST                  tile
+       64 LOAD_METHOD                setSelected
+       66 CACHE                      
+       68 CACHE                      
+       70 CACHE                      
+       72 CACHE                      
+       74 CACHE                      
+       76 CACHE                      
+       78 CACHE                      
+       80 CACHE                      
+       82 CACHE                      
+       84 CACHE                      
+       86 LOAD_FAST                  name
+       88 LOAD_FAST                  raw
+       90 COMPARE_OP                 ==
+       92 CACHE                      
+       94 CACHE                      
+       96 PRECALL                    
+       98 CACHE                      
+      100 CALL                       
+      102 CACHE                      
+      104 CACHE                      
+      106 CACHE                      
+      108 CACHE                      
+      110 POP_TOP                    
+      112 JUMP_BACKWARD              to 52
+      114 LOAD_CONST                 None
+      116 RETURN_VALUE               

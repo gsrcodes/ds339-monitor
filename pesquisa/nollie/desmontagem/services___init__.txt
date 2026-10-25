@@ -1,0 +1,26 @@
+== code <module> line 1 args=()
+    0 RESUME                     
+    2 LOAD_CONST                 "\n应用层服务：设备会话、启动流程编排（与 Qt Widget 解耦的入口）。\n\n后续可逐步把 HomeInterface / DevMainWindow 里的分支迁到此处。\n"
+    4 STORE_NAME                 __doc__
+    6 LOAD_CONST                 1
+    8 LOAD_CONST                 ('DeviceSession',)
+   10 IMPORT_NAME                device_session
+   12 IMPORT_FROM                DeviceSession
+   14 STORE_NAME                 DeviceSession
+   16 POP_TOP                    
+   18 LOAD_CONST                 1
+   20 LOAD_CONST                 ('DeviceFlowService', 'LaunchDecision', 'LaunchKind')
+   22 IMPORT_NAME                device_flow
+   24 IMPORT_FROM                DeviceFlowService
+   26 STORE_NAME                 DeviceFlowService
+   28 IMPORT_FROM                LaunchDecision
+   30 STORE_NAME                 LaunchDecision
+   32 IMPORT_FROM                LaunchKind
+   34 STORE_NAME                 LaunchKind
+   36 POP_TOP                    
+   38 BUILD_LIST                 
+   40 LOAD_CONST                 ('DeviceSession', 'DeviceFlowService', 'LaunchDecision', 'LaunchKind')
+   42 LIST_EXTEND                
+   44 STORE_NAME                 __all__
+   46 LOAD_CONST                 None
+   48 RETURN_VALUE               

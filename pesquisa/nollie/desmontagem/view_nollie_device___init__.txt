@@ -1,0 +1,15 @@
+== code <module> line 1 args=()
+    0 RESUME                     
+    2 LOAD_CONST                 "\nNollie 单设备控制台 UI（MSFluentWindow + Home / Led / Canvas / Backup 等）。\n\n后续若增加其他硬件产品线，可并列新建包（如 ``app/view/other_device/``），与主窗口路由解耦。\n"
+    4 STORE_NAME                 __doc__
+    6 LOAD_CONST                 0
+    8 LOAD_CONST                 ('DevMainWindow',)
+   10 IMPORT_NAME                app.view.nollie_device.main_window
+   12 IMPORT_FROM                DevMainWindow
+   14 STORE_NAME                 DevMainWindow
+   16 POP_TOP                    
+   18 LOAD_CONST                 "DevMainWindow"
+   20 BUILD_LIST                 
+   22 STORE_NAME                 __all__
+   24 LOAD_CONST                 None
+   26 RETURN_VALUE               

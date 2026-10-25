@@ -1,0 +1,2902 @@
+== code <module> line 1 args=()
+    0 RESUME                     
+    2 SETUP_ANNOTATIONS          
+    4 LOAD_CONST                 '\nNollie device catalog + HID protocol constants.\n\nThis module is **data-only** — no runtime side effects beyond module-level\ndictionaries and a handful of helper lookup functions.\n\nLayout\n------\n    1. HID commands            (everything named HID_*)\n    2. Bootloader first-byte   (PROM / VERIFY — not HID_*)\n    3. Flash status + sizing + timing  (FLASH_STATUS_*, FLASH_PKT_LEN, …)\n    4. OTA timing              (OTA_*)\n    5. On-flash FSEQ animation layout  (FSEQ_BASE_ADDR, GD25Q128_SIZE)\n    6. Device catalog (N_DEV_USB_CONFIG) + name groupings\n    7. Firmware version target (per-device + helper)\n    8. Per-device feature matrix + GPIO labels (+ helpers)\n    9. FPS ↔ ms-per-frame bidirectional maps\n   10. Channel name ↔ hardware index maps\n   11. Voltage-data parsing spec\n   12. Empty-config template (N_DEV_CONFIG_JSON)\n   13. Device port map (Info page visual status)\n\nWhen adding a new controller:\n    - Register it in N_DEV_USB_CONFIG with VID/PID/interface + channel layout\n    - If it\'s a "current" product: add to N_DEV_CURRENT_NAMES\n    - Add channel maps to N_DEV_CH_NAME and N_DEV_NAME_CH\n    - Add voltage-field spec to N_DEV_VOLTAGE_SPEC\n    - Flag its capabilities in N_DEV_FEATURES\n    - Optionally pin its firmware target in N_DEV_FIRMWARE_VERSION\n    - Optionally add a port map to N_DEV_PORT_MAP (Info 页设备状态图)\n'
+    6 STORE_NAME                 __doc__
+    8 LOAD_CONST                 255
+   10 STORE_NAME                 HID_SHOW_LED
+   12 LOAD_CONST                 253
+   14 STORE_NAME                 HID_JUMP_BL
+   16 LOAD_CONST                 252
+   18 STORE_NAME                 HID_GET_CONFIG
+   20 LOAD_CONST                 250
+   22 STORE_NAME                 HID_SET_EFFECT
+   24 LOAD_CONST                 249
+   26 STORE_NAME                 HID_GET_EFFECT
+   28 LOAD_CONST                 248
+   30 STORE_NAME                 HID_SET_LED_INDEX
+   32 LOAD_CONST                 247
+   34 STORE_NAME                 HID_GET_LED_INDEX
+   36 LOAD_CONST                 246
+   38 STORE_NAME                 HID_SET_CORE
+   40 LOAD_CONST                 245
+   42 STORE_NAME                 HID_GET_CORE
+   44 LOAD_CONST                 244
+   46 STORE_NAME                 HID_FLASH_OPERATION
+   48 LOAD_CONST                 243
+   50 STORE_NAME                 HID_REC_CTRL
+   52 LOAD_CONST                 242
+   54 STORE_NAME                 HID_SET_LED_STREAM
+   56 LOAD_CONST                 8
+   58 STORE_NAME                 LED_STREAM_HDR_LEN
+   60 LOAD_CONST                 1
+   62 STORE_NAME                 LED_STREAM_FLAG_SHOW
+   64 LOAD_CONST                 1
+   66 STORE_NAME                 HID_CONFIG_VERSION
+   68 LOAD_CONST                 2
+   70 STORE_NAME                 HID_CONFIG_FW_VERSION
+   72 LOAD_CONST                 3
+   74 STORE_NAME                 HID_CONFIG_CRASH_FLAG
+   76 LOAD_CONST                 26
+   78 STORE_NAME                 HID_CONFIG_VOLTAGE
+   80 LOAD_CONST                 1
+   82 STORE_NAME                 HID_EFFECT_MODE
+   84 LOAD_CONST                 2
+   86 STORE_NAME                 HID_EFFECT_CH_PARAM
+   88 LOAD_CONST                 3
+   90 STORE_NAME                 HID_EFFECT_CANVAS
+   92 LOAD_CONST                 4
+   94 STORE_NAME                 HID_EFFECT_CANVAS_LEN
+   96 LOAD_CONST                 5
+   98 STORE_NAME                 HID_EFFECT_START_CANVAS_LEN
+  100 LOAD_CONST                 6
+  102 STORE_NAME                 HID_EFFECT_FPS
+  104 LOAD_CONST                 7
+  106 STORE_NAME                 HID_EFFECT_START_FPS
+  108 LOAD_CONST                 8
+  110 STORE_NAME                 HID_EFFECT_LED_NUM
+  112 LOAD_CONST                 9
+  114 STORE_NAME                 HID_EFFECT_ZLED_NUM
+  116 LOAD_CONST                 10
+  118 STORE_NAME                 HID_EFFECT_GPIO
+  120 LOAD_CONST                 11
+  122 STORE_NAME                 HID_EFFECT_START_CANVAS
+  124 LOAD_CONST                 13
+  126 STORE_NAME                 HID_EFFECT_PALETTE
+  128 LOAD_CONST                 14
+  130 STORE_NAME                 HID_EFFECT_DYNAMIC_1
+  132 LOAD_CONST                 15
+  134 STORE_NAME                 HID_EFFECT_DYNAMIC_2
+  136 LOAD_CONST                 16
+  138 STORE_NAME                 HID_EFFECT_FSEQ_LED_NUM
+  140 LOAD_CONST                 17
+  142 STORE_NAME                 HID_EFFECT_FSEQ_INFO
+  144 LOAD_CONST                 18
+  146 STORE_NAME                 HID_EFFECT_FRAME_DELAY
+  148 LOAD_CONST                 19
+  150 STORE_NAME                 HID_EFFECT_BOOT_PLAYLIST
+  152 LOAD_CONST                 20
+  154 STORE_NAME                 HID_EFFECT_LED_DETECT
+  156 LOAD_CONST                 32
+  158 STORE_NAME                 HID_EFFECT_INIT_START
+  160 LOAD_CONST                 33
+  162 STORE_NAME                 HID_EFFECT_RESTORE_0
+  164 LOAD_CONST                 34
+  166 STORE_NAME                 HID_EFFECT_RESTORE_1
+  168 LOAD_CONST                 35
+  170 STORE_NAME                 HID_EFFECT_SOFT_RESET
+  172 LOAD_CONST                 0
+  174 STORE_NAME                 FX_OL
+  176 LOAD_CONST                 1
+  178 STORE_NAME                 FX_HW
+  180 LOAD_CONST                 2
+  182 STORE_NAME                 FX_SL
+  184 LOAD_CONST                 3
+  186 STORE_NAME                 FX_FSEQ
+  188 LOAD_CONST                 1
+  190 STORE_NAME                 HID_CORE_FIRST_UNIX
+  192 LOAD_CONST                 2
+  194 STORE_NAME                 HID_CORE_UNIX
+  196 LOAD_CONST                 3
+  198 STORE_NAME                 HID_CORE_WRITE_COUNT
+  200 LOAD_CONST                 4
+  202 STORE_NAME                 HID_CORE_NAME_COUNT
+  204 LOAD_CONST                 5
+  206 STORE_NAME                 HID_CORE_NAME_LEN
+  208 LOAD_CONST                 6
+  210 STORE_NAME                 HID_CORE_NAME
+  212 LOAD_CONST                 7
+  214 STORE_NAME                 HID_CORE_VMAP_NAME
+  216 LOAD_CONST                 22
+  218 STORE_NAME                 HID_CORE_OL_IDLE
+  220 LOAD_CONST                 1
+  222 STORE_NAME                 HID_FLASH_READ
+  224 LOAD_CONST                 2
+  226 STORE_NAME                 HID_FLASH_WRITE
+  228 LOAD_CONST                 3
+  230 STORE_NAME                 HID_FLASH_STATUS
+  232 LOAD_CONST                 4
+  234 STORE_NAME                 HID_FLASH_INFO
+  236 LOAD_CONST                 5
+  238 STORE_NAME                 HID_FLASH_ERASE
+  240 LOAD_CONST                 6
+  242 STORE_NAME                 HID_FLASH_WRITE_RAW
+  244 LOAD_CONST                 7
+  246 STORE_NAME                 HID_FLASH_CRC
+  248 LOAD_CONST                 1
+  250 STORE_NAME                 HID_REC_ECHO
+  252 LOAD_CONST                 2
+  254 STORE_NAME                 HID_REC_PLAY
+  256 LOAD_CONST                 3
+  258 STORE_NAME                 HID_REC_STOP
+  260 LOAD_CONST                 4
+  262 STORE_NAME                 HID_REC_STATUS
+  264 LOAD_CONST                 0
+  266 STORE_NAME                 FSEQ_PLAY_OK
+  268 LOAD_CONST                 1
+  270 STORE_NAME                 FSEQ_PLAY_ERASED
+  272 LOAD_CONST                 2
+  274 STORE_NAME                 FSEQ_PLAY_BUSY
+  276 LOAD_CONST                 3
+  278 STORE_NAME                 FSEQ_PLAY_NO_GEOMETRY
+  280 LOAD_CONST                 4
+  282 STORE_NAME                 FSEQ_PLAY_NO_FILE
+  284 LOAD_CONST                 5
+  286 STORE_NAME                 FSEQ_PLAY_BAD_HEADER
+  288 LOAD_CONST                 6
+  290 STORE_NAME                 FSEQ_PLAY_MAP_MISMATCH
+  292 LOAD_CONST                 7
+  294 STORE_NAME                 FSEQ_PLAY_COMPRESSED
+  296 LOAD_CONST                 8
+  298 STORE_NAME                 FSEQ_PLAY_READ_ERR
+  300 LOAD_CONST                 255
+  302 STORE_NAME                 FSEQ_PLAY_PENDING
+  304 LOAD_NAME                  FSEQ_PLAY_OK
+  306 LOAD_CONST                 ""
+  308 LOAD_NAME                  FSEQ_PLAY_ERASED
+  310 LOAD_CONST                 "animation was deleted"
+  312 LOAD_NAME                  FSEQ_PLAY_BUSY
+  314 LOAD_CONST                 "flash busy"
+  316 LOAD_NAME                  FSEQ_PLAY_NO_GEOMETRY
+  318 LOAD_CONST                 "channel map is empty (set per-channel LED counts)"
+  320 LOAD_NAME                  FSEQ_PLAY_NO_FILE
+  322 LOAD_CONST                 "no file on device"
+  324 LOAD_NAME                  FSEQ_PLAY_BAD_HEADER
+  326 LOAD_CONST                 "not a valid FSEQ v2 file"
+  328 LOAD_NAME                  FSEQ_PLAY_MAP_MISMATCH
+  330 LOAD_CONST                 "file channels do not match the channel map"
+  332 LOAD_NAME                  FSEQ_PLAY_COMPRESSED
+  334 LOAD_CONST                 "compressed FSEQ is not supported"
+  336 LOAD_NAME                  FSEQ_PLAY_READ_ERR
+  338 LOAD_CONST                 "flash read error"
+  340 LOAD_NAME                  FSEQ_PLAY_PENDING
+  342 LOAD_CONST                 "starting…"
+  344 BUILD_MAP                  
+  346 STORE_NAME                 FSEQ_PLAY_TEXT
+  348 BUILD_LIST                 
+  350 LOAD_CONST                 (129, 2, 0, 0)
+  352 LIST_EXTEND                
+  354 STORE_NAME                 HID_BOOTLOADER_CLEAR_CMD
+  356 BUILD_LIST                 
+  358 LOAD_CONST                 (131, 2, 0, 0)
+  360 LIST_EXTEND                
+  362 STORE_NAME                 HID_BOOTLOADER_REBOOT_CMD
+  364 LOAD_CONST                 132
+  366 STORE_NAME                 HID_BOOTLOADER_HEADER_CMD
+  368 LOAD_CONST                 b'NBE1'
+  370 STORE_NAME                 OTA_ENC_MAGIC
+  372 LOAD_CONST                 32
+  374 STORE_NAME                 OTA_ENC_HEADER_LEN
+  376 LOAD_CONST                 51200
+  378 STORE_NAME                 OTA_ENC_PLAIN_MAX
+  380 LOAD_CONST                 255
+  382 STORE_NAME                 HID_LED_INDEX_BYTES_MAX
+  384 LOAD_CONST                 64
+  386 STORE_NAME                 HID_READ_DEFAULT_LEN
+  388 LOAD_CONST                 20
+  390 STORE_NAME                 HID_READ_DEFAULT_TIMEOUT_MS
+  392 LOAD_CONST                 64
+  394 STORE_NAME                 HID_CLEAR_BUFFER_READ_LEN
+  396 LOAD_CONST                 10
+  398 STORE_NAME                 HID_CLEAR_BUFFER_READ_TIMEOUT_MS
+  400 LOAD_CONST                 128
+  402 STORE_NAME                 PROM
+  404 LOAD_CONST                 130
+  406 STORE_NAME                 VERIFY
+  408 LOAD_CONST                 0
+  410 STORE_NAME                 FLASH_STATUS_OK
+  412 LOAD_CONST                 1
+  414 STORE_NAME                 FLASH_STATUS_BUSY
+  416 LOAD_CONST                 2
+  418 STORE_NAME                 FLASH_STATUS_ERROR
+  420 LOAD_CONST                 3
+  422 STORE_NAME                 FLASH_STATUS_ADDR_ERR
+  424 LOAD_CONST                 4
+  426 STORE_NAME                 FLASH_STATUS_LEN_ERR
+  428 LOAD_CONST                 5
+  430 STORE_NAME                 FLASH_STATUS_NO_DEV
+  432 LOAD_CONST                 6
+  434 STORE_NAME                 FLASH_STATUS_RETRY
+  436 LOAD_CONST                 1024
+  438 STORE_NAME                 FLASH_PKT_LEN
+  440 LOAD_CONST                 1016
+  442 STORE_NAME                 FLASH_PAYLOAD_MAX
+  444 LOAD_CONST                 65536
+  446 STORE_NAME                 FLASH_ERASE_BLOCK_64K
+  448 LOAD_CONST                 2.0
+  450 STORE_NAME                 FLASH_ERASE_BLOCK_TIMEOUT_S
+  452 LOAD_CONST                 0.05
+  454 STORE_NAME                 FLASH_WRITE_POLL_INTERVAL_S
+  456 LOAD_CONST                 10.0
+  458 STORE_NAME                 FLASH_WRITE_DEFAULT_TIMEOUT_S
+  460 LOAD_CONST                 5.0
+  462 STORE_NAME                 FLASH_WRITE_RAW_DEFAULT_TIMEOUT_S
+  464 LOAD_CONST                 200
+  466 STORE_NAME                 FLASH_HID_READ_SHORT_TIMEOUT_MS
+  468 LOAD_CONST                 500
+  470 STORE_NAME                 FLASH_HID_READ_CHUNK_TIMEOUT_MS
+  472 LOAD_CONST                 60
+  474 STORE_NAME                 OTA_BOOTLOADER_PAYLOAD_CHUNK
+  476 LOAD_CONST                 200
+  478 STORE_NAME                 OTA_READ_ACK_TIMEOUT_MS
+  480 LOAD_CONST                 80
+  482 STORE_NAME                 OTA_REBOOT_READ_TIMEOUT_MS
+  484 LOAD_CONST                 500
+  486 STORE_NAME                 OTA_END_READ_TIMEOUT_MS
+  488 LOAD_CONST                 100
+  490 STORE_NAME                 OTA_CLEAR_READ_TIMEOUT_MS
+  492 LOAD_CONST                 0.01
+  494 STORE_NAME                 OTA_INTER_PACKET_SLEEP_S
+  496 LOAD_CONST                 0.01
+  498 STORE_NAME                 OTA_AUTO_UPDATE_STAGE_SLEEP_S
+  500 LOAD_CONST                 255
+  502 STORE_NAME                 OTA_VERIFY_EDGE_PAD
+  504 LOAD_CONST                 65536
+  506 STORE_NAME                 FSEQ_BASE_ADDR
+  508 LOAD_CONST                 16777216
+  510 STORE_NAME                 GD25Q128_SIZE
+  512 LOAD_CONST                 "device_name"
+  514 LOAD_NAME                  str
+  516 LOAD_CONST                 "return"
+  518 LOAD_NAME                  int
+  520 BUILD_TUPLE                
+  522 LOAD_CONST                 <Code311 code object get_flash_size at 0x1c36ef1f230, file app\core_driver\n_dev_config.py>, line 261
+  524 MAKE_FUNCTION              annotation
+  526 STORE_NAME                 get_flash_size
+  528 LOAD_CONST                 "device_name"
+  530 LOAD_NAME                  str
+  532 LOAD_CONST                 "return"
+  534 LOAD_NAME                  int
+  536 BUILD_TUPLE                
+  538 LOAD_CONST                 <Code311 code object get_fseq_region_bytes at 0x1c36ef69a90, file app\core_driver\n_dev_config.py>, line 271
+  540 MAKE_FUNCTION              annotation
+  542 STORE_NAME                 get_fseq_region_bytes
+  544 BUILD_MAP                  
+  546 LOAD_CONST                 "Nollie1_old"
+  548 LOAD_CONST                 5842
+  550 LOAD_CONST                 7953
+  552 LOAD_CONST                 0
+  554 LOAD_CONST                 64
+  556 LOAD_CONST                 64
+  558 LOAD_CONST                 1
+  560 LOAD_CONST                 630
+  562 LOAD_CONST                 0
+  564 LOAD_CONST                 "Nollie1"
+  566 LOAD_CONST                 30
+  568 LOAD_CONST                 "USB"
+  570 LOAD_CONST                 "nollie"
+  572 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+  574 BUILD_CONST_KEY_MAP        
+  576 MAP_ADD                    
+  578 LOAD_CONST                 "Nollie8_old"
+  580 LOAD_CONST                 5842
+  582 LOAD_CONST                 7937
+  584 LOAD_CONST                 0
+  586 LOAD_CONST                 64
+  588 LOAD_CONST                 64
+  590 LOAD_CONST                 8
+  592 LOAD_CONST                 126
+  594 LOAD_CONST                 0
+  596 LOAD_CONST                 "Nollie8"
+  598 LOAD_CONST                 60
+  600 LOAD_CONST                 "USB"
+  602 LOAD_CONST                 "nollie"
+  604 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+  606 BUILD_CONST_KEY_MAP        
+  608 MAP_ADD                    
+  610 LOAD_CONST                 "Nollie16_old"
+  612 LOAD_CONST                 12385
+  614 LOAD_CONST                 18198
+  616 LOAD_CONST                 0
+  618 LOAD_CONST                 1024
+  620 LOAD_CONST                 64
+  622 LOAD_CONST                 16
+  624 LOAD_CONST                 256
+  626 LOAD_CONST                 0
+  628 LOAD_CONST                 "Nollie16"
+  630 LOAD_CONST                 120
+  632 LOAD_CONST                 "USB"
+  634 LOAD_CONST                 "nollie"
+  636 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+  638 BUILD_CONST_KEY_MAP        
+  640 MAP_ADD                    
+  642 LOAD_CONST                 "Nollie32_old_2024"
+  644 LOAD_CONST                 12385
+  646 LOAD_CONST                 18196
+  648 LOAD_CONST                 0
+  650 LOAD_CONST                 1024
+  652 LOAD_CONST                 64
+  654 LOAD_CONST                 32
+  656 LOAD_CONST                 256
+  658 LOAD_CONST                 0
+  660 LOAD_CONST                 "Nollie32"
+  662 LOAD_CONST                 120
+  664 LOAD_CONST                 "USB"
+  666 LOAD_CONST                 "nollie"
+  668 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+  670 BUILD_CONST_KEY_MAP        
+  672 MAP_ADD                    
+  674 LOAD_CONST                 "Nollie1_old_2025"
+  676 LOAD_CONST                 5845
+  678 LOAD_CONST                 7953
+  680 LOAD_CONST                 0
+  682 LOAD_CONST                 64
+  684 LOAD_CONST                 64
+  686 LOAD_CONST                 1
+  688 LOAD_CONST                 630
+  690 LOAD_CONST                 0
+  692 LOAD_CONST                 "Nollie1"
+  694 LOAD_CONST                 120
+  696 LOAD_CONST                 "USB"
+  698 LOAD_CONST                 "nollie"
+  700 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+  702 BUILD_CONST_KEY_MAP        
+  704 MAP_ADD                    
+  706 LOAD_CONST                 "Nollie8_old_2025"
+  708 LOAD_CONST                 5845
+  710 LOAD_CONST                 7937
+  712 LOAD_CONST                 0
+  714 LOAD_CONST                 64
+  716 LOAD_CONST                 64
+  718 LOAD_CONST                 8
+  720 LOAD_CONST                 126
+  722 LOAD_CONST                 0
+  724 LOAD_CONST                 "Nollie8"
+  726 LOAD_CONST                 60
+  728 LOAD_CONST                 "USB"
+  730 LOAD_CONST                 "nollie"
+  732 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+  734 BUILD_CONST_KEY_MAP        
+  736 MAP_ADD                    
+  738 LOAD_CONST                 "Nollie16_2025"
+  740 LOAD_CONST                 5845
+  742 LOAD_CONST                 18198
+  744 LOAD_CONST                 0
+  746 LOAD_CONST                 1024
+  748 LOAD_CONST                 64
+  750 LOAD_CONST                 16
+  752 LOAD_CONST                 256
+  754 LOAD_CONST                 0
+  756 LOAD_CONST                 "Nollie16"
+  758 LOAD_CONST                 120
+  760 LOAD_CONST                 "USB"
+  762 LOAD_CONST                 "nollie"
+  764 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+  766 BUILD_CONST_KEY_MAP        
+  768 MAP_ADD                    
+  770 LOAD_CONST                 "Nollie32_2025"
+  772 LOAD_CONST                 5845
+  774 LOAD_CONST                 18196
+  776 LOAD_CONST                 0
+  778 LOAD_CONST                 1024
+  780 LOAD_CONST                 64
+  782 LOAD_CONST                 32
+  784 LOAD_CONST                 256
+  786 LOAD_CONST                 0
+  788 LOAD_CONST                 "Nollie32"
+  790 LOAD_CONST                 120
+  792 LOAD_CONST                 "USB"
+  794 LOAD_CONST                 "nollie"
+  796 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+  798 BUILD_CONST_KEY_MAP        
+  800 MAP_ADD                    
+  802 LOAD_CONST                 "Nollie1"
+  804 LOAD_CONST                 5845
+  806 LOAD_CONST                 10753
+  808 LOAD_CONST                 2
+  810 LOAD_CONST                 64
+  812 LOAD_CONST                 64
+  814 LOAD_CONST                 1
+  816 LOAD_CONST                 630
+  818 LOAD_CONST                 0
+  820 LOAD_CONST                 "Nollie1"
+  822 LOAD_CONST                 120
+  824 LOAD_CONST                 "USB"
+  826 LOAD_CONST                 "nollie"
+  828 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+  830 BUILD_CONST_KEY_MAP        
+  832 MAP_ADD                    
+  834 LOAD_CONST                 "Nollie8"
+  836 LOAD_CONST                 5845
+  838 LOAD_CONST                 10760
+  840 LOAD_CONST                 2
+  842 LOAD_CONST                 64
+  844 LOAD_CONST                 64
+  846 LOAD_CONST                 8
+  848 LOAD_CONST                 126
+  850 LOAD_CONST                 0
+  852 LOAD_CONST                 "Nollie8"
+  854 LOAD_CONST                 60
+  856 LOAD_CONST                 "USB"
+  858 LOAD_CONST                 "nollie"
+  860 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+  862 BUILD_CONST_KEY_MAP        
+  864 MAP_ADD                    
+  866 LOAD_CONST                 "Nollie8Plus"
+  868 LOAD_CONST                 "Nollie8 Plus"
+  870 LOAD_CONST                 5845
+  872 LOAD_CONST                 37544
+  874 LOAD_CONST                 2
+  876 LOAD_CONST                 64
+  878 LOAD_CONST                 64
+  880 LOAD_CONST                 8
+  882 LOAD_CONST                 126
+  884 LOAD_CONST                 0
+  886 LOAD_CONST                 "Nollie8Plus"
+  888 LOAD_CONST                 120
+  890 LOAD_CONST                 "USB"
+  892 LOAD_CONST                 "nollie"
+  894 LOAD_CONST                 ('display_name', 'vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+  896 BUILD_CONST_KEY_MAP        
+  898 MAP_ADD                    
+  900 LOAD_CONST                 "G857D"
+  902 LOAD_CONST                 6790
+  904 LOAD_CONST                 58136
+  906 LOAD_CONST                 2
+  908 LOAD_CONST                 64
+  910 LOAD_CONST                 64
+  912 LOAD_CONST                 8
+  914 LOAD_CONST                 126
+  916 LOAD_CONST                 0
+  918 LOAD_CONST                 "G857D"
+  920 LOAD_CONST                 60
+  922 LOAD_CONST                 "USB"
+  924 LOAD_CONST                 "nollie"
+  926 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+  928 BUILD_CONST_KEY_MAP        
+  930 MAP_ADD                    
+  932 LOAD_CONST                 "Prism8"
+  934 LOAD_CONST                 5845
+  936 LOAD_CONST                 11272
+  938 LOAD_CONST                 2
+  940 LOAD_CONST                 64
+  942 LOAD_CONST                 64
+  944 LOAD_CONST                 8
+  946 LOAD_CONST                 126
+  948 LOAD_CONST                 0
+  950 LOAD_CONST                 "Nollie8"
+  952 LOAD_CONST                 60
+  954 LOAD_CONST                 "USB"
+  956 LOAD_CONST                 "nollie"
+  958 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+  960 BUILD_CONST_KEY_MAP        
+  962 MAP_ADD                    
+  964 LOAD_CONST                 "Nollie16"
+  966 LOAD_CONST                 5845
+  968 LOAD_CONST                 10774
+  970 LOAD_CONST                 0
+  972 LOAD_CONST                 1024
+  974 LOAD_CONST                 1024
+  976 LOAD_CONST                 16
+  978 LOAD_CONST                 256
+  980 LOAD_CONST                 0
+  982 LOAD_CONST                 "Nollie16"
+  984 LOAD_CONST                 120
+  986 LOAD_CONST                 "USB"
+  988 LOAD_CONST                 "nollie"
+  990 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+  992 BUILD_CONST_KEY_MAP        
+  994 MAP_ADD                    
+  996 LOAD_CONST                 "Nollie32"
+  998 LOAD_CONST                 5845
+ 1000 LOAD_CONST                 10802
+ 1002 LOAD_CONST                 0
+ 1004 LOAD_CONST                 1024
+ 1006 LOAD_CONST                 1024
+ 1008 LOAD_CONST                 32
+ 1010 LOAD_CONST                 256
+ 1012 LOAD_CONST                 0
+ 1014 LOAD_CONST                 "Nollie32"
+ 1016 LOAD_CONST                 120
+ 1018 LOAD_CONST                 "USB"
+ 1020 LOAD_CONST                 "nollie"
+ 1022 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+ 1024 BUILD_CONST_KEY_MAP        
+ 1026 MAP_ADD                    
+ 1028 LOAD_CONST                 "Nollie8Pro"
+ 1030 LOAD_CONST                 5845
+ 1032 LOAD_CONST                 10885
+ 1034 LOAD_CONST                 0
+ 1036 LOAD_CONST                 1024
+ 1038 LOAD_CONST                 1024
+ 1040 LOAD_CONST                 8
+ 1042 LOAD_CONST                 512
+ 1044 LOAD_CONST                 0
+ 1046 LOAD_CONST                 "Nollie8Pro"
+ 1048 LOAD_CONST                 60
+ 1050 LOAD_CONST                 "USB"
+ 1052 LOAD_CONST                 "nollie"
+ 1054 LOAD_CONST                 4194304
+ 1056 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family', 'flash_size')
+ 1058 BUILD_CONST_KEY_MAP        
+ 1060 MAP_ADD                    
+ 1062 LOAD_CONST                 "Bootloader_32"
+ 1064 LOAD_CONST                 12385
+ 1066 LOAD_CONST                 61495
+ 1068 LOAD_CONST                 0
+ 1070 LOAD_CONST                 1024
+ 1072 LOAD_CONST                 64
+ 1074 LOAD_CONST                 0
+ 1076 LOAD_CONST                 0
+ 1078 LOAD_CONST                 1
+ 1080 LOAD_CONST                 "Nollie32"
+ 1082 LOAD_CONST                 120
+ 1084 LOAD_CONST                 "USB"
+ 1086 LOAD_CONST                 "nollie"
+ 1088 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+ 1090 BUILD_CONST_KEY_MAP        
+ 1092 MAP_ADD                    
+ 1094 LOAD_CONST                 12385
+ 1096 LOAD_CONST                 61441
+ 1098 LOAD_CONST                 0
+ 1100 LOAD_CONST                 64
+ 1102 LOAD_CONST                 64
+ 1104 LOAD_CONST                 0
+ 1106 LOAD_CONST                 0
+ 1108 LOAD_CONST                 1
+ 1110 LOAD_CONST                 "Nollie1"
+ 1112 LOAD_CONST                 120
+ 1114 LOAD_CONST                 "USB"
+ 1116 LOAD_CONST                 "nollie"
+ 1118 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+ 1120 BUILD_CONST_KEY_MAP        
+ 1122 LOAD_CONST                 12385
+ 1124 LOAD_CONST                 61697
+ 1126 LOAD_CONST                 0
+ 1128 LOAD_CONST                 64
+ 1130 LOAD_CONST                 64
+ 1132 LOAD_CONST                 0
+ 1134 LOAD_CONST                 0
+ 1136 LOAD_CONST                 1
+ 1138 LOAD_CONST                 "Nollie1"
+ 1140 LOAD_CONST                 120
+ 1142 LOAD_CONST                 "USB"
+ 1144 LOAD_CONST                 "nollie"
+ 1146 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family')
+ 1148 BUILD_CONST_KEY_MAP        
+ 1150 LOAD_CONST                 12385
+ 1152 LOAD_CONST                 61608
+ 1154 LOAD_CONST                 0
+ 1156 LOAD_CONST                 64
+ 1158 LOAD_CONST                 64
+ 1160 LOAD_CONST                 0
+ 1162 LOAD_CONST                 0
+ 1164 LOAD_CONST                 1
+ 1166 LOAD_CONST                 "Nollie8Plus"
+ 1168 LOAD_CONST                 120
+ 1170 LOAD_CONST                 "USB"
+ 1172 LOAD_CONST                 "nollie"
+ 1174 LOAD_CONST                 "enc"
+ 1176 LOAD_CONST                 ('vendor_id', 'product_id', 'interface_number', 'tx_len', 'rx_len', 'ch_len', 'ch_led_len', 'type', 'firmware_name', 'fps_max', 'connection', 'family', 'ota_format')
+ 1178 BUILD_CONST_KEY_MAP        
+ 1180 LOAD_CONST                 ('Bootloader_1', 'Bootloader_1a', 'Bootloader_8P')
+ 1182 BUILD_CONST_KEY_MAP        
+ 1184 DICT_UPDATE                
+ 1186 STORE_NAME                 N_DEV_USB_CONFIG
+ 1188 LOAD_CONST                 "Nollie16"
+ 1190 LOAD_CONST                 "Nollie32"
+ 1192 BUILD_LIST                 
+ 1194 BUILD_LIST                 
+ 1196 LOAD_CONST                 ('Nollie1', 'Nollie8', 'Prism8', 'G857D')
+ 1198 LIST_EXTEND                
+ 1200 BUILD_LIST                 
+ 1202 LOAD_CONST                 ('Nollie1', 'Nollie8', 'Prism8', 'G857D')
+ 1204 LIST_EXTEND                
+ 1206 LOAD_CONST                 "Nollie8Plus"
+ 1208 BUILD_LIST                 
+ 1210 LOAD_CONST                 ('Bootloader_32', 'Bootloader_1', 'Bootloader_1a', 'Bootloader_8P')
+ 1212 BUILD_CONST_KEY_MAP        
+ 1214 STORE_NAME                 N_DEV_FIRMWARE_NAME
+ 1216 BUILD_SET                  
+ 1218 LOAD_CONST                 frozenset({'Nollie8Pro', 'Nollie1', 'Nollie8Plus', 'Prism8', 'Nollie8', 'Nollie16', 'G857D', 'Nollie32'})
+ 1220 SET_UPDATE                 
+ 1222 STORE_NAME                 N_DEV_CURRENT_NAMES
+ 1224 BUILD_LIST                 
+ 1226 LOAD_CONST                 ('Bootloader_1', 'Bootloader_32', 'Bootloader_8', 'Bootloader_1a', 'Bootloader_8P')
+ 1228 LIST_EXTEND                
+ 1230 STORE_NAME                 N_DEV_BOOTLOADER_NAME
+ 1232 LOAD_CONST                 16
+ 1234 STORE_NAME                 FIRMWARE_VERSION
+ 1236 LOAD_CONST                 19
+ 1238 LOAD_CONST                 19
+ 1240 LOAD_CONST                 18
+ 1242 LOAD_CONST                 17
+ 1244 LOAD_CONST                 16
+ 1246 LOAD_CONST                 19
+ 1248 LOAD_CONST                 19
+ 1250 LOAD_CONST                 17
+ 1252 LOAD_CONST                 ('Nollie1', 'Nollie8', 'Nollie8Plus', 'Prism8', 'G857D', 'Nollie16', 'Nollie32', 'Nollie8Pro')
+ 1254 BUILD_CONST_KEY_MAP        
+ 1256 STORE_NAME                 N_DEV_FIRMWARE_VERSION
+ 1258 LOAD_CONST                 "device_name"
+ 1260 LOAD_NAME                  str
+ 1262 LOAD_CONST                 "return"
+ 1264 LOAD_NAME                  int
+ 1266 BUILD_TUPLE                
+ 1268 LOAD_CONST                 <Code311 code object get_firmware_version at 0x1c36ef69d10, file app\core_driver\n_dev_config.py>, line 499
+ 1270 MAKE_FUNCTION              annotation
+ 1272 STORE_NAME                 get_firmware_version
+ 1274 LOAD_CONST                 False
+ 1276 LOAD_CONST                 True
+ 1278 LOAD_CONST                 False
+ 1280 LOAD_CONST                 ('flash', 'gpio', 'fseq')
+ 1282 BUILD_CONST_KEY_MAP        
+ 1284 LOAD_CONST                 False
+ 1286 LOAD_CONST                 False
+ 1288 LOAD_CONST                 False
+ 1290 LOAD_CONST                 ('flash', 'gpio', 'fseq')
+ 1292 BUILD_CONST_KEY_MAP        
+ 1294 LOAD_CONST                 False
+ 1296 LOAD_CONST                 False
+ 1298 LOAD_CONST                 False
+ 1300 LOAD_CONST                 True
+ 1302 LOAD_CONST                 True
+ 1304 LOAD_CONST                 ('flash', 'gpio', 'fseq', 'led_detect', 'power_test')
+ 1306 BUILD_CONST_KEY_MAP        
+ 1308 LOAD_CONST                 False
+ 1310 LOAD_CONST                 False
+ 1312 LOAD_CONST                 False
+ 1314 LOAD_CONST                 ('flash', 'gpio', 'fseq')
+ 1316 BUILD_CONST_KEY_MAP        
+ 1318 LOAD_CONST                 False
+ 1320 LOAD_CONST                 False
+ 1322 LOAD_CONST                 False
+ 1324 LOAD_CONST                 ('flash', 'gpio', 'fseq')
+ 1326 BUILD_CONST_KEY_MAP        
+ 1328 LOAD_CONST                 True
+ 1330 LOAD_CONST                 False
+ 1332 LOAD_CONST                 True
+ 1334 LOAD_CONST                 ('flash', 'gpio', 'fseq')
+ 1336 BUILD_CONST_KEY_MAP        
+ 1338 LOAD_CONST                 True
+ 1340 LOAD_CONST                 True
+ 1342 LOAD_CONST                 True
+ 1344 LOAD_CONST                 ('flash', 'gpio', 'fseq')
+ 1346 BUILD_CONST_KEY_MAP        
+ 1348 LOAD_CONST                 True
+ 1350 LOAD_CONST                 False
+ 1352 LOAD_CONST                 True
+ 1354 LOAD_CONST                 ('flash', 'gpio', 'fseq')
+ 1356 BUILD_CONST_KEY_MAP        
+ 1358 LOAD_CONST                 ('Nollie1', 'Nollie8', 'Nollie8Plus', 'Prism8', 'G857D', 'Nollie16', 'Nollie32', 'Nollie8Pro')
+ 1360 BUILD_CONST_KEY_MAP        
+ 1362 STORE_NAME                 N_DEV_FEATURES
+ 1364 LOAD_NAME                  dict
+ 1366 LOAD_NAME                  str
+ 1368 LOAD_NAME                  dict
+ 1370 LOAD_NAME                  str
+ 1372 LOAD_NAME                  bool
+ 1374 BUILD_TUPLE                
+ 1376 BINARY_SUBSCR              
+ 1378 CACHE                      
+ 1380 CACHE                      
+ 1382 CACHE                      
+ 1384 CACHE                      
+ 1386 BUILD_TUPLE                
+ 1388 BINARY_SUBSCR              
+ 1390 CACHE                      
+ 1392 CACHE                      
+ 1394 CACHE                      
+ 1396 CACHE                      
+ 1398 LOAD_NAME                  __annotations__
+ 1400 LOAD_CONST                 "N_DEV_FEATURES"
+ 1402 STORE_SUBSCR               
+ 1404 CACHE                      
+ 1406 LOAD_CONST                 "device_name"
+ 1408 LOAD_NAME                  str
+ 1410 LOAD_CONST                 "feature"
+ 1412 LOAD_NAME                  str
+ 1414 LOAD_CONST                 "return"
+ 1416 LOAD_NAME                  bool
+ 1418 BUILD_TUPLE                
+ 1420 LOAD_CONST                 <Code311 code object has_feature at 0x1c36ef949d0, file app\core_driver\n_dev_config.py>, line 543
+ 1422 MAKE_FUNCTION              annotation
+ 1424 STORE_NAME                 has_feature
+ 1426 LOAD_CONST                 "OFF"
+ 1428 LOAD_CONST                 "ON"
+ 1430 LOAD_CONST                 (0, 1)
+ 1432 BUILD_CONST_KEY_MAP        
+ 1434 LOAD_CONST                 "ON"
+ 1436 LOAD_CONST                 "OFF"
+ 1438 LOAD_CONST                 (0, 1)
+ 1440 BUILD_CONST_KEY_MAP        
+ 1442 LOAD_CONST                 "Triple 8 Pin"
+ 1444 LOAD_CONST                 "Dual 8 Pin"
+ 1446 LOAD_CONST                 (0, 1)
+ 1448 BUILD_CONST_KEY_MAP        
+ 1450 LOAD_CONST                 ('_default', 'Nollie1', 'Nollie32')
+ 1452 BUILD_CONST_KEY_MAP        
+ 1454 STORE_NAME                 N_DEV_GPIO_LABELS
+ 1456 LOAD_NAME                  dict
+ 1458 LOAD_NAME                  str
+ 1460 LOAD_NAME                  dict
+ 1462 LOAD_NAME                  int
+ 1464 LOAD_NAME                  str
+ 1466 BUILD_TUPLE                
+ 1468 BINARY_SUBSCR              
+ 1470 CACHE                      
+ 1472 CACHE                      
+ 1474 CACHE                      
+ 1476 CACHE                      
+ 1478 BUILD_TUPLE                
+ 1480 BINARY_SUBSCR              
+ 1482 CACHE                      
+ 1484 CACHE                      
+ 1486 CACHE                      
+ 1488 CACHE                      
+ 1490 LOAD_NAME                  __annotations__
+ 1492 LOAD_CONST                 "N_DEV_GPIO_LABELS"
+ 1494 STORE_SUBSCR               
+ 1496 CACHE                      
+ 1498 LOAD_CONST                 "device_name"
+ 1500 LOAD_NAME                  str
+ 1502 LOAD_CONST                 "return"
+ 1504 LOAD_NAME                  dict
+ 1506 LOAD_NAME                  int
+ 1508 LOAD_NAME                  str
+ 1510 BUILD_TUPLE                
+ 1512 BINARY_SUBSCR              
+ 1514 CACHE                      
+ 1516 CACHE                      
+ 1518 CACHE                      
+ 1520 CACHE                      
+ 1522 BUILD_TUPLE                
+ 1524 LOAD_CONST                 <Code311 code object get_gpio_labels at 0x1c36ef948a0, file app\core_driver\n_dev_config.py>, line 562
+ 1526 MAKE_FUNCTION              annotation
+ 1528 STORE_NAME                 get_gpio_labels
+ 1530 LOAD_CONST                 120
+ 1532 LOAD_CONST                 110
+ 1534 LOAD_CONST                 100
+ 1536 LOAD_CONST                 90
+ 1538 LOAD_CONST                 80
+ 1540 LOAD_CONST                 70
+ 1542 LOAD_CONST                 60
+ 1544 LOAD_CONST                 50
+ 1546 LOAD_CONST                 40
+ 1548 LOAD_CONST                 30
+ 1550 LOAD_CONST                 20
+ 1552 LOAD_CONST                 10
+ 1554 LOAD_CONST                 (8, 9, 10, 11, 12, 14, 16, 20, 25, 33, 50, 100)
+ 1556 BUILD_CONST_KEY_MAP        
+ 1558 STORE_NAME                 N_DEV_MS_TO_FPS
+ 1560 LOAD_CONST                 8
+ 1562 LOAD_CONST                 9
+ 1564 LOAD_CONST                 10
+ 1566 LOAD_CONST                 11
+ 1568 LOAD_CONST                 12
+ 1570 LOAD_CONST                 14
+ 1572 LOAD_CONST                 16
+ 1574 LOAD_CONST                 20
+ 1576 LOAD_CONST                 25
+ 1578 LOAD_CONST                 33
+ 1580 LOAD_CONST                 50
+ 1582 LOAD_CONST                 100
+ 1584 LOAD_CONST                 (120, 110, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10)
+ 1586 BUILD_CONST_KEY_MAP        
+ 1588 STORE_NAME                 N_DEV_FPS_TO_MS
+ 1590 LOAD_CONST                 "Channel 1"
+ 1592 LOAD_CONST                 0
+ 1594 BUILD_MAP                  
+ 1596 LOAD_CONST                 0
+ 1598 LOAD_CONST                 1
+ 1600 LOAD_CONST                 2
+ 1602 LOAD_CONST                 3
+ 1604 LOAD_CONST                 4
+ 1606 LOAD_CONST                 5
+ 1608 LOAD_CONST                 6
+ 1610 LOAD_CONST                 7
+ 1612 LOAD_CONST                 ('Channel 1', 'Channel 2', 'Channel 3', 'Channel 4', 'Channel 5', 'Channel 6', 'Channel 7', 'Channel 8')
+ 1614 BUILD_CONST_KEY_MAP        
+ 1616 LOAD_CONST                 0
+ 1618 LOAD_CONST                 1
+ 1620 LOAD_CONST                 2
+ 1622 LOAD_CONST                 3
+ 1624 LOAD_CONST                 4
+ 1626 LOAD_CONST                 5
+ 1628 LOAD_CONST                 6
+ 1630 LOAD_CONST                 7
+ 1632 LOAD_CONST                 ('Channel 1', 'Channel 2', 'Channel 3', 'Channel 4', 'Channel 5', 'Channel 6', 'Channel 7', 'Channel 8')
+ 1634 BUILD_CONST_KEY_MAP        
+ 1636 LOAD_CONST                 0
+ 1638 LOAD_CONST                 1
+ 1640 LOAD_CONST                 2
+ 1642 LOAD_CONST                 3
+ 1644 LOAD_CONST                 4
+ 1646 LOAD_CONST                 5
+ 1648 LOAD_CONST                 6
+ 1650 LOAD_CONST                 7
+ 1652 LOAD_CONST                 ('Channel 1', 'Channel 2', 'Channel 3', 'Channel 4', 'Channel 5', 'Channel 6', 'Channel 7', 'Channel 8')
+ 1654 BUILD_CONST_KEY_MAP        
+ 1656 LOAD_CONST                 0
+ 1658 LOAD_CONST                 1
+ 1660 LOAD_CONST                 2
+ 1662 LOAD_CONST                 3
+ 1664 LOAD_CONST                 4
+ 1666 LOAD_CONST                 5
+ 1668 LOAD_CONST                 6
+ 1670 LOAD_CONST                 7
+ 1672 LOAD_CONST                 ('Channel 1', 'Channel 2', 'Channel 3', 'Channel 4', 'Channel 5', 'Channel 6', 'Channel 7', 'Channel 8')
+ 1674 BUILD_CONST_KEY_MAP        
+ 1676 LOAD_CONST                 0
+ 1678 LOAD_CONST                 1
+ 1680 LOAD_CONST                 2
+ 1682 LOAD_CONST                 3
+ 1684 LOAD_CONST                 4
+ 1686 LOAD_CONST                 5
+ 1688 LOAD_CONST                 6
+ 1690 LOAD_CONST                 7
+ 1692 LOAD_CONST                 ('Channel 1', 'Channel 2', 'Channel 3', 'Channel 4', 'Channel 5', 'Channel 6', 'Channel 7', 'Channel 8')
+ 1694 BUILD_CONST_KEY_MAP        
+ 1696 BUILD_MAP                  
+ 1698 LOAD_CONST                 "Channel 1"
+ 1700 LOAD_CONST                 3
+ 1702 MAP_ADD                    
+ 1704 LOAD_CONST                 "Channel 2"
+ 1706 LOAD_CONST                 2
+ 1708 MAP_ADD                    
+ 1710 LOAD_CONST                 "Channel 3"
+ 1712 LOAD_CONST                 1
+ 1714 MAP_ADD                    
+ 1716 LOAD_CONST                 "Channel 4"
+ 1718 LOAD_CONST                 0
+ 1720 MAP_ADD                    
+ 1722 LOAD_CONST                 "Channel 5"
+ 1724 LOAD_CONST                 8
+ 1726 MAP_ADD                    
+ 1728 LOAD_CONST                 "Channel 6"
+ 1730 LOAD_CONST                 9
+ 1732 MAP_ADD                    
+ 1734 LOAD_CONST                 "Channel 7"
+ 1736 LOAD_CONST                 10
+ 1738 MAP_ADD                    
+ 1740 LOAD_CONST                 "Channel 8"
+ 1742 LOAD_CONST                 11
+ 1744 MAP_ADD                    
+ 1746 LOAD_CONST                 "Channel 9"
+ 1748 LOAD_CONST                 4
+ 1750 MAP_ADD                    
+ 1752 LOAD_CONST                 "Channel 10"
+ 1754 LOAD_CONST                 5
+ 1756 MAP_ADD                    
+ 1758 LOAD_CONST                 "Channel 11"
+ 1760 LOAD_CONST                 6
+ 1762 MAP_ADD                    
+ 1764 LOAD_CONST                 "Channel 12"
+ 1766 LOAD_CONST                 7
+ 1768 MAP_ADD                    
+ 1770 LOAD_CONST                 "Channel 13"
+ 1772 LOAD_CONST                 15
+ 1774 MAP_ADD                    
+ 1776 LOAD_CONST                 "Channel 14"
+ 1778 LOAD_CONST                 14
+ 1780 MAP_ADD                    
+ 1782 LOAD_CONST                 "Channel 15"
+ 1784 LOAD_CONST                 13
+ 1786 MAP_ADD                    
+ 1788 LOAD_CONST                 "Channel 16"
+ 1790 LOAD_CONST                 12
+ 1792 MAP_ADD                    
+ 1794 BUILD_MAP                  
+ 1796 LOAD_CONST                 "Channel 1"
+ 1798 LOAD_CONST                 5
+ 1800 MAP_ADD                    
+ 1802 LOAD_CONST                 "Channel 2"
+ 1804 LOAD_CONST                 4
+ 1806 MAP_ADD                    
+ 1808 LOAD_CONST                 "Channel 3"
+ 1810 LOAD_CONST                 3
+ 1812 MAP_ADD                    
+ 1814 LOAD_CONST                 "Channel 4"
+ 1816 LOAD_CONST                 2
+ 1818 MAP_ADD                    
+ 1820 LOAD_CONST                 "Channel 5"
+ 1822 LOAD_CONST                 1
+ 1824 MAP_ADD                    
+ 1826 LOAD_CONST                 "Channel 6"
+ 1828 LOAD_CONST                 0
+ 1830 MAP_ADD                    
+ 1832 LOAD_CONST                 "Channel 7"
+ 1834 LOAD_CONST                 15
+ 1836 MAP_ADD                    
+ 1838 LOAD_CONST                 "Channel 8"
+ 1840 LOAD_CONST                 14
+ 1842 MAP_ADD                    
+ 1844 LOAD_CONST                 "Channel 9"
+ 1846 LOAD_CONST                 26
+ 1848 MAP_ADD                    
+ 1850 LOAD_CONST                 "Channel 10"
+ 1852 LOAD_CONST                 27
+ 1854 MAP_ADD                    
+ 1856 LOAD_CONST                 "Channel 11"
+ 1858 LOAD_CONST                 28
+ 1860 MAP_ADD                    
+ 1862 LOAD_CONST                 "Channel 12"
+ 1864 LOAD_CONST                 29
+ 1866 MAP_ADD                    
+ 1868 LOAD_CONST                 "Channel 13"
+ 1870 LOAD_CONST                 30
+ 1872 MAP_ADD                    
+ 1874 LOAD_CONST                 "Channel 14"
+ 1876 LOAD_CONST                 31
+ 1878 MAP_ADD                    
+ 1880 LOAD_CONST                 "Channel 15"
+ 1882 LOAD_CONST                 8
+ 1884 MAP_ADD                    
+ 1886 LOAD_CONST                 "Channel 16"
+ 1888 LOAD_CONST                 9
+ 1890 MAP_ADD                    
+ 1892 LOAD_CONST                 "Channel ATX1"
+ 1894 LOAD_CONST                 19
+ 1896 MAP_ADD                    
+ 1898 LOAD_CONST                 18
+ 1900 LOAD_CONST                 17
+ 1902 LOAD_CONST                 16
+ 1904 LOAD_CONST                 7
+ 1906 LOAD_CONST                 6
+ 1908 LOAD_CONST                 25
+ 1910 LOAD_CONST                 24
+ 1912 LOAD_CONST                 23
+ 1914 LOAD_CONST                 22
+ 1916 LOAD_CONST                 21
+ 1918 LOAD_CONST                 20
+ 1920 LOAD_CONST                 13
+ 1922 LOAD_CONST                 12
+ 1924 LOAD_CONST                 11
+ 1926 LOAD_CONST                 10
+ 1928 LOAD_CONST                 ('Channel ATX2', 'Channel ATX3', 'Channel ATX4', 'Channel ATX5', 'Channel ATX6', 'Channel GPU1', 'Channel GPU2', 'Channel GPU3', 'Channel GPU4', 'Channel GPU5', 'Channel GPU6', 'Channel EXT1', 'Channel EXT2', 'Channel EXT3', 'Channel EXT4')
+ 1930 BUILD_CONST_KEY_MAP        
+ 1932 DICT_UPDATE                
+ 1934 LOAD_CONST                 ('Nollie1', 'Nollie8', 'Nollie8Plus', 'Prism8', 'G857D', 'Nollie8Pro', 'Nollie16', 'Nollie32')
+ 1936 BUILD_CONST_KEY_MAP        
+ 1938 STORE_NAME                 N_DEV_CH_NAME
+ 1940 LOAD_CONST                 0
+ 1942 LOAD_CONST                 "Channel 1"
+ 1944 BUILD_MAP                  
+ 1946 LOAD_CONST                 "Channel 1"
+ 1948 LOAD_CONST                 "Channel 2"
+ 1950 LOAD_CONST                 "Channel 3"
+ 1952 LOAD_CONST                 "Channel 4"
+ 1954 LOAD_CONST                 "Channel 5"
+ 1956 LOAD_CONST                 "Channel 6"
+ 1958 LOAD_CONST                 "Channel 7"
+ 1960 LOAD_CONST                 "Channel 8"
+ 1962 LOAD_CONST                 (0, 1, 2, 3, 4, 5, 6, 7)
+ 1964 BUILD_CONST_KEY_MAP        
+ 1966 LOAD_CONST                 "Channel 1"
+ 1968 LOAD_CONST                 "Channel 2"
+ 1970 LOAD_CONST                 "Channel 3"
+ 1972 LOAD_CONST                 "Channel 4"
+ 1974 LOAD_CONST                 "Channel 5"
+ 1976 LOAD_CONST                 "Channel 6"
+ 1978 LOAD_CONST                 "Channel 7"
+ 1980 LOAD_CONST                 "Channel 8"
+ 1982 LOAD_CONST                 (0, 1, 2, 3, 4, 5, 6, 7)
+ 1984 BUILD_CONST_KEY_MAP        
+ 1986 LOAD_CONST                 "Channel 1"
+ 1988 LOAD_CONST                 "Channel 2"
+ 1990 LOAD_CONST                 "Channel 3"
+ 1992 LOAD_CONST                 "Channel 4"
+ 1994 LOAD_CONST                 "Channel 5"
+ 1996 LOAD_CONST                 "Channel 6"
+ 1998 LOAD_CONST                 "Channel 7"
+ 2000 LOAD_CONST                 "Channel 8"
+ 2002 LOAD_CONST                 (0, 1, 2, 3, 4, 5, 6, 7)
+ 2004 BUILD_CONST_KEY_MAP        
+ 2006 LOAD_CONST                 "Channel 1"
+ 2008 LOAD_CONST                 "Channel 2"
+ 2010 LOAD_CONST                 "Channel 3"
+ 2012 LOAD_CONST                 "Channel 4"
+ 2014 LOAD_CONST                 "Channel 5"
+ 2016 LOAD_CONST                 "Channel 6"
+ 2018 LOAD_CONST                 "Channel 7"
+ 2020 LOAD_CONST                 "Channel 8"
+ 2022 LOAD_CONST                 (0, 1, 2, 3, 4, 5, 6, 7)
+ 2024 BUILD_CONST_KEY_MAP        
+ 2026 LOAD_CONST                 "Channel 1"
+ 2028 LOAD_CONST                 "Channel 2"
+ 2030 LOAD_CONST                 "Channel 3"
+ 2032 LOAD_CONST                 "Channel 4"
+ 2034 LOAD_CONST                 "Channel 5"
+ 2036 LOAD_CONST                 "Channel 6"
+ 2038 LOAD_CONST                 "Channel 7"
+ 2040 LOAD_CONST                 "Channel 8"
+ 2042 LOAD_CONST                 (0, 1, 2, 3, 4, 5, 6, 7)
+ 2044 BUILD_CONST_KEY_MAP        
+ 2046 BUILD_MAP                  
+ 2048 LOAD_CONST                 3
+ 2050 LOAD_CONST                 "Channel 1"
+ 2052 MAP_ADD                    
+ 2054 LOAD_CONST                 2
+ 2056 LOAD_CONST                 "Channel 2"
+ 2058 MAP_ADD                    
+ 2060 LOAD_CONST                 1
+ 2062 LOAD_CONST                 "Channel 3"
+ 2064 MAP_ADD                    
+ 2066 LOAD_CONST                 0
+ 2068 LOAD_CONST                 "Channel 4"
+ 2070 MAP_ADD                    
+ 2072 LOAD_CONST                 8
+ 2074 LOAD_CONST                 "Channel 5"
+ 2076 MAP_ADD                    
+ 2078 LOAD_CONST                 9
+ 2080 LOAD_CONST                 "Channel 6"
+ 2082 MAP_ADD                    
+ 2084 LOAD_CONST                 10
+ 2086 LOAD_CONST                 "Channel 7"
+ 2088 MAP_ADD                    
+ 2090 LOAD_CONST                 11
+ 2092 LOAD_CONST                 "Channel 8"
+ 2094 MAP_ADD                    
+ 2096 LOAD_CONST                 4
+ 2098 LOAD_CONST                 "Channel 9"
+ 2100 MAP_ADD                    
+ 2102 LOAD_CONST                 5
+ 2104 LOAD_CONST                 "Channel 10"
+ 2106 MAP_ADD                    
+ 2108 LOAD_CONST                 6
+ 2110 LOAD_CONST                 "Channel 11"
+ 2112 MAP_ADD                    
+ 2114 LOAD_CONST                 7
+ 2116 LOAD_CONST                 "Channel 12"
+ 2118 MAP_ADD                    
+ 2120 LOAD_CONST                 15
+ 2122 LOAD_CONST                 "Channel 13"
+ 2124 MAP_ADD                    
+ 2126 LOAD_CONST                 14
+ 2128 LOAD_CONST                 "Channel 14"
+ 2130 MAP_ADD                    
+ 2132 LOAD_CONST                 13
+ 2134 LOAD_CONST                 "Channel 15"
+ 2136 MAP_ADD                    
+ 2138 LOAD_CONST                 12
+ 2140 LOAD_CONST                 "Channel 16"
+ 2142 MAP_ADD                    
+ 2144 BUILD_MAP                  
+ 2146 LOAD_CONST                 5
+ 2148 LOAD_CONST                 "Channel 1"
+ 2150 MAP_ADD                    
+ 2152 LOAD_CONST                 4
+ 2154 LOAD_CONST                 "Channel 2"
+ 2156 MAP_ADD                    
+ 2158 LOAD_CONST                 3
+ 2160 LOAD_CONST                 "Channel 3"
+ 2162 MAP_ADD                    
+ 2164 LOAD_CONST                 2
+ 2166 LOAD_CONST                 "Channel 4"
+ 2168 MAP_ADD                    
+ 2170 LOAD_CONST                 1
+ 2172 LOAD_CONST                 "Channel 5"
+ 2174 MAP_ADD                    
+ 2176 LOAD_CONST                 0
+ 2178 LOAD_CONST                 "Channel 6"
+ 2180 MAP_ADD                    
+ 2182 LOAD_CONST                 15
+ 2184 LOAD_CONST                 "Channel 7"
+ 2186 MAP_ADD                    
+ 2188 LOAD_CONST                 14
+ 2190 LOAD_CONST                 "Channel 8"
+ 2192 MAP_ADD                    
+ 2194 LOAD_CONST                 26
+ 2196 LOAD_CONST                 "Channel 9"
+ 2198 MAP_ADD                    
+ 2200 LOAD_CONST                 27
+ 2202 LOAD_CONST                 "Channel 10"
+ 2204 MAP_ADD                    
+ 2206 LOAD_CONST                 28
+ 2208 LOAD_CONST                 "Channel 11"
+ 2210 MAP_ADD                    
+ 2212 LOAD_CONST                 29
+ 2214 LOAD_CONST                 "Channel 12"
+ 2216 MAP_ADD                    
+ 2218 LOAD_CONST                 30
+ 2220 LOAD_CONST                 "Channel 13"
+ 2222 MAP_ADD                    
+ 2224 LOAD_CONST                 31
+ 2226 LOAD_CONST                 "Channel 14"
+ 2228 MAP_ADD                    
+ 2230 LOAD_CONST                 8
+ 2232 LOAD_CONST                 "Channel 15"
+ 2234 MAP_ADD                    
+ 2236 LOAD_CONST                 9
+ 2238 LOAD_CONST                 "Channel 16"
+ 2240 MAP_ADD                    
+ 2242 LOAD_CONST                 19
+ 2244 LOAD_CONST                 "Channel ATX1"
+ 2246 MAP_ADD                    
+ 2248 LOAD_CONST                 "Channel ATX2"
+ 2250 LOAD_CONST                 "Channel ATX3"
+ 2252 LOAD_CONST                 "Channel ATX4"
+ 2254 LOAD_CONST                 "Channel ATX5"
+ 2256 LOAD_CONST                 "Channel ATX6"
+ 2258 LOAD_CONST                 "Channel GPU1"
+ 2260 LOAD_CONST                 "Channel GPU2"
+ 2262 LOAD_CONST                 "Channel GPU3"
+ 2264 LOAD_CONST                 "Channel GPU4"
+ 2266 LOAD_CONST                 "Channel GPU5"
+ 2268 LOAD_CONST                 "Channel GPU6"
+ 2270 LOAD_CONST                 "Channel EXT1"
+ 2272 LOAD_CONST                 "Channel EXT2"
+ 2274 LOAD_CONST                 "Channel EXT3"
+ 2276 LOAD_CONST                 "Channel EXT4"
+ 2278 LOAD_CONST                 (18, 17, 16, 7, 6, 25, 24, 23, 22, 21, 20, 13, 12, 11, 10)
+ 2280 BUILD_CONST_KEY_MAP        
+ 2282 DICT_UPDATE                
+ 2284 LOAD_CONST                 ('Nollie1', 'Nollie8', 'Nollie8Plus', 'Prism8', 'G857D', 'Nollie8Pro', 'Nollie16', 'Nollie32')
+ 2286 BUILD_CONST_KEY_MAP        
+ 2288 STORE_NAME                 N_DEV_NAME_CH
+ 2290 LOAD_CONST                 (('xt30_voltage', 0, 0.001, 'V'), ('xt30_current', 1, 0.01, 'A'), ('ldo_voltage', 2, 0.001, 'V'), ('mcu_temp', 3, 0.01, 'C°'), ('cpu_usage', 4, 1, ''), ('rom_state', 5, 1, ''))
+ 2292 LOAD_CONST                 (('xt30_voltage', 0, 0.001, 'V'), ('xt30_current', 1, 0.01, 'A'), ('ldo_voltage', 2, 0.001, 'V'), ('mcu_temp', 3, 0.01, 'C°'), ('cpu_usage', 4, 1, ''), ('rom_state', 5, 1, ''))
+ 2294 LOAD_CONST                 (('xt30_voltage', 0, 0.001, 'V'), ('xt30_current', 1, 0.01, 'A'), ('ldo_voltage', 2, 0.001, 'V'), ('mcu_temp', 3, 0.01, 'C°'), ('cpu_usage', 4, 1, ''), ('rom_state', 5, 1, ''))
+ 2296 LOAD_CONST                 (('vcc_voltage', 0, 0.001, 'V'), ('ch1_voltage', 1, 0.001, 'V'), ('ch2_voltage', 2, 0.001, 'V'), ('cpu_usage', 4, 1, ''), ('rom_state', 5, 1, ''))
+ 2298 LOAD_CONST                 (('vcc_voltage', 0, 0.001, 'V'), ('ch1_voltage', 1, 0.001, 'V'), ('ch2_voltage', 2, 0.001, 'V'), ('power_flags', 9, 1, ''), ('ch1_current', 3, 0.001, 'A'), ('ch2_current', 6, 0.001, 'A'), ('cpu_usage', 4, 1, ''), ('rom_state', 5, 1, ''))
+ 2300 LOAD_CONST                 (('vcc_voltage', 0, 0.001, 'V'), ('ch1_voltage', 1, 0.001, 'V'), ('ch2_voltage', 2, 0.001, 'V'), ('cpu_usage', 4, 1, ''), ('rom_state', 5, 1, ''))
+ 2302 LOAD_CONST                 (('vcc_voltage', 0, 0.001, 'V'), ('ch1_voltage', 1, 0.001, 'V'), ('ch2_voltage', 2, 0.001, 'V'), ('cpu_usage', 4, 1, ''), ('rom_state', 5, 1, ''))
+ 2304 LOAD_CONST                 (('cpu_usage', 4, 1, ''), ('rom_state', 5, 1, ''))
+ 2306 LOAD_CONST                 ('Nollie8Pro', 'Nollie32', 'Nollie16', 'Nollie8', 'Nollie8Plus', 'Prism8', 'G857D', 'Nollie1')
+ 2308 BUILD_CONST_KEY_MAP        
+ 2310 STORE_NAME                 N_DEV_VOLTAGE_SPEC
+ 2312 BUILD_MAP                  
+ 2314 LOAD_CONST                 "ch_len"
+ 2316 LOAD_CONST                 0
+ 2318 MAP_ADD                    
+ 2320 LOAD_CONST                 "ch_led_len"
+ 2322 LOAD_CONST                 0
+ 2324 MAP_ADD                    
+ 2326 LOAD_CONST                 "dev_name"
+ 2328 LOAD_CONST                 ""
+ 2330 MAP_ADD                    
+ 2332 LOAD_CONST                 "dev_sn"
+ 2334 LOAD_CONST                 ""
+ 2336 MAP_ADD                    
+ 2338 LOAD_CONST                 "config_version"
+ 2340 LOAD_CONST                 0
+ 2342 MAP_ADD                    
+ 2344 LOAD_CONST                 "hardware"
+ 2346 LOAD_CONST                 0
+ 2348 MAP_ADD                    
+ 2350 LOAD_CONST                 "firmware_version"
+ 2352 LOAD_CONST                 "0,0,0"
+ 2354 MAP_ADD                    
+ 2356 LOAD_CONST                 "name"
+ 2358 LOAD_CONST                 "null"
+ 2360 MAP_ADD                    
+ 2362 LOAD_CONST                 "dev_ch_name"
+ 2364 BUILD_LIST                 
+ 2366 MAP_ADD                    
+ 2368 LOAD_CONST                 "dev_ch_index"
+ 2370 BUILD_LIST                 
+ 2372 MAP_ADD                    
+ 2374 LOAD_CONST                 "dev_ch_make"
+ 2376 LOAD_CONST                 None
+ 2378 MAP_ADD                    
+ 2380 LOAD_CONST                 "dev_ch_all"
+ 2382 BUILD_LIST                 
+ 2384 MAP_ADD                    
+ 2386 LOAD_CONST                 "dev_start_ch_all"
+ 2388 BUILD_LIST                 
+ 2390 MAP_ADD                    
+ 2392 LOAD_CONST                 "unix"
+ 2394 LOAD_CONST                 "null"
+ 2396 MAP_ADD                    
+ 2398 LOAD_CONST                 "first_unix"
+ 2400 LOAD_CONST                 "null"
+ 2402 MAP_ADD                    
+ 2404 LOAD_CONST                 "flash_write"
+ 2406 LOAD_CONST                 0
+ 2408 MAP_ADD                    
+ 2410 LOAD_CONST                 "cpu_usage"
+ 2412 LOAD_CONST                 0
+ 2414 MAP_ADD                    
+ 2416 BUILD_MAP                  
+ 2418 LOAD_CONST                 "rom_state"
+ 2420 LOAD_CONST                 0
+ 2422 MAP_ADD                    
+ 2424 LOAD_CONST                 "fx_init_start"
+ 2426 LOAD_CONST                 0
+ 2428 MAP_ADD                    
+ 2430 LOAD_CONST                 "general_config"
+ 2432 BUILD_MAP                  
+ 2434 MAP_ADD                    
+ 2436 LOAD_CONST                 "fx_canvas"
+ 2438 BUILD_MAP                  
+ 2440 MAP_ADD                    
+ 2442 LOAD_CONST                 "fx_canvas_ch_map"
+ 2444 BUILD_LIST                 
+ 2446 MAP_ADD                    
+ 2448 LOAD_CONST                 "fx_start_canvas_ch_map"
+ 2450 BUILD_LIST                 
+ 2452 MAP_ADD                    
+ 2454 LOAD_CONST                 "fx_canvas_len"
+ 2456 LOAD_CONST                 0
+ 2458 MAP_ADD                    
+ 2460 LOAD_CONST                 "fx_start_canvas_len"
+ 2462 LOAD_CONST                 0
+ 2464 MAP_ADD                    
+ 2466 LOAD_CONST                 "fx_fps"
+ 2468 LOAD_CONST                 0
+ 2470 MAP_ADD                    
+ 2472 LOAD_CONST                 "fx_start_fps"
+ 2474 LOAD_CONST                 0
+ 2476 MAP_ADD                    
+ 2478 LOAD_CONST                 "fx_ch_led_num"
+ 2480 BUILD_LIST                 
+ 2482 MAP_ADD                    
+ 2484 LOAD_CONST                 "fx_ch_zled_num"
+ 2486 BUILD_LIST                 
+ 2488 MAP_ADD                    
+ 2490 LOAD_CONST                 "fx_gpio"
+ 2492 BUILD_LIST                 
+ 2494 MAP_ADD                    
+ 2496 LOAD_CONST                 "fx_vmap"
+ 2498 BUILD_MAP                  
+ 2500 MAP_ADD                    
+ 2502 LOAD_CONST                 "fx_vmap_name"
+ 2504 BUILD_MAP                  
+ 2506 MAP_ADD                    
+ 2508 LOAD_CONST                 "boot_intro"
+ 2510 LOAD_CONST                 0
+ 2512 MAP_ADD                    
+ 2514 LOAD_CONST                 "boot_steady"
+ 2516 LOAD_CONST                 0
+ 2518 MAP_ADD                    
+ 2520 DICT_UPDATE                
+ 2522 LOAD_CONST                 0
+ 2524 LOAD_CONST                 <Code311 code object <listcomp> at 0x1c36efb5130, file app\core_driver\n_dev_config.py>, line 803
+ 2526 MAKE_FUNCTION              No arguments
+ 2528 PUSH_NULL                  
+ 2530 LOAD_NAME                  range
+ 2532 LOAD_CONST                 8
+ 2534 PRECALL                    
+ 2536 CACHE                      
+ 2538 CALL                       
+ 2540 CACHE                      
+ 2542 CACHE                      
+ 2544 CACHE                      
+ 2546 CACHE                      
+ 2548 GET_ITER                   
+ 2550 PRECALL                    
+ 2552 CACHE                      
+ 2554 CALL                       
+ 2556 CACHE                      
+ 2558 CACHE                      
+ 2560 CACHE                      
+ 2562 CACHE                      
+ 2564 LOAD_CONST                 0
+ 2566 BUILD_LIST                 
+ 2568 LOAD_CONST                 16
+ 2570 BINARY_OP                  *
+ 2572 CACHE                      
+ 2574 LOAD_CONST                 0
+ 2576 BUILD_LIST                 
+ 2578 LOAD_CONST                 16
+ 2580 BINARY_OP                  *
+ 2582 CACHE                      
+ 2584 LOAD_CONST                 33
+ 2586 BUILD_LIST                 
+ 2588 LOAD_CONST                 16
+ 2590 BINARY_OP                  *
+ 2592 CACHE                      
+ 2594 LOAD_CONST                 ('ol_idle_s', 'fx_palette', 'fx_dynamic_1', 'fx_dynamic_2', 'fx_frame_delay')
+ 2596 BUILD_CONST_KEY_MAP        
+ 2598 DICT_UPDATE                
+ 2600 STORE_NAME                 N_DEV_CONFIG_JSON
+ 2602 LOAD_CONST                 "Nollie8.png"
+ 2604 LOAD_CONST                 (0.0, 0.2, 1.0, 0.8)
+ 2606 LOAD_CONST                 "channel"
+ 2608 LOAD_CONST                 "Channel 1"
+ 2610 LOAD_CONST                 "1"
+ 2612 LOAD_CONST                 (0.2025, 0.278)
+ 2614 LOAD_CONST                 "top"
+ 2616 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2618 BUILD_CONST_KEY_MAP        
+ 2620 LOAD_CONST                 "channel"
+ 2622 LOAD_CONST                 "Channel 2"
+ 2624 LOAD_CONST                 "2"
+ 2626 LOAD_CONST                 (0.3925, 0.278)
+ 2628 LOAD_CONST                 "top"
+ 2630 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2632 BUILD_CONST_KEY_MAP        
+ 2634 LOAD_CONST                 "channel"
+ 2636 LOAD_CONST                 "Channel 3"
+ 2638 LOAD_CONST                 "3"
+ 2640 EXTENDED_ARG               256
+ 2642 LOAD_CONST                 (0.5825, 0.278)
+ 2644 LOAD_CONST                 "top"
+ 2646 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2648 BUILD_CONST_KEY_MAP        
+ 2650 LOAD_CONST                 "channel"
+ 2652 LOAD_CONST                 "Channel 4"
+ 2654 EXTENDED_ARG               256
+ 2656 LOAD_CONST                 "4"
+ 2658 EXTENDED_ARG               256
+ 2660 LOAD_CONST                 (0.775, 0.278)
+ 2662 LOAD_CONST                 "top"
+ 2664 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2666 BUILD_CONST_KEY_MAP        
+ 2668 LOAD_CONST                 "channel"
+ 2670 LOAD_CONST                 "Channel 5"
+ 2672 EXTENDED_ARG               256
+ 2674 LOAD_CONST                 "5"
+ 2676 EXTENDED_ARG               256
+ 2678 LOAD_CONST                 (0.2025, 0.722)
+ 2680 EXTENDED_ARG               256
+ 2682 LOAD_CONST                 "bottom"
+ 2684 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2686 BUILD_CONST_KEY_MAP        
+ 2688 LOAD_CONST                 "channel"
+ 2690 LOAD_CONST                 "Channel 6"
+ 2692 EXTENDED_ARG               256
+ 2694 LOAD_CONST                 "6"
+ 2696 EXTENDED_ARG               256
+ 2698 LOAD_CONST                 (0.3925, 0.722)
+ 2700 EXTENDED_ARG               256
+ 2702 LOAD_CONST                 "bottom"
+ 2704 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2706 BUILD_CONST_KEY_MAP        
+ 2708 LOAD_CONST                 "channel"
+ 2710 LOAD_CONST                 "Channel 7"
+ 2712 EXTENDED_ARG               256
+ 2714 LOAD_CONST                 "7"
+ 2716 EXTENDED_ARG               256
+ 2718 LOAD_CONST                 (0.5825, 0.722)
+ 2720 EXTENDED_ARG               256
+ 2722 LOAD_CONST                 "bottom"
+ 2724 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2726 BUILD_CONST_KEY_MAP        
+ 2728 LOAD_CONST                 "channel"
+ 2730 LOAD_CONST                 "Channel 8"
+ 2732 EXTENDED_ARG               256
+ 2734 LOAD_CONST                 "8"
+ 2736 EXTENDED_ARG               256
+ 2738 LOAD_CONST                 (0.775, 0.722)
+ 2740 EXTENDED_ARG               256
+ 2742 LOAD_CONST                 "bottom"
+ 2744 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2746 BUILD_CONST_KEY_MAP        
+ 2748 EXTENDED_ARG               256
+ 2750 LOAD_CONST                 "rail"
+ 2752 EXTENDED_ARG               256
+ 2754 LOAD_CONST                 "ch2_voltage"
+ 2756 EXTENDED_ARG               256
+ 2758 LOAD_CONST                 "CH2"
+ 2760 EXTENDED_ARG               256
+ 2762 LOAD_CONST                 (0.045, 0.466)
+ 2764 EXTENDED_ARG               256
+ 2766 LOAD_CONST                 "left"
+ 2768 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2770 BUILD_CONST_KEY_MAP        
+ 2772 EXTENDED_ARG               256
+ 2774 LOAD_CONST                 "rail"
+ 2776 EXTENDED_ARG               256
+ 2778 LOAD_CONST                 "ch1_voltage"
+ 2780 EXTENDED_ARG               256
+ 2782 LOAD_CONST                 "CH1"
+ 2784 EXTENDED_ARG               256
+ 2786 LOAD_CONST                 (0.045, 0.584)
+ 2788 EXTENDED_ARG               256
+ 2790 LOAD_CONST                 "left"
+ 2792 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2794 BUILD_CONST_KEY_MAP        
+ 2796 EXTENDED_ARG               256
+ 2798 LOAD_CONST                 "rail"
+ 2800 EXTENDED_ARG               256
+ 2802 LOAD_CONST                 "vcc_voltage"
+ 2804 EXTENDED_ARG               256
+ 2806 LOAD_CONST                 "VCC"
+ 2808 EXTENDED_ARG               256
+ 2810 LOAD_CONST                 (0.955, 0.515)
+ 2812 EXTENDED_ARG               256
+ 2814 LOAD_CONST                 "right"
+ 2816 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2818 BUILD_CONST_KEY_MAP        
+ 2820 BUILD_LIST                 
+ 2822 EXTENDED_ARG               256
+ 2824 LOAD_CONST                 ('image', 'crop', 'ports')
+ 2826 BUILD_CONST_KEY_MAP        
+ 2828 LOAD_CONST                 "Nollie8.png"
+ 2830 LOAD_CONST                 (0.0, 0.2, 1.0, 0.8)
+ 2832 LOAD_CONST                 "channel"
+ 2834 LOAD_CONST                 "Channel 1"
+ 2836 LOAD_CONST                 "1"
+ 2838 LOAD_CONST                 (0.2025, 0.278)
+ 2840 LOAD_CONST                 "top"
+ 2842 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2844 BUILD_CONST_KEY_MAP        
+ 2846 LOAD_CONST                 "channel"
+ 2848 LOAD_CONST                 "Channel 2"
+ 2850 LOAD_CONST                 "2"
+ 2852 LOAD_CONST                 (0.3925, 0.278)
+ 2854 LOAD_CONST                 "top"
+ 2856 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2858 BUILD_CONST_KEY_MAP        
+ 2860 LOAD_CONST                 "channel"
+ 2862 LOAD_CONST                 "Channel 3"
+ 2864 LOAD_CONST                 "3"
+ 2866 EXTENDED_ARG               256
+ 2868 LOAD_CONST                 (0.5825, 0.278)
+ 2870 LOAD_CONST                 "top"
+ 2872 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2874 BUILD_CONST_KEY_MAP        
+ 2876 LOAD_CONST                 "channel"
+ 2878 LOAD_CONST                 "Channel 4"
+ 2880 EXTENDED_ARG               256
+ 2882 LOAD_CONST                 "4"
+ 2884 EXTENDED_ARG               256
+ 2886 LOAD_CONST                 (0.775, 0.278)
+ 2888 LOAD_CONST                 "top"
+ 2890 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2892 BUILD_CONST_KEY_MAP        
+ 2894 LOAD_CONST                 "channel"
+ 2896 LOAD_CONST                 "Channel 5"
+ 2898 EXTENDED_ARG               256
+ 2900 LOAD_CONST                 "5"
+ 2902 EXTENDED_ARG               256
+ 2904 LOAD_CONST                 (0.2025, 0.722)
+ 2906 EXTENDED_ARG               256
+ 2908 LOAD_CONST                 "bottom"
+ 2910 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2912 BUILD_CONST_KEY_MAP        
+ 2914 LOAD_CONST                 "channel"
+ 2916 LOAD_CONST                 "Channel 6"
+ 2918 EXTENDED_ARG               256
+ 2920 LOAD_CONST                 "6"
+ 2922 EXTENDED_ARG               256
+ 2924 LOAD_CONST                 (0.3925, 0.722)
+ 2926 EXTENDED_ARG               256
+ 2928 LOAD_CONST                 "bottom"
+ 2930 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2932 BUILD_CONST_KEY_MAP        
+ 2934 LOAD_CONST                 "channel"
+ 2936 LOAD_CONST                 "Channel 7"
+ 2938 EXTENDED_ARG               256
+ 2940 LOAD_CONST                 "7"
+ 2942 EXTENDED_ARG               256
+ 2944 LOAD_CONST                 (0.5825, 0.722)
+ 2946 EXTENDED_ARG               256
+ 2948 LOAD_CONST                 "bottom"
+ 2950 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2952 BUILD_CONST_KEY_MAP        
+ 2954 LOAD_CONST                 "channel"
+ 2956 LOAD_CONST                 "Channel 8"
+ 2958 EXTENDED_ARG               256
+ 2960 LOAD_CONST                 "8"
+ 2962 EXTENDED_ARG               256
+ 2964 LOAD_CONST                 (0.775, 0.722)
+ 2966 EXTENDED_ARG               256
+ 2968 LOAD_CONST                 "bottom"
+ 2970 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2972 BUILD_CONST_KEY_MAP        
+ 2974 EXTENDED_ARG               256
+ 2976 LOAD_CONST                 "rail"
+ 2978 EXTENDED_ARG               256
+ 2980 LOAD_CONST                 "ch2_voltage"
+ 2982 EXTENDED_ARG               256
+ 2984 LOAD_CONST                 "CH2"
+ 2986 EXTENDED_ARG               256
+ 2988 LOAD_CONST                 (0.045, 0.466)
+ 2990 EXTENDED_ARG               256
+ 2992 LOAD_CONST                 "left"
+ 2994 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 2996 BUILD_CONST_KEY_MAP        
+ 2998 EXTENDED_ARG               256
+ 3000 LOAD_CONST                 "rail"
+ 3002 EXTENDED_ARG               256
+ 3004 LOAD_CONST                 "ch1_voltage"
+ 3006 EXTENDED_ARG               256
+ 3008 LOAD_CONST                 "CH1"
+ 3010 EXTENDED_ARG               256
+ 3012 LOAD_CONST                 (0.045, 0.584)
+ 3014 EXTENDED_ARG               256
+ 3016 LOAD_CONST                 "left"
+ 3018 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3020 BUILD_CONST_KEY_MAP        
+ 3022 EXTENDED_ARG               256
+ 3024 LOAD_CONST                 "rail"
+ 3026 EXTENDED_ARG               256
+ 3028 LOAD_CONST                 "vcc_voltage"
+ 3030 EXTENDED_ARG               256
+ 3032 LOAD_CONST                 "VCC"
+ 3034 EXTENDED_ARG               256
+ 3036 LOAD_CONST                 (0.955, 0.515)
+ 3038 EXTENDED_ARG               256
+ 3040 LOAD_CONST                 "right"
+ 3042 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3044 BUILD_CONST_KEY_MAP        
+ 3046 BUILD_LIST                 
+ 3048 EXTENDED_ARG               256
+ 3050 LOAD_CONST                 ('image', 'crop', 'ports')
+ 3052 BUILD_CONST_KEY_MAP        
+ 3054 EXTENDED_ARG               256
+ 3056 LOAD_CONST                 "Nollie16.png"
+ 3058 EXTENDED_ARG               256
+ 3060 LOAD_CONST                 (0.0, 0.27, 1.0, 0.73)
+ 3062 LOAD_CONST                 "channel"
+ 3064 LOAD_CONST                 "Channel 1"
+ 3066 LOAD_CONST                 "1"
+ 3068 EXTENDED_ARG               256
+ 3070 LOAD_CONST                 (0.113, 0.356)
+ 3072 LOAD_CONST                 "top"
+ 3074 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3076 BUILD_CONST_KEY_MAP        
+ 3078 LOAD_CONST                 "channel"
+ 3080 LOAD_CONST                 "Channel 2"
+ 3082 LOAD_CONST                 "2"
+ 3084 EXTENDED_ARG               256
+ 3086 LOAD_CONST                 (0.222, 0.356)
+ 3088 LOAD_CONST                 "top"
+ 3090 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3092 BUILD_CONST_KEY_MAP        
+ 3094 LOAD_CONST                 "channel"
+ 3096 LOAD_CONST                 "Channel 3"
+ 3098 LOAD_CONST                 "3"
+ 3100 EXTENDED_ARG               256
+ 3102 LOAD_CONST                 (0.332, 0.356)
+ 3104 LOAD_CONST                 "top"
+ 3106 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3108 BUILD_CONST_KEY_MAP        
+ 3110 LOAD_CONST                 "channel"
+ 3112 LOAD_CONST                 "Channel 4"
+ 3114 EXTENDED_ARG               256
+ 3116 LOAD_CONST                 "4"
+ 3118 EXTENDED_ARG               256
+ 3120 LOAD_CONST                 (0.442, 0.356)
+ 3122 LOAD_CONST                 "top"
+ 3124 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3126 BUILD_CONST_KEY_MAP        
+ 3128 LOAD_CONST                 "channel"
+ 3130 LOAD_CONST                 "Channel 5"
+ 3132 EXTENDED_ARG               256
+ 3134 LOAD_CONST                 "5"
+ 3136 EXTENDED_ARG               256
+ 3138 LOAD_CONST                 (0.551, 0.356)
+ 3140 LOAD_CONST                 "top"
+ 3142 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3144 BUILD_CONST_KEY_MAP        
+ 3146 LOAD_CONST                 "channel"
+ 3148 LOAD_CONST                 "Channel 6"
+ 3150 EXTENDED_ARG               256
+ 3152 LOAD_CONST                 "6"
+ 3154 EXTENDED_ARG               256
+ 3156 LOAD_CONST                 (0.661, 0.356)
+ 3158 LOAD_CONST                 "top"
+ 3160 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3162 BUILD_CONST_KEY_MAP        
+ 3164 LOAD_CONST                 "channel"
+ 3166 LOAD_CONST                 "Channel 7"
+ 3168 EXTENDED_ARG               256
+ 3170 LOAD_CONST                 "7"
+ 3172 EXTENDED_ARG               256
+ 3174 LOAD_CONST                 (0.771, 0.356)
+ 3176 LOAD_CONST                 "top"
+ 3178 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3180 BUILD_CONST_KEY_MAP        
+ 3182 LOAD_CONST                 "channel"
+ 3184 LOAD_CONST                 "Channel 8"
+ 3186 EXTENDED_ARG               256
+ 3188 LOAD_CONST                 "8"
+ 3190 EXTENDED_ARG               256
+ 3192 LOAD_CONST                 (0.881, 0.356)
+ 3194 LOAD_CONST                 "top"
+ 3196 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3198 BUILD_CONST_KEY_MAP        
+ 3200 LOAD_CONST                 "channel"
+ 3202 LOAD_CONST                 "Channel 9"
+ 3204 EXTENDED_ARG               256
+ 3206 LOAD_CONST                 "9"
+ 3208 EXTENDED_ARG               256
+ 3210 LOAD_CONST                 (0.113, 0.648)
+ 3212 EXTENDED_ARG               256
+ 3214 LOAD_CONST                 "bottom"
+ 3216 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3218 BUILD_CONST_KEY_MAP        
+ 3220 LOAD_CONST                 "channel"
+ 3222 LOAD_CONST                 "Channel 10"
+ 3224 EXTENDED_ARG               256
+ 3226 LOAD_CONST                 "10"
+ 3228 EXTENDED_ARG               256
+ 3230 LOAD_CONST                 (0.222, 0.648)
+ 3232 EXTENDED_ARG               256
+ 3234 LOAD_CONST                 "bottom"
+ 3236 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3238 BUILD_CONST_KEY_MAP        
+ 3240 LOAD_CONST                 "channel"
+ 3242 LOAD_CONST                 "Channel 11"
+ 3244 EXTENDED_ARG               256
+ 3246 LOAD_CONST                 "11"
+ 3248 EXTENDED_ARG               256
+ 3250 LOAD_CONST                 (0.332, 0.648)
+ 3252 EXTENDED_ARG               256
+ 3254 LOAD_CONST                 "bottom"
+ 3256 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3258 BUILD_CONST_KEY_MAP        
+ 3260 LOAD_CONST                 "channel"
+ 3262 LOAD_CONST                 "Channel 12"
+ 3264 EXTENDED_ARG               256
+ 3266 LOAD_CONST                 "12"
+ 3268 EXTENDED_ARG               256
+ 3270 LOAD_CONST                 (0.442, 0.648)
+ 3272 EXTENDED_ARG               256
+ 3274 LOAD_CONST                 "bottom"
+ 3276 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3278 BUILD_CONST_KEY_MAP        
+ 3280 LOAD_CONST                 "channel"
+ 3282 LOAD_CONST                 "Channel 13"
+ 3284 EXTENDED_ARG               256
+ 3286 LOAD_CONST                 "13"
+ 3288 EXTENDED_ARG               256
+ 3290 LOAD_CONST                 (0.551, 0.648)
+ 3292 EXTENDED_ARG               256
+ 3294 LOAD_CONST                 "bottom"
+ 3296 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3298 BUILD_CONST_KEY_MAP        
+ 3300 LOAD_CONST                 "channel"
+ 3302 LOAD_CONST                 "Channel 14"
+ 3304 EXTENDED_ARG               256
+ 3306 LOAD_CONST                 "14"
+ 3308 EXTENDED_ARG               256
+ 3310 LOAD_CONST                 (0.661, 0.648)
+ 3312 EXTENDED_ARG               256
+ 3314 LOAD_CONST                 "bottom"
+ 3316 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3318 BUILD_CONST_KEY_MAP        
+ 3320 LOAD_CONST                 "channel"
+ 3322 LOAD_CONST                 "Channel 15"
+ 3324 EXTENDED_ARG               256
+ 3326 LOAD_CONST                 "15"
+ 3328 EXTENDED_ARG               256
+ 3330 LOAD_CONST                 (0.771, 0.648)
+ 3332 EXTENDED_ARG               256
+ 3334 LOAD_CONST                 "bottom"
+ 3336 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3338 BUILD_CONST_KEY_MAP        
+ 3340 LOAD_CONST                 "channel"
+ 3342 LOAD_CONST                 "Channel 16"
+ 3344 EXTENDED_ARG               256
+ 3346 LOAD_CONST                 "16"
+ 3348 EXTENDED_ARG               256
+ 3350 LOAD_CONST                 (0.881, 0.648)
+ 3352 EXTENDED_ARG               256
+ 3354 LOAD_CONST                 "bottom"
+ 3356 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3358 BUILD_CONST_KEY_MAP        
+ 3360 EXTENDED_ARG               256
+ 3362 LOAD_CONST                 "rail"
+ 3364 EXTENDED_ARG               256
+ 3366 LOAD_CONST                 "xt30_voltage"
+ 3368 EXTENDED_ARG               256
+ 3370 LOAD_CONST                 "XT30"
+ 3372 EXTENDED_ARG               256
+ 3374 LOAD_CONST                 (0.04, 0.502)
+ 3376 EXTENDED_ARG               256
+ 3378 LOAD_CONST                 "left"
+ 3380 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3382 BUILD_CONST_KEY_MAP        
+ 3384 EXTENDED_ARG               256
+ 3386 LOAD_CONST                 "rail"
+ 3388 EXTENDED_ARG               256
+ 3390 LOAD_CONST                 "ldo_voltage"
+ 3392 EXTENDED_ARG               256
+ 3394 LOAD_CONST                 "LDO"
+ 3396 EXTENDED_ARG               256
+ 3398 LOAD_CONST                 (0.955, 0.505)
+ 3400 EXTENDED_ARG               256
+ 3402 LOAD_CONST                 "right"
+ 3404 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3406 BUILD_CONST_KEY_MAP        
+ 3408 BUILD_LIST                 
+ 3410 EXTENDED_ARG               256
+ 3412 LOAD_CONST                 ('image', 'crop', 'ports')
+ 3414 BUILD_CONST_KEY_MAP        
+ 3416 EXTENDED_ARG               256
+ 3418 LOAD_CONST                 "Nollie32.png"
+ 3420 EXTENDED_ARG               256
+ 3422 LOAD_CONST                 (0.0, 0.17, 1.0, 0.82)
+ 3424 LOAD_CONST                 "channel"
+ 3426 LOAD_CONST                 "Channel 1"
+ 3428 LOAD_CONST                 "1"
+ 3430 EXTENDED_ARG               256
+ 3432 LOAD_CONST                 (0.1, 0.287)
+ 3434 LOAD_CONST                 "top"
+ 3436 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3438 BUILD_CONST_KEY_MAP        
+ 3440 LOAD_CONST                 "channel"
+ 3442 LOAD_CONST                 "Channel 2"
+ 3444 LOAD_CONST                 "2"
+ 3446 EXTENDED_ARG               256
+ 3448 LOAD_CONST                 (0.214, 0.287)
+ 3450 LOAD_CONST                 "top"
+ 3452 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3454 BUILD_CONST_KEY_MAP        
+ 3456 LOAD_CONST                 "channel"
+ 3458 LOAD_CONST                 "Channel 3"
+ 3460 LOAD_CONST                 "3"
+ 3462 EXTENDED_ARG               256
+ 3464 LOAD_CONST                 (0.329, 0.287)
+ 3466 LOAD_CONST                 "top"
+ 3468 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3470 BUILD_CONST_KEY_MAP        
+ 3472 LOAD_CONST                 "channel"
+ 3474 LOAD_CONST                 "Channel 4"
+ 3476 EXTENDED_ARG               256
+ 3478 LOAD_CONST                 "4"
+ 3480 EXTENDED_ARG               256
+ 3482 LOAD_CONST                 (0.443, 0.287)
+ 3484 LOAD_CONST                 "top"
+ 3486 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3488 BUILD_CONST_KEY_MAP        
+ 3490 LOAD_CONST                 "channel"
+ 3492 LOAD_CONST                 "Channel 5"
+ 3494 EXTENDED_ARG               256
+ 3496 LOAD_CONST                 "5"
+ 3498 EXTENDED_ARG               256
+ 3500 LOAD_CONST                 (0.557, 0.287)
+ 3502 LOAD_CONST                 "top"
+ 3504 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3506 BUILD_CONST_KEY_MAP        
+ 3508 LOAD_CONST                 "channel"
+ 3510 LOAD_CONST                 "Channel 6"
+ 3512 EXTENDED_ARG               256
+ 3514 LOAD_CONST                 "6"
+ 3516 EXTENDED_ARG               256
+ 3518 LOAD_CONST                 (0.671, 0.287)
+ 3520 LOAD_CONST                 "top"
+ 3522 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3524 BUILD_CONST_KEY_MAP        
+ 3526 LOAD_CONST                 "channel"
+ 3528 LOAD_CONST                 "Channel 7"
+ 3530 EXTENDED_ARG               256
+ 3532 LOAD_CONST                 "7"
+ 3534 EXTENDED_ARG               256
+ 3536 LOAD_CONST                 (0.786, 0.287)
+ 3538 LOAD_CONST                 "top"
+ 3540 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3542 BUILD_CONST_KEY_MAP        
+ 3544 LOAD_CONST                 "channel"
+ 3546 LOAD_CONST                 "Channel 8"
+ 3548 EXTENDED_ARG               256
+ 3550 LOAD_CONST                 "8"
+ 3552 EXTENDED_ARG               256
+ 3554 LOAD_CONST                 (0.9, 0.287)
+ 3556 LOAD_CONST                 "top"
+ 3558 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3560 BUILD_CONST_KEY_MAP        
+ 3562 LOAD_CONST                 "channel"
+ 3564 LOAD_CONST                 "Channel 9"
+ 3566 EXTENDED_ARG               256
+ 3568 LOAD_CONST                 "9"
+ 3570 EXTENDED_ARG               256
+ 3572 LOAD_CONST                 (0.1, 0.707)
+ 3574 EXTENDED_ARG               256
+ 3576 LOAD_CONST                 "bottom"
+ 3578 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3580 BUILD_CONST_KEY_MAP        
+ 3582 LOAD_CONST                 "channel"
+ 3584 LOAD_CONST                 "Channel 10"
+ 3586 EXTENDED_ARG               256
+ 3588 LOAD_CONST                 "10"
+ 3590 EXTENDED_ARG               256
+ 3592 LOAD_CONST                 (0.214, 0.707)
+ 3594 EXTENDED_ARG               256
+ 3596 LOAD_CONST                 "bottom"
+ 3598 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3600 BUILD_CONST_KEY_MAP        
+ 3602 LOAD_CONST                 "channel"
+ 3604 LOAD_CONST                 "Channel 11"
+ 3606 EXTENDED_ARG               256
+ 3608 LOAD_CONST                 "11"
+ 3610 EXTENDED_ARG               256
+ 3612 LOAD_CONST                 (0.329, 0.707)
+ 3614 EXTENDED_ARG               256
+ 3616 LOAD_CONST                 "bottom"
+ 3618 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3620 BUILD_CONST_KEY_MAP        
+ 3622 LOAD_CONST                 "channel"
+ 3624 LOAD_CONST                 "Channel 12"
+ 3626 EXTENDED_ARG               256
+ 3628 LOAD_CONST                 "12"
+ 3630 EXTENDED_ARG               256
+ 3632 LOAD_CONST                 (0.443, 0.707)
+ 3634 EXTENDED_ARG               256
+ 3636 LOAD_CONST                 "bottom"
+ 3638 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3640 BUILD_CONST_KEY_MAP        
+ 3642 LOAD_CONST                 "channel"
+ 3644 LOAD_CONST                 "Channel 13"
+ 3646 EXTENDED_ARG               256
+ 3648 LOAD_CONST                 "13"
+ 3650 EXTENDED_ARG               256
+ 3652 LOAD_CONST                 (0.557, 0.707)
+ 3654 EXTENDED_ARG               256
+ 3656 LOAD_CONST                 "bottom"
+ 3658 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3660 BUILD_CONST_KEY_MAP        
+ 3662 LOAD_CONST                 "channel"
+ 3664 LOAD_CONST                 "Channel 14"
+ 3666 EXTENDED_ARG               256
+ 3668 LOAD_CONST                 "14"
+ 3670 EXTENDED_ARG               256
+ 3672 LOAD_CONST                 (0.671, 0.707)
+ 3674 EXTENDED_ARG               256
+ 3676 LOAD_CONST                 "bottom"
+ 3678 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3680 BUILD_CONST_KEY_MAP        
+ 3682 LOAD_CONST                 "channel"
+ 3684 LOAD_CONST                 "Channel 15"
+ 3686 EXTENDED_ARG               256
+ 3688 LOAD_CONST                 "15"
+ 3690 EXTENDED_ARG               256
+ 3692 LOAD_CONST                 (0.786, 0.707)
+ 3694 EXTENDED_ARG               256
+ 3696 LOAD_CONST                 "bottom"
+ 3698 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3700 BUILD_CONST_KEY_MAP        
+ 3702 LOAD_CONST                 "channel"
+ 3704 LOAD_CONST                 "Channel 16"
+ 3706 EXTENDED_ARG               256
+ 3708 LOAD_CONST                 "16"
+ 3710 EXTENDED_ARG               256
+ 3712 LOAD_CONST                 (0.9, 0.707)
+ 3714 EXTENDED_ARG               256
+ 3716 LOAD_CONST                 "bottom"
+ 3718 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3720 BUILD_CONST_KEY_MAP        
+ 3722 EXTENDED_ARG               256
+ 3724 LOAD_CONST                 "channel_group"
+ 3726 EXTENDED_ARG               256
+ 3728 LOAD_CONST                 "ATX"
+ 3730 EXTENDED_ARG               256
+ 3732 LOAD_CONST                 "ATX"
+ 3734 EXTENDED_ARG               256
+ 3736 LOAD_CONST                 (0.05, 0.435)
+ 3738 EXTENDED_ARG               256
+ 3740 LOAD_CONST                 "left"
+ 3742 BUILD_LIST                 
+ 3744 EXTENDED_ARG               256
+ 3746 LOAD_CONST                 ('Channel ATX1', 'Channel ATX2', 'Channel ATX3', 'Channel ATX4', 'Channel ATX5', 'Channel ATX6')
+ 3748 LIST_EXTEND                
+ 3750 EXTENDED_ARG               256
+ 3752 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side', 'keys')
+ 3754 BUILD_CONST_KEY_MAP        
+ 3756 EXTENDED_ARG               256
+ 3758 LOAD_CONST                 "channel_group"
+ 3760 EXTENDED_ARG               256
+ 3762 LOAD_CONST                 "GPU"
+ 3764 EXTENDED_ARG               256
+ 3766 LOAD_CONST                 "GPU"
+ 3768 EXTENDED_ARG               256
+ 3770 LOAD_CONST                 (0.05, 0.585)
+ 3772 EXTENDED_ARG               256
+ 3774 LOAD_CONST                 "left"
+ 3776 BUILD_LIST                 
+ 3778 EXTENDED_ARG               256
+ 3780 LOAD_CONST                 ('Channel GPU1', 'Channel GPU2', 'Channel GPU3', 'Channel GPU4', 'Channel GPU5', 'Channel GPU6')
+ 3782 LIST_EXTEND                
+ 3784 EXTENDED_ARG               256
+ 3786 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side', 'keys')
+ 3788 BUILD_CONST_KEY_MAP        
+ 3790 EXTENDED_ARG               256
+ 3792 LOAD_CONST                 "rail"
+ 3794 EXTENDED_ARG               256
+ 3796 LOAD_CONST                 "xt30_voltage"
+ 3798 EXTENDED_ARG               256
+ 3800 LOAD_CONST                 "XT30"
+ 3802 EXTENDED_ARG               256
+ 3804 LOAD_CONST                 (0.925, 0.4)
+ 3806 EXTENDED_ARG               256
+ 3808 LOAD_CONST                 "right"
+ 3810 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3812 BUILD_CONST_KEY_MAP        
+ 3814 EXTENDED_ARG               256
+ 3816 LOAD_CONST                 "channel_group"
+ 3818 EXTENDED_ARG               256
+ 3820 LOAD_CONST                 "EXT"
+ 3822 EXTENDED_ARG               256
+ 3824 LOAD_CONST                 "EXT"
+ 3826 EXTENDED_ARG               256
+ 3828 LOAD_CONST                 (0.94, 0.525)
+ 3830 EXTENDED_ARG               256
+ 3832 LOAD_CONST                 "right"
+ 3834 BUILD_LIST                 
+ 3836 EXTENDED_ARG               256
+ 3838 LOAD_CONST                 ('Channel EXT1', 'Channel EXT2', 'Channel EXT3', 'Channel EXT4')
+ 3840 LIST_EXTEND                
+ 3842 EXTENDED_ARG               256
+ 3844 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side', 'keys')
+ 3846 BUILD_CONST_KEY_MAP        
+ 3848 EXTENDED_ARG               256
+ 3850 LOAD_CONST                 "rail"
+ 3852 EXTENDED_ARG               256
+ 3854 LOAD_CONST                 "ldo_voltage"
+ 3856 EXTENDED_ARG               256
+ 3858 LOAD_CONST                 "LDO"
+ 3860 EXTENDED_ARG               256
+ 3862 LOAD_CONST                 (0.945, 0.63)
+ 3864 EXTENDED_ARG               256
+ 3866 LOAD_CONST                 "right"
+ 3868 LOAD_CONST                 ('kind', 'key', 'label', 'pos', 'side')
+ 3870 BUILD_CONST_KEY_MAP        
+ 3872 BUILD_LIST                 
+ 3874 EXTENDED_ARG               256
+ 3876 LOAD_CONST                 ('image', 'crop', 'ports')
+ 3878 BUILD_CONST_KEY_MAP        
+ 3880 EXTENDED_ARG               256
+ 3882 LOAD_CONST                 ('Nollie8', 'Nollie8Plus', 'Nollie16', 'Nollie32')
+ 3884 BUILD_CONST_KEY_MAP        
+ 3886 STORE_NAME                 N_DEV_PORT_MAP
+ 3888 EXTENDED_ARG               256
+ 3890 LOAD_CONST                 "Winbond"
+ 3892 EXTENDED_ARG               256
+ 3894 LOAD_CONST                 "GigaDevice"
+ 3896 EXTENDED_ARG               256
+ 3898 LOAD_CONST                 "Micron"
+ 3900 EXTENDED_ARG               256
+ 3902 LOAD_CONST                 "Atmel"
+ 3904 EXTENDED_ARG               256
+ 3906 LOAD_CONST                 "Macronix"
+ 3908 EXTENDED_ARG               256
+ 3910 LOAD_CONST                 "PUYA"
+ 3912 EXTENDED_ARG               256
+ 3914 LOAD_CONST                 (239, 200, 32, 31, 194, 133)
+ 3916 BUILD_CONST_KEY_MAP        
+ 3918 STORE_NAME                 FLASH_VENDOR_NAMES
+ 3920 EXTENDED_ARG               256
+ 3922 LOAD_CONST                 "cap"
+ 3924 LOAD_NAME                  int
+ 3926 BUILD_TUPLE                
+ 3928 EXTENDED_ARG               256
+ 3930 LOAD_CONST                 <Code311 code object flash_capacity_bytes at 0x1c36ef79150, file app\core_driver\n_dev_config.py>, line 949
+ 3932 MAKE_FUNCTION              annotation
+ 3934 STORE_NAME                 flash_capacity_bytes
+ 3936 EXTENDED_ARG               256
+ 3938 LOAD_CONST                 "mfr"
+ 3940 LOAD_NAME                  int
+ 3942 EXTENDED_ARG               256
+ 3944 LOAD_CONST                 "mem_type"
+ 3946 LOAD_NAME                  int
+ 3948 EXTENDED_ARG               256
+ 3950 LOAD_CONST                 "cap"
+ 3952 LOAD_NAME                  int
+ 3954 LOAD_CONST                 "return"
+ 3956 LOAD_NAME                  str
+ 3958 BUILD_TUPLE                
+ 3960 EXTENDED_ARG               256
+ 3962 LOAD_CONST                 <Code311 code object resolve_flash_chip at 0x1c36ef79260, file app\core_driver\n_dev_config.py>, line 954
+ 3964 MAKE_FUNCTION              annotation
+ 3966 STORE_NAME                 resolve_flash_chip
+ 3968 EXTENDED_ARG               256
+ 3970 LOAD_CONST                 8027
+ 3972 LOAD_NAME                  N_DEV_VOLTAGE_SPEC
+ 3974 LOAD_CONST                 "Nollie8Plus"
+ 3976 BINARY_SUBSCR              
+ 3978 CACHE                      
+ 3980 CACHE                      
+ 3982 CACHE                      
+ 3984 CACHE                      
+ 3986 BUILD_MAP                  
+ 3988 STORE_NAME                 N_DEV_VOLTAGE_SPEC_BY_HARDWARE
+ 3990 LOAD_CONST                 "Nollie8Plus"
+ 3992 EXTENDED_ARG               256
+ 3994 LOAD_CONST                 (('ch1_power', 'ch1_voltage', 'ch1_current'), ('ch2_power', 'ch2_voltage', 'ch2_current'))
+ 3996 BUILD_MAP                  
+ 3998 STORE_NAME                 N_DEV_POWER_PAIRS
+ 4000 EXTENDED_ARG               256
+ 4002 LOAD_CONST                 8027
+ 4004 LOAD_NAME                  N_DEV_POWER_PAIRS
+ 4006 LOAD_CONST                 "Nollie8Plus"
+ 4008 BINARY_SUBSCR              
+ 4010 CACHE                      
+ 4012 CACHE                      
+ 4014 CACHE                      
+ 4016 CACHE                      
+ 4018 BUILD_MAP                  
+ 4020 STORE_NAME                 N_DEV_POWER_PAIRS_BY_HARDWARE
+ 4022 EXTENDED_ARG               256
+ 4024 LOAD_CONST                 (None,)
+ 4026 LOAD_CONST                 "dev_name"
+ 4028 LOAD_NAME                  str
+ 4030 BUILD_TUPLE                
+ 4032 EXTENDED_ARG               256
+ 4034 LOAD_CONST                 <Code311 code object get_power_pairs at 0x1c36ef79370, file app\core_driver\n_dev_config.py>, line 983
+ 4036 MAKE_FUNCTION              default, annotation
+ 4038 STORE_NAME                 get_power_pairs
+ 4040 EXTENDED_ARG               256
+ 4042 LOAD_CONST                 (None,)
+ 4044 LOAD_CONST                 "dev_name"
+ 4046 LOAD_NAME                  str
+ 4048 BUILD_TUPLE                
+ 4050 EXTENDED_ARG               256
+ 4052 LOAD_CONST                 <Code311 code object get_derived_fields at 0x1c36ef79590, file app\core_driver\n_dev_config.py>, line 993
+ 4054 MAKE_FUNCTION              default, annotation
+ 4056 STORE_NAME                 get_derived_fields
+ 4058 EXTENDED_ARG               256
+ 4060 LOAD_CONST                 (None,)
+ 4062 LOAD_CONST                 "dev_name"
+ 4064 LOAD_NAME                  str
+ 4066 BUILD_TUPLE                
+ 4068 EXTENDED_ARG               256
+ 4070 LOAD_CONST                 <Code311 code object get_voltage_spec at 0x1c36ef796a0, file app\core_driver\n_dev_config.py>, line 1002
+ 4072 MAKE_FUNCTION              default, annotation
+ 4074 STORE_NAME                 get_voltage_spec
+ 4076 EXTENDED_ARG               256
+ 4078 LOAD_CONST                 (None,)
+ 4080 LOAD_CONST                 "dev_name"
+ 4082 LOAD_NAME                  str
+ 4084 LOAD_CONST                 "return"
+ 4086 LOAD_NAME                  dict
+ 4088 BUILD_TUPLE                
+ 4090 EXTENDED_ARG               256
+ 4092 LOAD_CONST                 <Code311 code object decode_voltage_data at 0x1c36ef798c0, file app\core_driver\n_dev_config.py>, line 1013
+ 4094 MAKE_FUNCTION              default, annotation
+ 4096 STORE_NAME                 decode_voltage_data
+ 4098 LOAD_CONST                 0
+ 4100 STORE_NAME                 CANVAS_LOOP_BASE
+ 4102 LOAD_CONST                 14
+ 4104 STORE_NAME                 CANVAS_LOOP_MAX
+ 4106 LOAD_CONST                 14
+ 4108 STORE_NAME                 CANVAS_BOOT_BASE
+ 4110 LOAD_CONST                 2
+ 4112 STORE_NAME                 CANVAS_BOOT_MAX
+ 4114 BUILD_LIST                 
+ 4116 EXTENDED_ARG               256
+ 4118 LOAD_CONST                 (('#0f6cbd', '#4fa8ff'), ('#8034c2', '#b77ff0'), ('#c2399f', '#ef7fd0'), ('#4f52b2', '#8f90f5'), ('#0a85b8', '#4fc3e8'), ('#d1367e', '#ff85b3'), ('#6b5bd2', '#a89bff'))
+ 4120 LIST_EXTEND                
+ 4122 STORE_NAME                 CANVAS_ACCENT_COLORS
+ 4124 EXTENDED_ARG               256
+ 4126 LOAD_CONST                 "canvas_idx"
+ 4128 LOAD_NAME                  int
+ 4130 LOAD_CONST                 "return"
+ 4132 LOAD_NAME                  tuple
+ 4134 LOAD_NAME                  str
+ 4136 LOAD_NAME                  str
+ 4138 BUILD_TUPLE                
+ 4140 BINARY_SUBSCR              
+ 4142 CACHE                      
+ 4144 CACHE                      
+ 4146 CACHE                      
+ 4148 CACHE                      
+ 4150 BUILD_TUPLE                
+ 4152 EXTENDED_ARG               256
+ 4154 LOAD_CONST                 <Code311 code object canvas_accent at 0x1c36ef799d0, file app\core_driver\n_dev_config.py>, line 1051
+ 4156 MAKE_FUNCTION              annotation
+ 4158 STORE_NAME                 canvas_accent
+ 4160 EXTENDED_ARG               256
+ 4162 LOAD_CONST                 "ch_count"
+ 4164 LOAD_NAME                  int
+ 4166 LOAD_CONST                 "return"
+ 4168 LOAD_NAME                  dict
+ 4170 BUILD_TUPLE                
+ 4172 EXTENDED_ARG               256
+ 4174 LOAD_CONST                 <Code311 code object make_default_canvas_config at 0x1c36ef79ae0, file app\core_driver\n_dev_config.py>, line 1056
+ 4176 MAKE_FUNCTION              annotation
+ 4178 STORE_NAME                 make_default_canvas_config
+ 4180 LOAD_CONST                 None
+ 4182 RETURN_VALUE               
+  == code get_flash_size line 261 args=('device_name',)
+      0 RESUME                     
+      2 LOAD_GLOBAL                N_DEV_USB_CONFIG
+      4 CACHE                      
+      6 CACHE                      
+      8 CACHE                      
+     10 CACHE                      
+     12 CACHE                      
+     14 LOAD_METHOD                get
+     16 CACHE                      
+     18 CACHE                      
+     20 CACHE                      
+     22 CACHE                      
+     24 CACHE                      
+     26 CACHE                      
+     28 CACHE                      
+     30 CACHE                      
+     32 CACHE                      
+     34 CACHE                      
+     36 LOAD_FAST                  device_name
+     38 BUILD_MAP                  
+     40 PRECALL                    
+     42 CACHE                      
+     44 CALL                       
+     46 CACHE                      
+     48 CACHE                      
+     50 CACHE                      
+     52 CACHE                      
+     54 LOAD_METHOD                get
+     56 CACHE                      
+     58 CACHE                      
+     60 CACHE                      
+     62 CACHE                      
+     64 CACHE                      
+     66 CACHE                      
+     68 CACHE                      
+     70 CACHE                      
+     72 CACHE                      
+     74 CACHE                      
+     76 LOAD_CONST                 "flash_size"
+     78 LOAD_GLOBAL                GD25Q128_SIZE
+     80 CACHE                      
+     82 CACHE                      
+     84 CACHE                      
+     86 CACHE                      
+     88 CACHE                      
+     90 PRECALL                    
+     92 CACHE                      
+     94 CALL                       
+     96 CACHE                      
+     98 CACHE                      
+    100 CACHE                      
+    102 CACHE                      
+    104 RETURN_VALUE               
+  == code get_fseq_region_bytes line 271 args=('device_name',)
+      0 RESUME                     
+      2 LOAD_GLOBAL                NULL + get_flash_size
+      4 CACHE                      
+      6 CACHE                      
+      8 CACHE                      
+     10 CACHE                      
+     12 CACHE                      
+     14 LOAD_FAST                  device_name
+     16 PRECALL                    
+     18 CACHE                      
+     20 CALL                       
+     22 CACHE                      
+     24 CACHE                      
+     26 CACHE                      
+     28 CACHE                      
+     30 LOAD_GLOBAL                FSEQ_BASE_ADDR
+     32 CACHE                      
+     34 CACHE                      
+     36 CACHE                      
+     38 CACHE                      
+     40 CACHE                      
+     42 BINARY_OP                  -
+     44 CACHE                      
+     46 RETURN_VALUE               
+  == code get_firmware_version line 499 args=('device_name',)
+      0 RESUME                     
+      2 LOAD_GLOBAL                N_DEV_FIRMWARE_VERSION
+      4 CACHE                      
+      6 CACHE                      
+      8 CACHE                      
+     10 CACHE                      
+     12 CACHE                      
+     14 LOAD_METHOD                get
+     16 CACHE                      
+     18 CACHE                      
+     20 CACHE                      
+     22 CACHE                      
+     24 CACHE                      
+     26 CACHE                      
+     28 CACHE                      
+     30 CACHE                      
+     32 CACHE                      
+     34 CACHE                      
+     36 LOAD_FAST                  device_name
+     38 LOAD_GLOBAL                FIRMWARE_VERSION
+     40 CACHE                      
+     42 CACHE                      
+     44 CACHE                      
+     46 CACHE                      
+     48 CACHE                      
+     50 PRECALL                    
+     52 CACHE                      
+     54 CALL                       
+     56 CACHE                      
+     58 CACHE                      
+     60 CACHE                      
+     62 CACHE                      
+     64 RETURN_VALUE               
+  == code has_feature line 543 args=('device_name', 'feature')
+      0 RESUME                     
+      2 LOAD_GLOBAL                N_DEV_FEATURES
+      4 CACHE                      
+      6 CACHE                      
+      8 CACHE                      
+     10 CACHE                      
+     12 CACHE                      
+     14 LOAD_METHOD                get
+     16 CACHE                      
+     18 CACHE                      
+     20 CACHE                      
+     22 CACHE                      
+     24 CACHE                      
+     26 CACHE                      
+     28 CACHE                      
+     30 CACHE                      
+     32 CACHE                      
+     34 CACHE                      
+     36 LOAD_FAST                  device_name
+     38 BUILD_MAP                  
+     40 PRECALL                    
+     42 CACHE                      
+     44 CALL                       
+     46 CACHE                      
+     48 CACHE                      
+     50 CACHE                      
+     52 CACHE                      
+     54 LOAD_METHOD                get
+     56 CACHE                      
+     58 CACHE                      
+     60 CACHE                      
+     62 CACHE                      
+     64 CACHE                      
+     66 CACHE                      
+     68 CACHE                      
+     70 CACHE                      
+     72 CACHE                      
+     74 CACHE                      
+     76 LOAD_FAST                  feature
+     78 LOAD_CONST                 False
+     80 PRECALL                    
+     82 CACHE                      
+     84 CALL                       
+     86 CACHE                      
+     88 CACHE                      
+     90 CACHE                      
+     92 CACHE                      
+     94 RETURN_VALUE               
+  == code get_gpio_labels line 562 args=('device_name',)
+      0 RESUME                     
+      2 LOAD_GLOBAL                N_DEV_GPIO_LABELS
+      4 CACHE                      
+      6 CACHE                      
+      8 CACHE                      
+     10 CACHE                      
+     12 CACHE                      
+     14 LOAD_METHOD                get
+     16 CACHE                      
+     18 CACHE                      
+     20 CACHE                      
+     22 CACHE                      
+     24 CACHE                      
+     26 CACHE                      
+     28 CACHE                      
+     30 CACHE                      
+     32 CACHE                      
+     34 CACHE                      
+     36 LOAD_FAST                  device_name
+     38 LOAD_GLOBAL                N_DEV_GPIO_LABELS
+     40 CACHE                      
+     42 CACHE                      
+     44 CACHE                      
+     46 CACHE                      
+     48 CACHE                      
+     50 LOAD_CONST                 "_default"
+     52 BINARY_SUBSCR              
+     54 CACHE                      
+     56 CACHE                      
+     58 CACHE                      
+     60 CACHE                      
+     62 PRECALL                    
+     64 CACHE                      
+     66 CALL                       
+     68 CACHE                      
+     70 CACHE                      
+     72 CACHE                      
+     74 CACHE                      
+     76 RETURN_VALUE               
+  == code <listcomp> line 803 args=('.0',)
+      0 RESUME                     
+      2 BUILD_LIST                 
+      4 LOAD_FAST                  .0
+      6 FOR_ITER                   to 24
+      8 STORE_FAST                 _
+     10 LOAD_CONST                 0
+     12 BUILD_LIST                 
+     14 LOAD_CONST                 48
+     16 BINARY_OP                  *
+     18 CACHE                      
+     20 LIST_APPEND                
+     22 JUMP_BACKWARD              to 6
+     24 RETURN_VALUE               
+  == code flash_capacity_bytes line 949 args=('cap',)
+      0 RESUME                     
+      2 LOAD_CONST                 20
+      4 LOAD_FAST                  cap
+      6 SWAP                       TOS <-> TOS1
+      8 COPY                       
+     10 COMPARE_OP                 <=
+     12 CACHE                      
+     14 CACHE                      
+     16 POP_JUMP_FORWARD_IF_FALSE  to 30
+     18 LOAD_CONST                 30
+     20 COMPARE_OP                 <=
+     22 CACHE                      
+     24 CACHE                      
+     26 POP_JUMP_FORWARD_IF_FALSE  to 44
+     28 JUMP_FORWARD               to 34
+     30 POP_TOP                    
+     32 JUMP_FORWARD               to 44
+     34 LOAD_CONST                 1
+     36 LOAD_FAST                  cap
+     38 BINARY_OP                  <<
+     40 CACHE                      
+     42 JUMP_FORWARD               to 46
+     44 LOAD_CONST                 None
+     46 RETURN_VALUE               
+  == code resolve_flash_chip line 954 args=('mfr', 'mem_type', 'cap')
+      0 RESUME                     
+      2 LOAD_GLOBAL                NULL + flash_capacity_bytes
+      4 CACHE                      
+      6 CACHE                      
+      8 CACHE                      
+     10 CACHE                      
+     12 CACHE                      
+     14 LOAD_FAST                  cap
+     16 PRECALL                    
+     18 CACHE                      
+     20 CALL                       
+     22 CACHE                      
+     24 CACHE                      
+     26 CACHE                      
+     28 CACHE                      
+     30 STORE_FAST                 size
+     32 LOAD_GLOBAL                FLASH_VENDOR_NAMES
+     34 CACHE                      
+     36 CACHE                      
+     38 CACHE                      
+     40 CACHE                      
+     42 CACHE                      
+     44 LOAD_METHOD                get
+     46 CACHE                      
+     48 CACHE                      
+     50 CACHE                      
+     52 CACHE                      
+     54 CACHE                      
+     56 CACHE                      
+     58 CACHE                      
+     60 CACHE                      
+     62 CACHE                      
+     64 CACHE                      
+     66 LOAD_FAST                  mfr
+     68 LOAD_CONST                 "MFR 0x"
+     70 LOAD_FAST                  mfr
+     72 LOAD_CONST                 "02X"
+     74 FORMAT_VALUE               
+     76 BUILD_STRING               
+     78 PRECALL                    
+     80 CACHE                      
+     82 CALL                       
+     84 CACHE                      
+     86 CACHE                      
+     88 CACHE                      
+     90 CACHE                      
+     92 STORE_FAST                 mfr_name
+     94 LOAD_FAST                  size
+     96 POP_JUMP_FORWARD_IF_FALSE  to 120
+     98 LOAD_FAST                  mfr_name
+    100 FORMAT_VALUE               
+    102 LOAD_CONST                 ", "
+    104 LOAD_FAST                  size
+    106 LOAD_CONST                 20
+    108 BINARY_OP                  >>
+    110 CACHE                      
+    112 FORMAT_VALUE               
+    114 LOAD_CONST                 " MB"
+    116 BUILD_STRING               
+    118 RETURN_VALUE               
+    120 LOAD_FAST                  mfr_name
+    122 RETURN_VALUE               
+  == code get_power_pairs line 983 args=('dev_name', 'hardware')
+      0 RESUME                     
+      2 NOP                        
+      4 LOAD_FAST                  hardware
+      6 POP_JUMP_FORWARD_IF_NONE   to 38
+      8 LOAD_GLOBAL                NULL + int
+     10 CACHE                      
+     12 CACHE                      
+     14 CACHE                      
+     16 CACHE                      
+     18 CACHE                      
+     20 LOAD_FAST                  hardware
+     22 PRECALL                    
+     24 CACHE                      
+     26 CALL                       
+     28 CACHE                      
+     30 CACHE                      
+     32 CACHE                      
+     34 CACHE                      
+     36 JUMP_FORWARD               to 40
+     38 LOAD_CONST                 None
+     40 STORE_FAST                 hw
+     42 JUMP_FORWARD               to 94
+     44 PUSH_EXC_INFO              
+     46 LOAD_GLOBAL                TypeError
+     48 CACHE                      
+     50 CACHE                      
+     52 CACHE                      
+     54 CACHE                      
+     56 CACHE                      
+     58 LOAD_GLOBAL                ValueError
+     60 CACHE                      
+     62 CACHE                      
+     64 CACHE                      
+     66 CACHE                      
+     68 CACHE                      
+     70 BUILD_TUPLE                
+     72 CHECK_EXC_MATCH            
+     74 POP_JUMP_FORWARD_IF_FALSE  to 86
+     76 POP_TOP                    
+     78 LOAD_CONST                 None
+     80 STORE_FAST                 hw
+     82 POP_EXCEPT                 
+     84 JUMP_FORWARD               to 94
+     86 RERAISE                    
+     88 COPY                       
+     90 POP_EXCEPT                 
+     92 RERAISE                    
+     94 LOAD_FAST                  hw
+     96 POP_JUMP_FORWARD_IF_NONE   to 142
+     98 LOAD_FAST                  hw
+    100 LOAD_GLOBAL                N_DEV_POWER_PAIRS_BY_HARDWARE
+    102 CACHE                      
+    104 CACHE                      
+    106 CACHE                      
+    108 CACHE                      
+    110 CACHE                      
+    112 CONTAINS_OP                in
+    114 POP_JUMP_FORWARD_IF_FALSE  to 142
+    116 LOAD_GLOBAL                N_DEV_POWER_PAIRS_BY_HARDWARE
+    118 CACHE                      
+    120 CACHE                      
+    122 CACHE                      
+    124 CACHE                      
+    126 CACHE                      
+    128 LOAD_FAST                  hw
+    130 BINARY_SUBSCR              
+    132 CACHE                      
+    134 CACHE                      
+    136 CACHE                      
+    138 CACHE                      
+    140 RETURN_VALUE               
+    142 LOAD_GLOBAL                N_DEV_POWER_PAIRS
+    144 CACHE                      
+    146 CACHE                      
+    148 CACHE                      
+    150 CACHE                      
+    152 CACHE                      
+    154 LOAD_METHOD                get
+    156 CACHE                      
+    158 CACHE                      
+    160 CACHE                      
+    162 CACHE                      
+    164 CACHE                      
+    166 CACHE                      
+    168 CACHE                      
+    170 CACHE                      
+    172 CACHE                      
+    174 CACHE                      
+    176 LOAD_FAST                  dev_name
+    178 LOAD_CONST                 ()
+    180 PRECALL                    
+    182 CACHE                      
+    184 CALL                       
+    186 CACHE                      
+    188 CACHE                      
+    190 CACHE                      
+    192 CACHE                      
+    194 RETURN_VALUE               
+  == code get_derived_fields line 993 args=('dev_name', 'hardware')
+      0 RESUME                     
+      2 LOAD_GLOBAL                NULL + get_power_pairs
+      4 CACHE                      
+      6 CACHE                      
+      8 CACHE                      
+     10 CACHE                      
+     12 CACHE                      
+     14 LOAD_FAST                  dev_name
+     16 LOAD_FAST                  hardware
+     18 PRECALL                    
+     20 CACHE                      
+     22 CALL                       
+     24 CACHE                      
+     26 CACHE                      
+     28 CACHE                      
+     30 CACHE                      
+     32 STORE_FAST                 pairs
+     34 LOAD_CONST                 <Code311 code object <listcomp> at 0x1c36ef79480, file app\core_driver\n_dev_config.py>, line 996
+     36 MAKE_FUNCTION              No arguments
+     38 LOAD_FAST                  pairs
+     40 GET_ITER                   
+     42 PRECALL                    
+     44 CACHE                      
+     46 CALL                       
+     48 CACHE                      
+     50 CACHE                      
+     52 CACHE                      
+     54 CACHE                      
+     56 STORE_FAST                 out
+     58 LOAD_GLOBAL                NULL + len
+     60 CACHE                      
+     62 CACHE                      
+     64 CACHE                      
+     66 CACHE                      
+     68 CACHE                      
+     70 LOAD_FAST                  pairs
+     72 PRECALL                    
+     74 CACHE                      
+     76 CALL                       
+     78 CACHE                      
+     80 CACHE                      
+     82 CACHE                      
+     84 CACHE                      
+     86 LOAD_CONST                 2
+     88 COMPARE_OP                 >=
+     90 CACHE                      
+     92 CACHE                      
+     94 POP_JUMP_FORWARD_IF_FALSE  to 138
+     96 LOAD_FAST                  out
+     98 LOAD_METHOD                append
+    100 CACHE                      
+    102 CACHE                      
+    104 CACHE                      
+    106 CACHE                      
+    108 CACHE                      
+    110 CACHE                      
+    112 CACHE                      
+    114 CACHE                      
+    116 CACHE                      
+    118 CACHE                      
+    120 LOAD_CONST                 ('total_power', 'W')
+    122 PRECALL                    
+    124 CACHE                      
+    126 CALL                       
+    128 CACHE                      
+    130 CACHE                      
+    132 CACHE                      
+    134 CACHE                      
+    136 POP_TOP                    
+    138 LOAD_FAST                  out
+    140 RETURN_VALUE               
+    == code <listcomp> line 996 args=('.0',)
+        0 RESUME                     
+        2 BUILD_LIST                 
+        4 LOAD_FAST                  .0
+        6 FOR_ITER                   to 28
+        8 UNPACK_SEQUENCE            
+       10 CACHE                      
+       12 STORE_FAST                 name
+       14 STORE_FAST                 _v
+       16 STORE_FAST                 _i
+       18 LOAD_FAST                  name
+       20 LOAD_CONST                 "W"
+       22 BUILD_TUPLE                
+       24 LIST_APPEND                
+       26 JUMP_BACKWARD              to 6
+       28 RETURN_VALUE               
+  == code get_voltage_spec line 1002 args=('dev_name', 'hardware')
+      0 RESUME                     
+      2 NOP                        
+      4 LOAD_FAST                  hardware
+      6 POP_JUMP_FORWARD_IF_NONE   to 38
+      8 LOAD_GLOBAL                NULL + int
+     10 CACHE                      
+     12 CACHE                      
+     14 CACHE                      
+     16 CACHE                      
+     18 CACHE                      
+     20 LOAD_FAST                  hardware
+     22 PRECALL                    
+     24 CACHE                      
+     26 CALL                       
+     28 CACHE                      
+     30 CACHE                      
+     32 CACHE                      
+     34 CACHE                      
+     36 JUMP_FORWARD               to 40
+     38 LOAD_CONST                 None
+     40 STORE_FAST                 hw
+     42 JUMP_FORWARD               to 94
+     44 PUSH_EXC_INFO              
+     46 LOAD_GLOBAL                TypeError
+     48 CACHE                      
+     50 CACHE                      
+     52 CACHE                      
+     54 CACHE                      
+     56 CACHE                      
+     58 LOAD_GLOBAL                ValueError
+     60 CACHE                      
+     62 CACHE                      
+     64 CACHE                      
+     66 CACHE                      
+     68 CACHE                      
+     70 BUILD_TUPLE                
+     72 CHECK_EXC_MATCH            
+     74 POP_JUMP_FORWARD_IF_FALSE  to 86
+     76 POP_TOP                    
+     78 LOAD_CONST                 None
+     80 STORE_FAST                 hw
+     82 POP_EXCEPT                 
+     84 JUMP_FORWARD               to 94
+     86 RERAISE                    
+     88 COPY                       
+     90 POP_EXCEPT                 
+     92 RERAISE                    
+     94 LOAD_FAST                  hw
+     96 POP_JUMP_FORWARD_IF_NONE   to 142
+     98 LOAD_FAST                  hw
+    100 LOAD_GLOBAL                N_DEV_VOLTAGE_SPEC_BY_HARDWARE
+    102 CACHE                      
+    104 CACHE                      
+    106 CACHE                      
+    108 CACHE                      
+    110 CACHE                      
+    112 CONTAINS_OP                in
+    114 POP_JUMP_FORWARD_IF_FALSE  to 142
+    116 LOAD_GLOBAL                N_DEV_VOLTAGE_SPEC_BY_HARDWARE
+    118 CACHE                      
+    120 CACHE                      
+    122 CACHE                      
+    124 CACHE                      
+    126 CACHE                      
+    128 LOAD_FAST                  hw
+    130 BINARY_SUBSCR              
+    132 CACHE                      
+    134 CACHE                      
+    136 CACHE                      
+    138 CACHE                      
+    140 RETURN_VALUE               
+    142 LOAD_GLOBAL                N_DEV_VOLTAGE_SPEC
+    144 CACHE                      
+    146 CACHE                      
+    148 CACHE                      
+    150 CACHE                      
+    152 CACHE                      
+    154 LOAD_METHOD                get
+    156 CACHE                      
+    158 CACHE                      
+    160 CACHE                      
+    162 CACHE                      
+    164 CACHE                      
+    166 CACHE                      
+    168 CACHE                      
+    170 CACHE                      
+    172 CACHE                      
+    174 CACHE                      
+    176 LOAD_FAST                  dev_name
+    178 LOAD_CONST                 ()
+    180 PRECALL                    
+    182 CACHE                      
+    184 CALL                       
+    186 CACHE                      
+    188 CACHE                      
+    190 CACHE                      
+    192 CACHE                      
+    194 RETURN_VALUE               
+  == code decode_voltage_data line 1013 args=('dev_name', 'raw', 'hardware')
+      0 RESUME                     
+      2 BUILD_MAP                  
+      4 STORE_FAST                 out
+      6 LOAD_GLOBAL                NULL + get_voltage_spec
+      8 CACHE                      
+     10 CACHE                      
+     12 CACHE                      
+     14 CACHE                      
+     16 CACHE                      
+     18 LOAD_FAST                  dev_name
+     20 LOAD_FAST                  hardware
+     22 PRECALL                    
+     24 CACHE                      
+     26 CALL                       
+     28 CACHE                      
+     30 CACHE                      
+     32 CACHE                      
+     34 CACHE                      
+     36 GET_ITER                   
+     38 FOR_ITER                   to 120
+     40 UNPACK_SEQUENCE            
+     42 CACHE                      
+     44 STORE_FAST                 field
+     46 STORE_FAST                 idx
+     48 STORE_FAST                 scale
+     50 STORE_FAST                 unit
+     52 LOAD_FAST                  idx
+     54 LOAD_GLOBAL                NULL + len
+     56 CACHE                      
+     58 CACHE                      
+     60 CACHE                      
+     62 CACHE                      
+     64 CACHE                      
+     66 LOAD_FAST                  raw
+     68 PRECALL                    
+     70 CACHE                      
+     72 CALL                       
+     74 CACHE                      
+     76 CACHE                      
+     78 CACHE                      
+     80 CACHE                      
+     82 COMPARE_OP                 <
+     84 CACHE                      
+     86 CACHE                      
+     88 POP_JUMP_FORWARD_IF_FALSE  to 118
+     90 LOAD_FAST                  raw
+     92 LOAD_FAST                  idx
+     94 BINARY_SUBSCR              
+     96 CACHE                      
+     98 CACHE                      
+    100 CACHE                      
+    102 CACHE                      
+    104 LOAD_FAST                  scale
+    106 BINARY_OP                  *
+    108 CACHE                      
+    110 LOAD_FAST                  out
+    112 LOAD_FAST                  field
+    114 STORE_SUBSCR               
+    116 CACHE                      
+    118 JUMP_BACKWARD              to 38
+    120 LOAD_GLOBAL                NULL + get_power_pairs
+    122 CACHE                      
+    124 CACHE                      
+    126 CACHE                      
+    128 CACHE                      
+    130 CACHE                      
+    132 LOAD_FAST                  dev_name
+    134 LOAD_FAST                  hardware
+    136 PRECALL                    
+    138 CACHE                      
+    140 CALL                       
+    142 CACHE                      
+    144 CACHE                      
+    146 CACHE                      
+    148 CACHE                      
+    150 STORE_FAST                 pairs
+    152 LOAD_CONST                 0.0
+    154 STORE_FAST                 total
+    156 LOAD_CONST                 0
+    158 STORE_FAST                 n
+    160 LOAD_FAST                  pairs
+    162 GET_ITER                   
+    164 FOR_ITER                   to 266
+    166 UNPACK_SEQUENCE            
+    168 CACHE                      
+    170 STORE_FAST                 name
+    172 STORE_FAST                 vf
+    174 STORE_FAST                 cf
+    176 LOAD_FAST                  vf
+    178 LOAD_FAST                  out
+    180 CONTAINS_OP                in
+    182 POP_JUMP_FORWARD_IF_FALSE  to 264
+    184 LOAD_FAST                  cf
+    186 LOAD_FAST                  out
+    188 CONTAINS_OP                in
+    190 POP_JUMP_FORWARD_IF_FALSE  to 264
+    192 LOAD_FAST                  out
+    194 LOAD_FAST                  vf
+    196 BINARY_SUBSCR              
+    198 CACHE                      
+    200 CACHE                      
+    202 CACHE                      
+    204 CACHE                      
+    206 LOAD_FAST                  out
+    208 LOAD_FAST                  cf
+    210 BINARY_SUBSCR              
+    212 CACHE                      
+    214 CACHE                      
+    216 CACHE                      
+    218 CACHE                      
+    220 BINARY_OP                  *
+    222 CACHE                      
+    224 LOAD_FAST                  out
+    226 LOAD_FAST                  name
+    228 STORE_SUBSCR               
+    230 CACHE                      
+    232 LOAD_FAST                  total
+    234 LOAD_FAST                  out
+    236 LOAD_FAST                  name
+    238 BINARY_SUBSCR              
+    240 CACHE                      
+    242 CACHE                      
+    244 CACHE                      
+    246 CACHE                      
+    248 BINARY_OP                  +=
+    250 CACHE                      
+    252 STORE_FAST                 total
+    254 LOAD_FAST                  n
+    256 LOAD_CONST                 1
+    258 BINARY_OP                  +=
+    260 CACHE                      
+    262 STORE_FAST                 n
+    264 JUMP_BACKWARD              to 164
+    266 LOAD_GLOBAL                NULL + len
+    268 CACHE                      
+    270 CACHE                      
+    272 CACHE                      
+    274 CACHE                      
+    276 CACHE                      
+    278 LOAD_FAST                  pairs
+    280 PRECALL                    
+    282 CACHE                      
+    284 CALL                       
+    286 CACHE                      
+    288 CACHE                      
+    290 CACHE                      
+    292 CACHE                      
+    294 LOAD_CONST                 2
+    296 COMPARE_OP                 >=
+    298 CACHE                      
+    300 CACHE                      
+    302 POP_JUMP_FORWARD_IF_FALSE  to 318
+    304 LOAD_FAST                  n
+    306 POP_JUMP_FORWARD_IF_FALSE  to 318
+    308 LOAD_FAST                  total
+    310 LOAD_FAST                  out
+    312 LOAD_CONST                 "total_power"
+    314 STORE_SUBSCR               
+    316 CACHE                      
+    318 LOAD_FAST                  out
+    320 RETURN_VALUE               
+  == code canvas_accent line 1051 args=('canvas_idx',)
+      0 RESUME                     
+      2 LOAD_GLOBAL                CANVAS_ACCENT_COLORS
+      4 CACHE                      
+      6 CACHE                      
+      8 CACHE                      
+     10 CACHE                      
+     12 CACHE                      
+     14 LOAD_FAST                  canvas_idx
+     16 LOAD_GLOBAL                NULL + len
+     18 CACHE                      
+     20 CACHE                      
+     22 CACHE                      
+     24 CACHE                      
+     26 CACHE                      
+     28 LOAD_GLOBAL                CANVAS_ACCENT_COLORS
+     30 CACHE                      
+     32 CACHE                      
+     34 CACHE                      
+     36 CACHE                      
+     38 CACHE                      
+     40 PRECALL                    
+     42 CACHE                      
+     44 CALL                       
+     46 CACHE                      
+     48 CACHE                      
+     50 CACHE                      
+     52 CACHE                      
+     54 BINARY_OP                  %
+     56 CACHE                      
+     58 BINARY_SUBSCR              
+     60 CACHE                      
+     62 CACHE                      
+     64 CACHE                      
+     66 CACHE                      
+     68 RETURN_VALUE               
+  == code make_default_canvas_config line 1056 args=('ch_count',)
+      0 RESUME                     
+      2 LOAD_CONST                 2
+      4 LOAD_CONST                 100
+      6 LOAD_CONST                 1
+      8 LOAD_CONST                 1
+     10 LOAD_FAST                  ch_count
+     12 LOAD_CONST                 0
+     14 LOAD_CONST                 0
+     16 BUILD_LIST                 
+     18 LOAD_CONST                 (0, 255, 0)
+     20 LIST_EXTEND                
+     22 BUILD_LIST                 
+     24 LOAD_CONST                 (255, 255, 0)
+     26 LIST_EXTEND                
+     28 BUILD_LIST                 
+     30 LOAD_CONST                 (0, 255, 255)
+     32 LIST_EXTEND                
+     34 LOAD_CONST                 ('fx_mode', 'fx_brightness', 'fx_step', 'fx_size', 'fx_canvas_ch_len', 'fx_vmap_process', 'fx_delay', 'fx_color_1', 'fx_color_2', 'fx_color_3')
+     36 BUILD_CONST_KEY_MAP        
+     38 RETURN_VALUE               

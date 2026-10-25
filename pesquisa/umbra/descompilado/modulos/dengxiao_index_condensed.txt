@@ -1,0 +1,408 @@
+L23040: print "选项卡切换"
+L23042: <Code38 code object <listcomp> at 0x2589185a430, file Sync_light.py>, ... "MainWindow.fan_dengxiao_index.<locals>.<listcomp>" range 52 agreement =>(fan_order_list
+L23050: port FAN_LIGHT_FLAG 0 ==
+L23051: 1 port =>(FAN_LIGHT_FLAG
+L23056: self light_on_off_switch setChecked True
+L23059: self system_info_widget hide
+L23061: self tongbu_dengguang_on_off hide
+L23062: self tongbu_dengguang_on_off_switch hide
+L23063: self tongbu_dengguang_on_off_lable hide
+L23064: self tongbu_effect_widget hide
+L23065: self yibu_effect_widget hide
+L23066: self hebing_effect_widget hide
+L23067: self fan_speed_ten_widget hide
+L23068: self new_shezhi_yemian_widget hide
+L23069: self effect_fan_speed_widget hide
+L23070: self new_shezhi_widget hide
+L23071: self shezhi_tongyong_widget hide
+L23072: self shezhi_zhichi_widget hide
+L23075: self tongbu_dengguang_on_off hide
+L23076: self tongbu_dengguang_on_off_switch hide
+L23077: self tongbu_dengguang_on_off_lable hide
+L23079: self tongbu_speed_on_off hide
+L23080: self tongbu_speed_on_off_switch hide
+L23081: self tongbu_speed_on_off_lable hide
+L23083: self top_zhanwei_widget hide
+L23084: self kaiguandeng_shuxian hide
+L23085: self kaiguandeng_zhanwei hide
+L23086: self kaiguandeng_switch hide
+L23087: self kaiguandeng_lable_txt hide
+L23088: self xitongxianshi_on_off_lable hide
+L23089: self xitongxianshi_on_off_switch hide
+L23091: self yibu_baocun_widget hide
+L23093: port fan_advanced_effect 13 1 ==
+L23094: self kaiguandeng_lable_txt setText "关灯"
+L23095: port language "en" ==
+L23096: self kaiguandeng_lable_txt setText "Turn Off"
+L23097: self kaiguandeng_lable_txt setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            ...
+L23103: self kaiguandeng_switch setChecked False
+L23105: port fan_argb_button_model_index 0 ==
+L23106: print "系统信息选项卡"
+L23107: self xitongxianshi_on_off_lable show
+L23108: self xitongxianshi_on_off_switch show
+L23109: self system_info_widget show
+L23110: self main_widget_mubu hide
+L23111: self effect_list_label hide
+L23112: self fan_effect_list hide
+L23113: self ARGB_FAN_sync_all hide
+L23114: self ARGB_FAN_all hide
+L23115: self chuji_effect_widget hide
+L23117: self fan_lable_tese =:(i
+L23118: i hide
+L23119: self overlay hide
+L23120: self top_zhanwei_widget show
+L23122: port fan_argb_button_model_index 1 ==
+L23123: print "ARGB控制器选项卡"
+L23124: _last_future None is-not
+L23125:
+L23126: _last_future done
+L23127: time sleep 0.01
+L23128:
+L23129:
+L23130: self fan_config_dan_widget show
+L23131: self system_info_widget hide
+L23132: self main_widget_mubu hide
+L23133: self effect_list_label hide
+L23134: self fan_effect_list hide
+L23135: self ARGB_FAN_sync_all hide
+L23136: self ARGB_FAN_all hide
+L23137: self chuji_effect_widget hide
+L23139: self fan_lable_tese =:(i
+L23140: i hide
+L23141: self tongbu_effect_widget show
+L23142: self effect_fan_speed_widget show
+L23143: self tongbu_dengguang_on_off show
+L23144: self tongbu_dengguang_on_off_switch show
+L23145: self tongbu_dengguang_on_off_lable show
+L23146: port fan_advanced_effect 0 =:(vaule_argb
+L23148: self kaiguandeng_zhanwei show
+L23149: self kaiguandeng_switch show
+L23150: self kaiguandeng_lable_txt show
+L23151: port fan_advanced_effect 13 0 ==
+L23152: self kaiguandeng_shuxian show
+L23154: port MCU_C_FLAG 0 1 ==
+L23155: self tongbu_dengguang_on_off_switch setChecked True
+L23158: self tongbu_dengguang_on_off_switch setChecked False
+L23160: port MCU_C_FLAG 1 1 == vaule_argb 3 ==
+L23161: self tongbu_speed_on_off_switch setChecked True
+L23163: vaule_argb 3 < vaule_argb 4 ==
+L23164: port MCU_C_FLAG 0 1 ==
+L23165: self overlay show
+L23166: self overlay raise_
+L23168: self overlay hide
+L23169: vaule_argb 3 ==
+L23170: port MCU_C_FLAG 1 1 ==
+L23171: self overlay show
+L23172: self overlay raise_
+L23174: self overlay hide
+L23175: port fan_advanced_effect 1 1 ==
+L23176: 0 port fan_advanced_effect 1 []=
+L23177: self fan_effect_speed_buttons vaule_argb click
+L23179: port fan_argb_button_model_index 2 ==
+L23180: self kaiguandeng_switch show
+L23181: self kaiguandeng_lable_txt show
+L23182: self top_zhanwei_widget show
+L23183: self kaiguandeng_zhanwei show
+L23184: agreement ARGB_MCU_C_changer port ARGB_ser 1
+L23185: port fan_advanced_effect 13 1 ==
+L23186: agreement argb_fan_light_off port ARGB_ser
+L23187: sum port ARGB_TEN_NUM =:(sum_rgb
+L23188: 160 =:(C_NUM
+L23189: sum_rgb C_NUM =:(sum_send_z
+L23190: sum_rgb C_NUM =:(sum_send_y
+L23191: sum_send_y
+L23192: sum_send_z 1 =:(sum_send_z
+L23193: 1 =:(sum_send_z
+L23194: print "间隔次数：" sum_send_z ", 灯珠总数：" sum_rgb
+L23195: sum_send_z self canvas scene =>(send_flag_devices_fan
+L23196: print "幕布灯效选项卡"
+L23198: self chuji_effect_widget hide
+L23199: self main_widget_mubu show
+L23201: self canvas scene load_icons_state
+L23202: self canvas scene update
+L23203: self on_effect_changed self effect_manager current_effect
+L23204: self overlay hide
+L23205: port fan_advanced_effect 13 1 ==
+L23206: self overlay show
+L23207: self overlay raise_
+L23208: port fan_argb_button_model_index 3 ==
+L23209: print "设置选项卡"
+L23210: self main_widget_mubu hide
+L23211: self effect_list_label hide
+L23212: self fan_effect_list hide
+L23213: self ARGB_FAN_sync_all hide
+L23214: self ARGB_FAN_all hide
+L23215: self chuji_effect_widget hide
+L23216: self fan_lable_tese =:(i
+L23217: i hide
+L23218: self new_shezhi_widget show
+L23219: self shezhi_tongyong_widget show
+L23220: self overlay hide
+L23221: self new_shezhi_buttons 0 click
+L23222: port fan_argb_button_model_index 5 ==
+L23223: self main_widget_mubu hide
+L23226: port fan_advanced_effect 0 =:(effect
+L23227: port fan_advanced_effect 1 =:(fan_index
+L23228: port fan_advanced_effect 2 =:(async_index
+L23229: port fan_advanced_effect 3 =:(tongp_shiy_index
+L23230: print "高级灯效选项卡 " port fan_advanced_effect
+L23244: self liusu_fan_lable show
+L23245: self slider_fan_liusu show
+L23246: self liusu_fan_text_lable show
+L23248: self fangxiang_fan_lable show
+L23249: self fan_fangxiang_buttons =:(i
+L23250: i hide
+L23252: self liangdu_fan_lable show
+L23253: self slider_fan_liangdu show
+L23254: self liangdu_fan_text_lable show
+L23256: self yanse_fan_lable show
+L23257: self fan_dengxiao_buttons =:(i
+L23258: i show
+L23259: self button_fan_tiaose show
+L23261: self fan_effect_list blockSignals True
+L23262: self fan_effect_list clear
+L23263: port language "zh" ==
+L23264: port dengxiao_model2_zh =:(dengxiao
+L23266: port dengxiao_model2_en =:(dengxiao
+L23267: self fan_effect_list addItems dengxiao
+L23268: self fan_effect_list setCurrentIndex effect
+L23269: self fan_effect_list blockSignals False
+L23270: self effect_list_label show
+L23271: self fan_effect_list show
+L23272: self chuji_effect_widget hide
+L23273: range 10 =:(i
+L23274: port ARGB_TEN_NUM i 0 ==
+L23275: self ARGB_FAN_devices i hide
+L23277: self ARGB_FAN_devices i show
+L23278: port ARGB_TEN_NUM 0 6 ==
+L23279: self ARGB_FAN_devices 0 hide
+L23280: range 6 =:(i
+L23281: self ARGB_FAN_chuan i hide
+L23282: self fan_lable_tese =:(i
+L23283: i show
+L23284: self tese_tongping_shiyin_xianshi 4
+L23285: self fan_effect_settings effect
+L23286: self anyc_list effect 255 !=
+L23287: self ARGB_FAN_all show
+L23288: self ARGB_FAN_sync_all show
+L23290: self ARGB_FAN_all show
+L23291: self ARGB_FAN_sync_all hide
+L23292: async_index 1 ==
+L23293: print "异步"
+L23294: self ARGB_FAN_all setStyleSheet
+L23295: "background-color: rgb(243,244,243);color: rgb(51,51,50);font-size: 16...
+L23294:
+L23303: self ARGB_FAN_sync_all setStyleSheet
+L23304: "background-color: rgb(25,78,255);color: rgb(243,244,243);font-size: 1...
+L23303:
+L23312: range 10 =:(i
+L23313: self ARGB_FAN_devices i setIcon
+L23314: QIcon port file_path_img port file_path_img self ARGB_FAN_devices_img_xuanzhong i
+L23313:
+L23315: self ARGB_FAN_devices i setChecked False
+L23318: self ARGB_send_show_effect
+L23319: self anyc_list effect agreement fan_order_list 0 []=
+L23320: range 15 =:(i
+L23321: port ARGB_qun_async_config effect i agreement fan_order_list 1 i []=
+L23322: agreement ARGB_ten_effect port ARGB_ser 254 254
+L23323: effect [1] port ARGB_qun_async_config effect =:(effect_id
+L23324: self fan_effect_set_sync effect_id
+L23325: async_index 2 ==
+L23326: 0 =:(effect
+L23327: tongp_shiy_index 0 ==
+L23328: 20 =:(effect
+L23329: self tese_tongping_shiyin_xianshi 1
+L23330: tongp_shiy_index 1 ==
+L23331: 21 =:(effect
+L23332: self tese_tongping_shiyin_xianshi 2
+L23333: self fan_effect_settings effect
+L23334: effect [1] port ARGB_qun_async_config effect =:(effect_id
+L23335: self fan_effect_set_sync effect_id
+L23336: tongp_shiy_index test =>(fan_screen_shiyin_effect
+L23337: test fan_shiyin_event set
+L23338: time sleep 0.01
+L23339: test fan_shiyin_event clear
+L23340: threading Thread <Code38 code object <lambda> at 0x2589185a890, file Sync_light.py>, li... "MainWindow.fan_dengxiao_index.<locals>.<lambda>" True ('target', 'daemon') =:(t
+L23341: t start
+L23343: fan_index 255 != fan_index 10 <
+L23344: self ARGB_FAN_all setStyleSheet
+L23345: "background-color: rgb(243,244,243);color: rgb(51,51,50);font-size: 16...
+L23344:
+L23353: self ARGB_FAN_sync_all setStyleSheet
+L23354: "background-color: rgb(243,244,243);color: rgb(51,51,50);font-size: 16...
+L23353:
+L23362: range 10 =:(i
+L23363: port ARGB_TEN_NUM i 0 !=
+L23364: i fan_index ==
+L23365: self ARGB_FAN_devices i setIcon
+L23366: QIcon port file_path_img port file_path_img self ARGB_FAN_devices_img_xuanzhong i
+L23365:
+L23368: self ARGB_FAN_devices i setIcon
+L23369: QIcon port file_path_img port file_path_img self ARGB_FAN_devices_img i
+L23368:
+L23371: copy deepcopy port ARGB_TEN_MODEL1 i agreement =>(fan_order_list
+L23372: copy deepcopy fan_index =:(index
+L23373: port gaoji_ten_dengxiao_leixing index 2 =:(fan_id
+L23374: port ARGB_TEN_LEIXING index 1 == port jimu_lianpai in
+L23375: port ARGB_TEN_MODEL1 index fan_id 0 =:(effect
+L23376: print "fan_id : " fan_id
+L23377: self ARGB_FAN_chuan =:(i
+L23378: i show
+L23379: range 6 =:(i
+L23380: i fan_id !=
+L23381: self ARGB_FAN_chuan i setIcon QIcon port file_path_img port file_path_img self ARGB_FAN_chuan_img i
+L23382: self ARGB_FAN_chuan i setChecked False
+L23384: self ARGB_FAN_chuan i setIcon
+L23385: QIcon port file_path_img port file_path_img self ARGB_FAN_chuan_img_xuanzhong i
+L23384:
+L23386: self fan_effect_settings effect
+L23387: self fan_effect_set_sync port ARGB_TEN_MODEL1 index fan_id
+L23389: 5 =:(fan_id
+L23390: enumerate self ARGB_FAN_chuan =:(i =:(vaule
+L23391: vaule hide
+L23392: port ARGB_TEN_MODEL1 index fan_id 0 =:(effect
+L23393: self fan_effect_settings effect
+L23394: self fan_effect_set_sync port ARGB_TEN_MODEL1 index fan_id
+L23395: fan_id 5 !=
+L23396: self ARGB_FAN_all hide
+L23397: self ARGB_FAN_sync_all hide
+L23399: self anyc_list effect 255 !=
+L23400: self ARGB_FAN_all show
+L23401: self ARGB_FAN_sync_all show
+L23403: self ARGB_FAN_all show
+L23404: self ARGB_FAN_sync_all hide
+L23409: self dan_fan_huifu_tab_effect fan_index
+L23410: port gaoji_ten_dengxiao_leixing fan_index 2 =:(fan_id
+L23411: port ARGB_TEN_LEIXING fan_index 1 == port jimu_lianpai in
+L23412: port ARGB_TEN_MODEL1 fan_index fan_id 0 =:(effect
+L23413: print "fan_id : " fan_id
+L23415: self ARGB_FAN_chuan =:(i
+L23416: i show
+L23417: range 6 =:(i
+L23418: i fan_id !=
+L23419: self ARGB_FAN_chuan i setIcon QIcon port file_path_img port file_path_img self ARGB_FAN_chuan_img i
+L23420: self ARGB_FAN_chuan i setChecked False
+L23422: self ARGB_FAN_chuan i setIcon
+L23423: QIcon port file_path_img port file_path_img self ARGB_FAN_chuan_img_xuanzhong i
+L23422:
+L23424: fan_index 255 ==
+L23425: self ARGB_FAN_all setStyleSheet
+L23426: "background-color: rgb(25,78,255);color: rgb(243,244,243);font-size: 1...
+L23425:
+L23434: self ARGB_FAN_sync_all setStyleSheet
+L23435: "background-color: rgb(243,244,243);color: rgb(51,51,50);font-size: 16...
+L23434:
+L23443: range 10 =:(i
+L23444: self ARGB_FAN_devices i setIcon
+L23445: QIcon port file_path_img port file_path_img self ARGB_FAN_devices_img_xuanzhong i
+L23444:
+L23446: effect agreement fan_order_list 0 []=
+L23447: port ARGB_dan_sync_config_gaoji effect 0 agreement fan_order_list 1 []=
+L23448: port ARGB_dan_sync_config_gaoji effect 1 agreement fan_order_list 2 []=
+L23449: port ARGB_dan_sync_config_gaoji effect 2 agreement fan_order_list 3 []=
+L23450: range 12 =:(i
+L23451: port ARGB_dan_sync_config_gaoji effect 3 i agreement fan_order_list 4 i []=
+L23452: agreement ARGB_ten_effect port ARGB_ser 255 255
+L23453: self fan_effect_set_sync agreement fan_order_list
+L23455: range 10 =:(i
+L23456: port ARGB_TEN_NUM i 0 !=
+L23457: self ARGB_FAN_SN_NUM i show
+L23459: self ARGB_FAN_SN_NUM i hide
+L23460: port ARGB_TEN_NUM 0 6 ==
+L23461: self ARGB_FAN_SN_NUM 0 hide
+L23464: port fan_argb_button_model_index 4 ==
+L23465: self main_widget_mubu hide
+L23468: print "硬件设置选项卡"
+L23469: self jiyi_moshi show
+L23470: self jiyi_changer_switch show
+L23471: self guding_moshi show
+L23472: self guding_changer_switch show
+L23473: self kaijizijian show
+L23474: self kaijizijian_changer_switch show
+L23475: port KaiJi_ZiJian 1 ==
+L23476: self kaijizijian_changer_switch setChecked False
+L23477: port KaiJi_ZiJian 255 ==
+L23478: self kaijizijian_changer_switch setChecked True
+L23479: port On_Effect 0 1 ==
+L23483: self liusu_fan_lable show
+L23484: self slider_fan_liusu show
+L23485: self liusu_fan_text_lable show
+L23487: self fangxiang_fan_lable show
+L23488: self fan_fangxiang_buttons =:(i
+L23489: i hide
+L23491: self liangdu_fan_lable show
+L23492: self slider_fan_liangdu show
+L23493: self liangdu_fan_text_lable show
+L23495: self yanse_fan_lable show
+L23496: self fan_dengxiao_buttons =:(i
+L23497: i show
+L23498: self button_fan_tiaose show
+L23501: self jiyi_changer_switch setChecked False
+L23502: self guding_changer_switch setChecked True
+L23503: <Code38 code object <listcomp> at 0x2589185a7b0, file Sync_light.py>, ... "MainWindow.fan_dengxiao_index.<locals>.<listcomp>" range 52 agreement =>(fan_order_list
+L23504: port On_Effect 1 17 agreement fan_order_list 0 16 []=
+L23505: self fan_effect_settings 22
+L23506: self fan_effect_set_sync agreement fan_order_list
+L23507: port On_Effect 0 255 ==
+L23510: self liusu_fan_lable hide
+L23511: self slider_fan_liusu hide
+L23512: self liusu_fan_text_lable hide
+L23514: self fangxiang_fan_lable hide
+L23515: self fan_fangxiang_buttons =:(i
+L23516: i hide
+L23518: self liangdu_fan_lable hide
+L23519: self slider_fan_liangdu hide
+L23520: self liangdu_fan_text_lable hide
+L23522: self yanse_fan_lable hide
+L23523: self fan_dengxiao_buttons =:(i
+L23524: i hide
+L23525: self button_fan_tiaose hide
+L23526: self jiyi_changer_switch setChecked True
+L23527: self guding_changer_switch setChecked False
+L23528: self effect_list_label show
+L23529: self fan_effect_list hide
+L23530: self ARGB_FAN_sync_all hide
+L23531: self ARGB_FAN_all hide
+L23532: range 6 =:(i
+L23533: self ARGB_FAN_chuan i hide
+L23535: self chuji_effect_widget hide
+L23536: range 10 =:(i
+L23537: self ARGB_FAN_devices i show
+L23538: self ARGB_FAN_SN_NUM i show
+L23539: i 0 ==
+L23540: self ARGB_FAN_devices i setIcon
+L23541: QIcon port file_path_img port file_path_img self ARGB_FAN_devices_img_xuanzhong i
+L23540:
+L23543: port ARGB_TEN_NUM i 0 ==
+L23544: self ARGB_FAN_devices i setIcon QIcon port file_path_img port file_path_img self ARGB_FAN_devices_img_none i
+L23546: self ARGB_FAN_devices i setIcon QIcon port file_path_img port file_path_img self ARGB_FAN_devices_img i
+L23547: agreement argb_fan_set port ARGB_ser 0
+L23548: self fan_set_config 0
+L23549: port ARGB_433RF None is-not
+L23550: port ARGB_433RF 0 1 ==
+L23551: port language "zh" ==
+L23552: self ARGB_rf_lable setText "遥控器配对状态: <span style='color:red;'>已配对</span>  配... "" join <Code38 code object <listcomp> at 0x2589185a970, file Sync_light.py>, ... "MainWindow.fan_dengxiao_index.<locals>.<listcomp>" port ARGB_433RF 1 3 "  "
+L23554: self ARGB_rf_lable setText "Remote pairing status: <span style='color:red;'>Paired</span>  Pairin... "" join <Code38 code object <listcomp> at 0x2589185aa50, file Sync_light.py>, ... "MainWindow.fan_dengxiao_index.<locals>.<listcomp>" port ARGB_433RF 1 3 "  "
+L23555: self rf_433_buttons 0 hide
+L23556: self rf_433_buttons 1 show
+L23558: port language "zh" ==
+L23560: self ARGB_rf_lable setText "遥控器配对状态: 未配对  配对码信息：      "
+L23562: self ARGB_rf_lable setText "Remote pairing status: Unpaired  Pairing code information:      "
+L23563: self rf_433_buttons 1 hide
+L23564: self rf_433_buttons 0 show
+L23565: range 2 =:(i
+L23566: self fan_buttons_tese i hide
+L23567: self fan_lable_tese i hide None
+L23042: [0] .0
+L23042: =:(_
+L23042: 0
+L23340: test ARGB_FAN_sound
+L23503: [0] .0
+L23503: =:(i
+L23503: 0
+L23552: [0] .0
+L23552: =:(x
+L23552: str x
+L23554: [0] .0
+L23554: =:(x
+L23554: str x

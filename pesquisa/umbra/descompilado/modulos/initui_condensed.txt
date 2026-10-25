@@ -1,0 +1,2794 @@
+L14620: self load_config self =>(item_list
+L14621: -1 self =>(selected_idx
+L14622: [0] self =>(yibu_ten_list
+L14624: "开启" "关闭" [2] self =>(kaiguan_flag
+L14625: "开灯" "关灯" [2] self =>(kaiguan_flag_light
+L14626: "正序" "倒序" [2] self =>(zheng_daoxu_flag
+L14627: "公测版" "稳定版" [2] self =>(gujian_ver
+L14629: QApplication desktop self =>(desktop
+L14640: port PID_COMPAY 1
+L14641: 830 self =>(height
+L14643: 900 self =>(height
+L14645: 1100 self =>(width
+L14646: port PID_COMPAY 5
+L14647: 1200 self =>(width
+L14648: 900 self =>(height
+L14649: 1200 self =>(width
+L14650: port PID_COMPAY 5
+L14653: QFontDatabase addApplicationFont port file_path_img "tts/MiSans-Regular.ttf" =:(font_id
+L14656: font_id -1
+L14657: print "警告：无法加载 MiSans 字体，使用默认字体"
+L14658: QFont "Segoe UI" self =>(font
+L14661: QFontDatabase applicationFontFamilies font_id =:(font_families
+L14662: font_families
+L14664: QFont font_families 0 self =>(font
+L14665: self font setStyleStrategy QFont PreferAntialias
+L14667: QFont "Segoe UI" self =>(font
+L14669: QFont "Segoe UI" self =>(font
+L14670: QApplication setFont self font
+L14673: Fan_updata_exe_Dialog self =>(dialog_exe
+L14674: self dialog_exe dialog_closed connect self on_dialog_closed
+L14676: self setWindowTitle ""
+L14679: port PID_COMPAY 4
+L14680: port PID_COMPAY_LIST 4 2 1
+L14681: self setWindowTitle "浪险电竞"
+L14682: self setWindowIcon QIcon port file_path_img "img/ARGB/0_0_0_4_JQL/jql-lxdj.ico"
+L14683: port PID_COMPAY_LIST 4 2 2
+L14684: self setWindowTitle "零度世家"
+L14685: self setWindowIcon QIcon port file_path_img "img/ARGB/0_0_0_4_JQL/jql-ldsj.ico"
+L14686: port PID_COMPAY_LIST 4 2 3
+L14687: self setWindowTitle "metalfish"
+L14688: self setWindowIcon QIcon port file_path_img "img/ARGB/0_0_0_4_JQL/jql-metalfish.ico"
+L14689: port PID_COMPAY_LIST 4 2 3
+L14690: self setWindowTitle "metalfish"
+L14691: self setWindowIcon QIcon port file_path_img "img/ARGB/0_0_0_4_JQL/jql-metalfish.ico"
+L14692: port PID_COMPAY_LIST 4 2 4
+L14693: self setWindowTitle "J.KM"
+L14694: self setWindowIcon QIcon port file_path_img "img/ARGB/0_0_0_4_JQL/jql.ico"
+L14695: port PID_COMPAY_LIST 4 2 5
+L14696: self setWindowTitle "TJ 异步控制器"
+L14697: self setWindowIcon QIcon port file_path_img "img/ARGB/0_0_0_4_JQL/jql_tj.ico"
+L14698: port PID_COMPAY 2
+L14699: self setWindowTitle "玩嘉ARGB"
+L14700: self setWindowIcon QIcon port file_path_img "img/ARGB/WANJIA/wanjia_512.ico"
+L14701: port PID_COMPAY 5
+L14702: self setWindowTitle "AsiaHorse UMBRA"
+L14703: self setWindowIcon QIcon port file_path_img "img/ARGB/0005YZM/0005YZM_LOGO.ico"
+L14704: port PID_COMPAY 7
+L14705: self setWindowTitle "黑蜘蛛"
+L14706: self setWindowIcon QIcon port file_path_img "img/ARGB/0007JJS/hzz.ico"
+L14707: port PID_COMPAY 10
+L14708: port PID_COMPAY_LIST 10 2 10
+L14709: self setWindowTitle "MoonCenter"
+L14710: self setWindowIcon QIcon port file_path_img "img/ARGB/00010KY/00010KY_LOGO.ico"
+L14711: port PID_COMPAY_LIST 10 2 1
+L14712: self setWindowTitle "WITRIGS"
+L14713: self setWindowIcon QIcon port file_path_img "img/ARGB/00010KY/KUYUE_WITRIGS.ico"
+L14715: self setWindowTitle "Sync_light"
+L14716: self setWindowIcon QIcon port file_path_img "img/Sync_light.ico"
+L14720: self setFixedSize self width self height
+L14742: 1 self =>(devices_qun_button
+L14744: 0 self =>(device_dan_button
+L14745: 0 self =>(device_dan_mcuid
+L14747: [0] self =>(quse_list
+L14749: 0 self =>(left_buttons
+L14752: 0 self =>(qunkong
+L14755: 0 self =>(device_fazhi
+L14759: QSystemTrayIcon self self =>(tray_icon
+L14761: port PID_COMPAY 1
+L14762: self tray_icon setIcon QIcon port file_path_img "img/ARGB/HJ/HJ_ARGB_HUB_256x256.ico"
+L14763: port PID_COMPAY 2
+L14764: self tray_icon setIcon QIcon port file_path_img "img/ARGB/WANJIA/wanjia_512.ico"
+L14765: port PID_COMPAY 4
+L14766: port PID_COMPAY_LIST 4 2 1
+L14767: self tray_icon setIcon QIcon port file_path_img "img/ARGB/0_0_0_4_JQL/jql-lxdj.ico"
+L14768: port PID_COMPAY_LIST 4 2 2
+L14769: self tray_icon setIcon QIcon port file_path_img "img/ARGB/0_0_0_4_JQL/jql-ldsj.ico"
+L14770: port PID_COMPAY_LIST 4 2 3
+L14771: self tray_icon setIcon QIcon port file_path_img "img/ARGB/0_0_0_4_JQL/jql-metalfish.ico"
+L14772: port PID_COMPAY_LIST 4 2 4
+L14773: self tray_icon setIcon QIcon port file_path_img "img/ARGB/0_0_0_4_JQL/jql.ico"
+L14774: port PID_COMPAY_LIST 4 2 5
+L14775: self tray_icon setIcon QIcon port file_path_img "img/ARGB/0_0_0_4_JQL/jql_tj.ico"
+L14776: port PID_COMPAY 7
+L14777: self tray_icon setIcon QIcon port file_path_img "img/ARGB/0007JJS/hzz.ico"
+L14778: port PID_COMPAY 5
+L14779: self tray_icon setIcon QIcon port file_path_img "img/ARGB/0005YZM/0005YZM_LOGO.ico"
+L14780: port PID_COMPAY 10
+L14781: port PID_COMPAY_LIST 10 2 10
+L14782: self tray_icon setIcon QIcon port file_path_img "img/ARGB/00010KY/00010KY_LOGO.ico"
+L14783: port PID_COMPAY_LIST 10 2 1
+L14784: self tray_icon setIcon QIcon port file_path_img "img/ARGB/00010KY/KUYUE_WITRIGS.ico"
+L14786: self tray_icon setIcon QIcon port file_path_img "img/1.ico"
+L14788: QAction "Show" self self =>(show_action
+L14789: self show_action setIcon QIcon port file_path_img "img/renwulan_show.svg"
+L14790: self show_action triggered connect self on_show
+L14791: QAction "Quit" self self =>(quit_action
+L14792: self quit_action setIcon QIcon port file_path_img "img/renwulan_exit.svg"
+L14793: self quit_action triggered connect self on_quit
+L14795: QMenu =:(tray_menu
+L14796: tray_menu setStyleSheet "\n            QMenu {\n                border-radius: 8px;  /* 圆角半径，值越大�...
+L14813: tray_menu addAction self show_action
+L14814: tray_menu addAction self quit_action
+L14815: self tray_icon setContextMenu tray_menu
+L14818: port PID_COMPAY 4
+L14819: port PID_COMPAY_LIST 4 2 1
+L14820: self tray_icon setToolTip "浪险电竞"
+L14821: port PID_COMPAY_LIST 4 2 2
+L14822: self tray_icon setToolTip "零度世家"
+L14823: port PID_COMPAY_LIST 4 2 3
+L14824: self tray_icon setToolTip "metalfish"
+L14825: port PID_COMPAY_LIST 4 2 4
+L14826: self tray_icon setToolTip "J.KM"
+L14827: port PID_COMPAY_LIST 4 2 5
+L14828: self tray_icon setToolTip "TJ 异步控制器"
+L14829: port PID_COMPAY 5
+L14830: self tray_icon setToolTip "AsiaHorse UMBRA"
+L14831: port PID_COMPAY 10
+L14832: port PID_COMPAY_LIST 10 2 10
+L14833: self tray_icon setToolTip "MoonCenter"
+L14834: port PID_COMPAY_LIST 10 2 1
+L14835: self tray_icon setToolTip "WITRIGS"
+L14840: self tray_icon activated connect self on_tray_icon_activated
+L14843: QPalette =:(palette
+L14846: palette setColor QPalette Window QColor 33 39 47
+L14848: self setPalette palette
+L14853: QHBoxLayout =:(main_layout
+L14854: main_layout setContentsMargins 0 0 0 0
+L14855: main_layout setSpacing 0
+L14858: QVBoxLayout =:(left_layout
+L14859: QLabel self =>(left_global_label
+L14860: self left_global_label setStyleSheet "\n            QLabel {\n            background-color: "
+L14862: port left_yanse
+L14860: ";\n            border-top-left-radius: 30px;\n            border-top-right-radius: 0px;\n...
+L14875: left_layout addWidget self left_global_label
+L14878: QVBoxLayout =:(inner_layout
+L14879: inner_layout setContentsMargins 20 30 30 20
+L14880: inner_layout setSpacing 10
+L14881: self left_global_label setLayout inner_layout
+L14921: QSvgWidget =:(logo_widget
+L14925: port PID_COMPAY 1
+L14926: logo_widget load bytes img_svg HUAJING "utf-8" ('encoding',)
+L14927: logo_widget setFixedSize 190 65
+L14928: port PID_COMPAY 7
+L14929: logo_widget load bytes img_svg HEIZHIZHU_JJS "utf-8" ('encoding',)
+L14930: logo_widget setFixedSize 200 100
+L14931: port PID_COMPAY 6
+L14932: logo_widget setText "皇家匠师"
+L14933: logo_widget setFont self font
+L14934: logo_widget setStyleSheet "\n                background-color: rgba(255, 255, 255, 0); \n                color: whit...
+L14939: port PID_COMPAY 2
+L14940: logo_widget load bytes img_svg wanjia "utf-8" ('encoding',)
+L14941: logo_widget setFixedSize 130 100
+L14942: port PID_COMPAY 4
+L14943: port PID_COMPAY_LIST 4 2 1
+L14944: logo_widget load bytes img_svg JQL_LXDJ "utf-8" ('encoding',)
+L14945: logo_widget setFixedSize 180 60
+L14946: port PID_COMPAY_LIST 4 2 2
+L14947: logo_widget load bytes img_svg JQL_LDSJ_W "utf-8" ('encoding',)
+L14948: logo_widget setFixedSize 200 16
+L14949: port PID_COMPAY_LIST 4 2 3
+L14950: logo_widget load bytes img_svg JQL_metalfish "utf-8" ('encoding',)
+L14951: logo_widget setFixedSize 205 100
+L14952: port PID_COMPAY_LIST 4 2 4
+L14953: logo_widget load bytes img_svg JQL_JQL "utf-8" ('encoding',)
+L14954: logo_widget setFixedSize 200 58
+L14955: port PID_COMPAY_LIST 4 2 5
+L14956: logo_widget load bytes img_svg JQL_TJ "utf-8" ('encoding',)
+L14957: logo_widget setFixedSize 88 80
+L14958: port PID_COMPAY 5
+L14959: logo_widget load bytes img_svg YZM_LOGO "utf-8" ('encoding',)
+L14960: logo_widget setFixedSize 200 40
+L14961: port PID_COMPAY 10
+L14962: port PID_COMPAY_LIST 10 2 10
+L14963: logo_widget load bytes img_svg KUYUE_LOGO "utf-8" ('encoding',)
+L14964: logo_widget setFixedSize 220 70
+L14965: port PID_COMPAY_LIST 10 2 1
+L14966: logo_widget load bytes img_svg KUYUE_WITRIGS "utf-8" ('encoding',)
+L14967: logo_widget setFixedSize 152 70
+L14972: inner_layout addWidget logo_widget Qt AlignTop Qt AlignCenter ('alignment',)
+L14975: QLabel "" =:(lable_16px
+L14976: lable_16px setFixedHeight 20
+L14977: inner_layout addWidget lable_16px
+L14980: QPushButton self =>(fan_name_button
+L14981: self fan_name_button setIcon QIcon port file_path_img "img/group_light_off.svg"
+L14982: self fan_name_button setIconSize QtCore QSize 40 40
+L14983: self fan_name_button setText "ARGB控制器"
+L14984: self fan_name_button setFixedHeight 70
+L14985: self fan_name_button setStyleSheet "background-color: rgb(25, 31, 37); color: rgb(17, 78, 255); text-align: left; padding-lef...
+L14988: self fan_name_button setFocusPolicy Qt NoFocus
+L14989: self fan_name_button setCheckable False
+L14990: self fan_name_button hide
+L14991: inner_layout addWidget self fan_name_button Qt AlignTop ('alignment',)
+L15007: [0] self =>(fan_light_buttons
+L15008: "img/system_info_off.svg" "img/ARGB_Controller.svg" "img/te_off.svg" "img/mubu_off.svg" "img/set_off.svg" [5] self =>(fan_light_img
+L15009: "img/system_info_on.svg" "img/ARGB_Controller.svg" "img/mubu_on.svg" "img/set_on.svg" [4] self =>(fan_light_img_xuanzhong
+L15010: "系统信息" "异步控制器" "幕布模式" "设置" [4] self =>(fan_light_buttons_name
+L15014: port PID_COMPAY 1
+L15015: 80 =:(EFFECT_HEIGHT
+L15016: port PID_COMPAY 2
+L15017: 60 =:(EFFECT_HEIGHT
+L15019: 60 =:(EFFECT_HEIGHT
+L15020: range 4 =:(i
+L15021: QPushButton =:(device_button
+L15022: device_button setCheckable True
+L15023: device_button setFont self font
+L15024: device_button setFocusPolicy Qt NoFocus
+L15025: device_button setIcon QIcon port file_path_img self fan_light_img_xuanzhong i
+L15026: device_button setIconSize QtCore QSize 35 35
+L15027: device_button setFixedHeight EFFECT_HEIGHT
+L15028: device_button setText self fan_light_buttons_name i
+L15029: device_button setStyleSheet
+L15030: "\n                QPushButton {\n                    background-color: rgba(242, 244, 241...
+L15033: port left_text_moren
+L15030: ";\n                    text-align: left;\n                    padding-left: 10px;\n      ...
+L15050: port left_button_hover_beijing
+L15030: ";\n                    color: "
+L15033: port left_text_moren
+L15030: ";\n                    border-left: 3px solid "
+L15052: port left_button_hover
+L15030: ";\n                }\n                \n                QPushButton:checked {\n          ...
+L15056: port left_button_checked_beijing
+L15030: ";\n                    color: "
+L15057: port left_text_xuanzhong
+L15030: ";\n                    border-left: 3px solid "
+L15058: port left_button_checked
+L15030: ";\n                }\n                "
+L15029:
+L15062: device_button clicked connect self fan_light_device_button_Clicked
+L15063: self fan_light_buttons append device_button
+L15064: self fan_light_buttons 0 setChecked True
+L15066: inner_layout addWidget device_button Qt AlignTop ('alignment',)
+L15069: QVBoxLayout =:(ARGB_tongbu_layout
+L15072: QWidget self =>(fan_tongbu_widget
+L15073: self fan_tongbu_widget setLayout ARGB_tongbu_layout
+L15076: self fan_tongbu_widget setFixedHeight 140
+L15079: self fan_tongbu_widget setStyleSheet "\n            background-color: rgba(255, 255, 255, 50);\n            border-radius: 10px...
+L15084: QLabel "同步主板" self =>(tongbuzhuban_lable
+L15085: self tongbuzhuban_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 20px; "
+L15088: QHBoxLayout =:(l_f_layout
+L15089: QLabel "灯光" self =>(mcu_c_changer_lable
+L15090: self mcu_c_changer_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L15091: SwitchButton self =>(C_mcu_changer_switch
+L15093: self C_mcu_changer_switch setChecked False
+L15094: self C_mcu_changer_switch stateChanged connect self C_mcu_changer_button_clicked
+L15095: self C_mcu_changer_switch setFocusPolicy Qt NoFocus
+L15096: QLabel "关闭" self =>(mcu_c_changer_on_off_lable
+L15097: self mcu_c_changer_on_off_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: rgb(243, 244, 243); font-size: 16px; "
+L15098: l_f_layout addWidget self mcu_c_changer_lable
+L15099: l_f_layout addWidget self C_mcu_changer_switch
+L15102: ARGB_tongbu_layout addWidget self tongbuzhuban_lable Qt AlignTop ('alignment',)
+L15103: ARGB_tongbu_layout addLayout l_f_layout
+L15105: QHBoxLayout =:(l_f_layout
+L15106: QLabel "风扇转速" self =>(fan_tongbu_lable
+L15107: self fan_tongbu_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L15108: SwitchButton self =>(fan_tongbu_switch
+L15110: self fan_tongbu_switch setChecked False
+L15111: self fan_tongbu_switch stateChanged connect self fan_tongbu_button_clicked
+L15112: l_f_layout addWidget self fan_tongbu_lable
+L15113: l_f_layout addWidget self fan_tongbu_switch
+L15114: ARGB_tongbu_layout addLayout l_f_layout
+L15115: self fan_tongbu_widget hide
+L15116: inner_layout addWidget self fan_tongbu_widget Qt AlignTop ('alignment',)
+L15119: QVBoxLayout =:(ARGB_kaiguandeng_layout
+L15120: QWidget self =>(fan_kaiguandeng_widget
+L15121: self fan_kaiguandeng_widget setLayout ARGB_kaiguandeng_layout
+L15124: port PID_COMPAY 1
+L15125: 87 =:(HEIGHT
+L15127: 70 =:(HEIGHT
+L15128: self fan_kaiguandeng_widget setFixedHeight HEIGHT
+L15131: self fan_kaiguandeng_widget setStyleSheet "\n            background-color: rgba(255, 255, 255, 50);\n            border-radius: 10px...
+L15135: QHBoxLayout =:(light_on_off_layout
+L15136: light_on_off_layout setSpacing 10
+L15138: QLabel "开/关灯" self =>(light_on_off_flag_lable
+L15139: self light_on_off_flag_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L15140: SwitchButton self =>(light_on_off_switch
+L15141: self light_on_off_switch setChecked True
+L15142: self light_on_off_switch stateChanged connect self light_on_off_button_clicked
+L15143: light_on_off_layout addWidget self light_on_off_flag_lable
+L15144: light_on_off_layout addWidget self light_on_off_switch
+L15145: ARGB_kaiguandeng_layout addLayout light_on_off_layout
+L15146: self fan_kaiguandeng_widget hide
+L15148: inner_layout addWidget self fan_kaiguandeng_widget Qt AlignTop ('alignment',)
+L15149: inner_layout addStretch 1
+L15152: QLabel =:(logo_lable
+L15159: inner_layout addWidget logo_lable Qt AlignCenter ('alignment',)
+L15162: QPushButton self =>(qunkong_button
+L15163: self qunkong_button setIcon QIcon port file_path_img "img/group_light_on.svg"
+L15164: self qunkong_button setIconSize QtCore QSize 30 30
+L15166: self qunkong_button setText "群控"
+L15167: self qunkong_button setFixedHeight 60
+L15168: self qunkong_button setStyleSheet "background-color: transparent; color: rgb(200, 200, 200); text-align: left; padding-left:...
+L15171: self qunkong_button setCheckable True
+L15172: self qunkong_button setFocusPolicy Qt NoFocus
+L15173: self qunkong_button clicked connect self device_qunkong
+L15174: self qunkong_button hide
+L15177: QLabel "设备列表" self =>(label_shezhi
+L15178: self label_shezhi setFont self font
+L15179: self label_shezhi setFixedHeight 20
+L15180: self label_shezhi setStyleSheet "color: white; font-size: 16px; "
+L15185: [0] self =>(device_list
+L15188: [0] self =>(device_buttons
+L15189: range 10 =:(i
+L15190: QHBoxLayout =:(shebei
+L15191: QPushButton self =>(device_button
+L15192: self device_button setCheckable True
+L15193: self device_button clicked connect self device_button_Clicked
+L15195: self device_button setFixedSize 220 60
+L15196: self device_button setFont self font
+L15197: self device_button setFocusPolicy Qt NoFocus
+L15198: self device_button setIcon QIcon ""
+L15199: self device_button setIconSize QtCore QSize 30 30
+L15200: self device_button setText ""
+L15201: self device_button setStyleSheet "background-color: transparent; color: rgb(255, 255, 255); text-align: left; padding-left:...
+L15204: shebei addWidget self device_button
+L15206: self device_buttons append self device_button
+L15208: QLabel "V" port Software_version "_" port Compilation_date self =>(banquan_layble
+L15209: self banquan_layble setFont self font
+L15210: self banquan_layble setStyleSheet "color: " port exe_ver_yanse "; font-size: 16px; "
+L15211: inner_layout addWidget self banquan_layble Qt AlignTop Qt AlignCenter ('alignment',)
+L15214: QVBoxLayout =:(banquan_layout
+L15215: banquan_layout setSpacing 2
+L15217: banquan_layout setContentsMargins 0 0 0 0
+L15218: QLabel "" =:(lable
+L15219: QLabel "POWERED BY" =:(lable1
+L15220: lable1 setStyleSheet "color: rgb(107, 107, 107); font-size: 10px; "
+L15221: QPushButton =:(kuyue_logo_button
+L15222: kuyue_logo_button setStyleSheet "background-color: transparent;"
+L15223: kuyue_logo_button setFixedSize 220 12
+L15224: kuyue_logo_button setIcon QIcon port file_path_img "img/ARGB/00010KY/left_button/logo_left_bottom.svg"
+L15225: kuyue_logo_button setIconSize QtCore QSize 92 12
+L15226: banquan_layout addWidget lable
+L15227: banquan_layout addWidget lable1 Qt AlignTop Qt AlignCenter ('alignment',)
+L15228: banquan_layout addWidget kuyue_logo_button Qt AlignTop Qt AlignCenter ('alignment',)
+L15229: port PID_COMPAY 10
+L15230: port PID_COMPAY_LIST 10 2 10
+L15231: inner_layout addLayout banquan_layout
+L15233: main_layout addLayout left_layout 1
+L15235: QHBoxLayout =:(middle_layout
+L15236: QLabel "" =:(label
+L15237: label setFixedWidth 2
+L15238: port PID_COMPAY 5
+L15239: label setStyleSheet "background-color: " port left_yanse ";"
+L15240: port PID_COMPAY 10
+L15241: label setStyleSheet "background-color: " port xian_yanse ";"
+L15243: label setStyleSheet "background-color: rgba(12, 35, 82, 255);"
+L15244: middle_layout addWidget label
+L15245: main_layout addLayout middle_layout
+L15248: QVBoxLayout =:(right_layout
+L15249: right_layout setContentsMargins 0 0 0 0
+L15250: right_layout setSpacing 0
+L15253: QVBoxLayout =:(right_top_layout
+L15254: right_top_layout setContentsMargins 0 0 0 0
+L15255: right_top_layout setSpacing 0
+L15256: QLabel =:(lable_logo_top
+L15257: lable_logo_top setFixedHeight 110
+L15258: lable_logo_top setStyleSheet "\n            QLabel {\n            background-color: "
+L15260: port right_yanse
+L15258: ";\n            border-top-left-radius: 0px;\n            border-top-right-radius: 30px;\n...
+L15268: right_top_layout addWidget lable_logo_top
+L15271: QVBoxLayout =:(top_lyout
+L15272: top_lyout setContentsMargins 0 0 0 0
+L15273: lable_logo_top setLayout top_lyout
+L15275: QHBoxLayout =:(top_one_layout
+L15276: top_one_layout setContentsMargins 0 0 0 0
+L15277: QPushButton "软件升级" self =>(exe_updata_button
+L15278: self exe_updata_button setFixedSize 150 40
+L15279: self exe_updata_button setFont self font
+L15280: self exe_updata_button setStyleSheet "background-color: rgb(255, 0, 0); color: rgb(255, 255, 255); font-size: 16px; border-radi...
+L15282: self exe_updata_button clicked connect self uploader_exe
+L15283: self exe_updata_button hide
+L15285: QPushButton self =>(settings_button
+L15286: self settings_button setIcon QIcon port file_path_img "img/Settings.svg"
+L15287: self settings_button setIconSize QtCore QSize 36 36
+L15288: self settings_button setCheckable True
+L15289: self settings_button setFocusPolicy Qt NoFocus
+L15290: self settings_button setStyleSheet "border-radius: 16px;"
+L15291: self settings_button clicked connect self openSettings
+L15294: QPushButton self =>(min_xiao
+L15295: self min_xiao setFixedHeight 40
+L15296: self min_xiao setFixedWidth 65
+L15297: self min_xiao setIcon QIcon port file_path_img "img/min_xiao.svg"
+L15298: self min_xiao setIconSize QtCore QSize 20 20
+L15299: self min_xiao setCheckable True
+L15300: self min_xiao setFocusPolicy Qt NoFocus
+L15301: self min_xiao setStyleSheet "border-radius: 13px;"
+L15303: self min_xiao setStyleSheet
+L15304: "\n            /* 默认状态 - 透明背景 */\n            QPushButton {\n             ...
+L15312: port lable_yanse
+L15304: ";\n            }\n            "
+L15303:
+L15316: self min_xiao clicked connect self min_xiao_mesg
+L15317: self min_xiao setChecked False
+L15319: QPushButton =:(close_button
+L15320: close_button setFixedHeight 40
+L15321: close_button setFixedWidth 65
+L15322: close_button setIcon QIcon port file_path_img "img/close.svg"
+L15323: close_button setIconSize QtCore QSize 15 15
+L15324: close_button setCheckable True
+L15325: close_button setFocusPolicy Qt NoFocus
+L15326: close_button setStyleSheet "border-radius: 13px;"
+L15328: close_button setStyleSheet
+L15329: "\n            /* 默认状态 - 透明背景 */\n            QPushButton {\n             ...
+L15328:
+L15345: close_button clicked connect self close_settings
+L15350: QLabel "  灯光同步主板" self =>(tongbu_dengguang_on_off
+L15351: self tongbu_dengguang_on_off setStyleSheet "\n        background-color: rgba(255, 255, 255, 0);\n        color: white;\n        font-...
+L15357: SwitchButton self =>(tongbu_dengguang_on_off_switch
+L15358: self tongbu_dengguang_on_off_switch setChecked False
+L15359: self tongbu_dengguang_on_off_switch stateChanged connect self mcu_computer_light_clicked
+L15360: QLabel "关闭" self =>(tongbu_dengguang_on_off_lable
+L15361: self tongbu_dengguang_on_off_lable setStyleSheet "\n        background-color: rgba(255, 255, 255, 0);\n        color: rgba(255, 255, 255, 1...
+L15368: QLabel "  风扇转速同步主板" self =>(tongbu_speed_on_off
+L15369: self tongbu_speed_on_off setStyleSheet "\n        background-color: rgba(255, 255, 255, 0);\n        color: white;\n        font-...
+L15375: SwitchButton self =>(tongbu_speed_on_off_switch
+L15376: self tongbu_speed_on_off_switch setChecked False
+L15377: self tongbu_speed_on_off_switch stateChanged connect self mcu_computer_fan_speed_clicked
+L15378: QLabel "关闭" self =>(tongbu_speed_on_off_lable
+L15379: self tongbu_speed_on_off_lable setStyleSheet "\n        background-color: rgba(255, 255, 255, 0);\n        color: rgba(255, 255, 255, 1...
+L15385: QLabel "" self =>(kaiguandeng_shuxian
+L15386: self kaiguandeng_shuxian setStyleSheet "\n        background-color: rgba(255, 255, 255, 255);\n        color: rgba(255, 255, 255,...
+L15392: self kaiguandeng_shuxian setFixedWidth 2
+L15393: QLabel "  " self =>(kaiguandeng_zhanwei
+L15394: SwitchButton self =>(kaiguandeng_switch
+L15395: self kaiguandeng_switch setChecked True
+L15396: self kaiguandeng_switch stateChanged connect self kaiguandeng_clicked
+L15397: QLabel "开灯" self =>(kaiguandeng_lable_txt
+L15398: self kaiguandeng_lable_txt setStyleSheet "\n        background-color: rgba(255, 255, 255, 0);\n        color: "
+L15400: port lable_yanse
+L15398: ";\n        font-size: 16px; \n                                                           ...
+L15405: SwitchButton self =>(xitongxianshi_on_off_switch
+L15406: self xitongxianshi_on_off_switch setChecked False
+L15407: self xitongxianshi_on_off_switch stateChanged connect self xitongxinxi_show_close
+L15409: QLabel "  显示系统信息浮动窗口" self =>(xitongxianshi_on_off_lable
+L15410: self xitongxianshi_on_off_lable setStyleSheet "\n        background-color: rgba(255, 255, 255, 0);\n        color: white;\n        font-...
+L15417: QLabel =:(la_lala
+L15421: top_one_layout addWidget self tongbu_dengguang_on_off Qt AlignBottom ('alignment',)
+L15422: top_one_layout addWidget self tongbu_dengguang_on_off_switch Qt AlignBottom ('alignment',)
+L15423: top_one_layout addWidget self tongbu_dengguang_on_off_lable Qt AlignBottom ('alignment',)
+L15424: top_one_layout addWidget self tongbu_speed_on_off Qt AlignBottom ('alignment',)
+L15425: top_one_layout addWidget self tongbu_speed_on_off_switch Qt AlignBottom ('alignment',)
+L15426: top_one_layout addWidget self tongbu_speed_on_off_lable Qt AlignBottom ('alignment',)
+L15427: top_one_layout addWidget self kaiguandeng_shuxian Qt AlignBottom ('alignment',)
+L15428: top_one_layout addWidget self kaiguandeng_zhanwei Qt AlignBottom ('alignment',)
+L15429: top_one_layout addWidget self kaiguandeng_switch Qt AlignBottom ('alignment',)
+L15430: top_one_layout addWidget self kaiguandeng_lable_txt Qt AlignBottom ('alignment',)
+L15431: top_one_layout addWidget self xitongxianshi_on_off_lable Qt AlignBottom ('alignment',)
+L15432: top_one_layout addWidget self xitongxianshi_on_off_switch Qt AlignBottom ('alignment',)
+L15433: top_one_layout addWidget la_lala 7
+L15434: top_one_layout addWidget self exe_updata_button Qt AlignBottom ('alignment',)
+L15435: top_one_layout addWidget self min_xiao Qt AlignRight Qt AlignTop ('alignment',)
+L15436: top_one_layout addWidget close_button Qt AlignRight Qt AlignTop ('alignment',)
+L15439: self tongbu_dengguang_on_off hide
+L15440: self tongbu_dengguang_on_off_switch hide
+L15441: self tongbu_dengguang_on_off_lable hide
+L15443: self tongbu_speed_on_off hide
+L15444: self tongbu_speed_on_off_switch hide
+L15445: self tongbu_speed_on_off_lable hide
+L15448: DesktopWidget self =>(widget_desktopwidget
+L15451: QHBoxLayout =:(effect_fan_speed_layout
+L15452: effect_fan_speed_layout setContentsMargins 0 0 30 0
+L15453: QWidget self =>(effect_fan_speed_widget
+L15454: self effect_fan_speed_widget setLayout effect_fan_speed_layout
+L15455: self effect_fan_speed_widget setFixedHeight 60
+L15456: self effect_fan_speed_widget setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            "
+L15459: [0] self =>(fan_effect_speed_buttons
+L15462: "同步灯效" "异步灯效" "合并灯效" "风扇调速" "控制器设置" [5] self =>(fan_effect_speed_buttons_name
+L15466: range 5 =:(i
+L15467: QPushButton =:(device_button
+L15468: device_button setCheckable True
+L15469: device_button setFont self font
+L15470: device_button setFocusPolicy Qt NoFocus
+L15472: device_button setIconSize QtCore QSize 35 35
+L15473: device_button setFixedHeight 50
+L15474: device_button setText self fan_effect_speed_buttons_name i
+L15476: device_button setStyleSheet
+L15477: "\n                QPushButton {\n                    background-color: rgba(242, 244, 241...
+L15496: port yzm_huang_xiao
+L15477: ",\n                    stop:0.5 "
+L15497: port xianshi_jianbian
+L15477: ",\n                    stop:1 "
+L15496: port yzm_huang_xiao
+L15477: ");\n                    color: rgb(242, 244, 241);\n                }\n                "
+L15476:
+L15503: device_button clicked connect self tongbu_yibu_hebing_zhuansu_button_Clicked
+L15504: self fan_effect_speed_buttons append device_button
+L15505: effect_fan_speed_layout addWidget device_button Qt AlignTop ('alignment',)
+L15506: effect_fan_speed_layout addStretch 1
+L15509: QHBoxLayout =:(new_shezhi_layout
+L15510: new_shezhi_layout setContentsMargins 0 0 30 0
+L15511: QWidget self =>(new_shezhi_widget
+L15512: self new_shezhi_widget setLayout new_shezhi_layout
+L15513: self new_shezhi_widget setFixedHeight 60
+L15514: self new_shezhi_widget setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            "
+L15517: [0] self =>(new_shezhi_buttons
+L15520: "通用" "支持" [2] self =>(new_shezhi_buttons_name
+L15521: "General" "Support" [2] self =>(new_shezhi_buttons_name_en
+L15522: "Allgemein" "Support" [2] self =>(new_shezhi_buttons_name_de
+L15523: "一般" "サポート" [2] self =>(new_shezhi_buttons_name_jp
+L15524: range 2 =:(i
+L15525: QPushButton =:(device_button
+L15526: device_button setCheckable True
+L15527: device_button setFont self font
+L15528: device_button setFocusPolicy Qt NoFocus
+L15530: device_button setIconSize QtCore QSize 35 35
+L15531: device_button setFixedHeight 50
+L15532: device_button setText self new_shezhi_buttons_name i
+L15533: device_button setStyleSheet
+L15534: "\n                QPushButton {\n                    background-color: rgba(242, 244, 241...
+L15553: port yzm_huang_xiao
+L15534: ",\n                    stop:0.5 "
+L15554: port xianshi_jianbian
+L15534: ",\n                    stop:1 "
+L15553: port yzm_huang_xiao
+L15534: ");\n                    color: rgb(242, 244, 241);\n                }\n                "
+L15533:
+L15560: device_button clicked connect self new_shezhi_button_Clicked
+L15561: self new_shezhi_buttons append device_button
+L15562: new_shezhi_layout addWidget device_button Qt AlignTop ('alignment',)
+L15563: new_shezhi_layout addStretch 1
+L15564: self effect_fan_speed_widget hide
+L15565: self new_shezhi_widget hide
+L15566: QWidget self =>(top_zhanwei_widget
+L15567: self top_zhanwei_widget setFixedHeight 60
+L15568: self top_zhanwei_widget setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            "
+L15571: self top_zhanwei_widget hide
+L15574: QVBoxLayout =:(middle_heng_layout
+L15575: middle_heng_layout setContentsMargins 0 0 0 0
+L15576: QLabel "" =:(right_top_label
+L15577: right_top_label setFixedHeight 2
+L15578: port PID_COMPAY 5
+L15579: "rgba(60, 60, 60, 255)" =:(color
+L15580: port PID_COMPAY 10
+L15581: port xian_yanse =:(color
+L15583: "rgba(9, 54, 93, 255)" =:(color
+L15584: right_top_label setStyleSheet "\n        QLabel {\n            background-color: "
+L15586: color
+L15584: ";\n            border-bottom: 2px solid "
+L15586: color
+L15584: ";\n        }\n        "
+L15590: middle_heng_layout addWidget right_top_label
+L15592: top_lyout addLayout top_one_layout 1
+L15593: top_lyout addWidget self effect_fan_speed_widget 3
+L15594: top_lyout addWidget self new_shezhi_widget 3
+L15595: top_lyout addWidget self top_zhanwei_widget 3
+L15596: top_lyout addLayout middle_heng_layout
+L15597: right_top_layout addLayout top_lyout
+L15621: QVBoxLayout =:(right_bottom_layout
+L15622: right_bottom_layout setContentsMargins 0 0 0 0
+L15623: right_bottom_layout setSpacing 0
+L15624: QLabel self =>(right_label_effect
+L15625: self right_label_effect setStyleSheet "\n            QLabel {\n            background-color: "
+L15627: port right_yanse
+L15625: ";\n            border-top-left-radius: 0px;\n            border-top-right-radius: 0px;\n ...
+L15635: right_bottom_layout addWidget self right_label_effect
+L15638: QVBoxLayout =:(inner_layout
+L15642: self right_label_effect setLayout inner_layout
+L15644: QLabel =:(image_label
+L15645: QPushButton self =>(settings_button
+L15646: self settings_button setIcon QIcon port file_path_img "img/Settings.svg"
+L15647: self settings_button setIconSize QtCore QSize 40 40
+L15648: self settings_button setCheckable True
+L15649: self settings_button setFocusPolicy Qt NoFocus
+L15650: self settings_button setStyleSheet "border-radius: 16px;"
+L15651: self settings_button clicked connect self openSettings
+L15652: image_label setAlignment Qt AlignCenter
+L15658: QPushButton self =>(settings_button_tab
+L15659: self settings_button_tab setIcon QIcon port file_path_img "img/Tab.svg"
+L15660: self settings_button_tab setIconSize QtCore QSize 40 40
+L15661: self settings_button_tab setCheckable True
+L15662: self settings_button_tab setFocusPolicy Qt NoFocus
+L15663: self settings_button_tab setStyleSheet "border-radius: 16px;"
+L15664: self settings_button_tab clicked connect self openTabSettings
+L15668: QLabel self =>(label_img
+L15672: port PID_COMPAY 2
+L15673: QPixmap port file_path_img "img/ARGB/WANJIA/WANJIA.png" =:(pixmap
+L15675: QPixmap port file_path_img "img/test.png" =:(pixmap
+L15676: self label_img setPixmap pixmap
+L15679: self label_img setScaledContents True
+L15680: self label_img resize pixmap width pixmap height
+L15683: inner_layout addWidget self label_img
+L15684: self label_img hide
+L15689: QVBoxLayout self =>(table1_layout
+L15690: QVBoxLayout self =>(table2_layout
+L15691: QVBoxLayout self =>(table3_layout
+L15692: QVBoxLayout self =>(table4_layout
+L15693: QVBoxLayout self =>(table5_layout
+L15694: QVBoxLayout self =>(table6_layout
+L15695: QVBoxLayout self =>(table7_layout
+L15698: QWidget self =>(table1
+L15699: self table1 setLayout self table1_layout
+L15700: QWidget self =>(table2
+L15701: self table2 setLayout self table2_layout
+L15702: QWidget self =>(table3
+L15703: self table3 setLayout self table3_layout
+L15704: QWidget self =>(table4
+L15705: self table4 setLayout self table4_layout
+L15706: QWidget self =>(table5
+L15707: self table5 setLayout self table5_layout
+L15708: QWidget self =>(table6
+L15709: self table6 setLayout self table6_layout
+L15710: QWidget self =>(table7
+L15711: self table7 setLayout self table7_layout
+L15714: QTabWidget self =>(device_settings_layout
+L15717: self device_settings_layout setStyleSheet
+L15718: "\n                        /*style-dark*/\n            QTabWidget::pane { /* The tab widge...
+L15717:
+L15765: self device_settings_layout setFixedHeight 100
+L15766: self device_settings_layout setFont self font
+L15767: self device_settings_layout addTab self table1 "调整线序"
+L15768: self device_settings_layout addTab self table2 "设备位置"
+L15769: self device_settings_layout addTab self table3 "选择边数"
+L15770: self device_settings_layout addTab self table4 "灯条规格"
+L15771: self device_settings_layout addTab self table5 "安装方式"
+L15772: self device_settings_layout addTab self table6 "调整点数"
+L15773: self device_settings_layout addTab self table7 "自动关灯"
+L15776: self device_settings_layout currentChanged connect self on_tab_changed
+L15782: self table1_UI
+L15783: self table2_UI
+L15784: self table3_UI
+L15785: self table4_UI
+L15786: self table5_UI
+L15787: self table6_UI
+L15788: self table7_UI
+L15794: QHBoxLayout =:(kaiguan
+L15795: QLabel "" self =>(lable_kong_name
+L15797: QLabel "" self =>(device_name_lable
+L15798: self device_name_lable setFont self font
+L15799: self device_name_lable setFocusPolicy Qt NoFocus
+L15800: self device_name_lable setStyleSheet "color: white; font-size: 16px; "
+L15801: QPushButton self =>(device_rename_button
+L15802: self device_rename_button setIcon QIcon port file_path_img "img/rename1.svg"
+L15803: self device_rename_button setIconSize QtCore QSize 35 35
+L15805: self device_rename_button setStyleSheet "border-radius: 15px;"
+L15806: self device_rename_button clicked connect self showDialog
+L15813: QPushButton self =>(button_onoff
+L15814: self button_onoff setIcon QIcon port file_path_img "img/light-on.svg"
+L15815: self button_onoff setIconSize QtCore QSize 80 80
+L15816: self button_onoff setFixedSize 80 80
+L15817: self button_onoff setStyleSheet "border-radius: 40px;"
+L15818: self button_onoff setCheckable True
+L15819: self button_onoff clicked bool connect self on_off
+L15823: kaiguan addWidget self lable_kong_name 4
+L15824: kaiguan addWidget self button_onoff 1 Qt AlignCenter ('alignment',)
+L15825: kaiguan addWidget self device_name_lable 3 Qt AlignRight ('alignment',)
+L15826: kaiguan addWidget self device_rename_button 1 Qt AlignLeft ('alignment',)
+L15833: QVBoxLayout =:(system_info
+L15836: QWidget self =>(system_info_widget
+L15837: self system_info_widget setLayout system_info
+L15840: self system_info_widget setFixedHeight 760
+L15843: self system_info_widget setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            border-radius: 10px;...
+L15847: inner_layout addWidget self system_info_widget Qt AlignTop ('alignment',)
+L15848: self system_info_widget hide
+L15850: QHBoxLayout =:(cpu_gpu_ram_layout
+L15851: cpu_gpu_ram_layout setSpacing 20
+L15853: QVBoxLayout =:(cpu_info_layout
+L15855: QLabel "CPU" self =>(cpu_info_name
+L15856: port PID_COMPAY 5
+L15857: self cpu_info_name setStyleSheet "color: " port left_yanse ";   font-size: 20px; font-weight: bold;"
+L15859: self cpu_info_name setStyleSheet "color: rgb(0, 190, 255);   font-size: 20px; font-weight: bold;"
+L15860: self cpu_info_name setFont self font
+L15862: circularprogressbar CircularProgressBar self =>(cpu_progressbar
+L15863: self cpu_progressbar setText "CPU负载"
+L15864: self cpu_progressbar setValue 12
+L15865: port PID_COMPAY 5
+L15866: self cpu_progressbar setColor QColor 251 233 0
+L15868: self cpu_progressbar setColor QColor 0 190 255
+L15870: CustomProgressBar CustomProgressBar self =>(cpu_temperature_progressbar
+L15871: self cpu_temperature_progressbar setLeftText "温度"
+L15872: self cpu_temperature_progressbar setValue 25
+L15873: self cpu_temperature_progressbar setRightText "25 ℃"
+L15874: self cpu_temperature_progressbar setBarColor QColor 0 190 255
+L15875: port PID_COMPAY 5
+L15876: self cpu_temperature_progressbar setBarColor QColor 251 233 0
+L15878: self cpu_temperature_progressbar setBarColor QColor 0 190 255
+L15880: CustomProgressBar CustomProgressBar self =>(cpu_MHZ_progressbar
+L15881: self cpu_MHZ_progressbar setLeftText "时钟频率"
+L15882: self cpu_MHZ_progressbar setRightText "3300 MHZ"
+L15883: self cpu_MHZ_progressbar setValue 65
+L15884: self cpu_MHZ_progressbar setBarColor QColor 0 190 255
+L15885: port PID_COMPAY 5
+L15886: self cpu_MHZ_progressbar setBarColor QColor 251 233 0
+L15888: self cpu_MHZ_progressbar setBarColor QColor 0 190 255
+L15890: cpu_info_layout addWidget self cpu_info_name
+L15891: cpu_info_layout addWidget self cpu_progressbar
+L15892: cpu_info_layout addWidget self cpu_temperature_progressbar
+L15893: cpu_info_layout addWidget self cpu_MHZ_progressbar
+L15895: cpu_gpu_ram_layout addLayout cpu_info_layout
+L15899: QVBoxLayout =:(gpu_info_layout
+L15901: QLabel "GPU" self =>(gpu_info_name
+L15902: port PID_COMPAY 5
+L15903: self gpu_info_name setStyleSheet "color: " port left_yanse ";   font-size: 20px; font-weight: bold;"
+L15905: self gpu_info_name setStyleSheet "color: rgb(0, 255, 135);   font-size: 20px; font-weight: bold;"
+L15906: self gpu_info_name setFont self font
+L15908: circularprogressbar CircularProgressBar self =>(gpu_progressbar
+L15909: self gpu_progressbar setText "GPU负载"
+L15910: self gpu_progressbar setValue 2
+L15911: port PID_COMPAY 5
+L15912: self gpu_progressbar setColor QColor 251 233 0
+L15914: self gpu_progressbar setColor QColor 0 255 135
+L15916: CustomProgressBar CustomProgressBar self =>(gpu_temperature_progressbar
+L15917: self gpu_temperature_progressbar setLeftText "温度"
+L15918: self gpu_temperature_progressbar setValue 50
+L15919: self gpu_temperature_progressbar setRightText "50 ℃"
+L15920: port PID_COMPAY 5
+L15921: self gpu_temperature_progressbar setBarColor QColor 251 233 0
+L15923: self gpu_temperature_progressbar setBarColor QColor 0 255 135
+L15925: CustomProgressBar CustomProgressBar self =>(gpu_MHZ_progressbar
+L15926: self gpu_MHZ_progressbar setLeftText "时钟频率"
+L15927: self gpu_MHZ_progressbar setRightText "135 MHZ"
+L15928: self gpu_MHZ_progressbar setValue 5
+L15929: port PID_COMPAY 5
+L15930: self gpu_MHZ_progressbar setBarColor QColor 251 233 0
+L15932: self gpu_MHZ_progressbar setBarColor QColor 0 255 135
+L15934: gpu_info_layout addWidget self gpu_info_name
+L15935: gpu_info_layout addWidget self gpu_progressbar
+L15936: gpu_info_layout addWidget self gpu_temperature_progressbar
+L15937: gpu_info_layout addWidget self gpu_MHZ_progressbar
+L15939: cpu_gpu_ram_layout addLayout gpu_info_layout
+L15943: QVBoxLayout =:(ram_info_layout
+L15945: QLabel "RAM" self =>(ram_info_name
+L15946: port PID_COMPAY 5
+L15947: self ram_info_name setStyleSheet "color: " port left_yanse ";   font-size: 20px; font-weight: bold;"
+L15949: self ram_info_name setStyleSheet "color: rgb(223, 213, 0);   font-size: 20px; font-weight: bold;"
+L15950: self ram_info_name setFont self font
+L15952: circularprogressbar CircularProgressBar self =>(ram_progressbar
+L15953: self ram_progressbar setText "RAM负载"
+L15954: self ram_progressbar setValue 40
+L15955: port PID_COMPAY 5
+L15956: self ram_progressbar setColor QColor 251 233 0
+L15958: self ram_progressbar setColor QColor 223 213 0
+L15960: QLabel =:(lable1
+L15961: lable1 setFixedHeight 70
+L15962: QLabel =:(lable2
+L15963: lable2 setFixedHeight 70
+L15966: ram_info_layout addWidget self ram_info_name
+L15967: ram_info_layout addWidget self ram_progressbar
+L15968: ram_info_layout addWidget lable1
+L15969: ram_info_layout addWidget lable2
+L15972: cpu_gpu_ram_layout addLayout ram_info_layout
+L15975: QLabel "" =:(label
+L15976: label setFixedHeight 2
+L15977: port PID_COMPAY 5
+L15978: label setStyleSheet "background-color: rgba(60, 60, 60, 255);"
+L15979: port PID_COMPAY 10
+L15980: label setStyleSheet "background-color: " port xian_yanse ";"
+L15982: label setStyleSheet "background-color: rgba(9, 54, 93, 255);"
+L15985: QHBoxLayout =:(netwoke_flash_layout
+L15986: netwoke_flash_layout setSpacing 20
+L15989: QVBoxLayout =:(network_info_layout
+L15991: QLabel "网络" self =>(network_info_name
+L15992: self network_info_name setFont self font
+L15993: port PID_COMPAY 5
+L15994: self network_info_name setStyleSheet "color: " port left_yanse ";   font-size: 20px; font-weight: bold;"
+L15996: self network_info_name setStyleSheet "color: white;  font-size: 20px; font-weight: bold;"
+L15998: netwok_kittle NetworkView self =>(network_text
+L15999: self network_text set_upload_speed "10 KB/S"
+L16000: self network_text set_download_speed "20 KB/S"
+L16003: network_info_layout addWidget self network_info_name Qt AlignTop ('alignment',)
+L16004: network_info_layout addWidget self network_text Qt AlignTop ('alignment',)
+L16005: network_info_layout addStretch 1
+L16006: netwoke_flash_layout addLayout network_info_layout
+L16009: QVBoxLayout =:(flash_info_layout
+L16011: QLabel "存储" self =>(flash_info_name
+L16012: self flash_info_name setFont self font
+L16013: port PID_COMPAY 5
+L16014: self flash_info_name setStyleSheet "color: " port left_yanse ";   font-size: 20px; font-weight: bold;"
+L16015: QColor 251 233 0 =:(color_flash
+L16017: self flash_info_name setStyleSheet "color: rgb(255, 43, 213);  font-size: 20px; font-weight: bold;"
+L16018: QColor 255 43 213 =:(color_flash
+L16020: QVBoxLayout =:(h_flash_layout
+L16021: [0] self =>(flash_progressbar
+L16023: range 4 =:(_
+L16024: QHBoxLayout =:(two_flash_layout
+L16025: range 2 =:(_
+L16026: CustomProgressBar CustomProgressBar =:(cpu_temperature_progressbar
+L16027: cpu_temperature_progressbar setLeftText "--"
+L16028: cpu_temperature_progressbar setValue 25
+L16029: cpu_temperature_progressbar setRightText "--"
+L16030: cpu_temperature_progressbar setBarColor color_flash
+L16031: cpu_temperature_progressbar setFixedWidth 272
+L16032: cpu_temperature_progressbar hide
+L16033: self flash_progressbar append cpu_temperature_progressbar
+L16034: two_flash_layout addWidget cpu_temperature_progressbar 1 Qt AlignLeft ('alignment',)
+L16035: h_flash_layout addLayout two_flash_layout
+L16037: flash_info_layout addWidget self flash_info_name
+L16038: flash_info_layout addLayout h_flash_layout
+L16039: flash_info_layout addStretch 1
+L16041: netwoke_flash_layout addLayout flash_info_layout
+L16043: system_info addLayout cpu_gpu_ram_layout
+L16044: system_info addWidget label
+L16045: system_info addLayout netwoke_flash_layout
+L16048: QVBoxLayout =:(tongbu_effect_H_layout
+L16049: tongbu_effect_H_layout setContentsMargins 0 0 0 0
+L16050: QWidget self =>(tongbu_effect_H_widget
+L16052: self tongbu_effect_H_widget setFixedHeight 650
+L16055: self tongbu_effect_H_widget setStyleSheet "\n            background-color: rgba(0, 255, 0, 0);\n            border-radius: 10px;\n  ...
+L16059: self tongbu_effect_H_widget setLayout tongbu_effect_H_layout
+L16061: [0] self =>(tongbu_effect_buttons
+L16062: [0] self =>(tongbu_effect_lables
+L16064: "img/ARGB/effect_svg/01.svg"
+L16065: "img/ARGB/effect_svg/02.svg"
+L16066: "img/ARGB/effect_svg/03.svg"
+L16067: "img/ARGB/effect_svg/04.svg"
+L16068: "img/ARGB/effect_svg/05.svg"
+L16069: "img/ARGB/effect_svg/06.svg"
+L16070: "img/ARGB/effect_svg/07.svg"
+L16071: "img/ARGB/effect_svg/08.svg"
+L16072: "img/ARGB/effect_svg/09.svg"
+L16073: "img/ARGB/effect_svg/10.svg"
+L16074: "img/ARGB/effect_svg/11.svg"
+L16075: "img/ARGB/effect_svg/12.svg"
+L16076: "img/ARGB/effect_svg/13.svg"
+L16077: "img/ARGB/effect_svg/14.svg"
+L16078: "img/ARGB/effect_svg/15.svg"
+L16063: [15] self =>(tongbu_effect_imgs
+L16082: "img/ARGB/effect_svg_xuanzhong/01.svg"
+L16083: "img/ARGB/effect_svg_xuanzhong/02.svg"
+L16084: "img/ARGB/effect_svg_xuanzhong/03.svg"
+L16085: "img/ARGB/effect_svg_xuanzhong/04.svg"
+L16086: "img/ARGB/effect_svg_xuanzhong/05.svg"
+L16087: "img/ARGB/effect_svg_xuanzhong/06.svg"
+L16088: "img/ARGB/effect_svg_xuanzhong/07.svg"
+L16089: "img/ARGB/effect_svg_xuanzhong/08.svg"
+L16090: "img/ARGB/effect_svg_xuanzhong/09.svg"
+L16091: "img/ARGB/effect_svg_xuanzhong/10.svg"
+L16092: "img/ARGB/effect_svg_xuanzhong/11.svg"
+L16093: "img/ARGB/effect_svg_xuanzhong/12.svg"
+L16094: "img/ARGB/effect_svg_xuanzhong/13.svg"
+L16095: "img/ARGB/effect_svg_xuanzhong/14.svg"
+L16096: "img/ARGB/effect_svg_xuanzhong/15.svg"
+L16081: [15] self =>(tongbu_effect_imgs_xuanzhong
+L16098: port PID_COMPAY 10
+L16100: "img/ARGB/00010KY/effect_svg/01.svg"
+L16101: "img/ARGB/00010KY/effect_svg/02.svg"
+L16102: "img/ARGB/00010KY/effect_svg/03.svg"
+L16103: "img/ARGB/00010KY/effect_svg/04.svg"
+L16104: "img/ARGB/00010KY/effect_svg/05.svg"
+L16105: "img/ARGB/00010KY/effect_svg/06.svg"
+L16106: "img/ARGB/00010KY/effect_svg/07.svg"
+L16107: "img/ARGB/00010KY/effect_svg/08.svg"
+L16108: "img/ARGB/00010KY/effect_svg/09.svg"
+L16109: "img/ARGB/00010KY/effect_svg/10.svg"
+L16110: "img/ARGB/00010KY/effect_svg/11.svg"
+L16111: "img/ARGB/00010KY/effect_svg/12.svg"
+L16112: "img/ARGB/00010KY/effect_svg/13.svg"
+L16113: "img/ARGB/00010KY/effect_svg/14.svg"
+L16114: "img/ARGB/00010KY/effect_svg/15.svg"
+L16099: [15] self =>(tongbu_effect_imgs
+L16118: "img/ARGB/00010KY/effect_svg_xuanzhong/01.svg"
+L16119: "img/ARGB/00010KY/effect_svg_xuanzhong/02.svg"
+L16120: "img/ARGB/00010KY/effect_svg_xuanzhong/03.svg"
+L16121: "img/ARGB/00010KY/effect_svg_xuanzhong/04.svg"
+L16122: "img/ARGB/00010KY/effect_svg_xuanzhong/05.svg"
+L16123: "img/ARGB/00010KY/effect_svg_xuanzhong/06.svg"
+L16124: "img/ARGB/00010KY/effect_svg_xuanzhong/07.svg"
+L16125: "img/ARGB/00010KY/effect_svg_xuanzhong/08.svg"
+L16126: "img/ARGB/00010KY/effect_svg_xuanzhong/09.svg"
+L16127: "img/ARGB/00010KY/effect_svg_xuanzhong/10.svg"
+L16128: "img/ARGB/00010KY/effect_svg_xuanzhong/11.svg"
+L16129: "img/ARGB/00010KY/effect_svg_xuanzhong/12.svg"
+L16130: "img/ARGB/00010KY/effect_svg_xuanzhong/13.svg"
+L16131: "img/ARGB/00010KY/effect_svg_xuanzhong/14.svg"
+L16132: "img/ARGB/00010KY/effect_svg_xuanzhong/15.svg"
+L16117: [15] self =>(tongbu_effect_imgs_xuanzhong
+L16135: range 5 =:(i
+L16136: QHBoxLayout =:(effect_layout
+L16137: range 3 =:(t
+L16138: QVBoxLayout =:(effect_text_layout
+L16139: effect_text_layout setContentsMargins 0 0 0 0
+L16140: QPushButton =:(device_button
+L16141: device_button setCheckable True
+L16142: device_button setFont self font
+L16143: device_button setFocusPolicy Qt NoFocus
+L16144: device_button setIcon QIcon port file_path_img self tongbu_effect_imgs i 3 t
+L16145: device_button setIconSize QtCore QSize 50 50
+L16146: device_button setFixedHeight 85
+L16148: QLabel port dengxiao_model2_zh i 3 t =:(text
+L16149: text setStyleSheet "color: rgb(242, 244, 241); font-size: 14px;"
+L16150: text setFixedHeight 20
+L16152: device_button clicked connect self tongbu_effect_changer_Clicked
+L16153: self tongbu_effect_buttons append device_button
+L16154: self tongbu_effect_lables append text
+L16155: device_button setStyleSheet
+L16156: "\n                    QPushButton {\n                        background-color: rgba(242, ...
+L16165: port xianshi_jianbian
+L16156: ";\n                    }\n                    \n                    QPushButton:pressed {...
+L16165: port xianshi_jianbian
+L16156: ";\n                    }\n                    \n                    QPushButton:checked {...
+L16165: port xianshi_jianbian
+L16156: ";\n                    }\n                    "
+L16155:
+L16179: QWidget =:(container
+L16180: container setFixedWidth 160
+L16181: container setLayout effect_text_layout
+L16182: effect_text_layout addWidget device_button Qt AlignCenter ('alignment',)
+L16183: effect_text_layout addWidget text Qt AlignTop Qt AlignCenter ('alignment',)
+L16185: effect_layout addWidget container
+L16186: effect_layout addStretch
+L16187: tongbu_effect_H_layout addLayout effect_layout Qt AlignTop ('alignment',)
+L16190: QVBoxLayout =:(tongbu_effect_settings_lyout
+L16191: tongbu_effect_settings_lyout setContentsMargins 0 0 0 0
+L16192: QWidget self =>(tongbu_effect_S_widget
+L16194: self tongbu_effect_S_widget setFixedHeight 650
+L16196: self tongbu_effect_S_widget setStyleSheet "\n            background-color: rgba(0, 255, 0, 0);\n            border-radius: 10px;\n  ...
+L16200: self tongbu_effect_S_widget setLayout tongbu_effect_settings_lyout
+L16203: QGroupBox "流速" self =>(tongbu_effect_liusu_group
+L16204: self tongbu_effect_liusu_group setFixedHeight 150
+L16205: self tongbu_effect_liusu_group setStyleSheet "\n            QGroupBox {\n                color: white;\n                border: 3px sol...
+L16222: QVBoxLayout =:(effect_liusu_layout
+L16223: QLabel "20%" self =>(tongbu_liusu_lable
+L16224: self tongbu_liusu_lable setStyleSheet
+L16225: "\n            color: white;\n            font-size: 30px; \n            \n            "
+L16224:
+L16231: QSlider Qt Horizontal self self =>(tongbu_slider_liusu
+L16232: self tongbu_slider_liusu setRange 0 50
+L16233: self tongbu_slider_liusu setValue 20
+L16234: self tongbu_slider_liusu setFixedHeight 30
+L16235: self tongbu_slider_liusu setFocusPolicy Qt NoFocus
+L16236: self tongbu_slider_liusu setTickInterval 1
+L16238: self tongbu_slider_liusu setStyleSheet
+L16239: '\n            QSlider::groove:horizontal {\n                background: rgb(100,100,100);...
+L16238:
+L16265: self tongbu_slider_liusu valueChanged connect self tongbu_effect_liusu_changer
+L16266: effect_liusu_layout addWidget self tongbu_liusu_lable Qt AlignCenter ('alignment',)
+L16267: effect_liusu_layout addWidget self tongbu_slider_liusu
+L16269: self tongbu_effect_liusu_group setLayout effect_liusu_layout
+L16273: QGroupBox "方向" self =>(tongbu_effect_fangxiang_group
+L16274: self tongbu_effect_fangxiang_group setFixedHeight 150
+L16275: self tongbu_effect_fangxiang_group setStyleSheet "\n            QGroupBox {\n                color: white;\n                border: 3px sol...
+L16292: QVBoxLayout =:(effect_fangxiang_layout
+L16293: QLabel "正序" self =>(tongbu_fangxiang_lable
+L16294: self tongbu_fangxiang_lable setStyleSheet
+L16295: "\n            color: white;\n            font-size: 30px; \n            \n            "
+L16294:
+L16302: QHBoxLayout =:(fangxiang
+L16303: [0] self =>(tongbu_fan_fangxiang_buttons
+L16304: "img/ARGB_LEFT_FLASH.svg" "img/ARGB_RIGHT_FLASH.svg" [2] self =>(fan_fangxiang_img
+L16305: port PID_COMPAY 5
+L16306: "img/ARGB/0005YZM/fangxiang/ARGB_LEFT_TURE.svg" "img/ARGB/0005YZM/fangxiang/ARGB_RIGHT_TURE.svg" [2] self =>(fan_fangxiang_img_xuanzhong
+L16307: port PID_COMPAY 10
+L16308: "img/ARGB/00010KY/fangxiang/ARGB_LEFT_FLASH.svg" "img/ARGB/00010KY/fangxiang/ARGB_RIGHT_FLASH.svg" [2] self =>(fan_fangxiang_img
+L16309: "img/ARGB/00010KY/fangxiang/ARGB_LEFT_TURE.svg" "img/ARGB/00010KY/fangxiang/ARGB_RIGHT_TURE.svg" [2] self =>(fan_fangxiang_img_xuanzhong
+L16311: "img/ARGB_LEFT_TURE.svg" "img/ARGB_RIGHT_TURE.svg" [2] self =>(fan_fangxiang_img_xuanzhong
+L16312: range 2 =:(i
+L16313: QPushButton =:(button
+L16314: button setCheckable True
+L16315: button setFocusPolicy Qt NoFocus
+L16316: button clicked connect self tongbu_effect_fangxiang_changer
+L16317: button setIcon QIcon port file_path_img port file_path_img self fan_fangxiang_img i
+L16318: i 1
+L16319: button setIcon QIcon port file_path_img port file_path_img self fan_fangxiang_img_xuanzhong i
+L16320: button setIconSize QtCore QSize 40 40
+L16321: button setStyleSheet "background-color: rgba(255, 255, 255, 0); border-radius: 16px;"
+L16322: self tongbu_fan_fangxiang_buttons append button
+L16323: fangxiang addWidget button Qt AlignCenter ('alignment',)
+L16324: effect_fangxiang_layout addWidget self tongbu_fangxiang_lable Qt AlignCenter ('alignment',)
+L16325: effect_fangxiang_layout addLayout fangxiang
+L16326: self tongbu_effect_fangxiang_group setLayout effect_fangxiang_layout
+L16330: QGroupBox "亮度" self =>(tongbu_effect_liangdu_group
+L16331: self tongbu_effect_liangdu_group setFixedHeight 150
+L16332: self tongbu_effect_liangdu_group setStyleSheet "\n            QGroupBox {\n                color: white;\n                border: 3px sol...
+L16349: QVBoxLayout =:(effect_liangdu_layout
+L16350: QLabel "60%" self =>(tongbu_liangdu_lable
+L16351: self tongbu_liangdu_lable setStyleSheet
+L16352: "\n            color: white;\n            font-size: 30px; \n            \n            "
+L16351:
+L16359: QSlider Qt Horizontal self self =>(tongbu_slider_liangdu
+L16360: self tongbu_slider_liangdu setRange 0 50
+L16361: self tongbu_slider_liangdu setValue 40
+L16362: self tongbu_slider_liangdu setFixedHeight 30
+L16363: self tongbu_slider_liangdu setStyleSheet
+L16364: '\n            QSlider::groove:horizontal {\n                background: rgb(100, 100, 100...
+L16363:
+L16389: self tongbu_slider_liangdu valueChanged connect self tongbu_effect_liangdu_changer
+L16390: effect_liangdu_layout addWidget self tongbu_liangdu_lable Qt AlignCenter ('alignment',)
+L16391: effect_liangdu_layout addWidget self tongbu_slider_liangdu
+L16393: self tongbu_effect_liangdu_group setLayout effect_liangdu_layout
+L16397: QGroupBox "颜色" self =>(tongbu_effect_yanse_group
+L16398: self tongbu_effect_yanse_group setFixedHeight 150
+L16399: self tongbu_effect_yanse_group setStyleSheet "\n            QGroupBox {\n                color: white;\n                border: 3px sol...
+L16416: QVBoxLayout =:(tongbu_effect_yanse_layout
+L16417: QLabel "60%" self =>(chuji_yanse_lable
+L16418: self chuji_yanse_lable setStyleSheet
+L16419: "\n            color: white;\n            font-size: 30px; \n            \n            "
+L16418:
+L16425: QHBoxLayout =:(fan_yanse
+L16426: 255 0 0 [3] 0 255 0 [3] 0 0 255 [3] 255 255 0 [3] [4] self =>(fan_dengxiao_colors
+L16427: [0] self =>(tongbu_fan_dengxiao_buttons
+L16428: range 4 =:(i
+L16429: QPushButton =:(button
+L16430: button setCheckable True
+L16431: button clicked connect self tongbu_yanse_changer
+L16432: button setFixedSize 40 40
+L16433: button setFocusPolicy Qt NoFocus
+L16434: button setStyleSheet "background-color: rgb" tuple self fan_dengxiao_colors i "; border-radius: 20px;"
+L16435: self tongbu_fan_dengxiao_buttons append button
+L16436: fan_yanse addWidget button
+L16439: QPushButton "调色板" self =>(tongbu_button_fan_tiaose
+L16440: self tongbu_button_fan_tiaose setFont self font
+L16441: self tongbu_button_fan_tiaose setFocusPolicy Qt NoFocus
+L16442: self tongbu_button_fan_tiaose setFixedHeight 40
+L16443: self tongbu_button_fan_tiaose setStyleSheet "background-color: rgb" (17, 78, 255) "; color: white; border-radius: 15px; font-size: 16px;"
+L16444: self tongbu_button_fan_tiaose clicked connect self tongbu_tiaose_changer
+L16447: tongbu_effect_yanse_layout addLayout fan_yanse
+L16448: tongbu_effect_yanse_layout addWidget self tongbu_button_fan_tiaose
+L16451: self tongbu_effect_yanse_group setLayout tongbu_effect_yanse_layout
+L16452: tongbu_effect_settings_lyout addWidget self tongbu_effect_yanse_group Qt AlignTop ('alignment',)
+L16453: tongbu_effect_settings_lyout addWidget self tongbu_effect_liusu_group Qt AlignTop ('alignment',)
+L16454: tongbu_effect_settings_lyout addWidget self tongbu_effect_liangdu_group Qt AlignTop ('alignment',)
+L16455: tongbu_effect_settings_lyout addWidget self tongbu_effect_fangxiang_group Qt AlignTop ('alignment',)
+L16458: tongbu_effect_settings_lyout addStretch
+L16461: QVBoxLayout =:(yibu_fan_ten_jimu_layout
+L16463: QHBoxLayout =:(yibu_fan_layout
+L16464: yibu_fan_layout setContentsMargins 0 0 0 0
+L16465: QWidget self =>(yibu_fan_widget
+L16467: self yibu_fan_widget setFixedHeight 650
+L16470: self yibu_fan_widget setStyleSheet "\n            background-color: rgba(0, 255, 0, 0);\n            border-radius: 10px;\n  ...
+L16474: self yibu_fan_widget setLayout yibu_fan_layout
+L16477: QVBoxLayout =:(yibu_ten_fan_layout
+L16478: <Code38 code object <listcomp> at 0x1e6da0427b0, file Sync_light.py>, line 16478 "MainWindow.initUI.<locals>.<listcomp>" range 10 self =>(fan_tubiao_img
+L16479: <Code38 code object <listcomp> at 0x1e6da0426d0, file Sync_light.py>, line 16479 "MainWindow.initUI.<locals>.<listcomp>" range 10 self =>(fan_tubiao_img_xuanzhong
+L16480: [0] self =>(yibu_ten_fan_buttons
+L16481: range 10 =:(i
+L16482: QPushButton =:(device_button
+L16483: device_button setCheckable True
+L16484: device_button setFont self font
+L16485: device_button setText i 1
+L16486: device_button setFocusPolicy Qt NoFocus
+L16487: device_button setIcon QIcon port file_path_img self fan_tubiao_img i
+L16488: device_button setIconSize QtCore QSize 55 55
+L16489: device_button setFixedSize 90 55
+L16490: port PID_COMPAY 5
+L16491: device_button setIconSize QtCore QSize 80 55
+L16492: device_button setFixedSize 105 55
+L16494: device_button setStyleSheet
+L16495: "\n                QPushButton {\n                    background-color: rgba(242, 244, 241...
+L16510: port xianshi_jianbian
+L16495: ";\n                }\n                "
+L16494:
+L16514: device_button clicked connect self yibu_fan_id_changer
+L16515: self yibu_ten_fan_buttons append device_button
+L16516: yibu_ten_fan_layout addWidget device_button Qt AlignTop ('alignment',)
+L16517: yibu_ten_fan_layout addStretch
+L16518: yibu_fan_layout addLayout yibu_ten_fan_layout
+L16521: QVBoxLayout =:(yibu_fan_jimu_layout
+L16522: yibu_fan_jimu_layout setContentsMargins 0 0 0 0
+L16523: QWidget self =>(yibu_fan_jimu_widget
+L16525: self yibu_fan_jimu_widget setFixedHeight 650
+L16528: self yibu_fan_jimu_widget setStyleSheet "\n            background-color: rgba(255, 0, 0, 0);\n            border-radius: 10px;\n  ...
+L16532: self yibu_fan_jimu_widget setLayout yibu_fan_jimu_layout
+L16535: QVBoxLayout =:(yibu_six_fan_layout
+L16537: "img/ARGB/fan_chuan/1-1.png"
+L16538: "img/ARGB/fan_chuan/5-1.png"
+L16539: "img/ARGB/fan_chuan/4-1.png"
+L16540: "img/ARGB/fan_chuan/2-1.png"
+L16541: "img/ARGB/fan_chuan/3-1.png"
+L16542: "img/ARGB/fan_chuan/6-1.png"
+L16536: [6] self =>(fan_chuanlian_tubiao_img
+L16545: "img/ARGB/fan_chuan/1-1.png"
+L16546: "img/ARGB/fan_chuan/5-1.png"
+L16547: "img/ARGB/fan_chuan/4-1.png"
+L16548: "img/ARGB/fan_chuan/2-1.png"
+L16549: "img/ARGB/fan_chuan/3-1.png"
+L16550: "img/ARGB/fan_chuan/5-1.png"
+L16544: [6] self =>(fan_chuanlian_tubiao_img_yzm
+L16552: "中心" "并联" "串联" "左侧" "右侧" "全部" [6] self =>(fan_six_text_zh
+L16553: [0] self =>(yibu_six_fan_buttons
+L16556: QHBoxLayout =:(fan_yibu_tongbu_layout
+L16557: QLabel "同步" self =>(yibu_tongbu
+L16558: self yibu_tongbu setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 14px; "
+L16559: SwitchButton self =>(yibu_tongbu_changer_switch
+L16560: self yibu_tongbu_changer_switch setChecked False
+L16561: self yibu_tongbu_changer_switch stateChanged connect self yibu_tongbu_changer
+L16562: fan_yibu_tongbu_layout addWidget self yibu_tongbu_changer_switch Qt AlignRight ('alignment',)
+L16563: fan_yibu_tongbu_layout addWidget self yibu_tongbu Qt AlignCenter ('alignment',)
+L16565: yibu_six_fan_layout addLayout fan_yibu_tongbu_layout
+L16566: range 6 =:(i
+L16567: QPushButton =:(device_button
+L16568: device_button setCheckable True
+L16569: device_button setFont self font
+L16570: device_button setFocusPolicy Qt NoFocus
+L16571: device_button setIcon QIcon port file_path_img self fan_chuanlian_tubiao_img i
+L16572: device_button setIconSize QtCore QSize 50 50
+L16573: device_button setFixedHeight 55
+L16574: device_button setText self fan_six_text_zh i
+L16575: device_button setStyleSheet
+L16576: "\n                QPushButton {\n                    background-color: rgba(242, 244, 241...
+L16591: port xianshi_jianbian
+L16576: ";\n                }\n                "
+L16575:
+L16595: device_button clicked connect self yibu_jimu_id_changer
+L16596: self yibu_six_fan_buttons append device_button
+L16597: yibu_six_fan_layout addWidget device_button Qt AlignTop ('alignment',)
+L16598: yibu_six_fan_layout addStretch
+L16599: yibu_fan_jimu_layout addLayout yibu_six_fan_layout
+L16606: QVBoxLayout =:(yibu_effect_H_layout
+L16607: yibu_effect_H_layout setContentsMargins 0 0 0 0
+L16608: QWidget self =>(yibu_effect_H_widget
+L16610: self yibu_effect_H_widget setFixedHeight 650
+L16613: self yibu_effect_H_widget setStyleSheet "\n            background-color: rgba(0, 255, 0, 0);\n            border-radius: 10px;\n  ...
+L16617: self yibu_effect_H_widget setLayout yibu_effect_H_layout
+L16619: [0] self =>(yibu_effect_buttons
+L16620: [0] self =>(yibu_effect_lables
+L16622: "img/ARGB/effect_svg/01.svg"
+L16623: "img/ARGB/effect_svg/02.svg"
+L16624: "img/ARGB/effect_svg/03.svg"
+L16625: "img/ARGB/effect_svg/04.svg"
+L16626: "img/ARGB/effect_svg/05.svg"
+L16627: "img/ARGB/effect_svg/06.svg"
+L16628: "img/ARGB/effect_svg/07.svg"
+L16629: "img/ARGB/effect_svg/08.svg"
+L16630: "img/ARGB/effect_svg/09.svg"
+L16631: "img/ARGB/effect_svg/10.svg"
+L16632: "img/ARGB/effect_svg/11.svg"
+L16633: "img/ARGB/effect_svg/12.svg"
+L16634: "img/ARGB/effect_svg/13.svg"
+L16635: "img/ARGB/effect_svg/14.svg"
+L16636: "img/ARGB/effect_svg/15.svg"
+L16621: [15] self =>(yibu_effect_imgs
+L16639: "img/ARGB/effect_svg_xuanzhong/01.svg"
+L16640: "img/ARGB/effect_svg_xuanzhong/02.svg"
+L16641: "img/ARGB/effect_svg_xuanzhong/03.svg"
+L16642: "img/ARGB/effect_svg_xuanzhong/04.svg"
+L16643: "img/ARGB/effect_svg_xuanzhong/05.svg"
+L16644: "img/ARGB/effect_svg_xuanzhong/06.svg"
+L16645: "img/ARGB/effect_svg_xuanzhong/07.svg"
+L16646: "img/ARGB/effect_svg_xuanzhong/08.svg"
+L16647: "img/ARGB/effect_svg_xuanzhong/09.svg"
+L16648: "img/ARGB/effect_svg_xuanzhong/10.svg"
+L16649: "img/ARGB/effect_svg_xuanzhong/11.svg"
+L16650: "img/ARGB/effect_svg_xuanzhong/12.svg"
+L16651: "img/ARGB/effect_svg_xuanzhong/13.svg"
+L16652: "img/ARGB/effect_svg_xuanzhong/14.svg"
+L16653: "img/ARGB/effect_svg_xuanzhong/15.svg"
+L16638: [15] self =>(yibu_effect_imgs_xuanzhong
+L16655: port PID_COMPAY 10
+L16657: "img/ARGB/00010KY/effect_svg/01.svg"
+L16658: "img/ARGB/00010KY/effect_svg/02.svg"
+L16659: "img/ARGB/00010KY/effect_svg/03.svg"
+L16660: "img/ARGB/00010KY/effect_svg/04.svg"
+L16661: "img/ARGB/00010KY/effect_svg/05.svg"
+L16662: "img/ARGB/00010KY/effect_svg/06.svg"
+L16663: "img/ARGB/00010KY/effect_svg/07.svg"
+L16664: "img/ARGB/00010KY/effect_svg/08.svg"
+L16665: "img/ARGB/00010KY/effect_svg/09.svg"
+L16666: "img/ARGB/00010KY/effect_svg/10.svg"
+L16667: "img/ARGB/00010KY/effect_svg/11.svg"
+L16668: "img/ARGB/00010KY/effect_svg/12.svg"
+L16669: "img/ARGB/00010KY/effect_svg/13.svg"
+L16670: "img/ARGB/00010KY/effect_svg/14.svg"
+L16671: "img/ARGB/00010KY/effect_svg/15.svg"
+L16656: [15] self =>(yibu_effect_imgs
+L16675: "img/ARGB/00010KY/effect_svg_xuanzhong/01.svg"
+L16676: "img/ARGB/00010KY/effect_svg_xuanzhong/02.svg"
+L16677: "img/ARGB/00010KY/effect_svg_xuanzhong/03.svg"
+L16678: "img/ARGB/00010KY/effect_svg_xuanzhong/04.svg"
+L16679: "img/ARGB/00010KY/effect_svg_xuanzhong/05.svg"
+L16680: "img/ARGB/00010KY/effect_svg_xuanzhong/06.svg"
+L16681: "img/ARGB/00010KY/effect_svg_xuanzhong/07.svg"
+L16682: "img/ARGB/00010KY/effect_svg_xuanzhong/08.svg"
+L16683: "img/ARGB/00010KY/effect_svg_xuanzhong/09.svg"
+L16684: "img/ARGB/00010KY/effect_svg_xuanzhong/10.svg"
+L16685: "img/ARGB/00010KY/effect_svg_xuanzhong/11.svg"
+L16686: "img/ARGB/00010KY/effect_svg_xuanzhong/12.svg"
+L16687: "img/ARGB/00010KY/effect_svg_xuanzhong/13.svg"
+L16688: "img/ARGB/00010KY/effect_svg_xuanzhong/14.svg"
+L16689: "img/ARGB/00010KY/effect_svg_xuanzhong/15.svg"
+L16674: [15] self =>(yibu_effect_imgs_xuanzhong
+L16692: range 5 =:(i
+L16693: QHBoxLayout =:(effect_layout
+L16694: range 3 =:(t
+L16695: QVBoxLayout =:(effect_text_layout
+L16696: effect_text_layout setContentsMargins 0 0 0 0
+L16697: QPushButton =:(device_button
+L16698: device_button setCheckable True
+L16699: device_button setFont self font
+L16700: device_button setFocusPolicy Qt NoFocus
+L16701: device_button setIcon QIcon port file_path_img self yibu_effect_imgs_xuanzhong i 3 t
+L16702: device_button setIconSize QtCore QSize 50 50
+L16703: device_button setFixedHeight 85
+L16705: QLabel port dengxiao_model2_zh i 3 t =:(text
+L16706: text setStyleSheet "color: rgb(242, 244, 241); font-size: 14px; "
+L16707: text setFixedHeight 20
+L16709: device_button clicked connect self yibu_effect_changer_Clicked
+L16710: self yibu_effect_buttons append device_button
+L16711: self yibu_effect_lables append text
+L16712: device_button setStyleSheet
+L16713: "\n                    QPushButton {\n                        background-color: rgba(242, ...
+L16722: port xianshi_jianbian
+L16713: ";\n                    }\n                    \n                    QPushButton:pressed {...
+L16722: port xianshi_jianbian
+L16713: ";\n                    }\n                    \n                    QPushButton:checked {...
+L16722: port xianshi_jianbian
+L16713: ";\n                    }\n                    "
+L16712:
+L16736: QWidget =:(container
+L16737: container setFixedWidth 85
+L16738: container setLayout effect_text_layout
+L16739: effect_text_layout addWidget device_button Qt AlignCenter ('alignment',)
+L16740: effect_text_layout addWidget text Qt AlignCenter Qt AlignTop ('alignment',)
+L16742: effect_layout addWidget container
+L16743: yibu_effect_H_layout addLayout effect_layout
+L16746: QVBoxLayout =:(yibu_effect_settings_lyout
+L16747: yibu_effect_settings_lyout setContentsMargins 0 0 0 0
+L16748: QWidget self =>(yibu_effect_S_widget
+L16750: self yibu_effect_S_widget setFixedHeight 650
+L16752: self yibu_effect_S_widget setStyleSheet "\n            background-color: rgba(0, 255, 0, 0);\n            border-radius: 10px;\n  ...
+L16756: self yibu_effect_S_widget setLayout yibu_effect_settings_lyout
+L16759: QGroupBox "流速" self =>(yibu_effect_liusu_group
+L16760: self yibu_effect_liusu_group setFixedHeight 150
+L16761: self yibu_effect_liusu_group setStyleSheet "\n            QGroupBox {\n                color: white;\n                border: 3px sol...
+L16778: QVBoxLayout =:(yibu_effect_liusu_layout
+L16779: QLabel "20%" self =>(yibu_liusu_lable
+L16780: self yibu_liusu_lable setStyleSheet
+L16781: "\n            color: white;\n            font-size: 30px; \n            \n            "
+L16780:
+L16788: QSlider Qt Horizontal self self =>(yibu_slider_liusu
+L16789: self yibu_slider_liusu setRange 0 50
+L16790: self yibu_slider_liusu setValue 20
+L16791: self yibu_slider_liusu setFixedHeight 30
+L16792: self yibu_slider_liusu setStyleSheet
+L16793: '\n            QSlider::groove:horizontal {\n                background: rgb(100,100,100);...
+L16792:
+L16819: self yibu_slider_liusu valueChanged connect self yibu_effect_liusu_changer
+L16820: yibu_effect_liusu_layout addWidget self yibu_liusu_lable Qt AlignCenter ('alignment',)
+L16821: yibu_effect_liusu_layout addWidget self yibu_slider_liusu
+L16823: self yibu_effect_liusu_group setLayout yibu_effect_liusu_layout
+L16827: QGroupBox "方向" self =>(yibu_effect_fangxiang_group
+L16828: self yibu_effect_fangxiang_group setFixedHeight 150
+L16829: self yibu_effect_fangxiang_group setStyleSheet "\n            QGroupBox {\n                color: white;\n                border: 3px sol...
+L16846: QVBoxLayout =:(yibu_effect_fangxiang_layout
+L16847: QLabel "正序" self =>(yibu_fangxiang_lable
+L16848: self yibu_fangxiang_lable setStyleSheet
+L16849: "\n            color: white;\n            font-size: 30px; \n            \n            "
+L16848:
+L16856: QHBoxLayout =:(fangxiang
+L16857: [0] self =>(yibu_fan_fangxiang_buttons
+L16858: "img/ARGB_LEFT_FLASH.svg" "img/ARGB_RIGHT_FLASH.svg" [2] self =>(yibu_fan_fangxiang_img
+L16859: "img/ARGB_LEFT_TURE.svg" "img/ARGB_RIGHT_TURE.svg" [2] self =>(yibu_fan_fangxiang_img_xuanzhong
+L16860: range 2 =:(i
+L16861: QPushButton =:(button
+L16862: button setCheckable True
+L16863: button setFocusPolicy Qt NoFocus
+L16864: button clicked connect self yibu_effect_fangxiang_changer
+L16865: button setIcon QIcon port file_path_img port file_path_img self yibu_fan_fangxiang_img i
+L16866: i 1
+L16867: button setIcon QIcon port file_path_img port file_path_img self yibu_fan_fangxiang_img_xuanzhong i
+L16868: button setIconSize QtCore QSize 40 40
+L16870: button setStyleSheet "background-color: rgba(255, 255, 255, 0); border-radius: 16px;"
+L16871: self yibu_fan_fangxiang_buttons append button
+L16872: fangxiang addWidget button Qt AlignCenter ('alignment',)
+L16874: yibu_effect_fangxiang_layout addWidget self yibu_fangxiang_lable Qt AlignCenter ('alignment',)
+L16875: yibu_effect_fangxiang_layout addLayout fangxiang
+L16877: self yibu_effect_fangxiang_group setLayout yibu_effect_fangxiang_layout
+L16881: QGroupBox "亮度" self =>(yibu_effect_liangdu_group
+L16882: self yibu_effect_liangdu_group setFixedHeight 150
+L16883: self yibu_effect_liangdu_group setStyleSheet "\n            QGroupBox {\n                color: white;\n                border: 3px sol...
+L16900: QVBoxLayout =:(yibu_effect_liangdu_layout
+L16901: QLabel "60%" self =>(yibu_liangdu_lable
+L16902: self yibu_liangdu_lable setStyleSheet
+L16903: "\n            color: white;\n            font-size: 30px; \n            \n            "
+L16902:
+L16910: QSlider Qt Horizontal self self =>(yibu_slider_liangdu
+L16911: self yibu_slider_liangdu setRange 0 50
+L16912: self yibu_slider_liangdu setValue 20
+L16913: self yibu_slider_liangdu setFixedHeight 30
+L16914: self yibu_slider_liangdu setStyleSheet
+L16915: '\n            QSlider::groove:horizontal {\n                background: rgb(100, 100, 100...
+L16914:
+L16940: self yibu_slider_liangdu valueChanged connect self yibu_effect_liangdu_changer
+L16941: yibu_effect_liangdu_layout addWidget self yibu_liangdu_lable Qt AlignCenter ('alignment',)
+L16942: yibu_effect_liangdu_layout addWidget self yibu_slider_liangdu
+L16944: self yibu_effect_liangdu_group setLayout yibu_effect_liangdu_layout
+L16948: QGroupBox "颜色" self =>(yibu_effect_yanse_group
+L16949: self yibu_effect_yanse_group setFixedHeight 150
+L16950: self yibu_effect_yanse_group setStyleSheet "\n            QGroupBox {\n                color: white;\n                border: 3px sol...
+L16967: QVBoxLayout =:(yibu_effect_yanse_layout
+L16969: QHBoxLayout =:(fan_yanse
+L16970: 255 0 0 [3] 0 255 0 [3] 0 0 255 [3] 255 255 0 [3] [4] self =>(yibu_fan_dengxiao_colors
+L16971: [0] self =>(yibu_fan_dengxiao_buttons
+L16972: range 4 =:(i
+L16973: QPushButton =:(button
+L16974: button setCheckable True
+L16975: button clicked connect self yibu_yanse_changer
+L16976: button setFixedSize 40 40
+L16977: button setFocusPolicy Qt NoFocus
+L16978: button setStyleSheet "background-color: rgb" tuple self yibu_fan_dengxiao_colors i "; border-radius: 20px;"
+L16979: self yibu_fan_dengxiao_buttons append button
+L16980: fan_yanse addWidget button
+L16983: QPushButton "调色板" self =>(yibu_button_fan_tiaose
+L16984: self yibu_button_fan_tiaose setFont self font
+L16985: self yibu_button_fan_tiaose setFocusPolicy Qt NoFocus
+L16986: self yibu_button_fan_tiaose setFixedHeight 40
+L16987: self yibu_button_fan_tiaose setStyleSheet "background-color: rgb" (17, 78, 255) "; color: white; border-radius: 15px; font-size: 16px;"
+L16988: self yibu_button_fan_tiaose clicked connect self yibu_tiaose_changer
+L16991: yibu_effect_yanse_layout addLayout fan_yanse
+L16992: yibu_effect_yanse_layout addWidget self yibu_button_fan_tiaose
+L16995: self yibu_effect_yanse_group setLayout yibu_effect_yanse_layout
+L16996: yibu_effect_settings_lyout addWidget self yibu_effect_yanse_group Qt AlignTop ('alignment',)
+L16997: yibu_effect_settings_lyout addWidget self yibu_effect_liusu_group Qt AlignTop ('alignment',)
+L16998: yibu_effect_settings_lyout addWidget self yibu_effect_liangdu_group Qt AlignTop ('alignment',)
+L16999: yibu_effect_settings_lyout addWidget self yibu_effect_fangxiang_group Qt AlignTop ('alignment',)
+L17001: yibu_effect_settings_lyout addStretch
+L17004: QHBoxLayout self =>(yibu_baocun_layout
+L17005: self yibu_baocun_layout setContentsMargins 0 0 0 0
+L17006: QWidget self =>(yibu_baocun_widget
+L17008: self yibu_baocun_widget setFixedHeight 100
+L17011: self yibu_baocun_widget setStyleSheet "\n            background-color: rgba(255, 255, 255, 10);\n            border-radius: 20px...
+L17015: self yibu_baocun_widget setLayout self yibu_baocun_layout
+L17018: [0] self =>(card_list
+L17023: QVBoxLayout =:(hebing_effect_H_layout
+L17024: hebing_effect_H_layout setContentsMargins 0 0 0 0
+L17025: QWidget self =>(hebing_effect_H_widget
+L17027: self hebing_effect_H_widget setFixedHeight 650
+L17030: self hebing_effect_H_widget setStyleSheet "\n            background-color: rgba(0, 255, 0, 0);\n            border-radius: 10px;\n  ...
+L17034: self hebing_effect_H_widget setLayout hebing_effect_H_layout
+L17036: [0] self =>(hebing_effect_buttons
+L17037: [0] self =>(hebing_effect_lables
+L17039: "img/ARGB/effect_svg/02.svg"
+L17040: "img/ARGB/effect_svg/06.svg"
+L17041: "img/ARGB/effect_svg/07.svg"
+L17042: "img/ARGB/effect_svg/08.svg"
+L17043: "img/ARGB/effect_svg/09.svg"
+L17044: "img/ARGB/effect_svg/10.svg"
+L17045: "img/ARGB/effect_svg/11.svg"
+L17046: "img/ARGB/effect_svg/13.svg"
+L17047: "img/ARGB/effect_svg/14.svg"
+L17048: "img/ARGB/effect_svg/15.svg"
+L17038: [10] self =>(hebing_effect_imgs
+L17051: "img/ARGB/effect_svg_xuanzhong/02.svg"
+L17052: "img/ARGB/effect_svg_xuanzhong/06.svg"
+L17053: "img/ARGB/effect_svg_xuanzhong/07.svg"
+L17054: "img/ARGB/effect_svg_xuanzhong/08.svg"
+L17055: "img/ARGB/effect_svg_xuanzhong/09.svg"
+L17056: "img/ARGB/effect_svg_xuanzhong/10.svg"
+L17057: "img/ARGB/effect_svg_xuanzhong/11.svg"
+L17058: "img/ARGB/effect_svg_xuanzhong/13.svg"
+L17059: "img/ARGB/effect_svg_xuanzhong/14.svg"
+L17060: "img/ARGB/effect_svg_xuanzhong/15.svg"
+L17050: [10] self =>(hebing_effect_imgs_xuanzhong
+L17062: port PID_COMPAY 10
+L17064: "img/ARGB/00010KY/effect_svg/02.svg"
+L17065: "img/ARGB/00010KY/effect_svg/06.svg"
+L17066: "img/ARGB/00010KY/effect_svg/07.svg"
+L17067: "img/ARGB/00010KY/effect_svg/08.svg"
+L17068: "img/ARGB/00010KY/effect_svg/09.svg"
+L17069: "img/ARGB/00010KY/effect_svg/10.svg"
+L17070: "img/ARGB/00010KY/effect_svg/11.svg"
+L17071: "img/ARGB/00010KY/effect_svg/13.svg"
+L17072: "img/ARGB/00010KY/effect_svg/14.svg"
+L17073: "img/ARGB/00010KY/effect_svg/15.svg"
+L17063: [10] self =>(hebing_effect_imgs
+L17077: "img/ARGB/00010KY/effect_svg_xuanzhong/02.svg"
+L17078: "img/ARGB/00010KY/effect_svg_xuanzhong/06.svg"
+L17079: "img/ARGB/00010KY/effect_svg_xuanzhong/07.svg"
+L17080: "img/ARGB/00010KY/effect_svg_xuanzhong/08.svg"
+L17081: "img/ARGB/00010KY/effect_svg_xuanzhong/09.svg"
+L17082: "img/ARGB/00010KY/effect_svg_xuanzhong/10.svg"
+L17083: "img/ARGB/00010KY/effect_svg_xuanzhong/11.svg"
+L17084: "img/ARGB/00010KY/effect_svg_xuanzhong/13.svg"
+L17085: "img/ARGB/00010KY/effect_svg_xuanzhong/14.svg"
+L17086: "img/ARGB/00010KY/effect_svg_xuanzhong/15.svg"
+L17076: [10] self =>(hebing_effect_imgs_xuanzhong
+L17088: 1 5 6 7 8 9 10 12 13 14 [10] self =>(hebing_effect_list
+L17089: range 4 =:(i
+L17090: QHBoxLayout =:(effect_layout
+L17091: range 3 =:(t
+L17092: i 3 t 10
+L17093:
+L17094: QVBoxLayout =:(effect_text_layout
+L17095: effect_text_layout setContentsMargins 0 0 0 0
+L17096: QPushButton =:(device_button
+L17097: device_button setCheckable True
+L17098: device_button setFont self font
+L17099: device_button setFocusPolicy Qt NoFocus
+L17100: device_button setIcon QIcon port file_path_img self hebing_effect_imgs_xuanzhong i 3 t
+L17101: device_button setIconSize QtCore QSize 50 50
+L17102: device_button setFixedHeight 85
+L17104: QLabel port dengxiao_model3_zh i 3 t =:(text
+L17105: text setStyleSheet "color: rgb(242, 244, 241); font-size: 14px; "
+L17106: text setFixedHeight 20
+L17108: device_button clicked connect self hebing_effect_changer_Clicked
+L17109: self hebing_effect_buttons append device_button
+L17110: self hebing_effect_lables append text
+L17111: device_button setStyleSheet
+L17112: "\n                    QPushButton {\n                        background-color: rgba(242, ...
+L17121: port xianshi_jianbian
+L17112: ";\n                    }\n                    \n                    QPushButton:pressed {...
+L17121: port xianshi_jianbian
+L17112: ";\n                    }\n                    \n                    QPushButton:checked {...
+L17121: port xianshi_jianbian
+L17112: ";\n                    }\n                    "
+L17111:
+L17135: QWidget =:(container
+L17136: container setFixedWidth 160
+L17137: container setLayout effect_text_layout
+L17138: effect_text_layout addWidget device_button Qt AlignCenter ('alignment',)
+L17139: effect_text_layout addWidget text Qt AlignCenter Qt AlignTop ('alignment',)
+L17140: effect_layout addWidget container
+L17142: effect_layout addStretch
+L17144: hebing_effect_H_layout addLayout effect_layout
+L17147: QVBoxLayout =:(hebing_effect_settings_lyout
+L17148: hebing_effect_settings_lyout setContentsMargins 0 0 0 0
+L17149: QWidget self =>(hebing_effect_S_widget
+L17151: self hebing_effect_S_widget setFixedHeight 650
+L17153: self hebing_effect_S_widget setStyleSheet "\n            background-color: rgba(0, 255, 0, 0);\n            border-radius: 10px;\n  ...
+L17157: self hebing_effect_S_widget setLayout hebing_effect_settings_lyout
+L17160: QGroupBox "流速" self =>(hebing_effect_liusu_group
+L17161: self hebing_effect_liusu_group setFixedHeight 150
+L17162: self hebing_effect_liusu_group setStyleSheet "\n            QGroupBox {\n                color: white;\n                border: 3px sol...
+L17179: QVBoxLayout =:(hebing_effect_liusu_layout
+L17180: QLabel "20%" self =>(hebing_liusu_lable
+L17181: self hebing_liusu_lable setStyleSheet
+L17182: "\n            color: white;\n            font-size: 30px; \n            \n            "
+L17181:
+L17189: QSlider Qt Horizontal self self =>(hebing_slider_liusu
+L17190: self hebing_slider_liusu setRange 0 50
+L17191: self hebing_slider_liusu setValue 20
+L17192: self hebing_slider_liusu setFixedHeight 30
+L17193: self hebing_slider_liusu setStyleSheet
+L17194: '\n            QSlider::groove:horizontal {\n                background: rgb(100,100,100);...
+L17193:
+L17220: self hebing_slider_liusu valueChanged connect self hebing_effect_liusu_changer
+L17221: hebing_effect_liusu_layout addWidget self hebing_liusu_lable Qt AlignCenter ('alignment',)
+L17222: hebing_effect_liusu_layout addWidget self hebing_slider_liusu
+L17224: self hebing_effect_liusu_group setLayout hebing_effect_liusu_layout
+L17228: QGroupBox "方向" self =>(hebing_effect_fangxiang_group
+L17229: self hebing_effect_fangxiang_group setFixedHeight 150
+L17230: self hebing_effect_fangxiang_group setStyleSheet "\n            QGroupBox {\n                color: white;\n                border: 3px sol...
+L17247: QVBoxLayout =:(effect_fangxiang_layout
+L17248: QLabel "正序" self =>(hebing_fangxiang_lable
+L17249: self hebing_fangxiang_lable setStyleSheet
+L17250: "\n            color: white;\n            font-size: 30px; \n            \n            "
+L17249:
+L17257: QHBoxLayout =:(fangxiang
+L17258: [0] self =>(hebing_fan_fangxiang_buttons
+L17261: range 2 =:(i
+L17262: QPushButton =:(button
+L17263: button setCheckable True
+L17264: button setFocusPolicy Qt NoFocus
+L17265: button clicked connect self hebing_effect_fangxiang_changer
+L17266: button setIcon QIcon port file_path_img port file_path_img self fan_fangxiang_img i
+L17267: i 1
+L17268: button setIcon QIcon port file_path_img port file_path_img self fan_fangxiang_img_xuanzhong i
+L17269: button setIconSize QtCore QSize 40 40
+L17271: button setStyleSheet "background-color: rgba(255, 255, 255, 0); border-radius: 16px;"
+L17272: self hebing_fan_fangxiang_buttons append button
+L17273: fangxiang addWidget button Qt AlignCenter ('alignment',)
+L17275: effect_fangxiang_layout addWidget self hebing_fangxiang_lable Qt AlignCenter ('alignment',)
+L17276: effect_fangxiang_layout addLayout fangxiang
+L17278: self hebing_effect_fangxiang_group setLayout effect_fangxiang_layout
+L17282: QGroupBox "亮度" self =>(hebing_effect_liangdu_group
+L17283: self hebing_effect_liangdu_group setFixedHeight 150
+L17284: self hebing_effect_liangdu_group setStyleSheet "\n            QGroupBox {\n                color: white;\n                border: 3px sol...
+L17301: QVBoxLayout =:(effect_liangdu_layout
+L17302: QLabel "60%" self =>(hebing_liangdu_lable
+L17303: self hebing_liangdu_lable setStyleSheet
+L17304: "\n            color: white;\n            font-size: 30px; \n            \n            "
+L17303:
+L17311: QSlider Qt Horizontal self self =>(hebing_slider_liangdu
+L17312: self hebing_slider_liangdu setRange 0 50
+L17313: self hebing_slider_liangdu setValue 60
+L17314: self hebing_slider_liangdu setFixedHeight 30
+L17315: self hebing_slider_liangdu setStyleSheet
+L17316: '\n            QSlider::groove:horizontal {\n                background: rgb(100, 100, 100...
+L17315:
+L17341: self hebing_slider_liangdu valueChanged connect self hebing_effect_liangdu_changer
+L17342: effect_liangdu_layout addWidget self hebing_liangdu_lable Qt AlignCenter ('alignment',)
+L17343: effect_liangdu_layout addWidget self hebing_slider_liangdu
+L17345: self hebing_effect_liangdu_group setLayout effect_liangdu_layout
+L17349: QGroupBox "颜色" self =>(hebing_effect_yanse_group
+L17350: self hebing_effect_yanse_group setFixedHeight 150
+L17351: self hebing_effect_yanse_group setStyleSheet "\n            QGroupBox {\n                color: white;\n                border: 3px sol...
+L17367: QVBoxLayout =:(effect_yanse_layout
+L17368: QHBoxLayout =:(fan_yanse
+L17369: [0] self =>(hebing_fan_dengxiao_buttons
+L17370: range 4 =:(i
+L17371: QPushButton =:(button
+L17372: button setCheckable True
+L17373: button clicked connect self hebing_yanse_changer
+L17374: button setFixedSize 40 40
+L17375: button setFocusPolicy Qt NoFocus
+L17376: button setStyleSheet "background-color: rgb" tuple self fan_dengxiao_colors i "; border-radius: 20px;"
+L17377: self hebing_fan_dengxiao_buttons append button
+L17378: fan_yanse addWidget button
+L17381: QPushButton "调色板" self =>(hebing_button_fan_tiaose
+L17382: self hebing_button_fan_tiaose setFont self font
+L17383: self hebing_button_fan_tiaose setFocusPolicy Qt NoFocus
+L17384: self hebing_button_fan_tiaose setFixedHeight 40
+L17385: self hebing_button_fan_tiaose setStyleSheet "background-color: rgb" (17, 78, 255) "; color: white; border-radius: 15px; font-size: 16px;"
+L17386: self hebing_button_fan_tiaose clicked connect self hebing_tiaose_changer
+L17389: effect_yanse_layout addLayout fan_yanse
+L17390: effect_yanse_layout addWidget self hebing_button_fan_tiaose
+L17393: self hebing_effect_yanse_group setLayout effect_yanse_layout
+L17394: hebing_effect_settings_lyout addWidget self hebing_effect_yanse_group Qt AlignTop ('alignment',)
+L17395: hebing_effect_settings_lyout addWidget self hebing_effect_liusu_group Qt AlignTop ('alignment',)
+L17396: hebing_effect_settings_lyout addWidget self hebing_effect_liangdu_group Qt AlignTop ('alignment',)
+L17397: hebing_effect_settings_lyout addWidget self hebing_effect_fangxiang_group Qt AlignTop ('alignment',)
+L17399: hebing_effect_settings_lyout addStretch
+L17404: QGroupBox "手动调速" self =>(fan_speed_shoudong_group
+L17405: self fan_speed_shoudong_group setFixedHeight 150
+L17406: self fan_speed_shoudong_group setStyleSheet "\n            QGroupBox {\n                color: white;\n                border: 3px sol...
+L17424: QHBoxLayout =:(fan_speed_layout
+L17426: [0] self =>(new_ARGB_FAN_speed
+L17427: [0] self =>(new_ARGB_FAN_speed_text
+L17428: "静音" "低速" "高速" "全速" [4] self =>(fan_speed_zh
+L17429: "Silent" "Low" "High" "Full" [4] self =>(fan_speed_en
+L17432: "img/ARGB/fan_speed/speed0.svg"
+L17433: "img/ARGB/fan_speed/speed1.svg"
+L17434: "img/ARGB/fan_speed/speed2.svg"
+L17435: "img/ARGB/fan_speed/speed3.svg"
+L17431: [4] self =>(new_ARGB_FAN_speed_img
+L17437: port PID_COMPAY 5
+L17439: "img/ARGB/fan_speed/YZM/speed0_1.svg"
+L17440: "img/ARGB/fan_speed/YZM/speed1_1.svg"
+L17441: "img/ARGB/fan_speed/YZM/speed2_1.svg"
+L17442: "img/ARGB/fan_speed/YZM/speed3_1.svg"
+L17438: [4] self =>(new_ARGB_FAN_speed_img_xuanzhong
+L17444: port PID_COMPAY 10
+L17446: "img/ARGB/00010KY/fan_speed/speed0.svg"
+L17447: "img/ARGB/00010KY/fan_speed/speed1.svg"
+L17448: "img/ARGB/00010KY/fan_speed/speed2.svg"
+L17449: "img/ARGB/00010KY/fan_speed/speed3.svg"
+L17445: [4] self =>(new_ARGB_FAN_speed_img
+L17452: "img/ARGB/00010KY/fan_speed/speed0_1.svg"
+L17453: "img/ARGB/00010KY/fan_speed/speed1_1.svg"
+L17454: "img/ARGB/00010KY/fan_speed/speed2_1.svg"
+L17455: "img/ARGB/00010KY/fan_speed/speed3_1.svg"
+L17451: [4] self =>(new_ARGB_FAN_speed_img_xuanzhong
+L17459: "img/ARGB/fan_speed/speed0_1.svg"
+L17460: "img/ARGB/fan_speed/speed1_1.svg"
+L17461: "img/ARGB/fan_speed/speed2_1.svg"
+L17462: "img/ARGB/fan_speed/speed3_1.svg"
+L17458: [4] self =>(new_ARGB_FAN_speed_img_xuanzhong
+L17464: range 4 =:(i
+L17465: QVBoxLayout =:(speed_layout
+L17466: QPushButton =:(fan_button
+L17467: fan_button clicked connect self shoudong_fan_speed_changer_clicked
+L17468: QLabel self fan_speed_zh i =:(lable_fan
+L17469: lable_fan setStyleSheet "background-color: rgba(255, 255, 255, 0); color: rgb(243,244,243); font-size: 14px; "
+L17470: fan_button setIcon QIcon port file_path_img port file_path_img self new_ARGB_FAN_speed_img i
+L17471: fan_button setIconSize QtCore QSize 150 40
+L17472: fan_button setFixedSize 150 40
+L17473: fan_button setStyleSheet "background-color: rgba(255, 255, 255, 0); border-radius: 15px;"
+L17475: fan_button setCheckable True
+L17476: fan_button setFocusPolicy Qt NoFocus
+L17477: self new_ARGB_FAN_speed append fan_button
+L17478: self new_ARGB_FAN_speed_text append lable_fan
+L17479: speed_layout addWidget fan_button 6 Qt AlignCenter Qt AlignBottom ('alignment',)
+L17480: speed_layout addWidget lable_fan 4 Qt AlignCenter Qt AlignTop ('alignment',)
+L17481: fan_speed_layout addLayout speed_layout
+L17482: self fan_speed_shoudong_group setLayout fan_speed_layout
+L17486: QGroupBox "自动调速" self =>(fan_speed_zidong_group
+L17487: self fan_speed_zidong_group setFixedHeight 530
+L17488: self fan_speed_zidong_group setStyleSheet "\n            QGroupBox {\n                color: white;\n                border: 3px sol...
+L17505: QVBoxLayout =:(zidong_fan_speed_layout
+L17507: QHBoxLayout =:(zidong_kaiguan_layout
+L17508: SwitchButton self =>(zidongtiaosu_changer_switch
+L17509: self zidongtiaosu_changer_switch setChecked False
+L17510: self zidongtiaosu_changer_switch stateChanged connect self zidong_fan_speed_onoff
+L17511: self zidongtiaosu_changer_switch setFocusPolicy Qt NoFocus
+L17512: QLabel "关闭" self =>(zidong_speed_lable
+L17513: self zidong_speed_lable setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            color: rgb(128, 128,...
+L17519: [0] self =>(zidong_speed_buttons
+L17520: "CPU" "GPU" [2] self =>(zidong_texts
+L17521: range 2 =:(i
+L17522: QPushButton =:(device_button
+L17523: device_button setCheckable True
+L17524: device_button setFont self font
+L17525: device_button setFocusPolicy Qt NoFocus
+L17526: device_button setIconSize QtCore QSize 50 50
+L17527: device_button setFixedHeight 50
+L17529: device_button setText self zidong_texts i
+L17530: device_button setStyleSheet
+L17531: "\n                QPushButton {\n                    background-color: rgba(242, 244, 241...
+L17545: port xianshi_jianbian
+L17531: ";\n                }\n                "
+L17530:
+L17549: device_button clicked connect self cpu_gpu_fan_speed_changer
+L17550: self zidong_speed_buttons append device_button
+L17551: zidong_kaiguan_layout addWidget self zidongtiaosu_changer_switch
+L17552: zidong_kaiguan_layout addWidget self zidong_speed_lable
+L17553: range 2 =:(i
+L17554: zidong_kaiguan_layout addWidget self zidong_speed_buttons i
+L17555: zidong_kaiguan_layout addStretch
+L17556: QLabel "(根据选择的 CPU 或 GPU的温度自动调节风扇转速)" self =>(zidong_fan_tishi
+L17557: self zidong_fan_tishi setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            color: white; \n    ...
+L17564: fan_speed_kittle FanControlWidget 400 ('height',) self =>(fan_control
+L17566: zidong_fan_speed_layout addLayout zidong_kaiguan_layout 1
+L17567: zidong_fan_speed_layout addWidget self zidong_fan_tishi 1 Qt AlignLeft ('alignment',)
+L17568: zidong_fan_speed_layout addWidget self fan_control 9 Qt AlignTop ('alignment',)
+L17569: port fan_advanced_effect 17 =:(zuobiao_list
+L17570: zuobiao_list 0
+L17571: port fan_advanced_effect 17 =:(zuobiao_list
+L17572:
+L17573: self fan_control set_curve_points zuobiao_list
+L17574: Exception =:(e
+L17575: print "获取自动调速坐标异常" zuobiao_list None =:(e
+L17576: self fan_speed_zidong_group setLayout zidong_fan_speed_layout
+L17579: QVBoxLayout =:(shezhi_tongyong_layout
+L17580: QWidget self =>(shezhi_tongyong_widget
+L17582: self shezhi_tongyong_widget setFixedHeight 650
+L17585: self shezhi_tongyong_widget setStyleSheet "\n            background-color: rgba(255, 0, 0, 0);\n            border-radius: 10px;\n  ...
+L17589: self shezhi_tongyong_widget setLayout shezhi_tongyong_layout
+L17590: self shezhi_tongyong_widget hide
+L17593: QHBoxLayout =:(kaiji_qidong_layout
+L17594: QHBoxLayout =:(kaiji_qidong_kaiguan_layout
+L17595: SwitchButton self =>(kaiji_qidong_switch
+L17596: self kaiji_qidong_switch setChecked False
+L17597: self kaiji_qidong_switch stateChanged connect self tongyong_kaiji_onoff
+L17598: self kaiji_qidong_switch setFocusPolicy Qt NoFocus
+L17599: QLabel "关闭" self =>(kaiji_qidong_lable
+L17600: self kaiji_qidong_lable setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            color: white; \n    ...
+L17606: QLabel "开机自动运行" self =>(kaiji_qidong_lable_text
+L17607: self kaiji_qidong_lable_text setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            color: white; \n    ...
+L17613: kaiji_qidong_kaiguan_layout addWidget self kaiji_qidong_switch 1 Qt AlignLeft ('alignment',)
+L17614: kaiji_qidong_kaiguan_layout addWidget self kaiji_qidong_lable 2 Qt AlignLeft ('alignment',)
+L17615: kaiji_qidong_layout addLayout kaiji_qidong_kaiguan_layout 2
+L17616: kaiji_qidong_layout addWidget self kaiji_qidong_lable_text 8 Qt AlignLeft ('alignment',)
+L17617: shezhi_tongyong_layout addLayout kaiji_qidong_layout 1
+L17620: QHBoxLayout =:(kaiji_zuixiao_layout
+L17621: QHBoxLayout =:(kaiji_zuixiao_kaiguan_layout
+L17622: SwitchButton self =>(kaiji_zuixiao_switch
+L17623: self kaiji_zuixiao_switch setChecked False
+L17624: self kaiji_zuixiao_switch stateChanged connect self tongyong_kaiji_renwulan_onoff
+L17625: self kaiji_zuixiao_switch setFocusPolicy Qt NoFocus
+L17626: QLabel "关闭" self =>(kaiji_zuixiao_lable
+L17627: self kaiji_zuixiao_lable setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            color: white; \n    ...
+L17633: QLabel "开启软件，自动隐藏到系统托盘" self =>(kaiji_zuixiao_lable_text
+L17634: self kaiji_zuixiao_lable_text setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            color: white; \n    ...
+L17640: kaiji_zuixiao_kaiguan_layout addWidget self kaiji_zuixiao_switch 1 Qt AlignLeft ('alignment',)
+L17641: kaiji_zuixiao_kaiguan_layout addWidget self kaiji_zuixiao_lable 2 Qt AlignLeft ('alignment',)
+L17642: kaiji_zuixiao_layout addLayout kaiji_zuixiao_kaiguan_layout 2
+L17643: kaiji_zuixiao_layout addWidget self kaiji_zuixiao_lable_text 8 Qt AlignLeft ('alignment',)
+L17644: shezhi_tongyong_layout addLayout kaiji_zuixiao_layout
+L17647: QHBoxLayout =:(kaiji_guanbi_layout
+L17648: QHBoxLayout =:(kaiji_guanbi_kaiguan_layout
+L17649: SwitchButton self =>(kaiji_guanbi_switch
+L17650: self kaiji_guanbi_switch setChecked True
+L17651: self kaiji_guanbi_switch stateChanged connect self tongyong_guanji_renwulan_onoff
+L17652: self kaiji_guanbi_switch setFocusPolicy Qt NoFocus
+L17653: QLabel "开启" self =>(kaiji_guanbi_lable
+L17654: self kaiji_guanbi_lable setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            color: rgb(0, 190, 2...
+L17660: QLabel "关闭软件时自动最小化到系统托盘" self =>(kaiji_guanbi_lable_text
+L17661: self kaiji_guanbi_lable_text setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            color: white; \n    ...
+L17667: kaiji_guanbi_kaiguan_layout addWidget self kaiji_guanbi_switch 1 Qt AlignLeft ('alignment',)
+L17668: kaiji_guanbi_kaiguan_layout addWidget self kaiji_guanbi_lable 2 Qt AlignLeft ('alignment',)
+L17669: kaiji_guanbi_layout addLayout kaiji_guanbi_kaiguan_layout 2
+L17670: kaiji_guanbi_layout addWidget self kaiji_guanbi_lable_text 8 Qt AlignLeft ('alignment',)
+L17671: shezhi_tongyong_layout addLayout kaiji_guanbi_layout 1
+L17674: QHBoxLayout =:(tongping_shanshuo_layout
+L17675: QHBoxLayout =:(tongping_shanshuo_kaiguan_layout
+L17676: SwitchButton self =>(tongping_shanshuo_switch
+L17677: self tongping_shanshuo_switch setChecked True
+L17678: self tongping_shanshuo_switch stateChanged connect self tongping_onoff
+L17679: self tongping_shanshuo_switch setFocusPolicy Qt NoFocus
+L17680: QLabel "开启" self =>(tongping_shanshuo_lable
+L17681: self tongping_shanshuo_lable setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            color: rgb(0, 190, 2...
+L17687: QLabel "同屏时任务栏闪烁，请开启此选项" self =>(tongping_shanshuo_lable_text
+L17688: self tongping_shanshuo_lable_text setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            color: white; \n    ...
+L17694: tongping_shanshuo_kaiguan_layout addWidget self tongping_shanshuo_switch 1 Qt AlignLeft ('alignment',)
+L17695: tongping_shanshuo_kaiguan_layout addWidget self tongping_shanshuo_lable 2 Qt AlignLeft ('alignment',)
+L17696: tongping_shanshuo_layout addLayout tongping_shanshuo_kaiguan_layout 2
+L17697: tongping_shanshuo_layout addWidget self tongping_shanshuo_lable_text 8 Qt AlignLeft ('alignment',)
+L17698: shezhi_tongyong_layout addLayout tongping_shanshuo_layout 1
+L17701: QHBoxLayout =:(faceit_ac_layout
+L17702: QHBoxLayout =:(faceit_ac_kaiguan_layout
+L17703: SwitchButton self =>(faceit_ac_switch
+L17704: self faceit_ac_switch setChecked True
+L17705: self faceit_ac_switch stateChanged connect self FACEIT_AC
+L17706: self faceit_ac_switch setFocusPolicy Qt NoFocus
+L17707: QLabel "开启" self =>(faceit_ac_lable
+L17708: self faceit_ac_lable setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            color: rgb(0, 190, 2...
+L17714: QLabel "FACEIT_AC优化，开启后需重启电脑生效" self =>(faceit_ac_lable_text
+L17715: self faceit_ac_lable_text setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            color: white; \n    ...
+L17721: faceit_ac_kaiguan_layout addWidget self faceit_ac_switch 1 Qt AlignLeft ('alignment',)
+L17722: faceit_ac_kaiguan_layout addWidget self faceit_ac_lable 2 Qt AlignLeft ('alignment',)
+L17723: faceit_ac_layout addLayout faceit_ac_kaiguan_layout 2
+L17724: faceit_ac_layout addWidget self faceit_ac_lable_text 8 Qt AlignLeft ('alignment',)
+L17725: shezhi_tongyong_layout addLayout faceit_ac_layout 1
+L17728: QHBoxLayout =:(yuyan_xuanxiang_layout
+L17730: "简体中文"
+L17731: "English"
+L17732: "Deutsch"
+L17733: "日本語"
+L17734: "Français"
+L17735: "Español"
+L17736: "Italiano"
+L17737: "Nederlands"
+L17738: "Svenska"
+L17739: "Polski"
+L17740: "العربية"
+L17741: "繁體中文"
+L17729: [12] =:(yuyan
+L17743: QComboBox self =>(yuyan_box
+L17748: self yuyan_box addItems yuyan
+L17749: self yuyan_box setStyleSheet "\n            QComboBox {\n                background-color: "
+L17751: port xianshi_jianbian
+L17749: ";\n                color: "
+L17752: port back_yanse
+L17749: ";\n                border: 1px solid #555;\n                border-radius: 5px;\n        ...
+L17751: port xianshi_jianbian
+L17749: ";\n                color: "
+L17752: port back_yanse
+L17749: ";\n                border-radius: 5px;\n                outline: none;  /* 移除选中�...
+L17752: port back_yanse
+L17749: " !important;\n                border: 1px solid "
+L17752: port back_yanse
+L17749: " !important;\n                border-radius: 3px;\n                font-size: 16px;\n    ...
+L17787: self yuyan_box currentIndexChanged connect self tongyong_yuyan_changer
+L17789: QLabel "语言" self =>(yuyan_lable_text
+L17790: self yuyan_lable_text setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            color: white; \n    ...
+L17796: yuyan_xuanxiang_layout addWidget self yuyan_box 2 Qt AlignLeft ('alignment',)
+L17797: yuyan_xuanxiang_layout addWidget self yuyan_lable_text 8 Qt AlignLeft ('alignment',)
+L17798: shezhi_tongyong_layout addLayout yuyan_xuanxiang_layout 1
+L17801: QHBoxLayout =:(tianchong_layout
+L17802: shezhi_tongyong_layout addLayout tianchong_layout 8
+L17803: shezhi_tongyong_layout setAlignment shezhi_tongyong_layout Qt AlignTop
+L17804: inner_layout addWidget self shezhi_tongyong_widget
+L17807: QVBoxLayout =:(shezhi_zhichi_layout
+L17808: QWidget self =>(shezhi_zhichi_widget
+L17810: self shezhi_zhichi_widget setFixedHeight 650
+L17813: self shezhi_zhichi_widget setStyleSheet "\n            background-color: rgba(255, 0, 0, 0);\n            border-radius: 10px;\n  ...
+L17817: self shezhi_zhichi_widget setLayout shezhi_zhichi_layout
+L17819: QHBoxLayout =:(cp_sn_layout
+L17820: QLabel "电脑唯一识别符：" self =>(cp_sn_lable
+L17821: self cp_sn_lable setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            color: white; \n    ...
+L17827: QLabel log mac_address self =>(cp_sn_lable_text
+L17828: self cp_sn_lable_text setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            color: white; \n    ...
+L17834: cp_sn_layout addWidget self cp_sn_lable
+L17835: cp_sn_layout addWidget self cp_sn_lable_text
+L17836: cp_sn_layout addStretch
+L17837: shezhi_zhichi_layout addLayout cp_sn_layout 1
+L17839: QTextEdit self =>(error_uploader
+L17840: self error_uploader setFixedHeight 300
+L17841: self error_uploader setFixedWidth 400
+L17842: self error_uploader setStyleSheet "\n            QTextEdit {\n                border: 2px solid rgb(153, 153, 153);\n       ...
+L17850: self error_uploader setPlaceholderText "简单描述一下您在使用产品遇到的问题..."
+L17851: shezhi_zhichi_layout addWidget self error_uploader Qt AlignLeft ('alignment',)
+L17854: QPushButton "提交问题" self =>(tijiao_wenti
+L17855: self tijiao_wenti setFixedHeight 50
+L17856: self tijiao_wenti setFixedWidth 200
+L17857: self tijiao_wenti setStyleSheet "\n            QPushButton {\n                background-color: white;\n                co...
+L17874: self tijiao_wenti clicked connect self log_uploader_text_up
+L17875: shezhi_zhichi_layout addWidget self tijiao_wenti
+L17877: QLabel "" self =>(la_log
+L17878: self la_log setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            color: white; \n    ...
+L17884: shezhi_zhichi_layout addWidget self la_log
+L17890: QHBoxLayout =:(tianchong_layout
+L17891: shezhi_zhichi_layout addLayout tianchong_layout 8
+L17894: QPushButton "" self =>(open_log_txt
+L17895: self open_log_txt setFixedHeight 50
+L17896: self open_log_txt setFixedWidth 200
+L17897: self open_log_txt setStyleSheet "\n            QPushButton {\n                background-color: rgba(100, 100, 100, 0);\n ...
+L17908: self open_log_txt clicked connect self open_log_file
+L17909: shezhi_zhichi_layout addWidget self open_log_txt
+L17911: shezhi_zhichi_layout setAlignment shezhi_zhichi_layout Qt AlignTop
+L17913: self shezhi_zhichi_widget hide
+L17914: inner_layout addWidget self shezhi_zhichi_widget
+L17919: QHBoxLayout =:(fan_speed_layout
+L17922: QWidget self =>(fan_speed_widget
+L17923: self fan_speed_widget setLayout fan_speed_layout
+L17926: self fan_speed_widget setFixedHeight 80
+L17929: self fan_speed_widget setStyleSheet "\n            background-color: rgba(255, 255, 255, 50);\n            border-radius: 10px...
+L17935: QHBoxLayout =:(l_f_layout
+L17943: QLabel "风扇转速:" self =>(fan_speed_changer_lable
+L17944: self fan_speed_changer_lable setFont self font
+L17945: self fan_speed_changer_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L17949: QSlider Qt Horizontal self =>(slider_fan_speed_ten
+L17950: self slider_fan_speed_ten setMinimum 0
+L17951: self slider_fan_speed_ten setMaximum 100
+L17952: self slider_fan_speed_ten setValue 20
+L17953: self slider_fan_speed_ten setTickInterval 1
+L17956: self slider_fan_speed_ten setFocusPolicy Qt NoFocus
+L17957: self slider_fan_speed_ten valueChanged connect self fan_speed_ten_changed
+L17958: self slider_fan_speed_ten setSingleStep 10
+L17961: self slider_fan_speed_ten setStyleSheet "\n                                                                    QSlider::groove:hor...
+L17983: QLabel "100%" self =>(fan_speed_text_lable
+L17984: self fan_speed_text_lable setFont self font
+L17985: self fan_speed_text_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px;"
+L17988: fan_speed_layout addWidget self fan_speed_changer_lable
+L17990: [0] self =>(ARGB_FAN_speed
+L17991: [0] self =>(ARGB_FAN_speed_text
+L17992: "静音" "低速" "高速" "全速" [4] self =>(fan_speed_zh
+L17993: "Silent" "Low" "High" "Full" [4] self =>(fan_speed_en
+L17994: "Leise" "Niedrig" "Hoch" "Voll" [4] self =>(fan_speed_de
+L17995: "サイレント" "低速" "高速" "全速" [4] self =>(fan_speed_jp
+L17997: "img/ARGB/fan_speed/speed0.svg"
+L17998: "img/ARGB/fan_speed/speed1.svg"
+L17999: "img/ARGB/fan_speed/speed2.svg"
+L18000: "img/ARGB/fan_speed/speed3.svg"
+L17996: [4] self =>(ARGB_FAN_speed_img
+L18003: "img/ARGB/fan_speed/speed0_1.svg"
+L18004: "img/ARGB/fan_speed/speed1_1.svg"
+L18005: "img/ARGB/fan_speed/speed2_1.svg"
+L18006: "img/ARGB/fan_speed/speed3_1.svg"
+L18002: [4] self =>(ARGB_FAN_speed_img_xuanzhong
+L18008: range 4 =:(i
+L18009: QVBoxLayout =:(speed_layout
+L18010: QPushButton =:(fan_button
+L18011: fan_button clicked connect self fan_speed_changer_clicked
+L18012: QLabel self fan_speed_zh i =:(lable_fan
+L18013: lable_fan setStyleSheet "background-color: rgba(255, 255, 255, 0); color: rgb(243,244,243); font-size: 14px; "
+L18014: fan_button setIcon QIcon port file_path_img port file_path_img self ARGB_FAN_speed_img i
+L18015: fan_button setIconSize QtCore QSize 150 40
+L18016: fan_button setFixedSize 150 40
+L18017: fan_button setStyleSheet "background-color: rgba(255, 255, 255, 0); border-radius: 15px;"
+L18019: fan_button setCheckable True
+L18020: fan_button setFocusPolicy Qt NoFocus
+L18021: self ARGB_FAN_speed append fan_button
+L18022: self ARGB_FAN_speed_text append lable_fan
+L18026: speed_layout addWidget fan_button Qt AlignHCenter ('alignment',)
+L18027: speed_layout addWidget lable_fan Qt AlignHCenter ('alignment',)
+L18030: fan_speed_layout addLayout speed_layout
+L18038: QVBoxLayout =:(main_layout_mubu
+L18039: main_layout_mubu setContentsMargins 0 0 0 0
+L18040: QWidget self =>(main_widget_mubu
+L18042: self main_widget_mubu setLayout main_layout_mubu
+L18044: QHBoxLayout =:(mubu_layout
+L18045: mubu_layout setContentsMargins 0 0 0 0
+L18047: CanvasWidget self effect_manager self =>(canvas
+L18048: EffectSelector self effect_manager self =>(effect_selector
+L18049: self effect_selector effectChanged connect self on_effect_changed
+L18050: ControlPanel self effect_manager self canvas scene self =>(control_panel
+L18052: mubu_layout addWidget self canvas Qt AlignLeft ('alignment',)
+L18053: mubu_layout addWidget self control_panel Qt AlignLeft ('alignment',)
+L18054: mubu_layout addStretch 1
+L18055: main_layout_mubu addLayout mubu_layout
+L18057: main_layout_mubu addStretch 1
+L18058: inner_layout addWidget self main_widget_mubu Qt AlignTop ('alignment',)
+L18059: self main_widget_mubu hide
+L18061: self canvas scene selectionChanged connect self control_panel update_control_visibility
+L18067: QVBoxLayout =:(setting_layout
+L18070: QWidget self =>(fan_config_dan_widget
+L18071: self fan_config_dan_widget setLayout setting_layout
+L18074: self fan_config_dan_widget setFixedHeight 60
+L18077: self fan_config_dan_widget setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            border-radius: 10px;...
+L18082: QHBoxLayout =:(set_fan_two
+L18085: QHBoxLayout =:(zishibie_rgb_num
+L18086: QPushButton "自识别灯珠数" self =>(zishibie_rgb_num_button
+L18087: self zishibie_rgb_num_button setFocusPolicy Qt NoFocus
+L18088: self zishibie_rgb_num_button setFont self font
+L18089: self zishibie_rgb_num_button setStyleSheet "background-color: rgb(242, 244, 241); color: rgb(51, 51, 50); font-size: 16px; border-rad...
+L18091: self zishibie_rgb_num_button clicked connect self fan_auto_rgb_num
+L18092: zishibie_rgb_num addWidget self zishibie_rgb_num_button
+L18093: zishibie_rgb_num addStretch 1
+L18097: QHBoxLayout =:(set_dengzhu
+L18098: QLabel "灯珠数量: " self =>(ARGB_number_lable
+L18099: self ARGB_number_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18100: QComboBox self =>(ARGB_settings_box_number
+L18101: self ARGB_settings_box_number setFocusPolicy Qt NoFocus
+L18102: self ARGB_settings_box_number addItems <Code38 code object <listcomp> at 0x1e6da042890, file Sync_light.py>, line 18102 "MainWindow.initUI.<locals>.<listcomp>" range 0 121 1
+L18103: self ARGB_settings_box_number view setSpacing 2
+L18104: self ARGB_settings_box_number setStyleSheet "\n            QComboBox {\n                background-color: "
+L18106: port xianshi_jianbian
+L18104: ";\n                color: "
+L18107: port back_yanse
+L18104: ";\n                border: 1px solid #555;\n                border-radius: 5px;\n        ...
+L18106: port xianshi_jianbian
+L18104: ";\n                color: "
+L18107: port back_yanse
+L18104: ";\n                border-radius: 5px;\n                outline: none;  /* 移除选中�...
+L18107: port back_yanse
+L18104: " !important;\n                border: 1px solid "
+L18107: port back_yanse
+L18104: " !important;\n                border-radius: 3px;\n                font-size: 16px;\n    ...
+L18142: self ARGB_settings_box_number activated connect self on_ARGB_settings_box_number_selected
+L18143: set_dengzhu addWidget self ARGB_number_lable
+L18144: set_dengzhu addWidget self ARGB_settings_box_number
+L18145: set_dengzhu addStretch 1
+L18146: set_dengzhu setAlignment Qt AlignLeft
+L18147: self ARGB_number_lable hide
+L18148: self ARGB_settings_box_number hide
+L18150: QHBoxLayout =:(set_beilv
+L18151: QLabel "  倍率: " self =>(ARGB_beilv_lable
+L18152: self ARGB_beilv_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18153: QComboBox self =>(ARGB_settings_box_beilv
+L18154: self ARGB_settings_box_beilv setFocusPolicy Qt NoFocus
+L18155: self ARGB_settings_box_beilv addItems <Code38 code object <listcomp> at 0x1e6da042a50, file Sync_light.py>, line 18155 "MainWindow.initUI.<locals>.<listcomp>" range 1 5
+L18156: self ARGB_settings_box_beilv view setSpacing 2
+L18157: self ARGB_settings_box_beilv setStyleSheet "\n            QComboBox {\n                background-color: rgb(25, 78, 255);\n         ...
+L18184: self ARGB_settings_box_beilv currentIndexChanged connect self on_ARGB_settings_box_beilv_selected
+L18185: set_beilv addWidget self ARGB_beilv_lable
+L18186: set_beilv addWidget self ARGB_settings_box_beilv
+L18187: set_beilv addStretch 1
+L18188: set_beilv setAlignment Qt AlignLeft
+L18189: self ARGB_beilv_lable hide
+L18190: self ARGB_settings_box_beilv hide
+L18192: QHBoxLayout =:(set_fangxiang
+L18193: QLabel "  RGB流向: " self =>(ARGB_fangxiang_lable
+L18194: self ARGB_fangxiang_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18195: set_fangxiang addWidget self ARGB_fangxiang_lable
+L18197: [0] self =>(ARGB_dan_fangxiang_buttons
+L18198: "img/ARGB_LEFT_FLASH.svg" "img/ARGB_RIGHT_FLASH.svg" [2] self =>(dan_fangxiang_img
+L18199: "img/ARGB_LEFT_TURE.svg" "img/ARGB_RIGHT_TURE.svg" [2] self =>(dan_fangxiang_img_xuanzhong
+L18200: range 2 =:(i
+L18201: QPushButton =:(button
+L18202: button setCheckable True
+L18203: button setFocusPolicy Qt NoFocus
+L18204: button clicked connect self fan_dan_fangxiang_dengxiao_Clicked
+L18205: button setIcon QIcon port file_path_img port file_path_img self dan_fangxiang_img i
+L18206: button setIconSize QtCore QSize 40 40
+L18207: button setStyleSheet "background-color: rgba(255, 255, 255, 0); border-radius: 16px;"
+L18208: self ARGB_dan_fangxiang_buttons append button
+L18209: set_fangxiang addWidget button Qt AlignLeft ('alignment',)
+L18213: set_fangxiang addStretch 1
+L18214: set_fangxiang setAlignment Qt AlignLeft
+L18219: QHBoxLayout =:(set_weizhi
+L18220: QLabel "  编号映射: " self =>(ARGB_id_lable
+L18221: self ARGB_id_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18222: QComboBox self =>(ARGB_settings_box_id
+L18223: self ARGB_settings_box_id setFocusPolicy Qt NoFocus
+L18224: self ARGB_settings_box_id addItems <Code38 code object <listcomp> at 0x1e6da042b30, file Sync_light.py>, line 18224 "MainWindow.initUI.<locals>.<listcomp>" range 1 11
+L18225: self ARGB_settings_box_id view setSpacing 2
+L18226: self ARGB_settings_box_id setStyleSheet "\n            QComboBox {\n                background-color: "
+L18228: port xianshi_jianbian
+L18226: ";\n                color: "
+L18229: port back_yanse
+L18226: ";\n                border: 1px solid #555;\n                border-radius: 5px;\n        ...
+L18228: port xianshi_jianbian
+L18226: ";\n                color: "
+L18229: port back_yanse
+L18226: ";\n                border-radius: 5px;\n                outline: none;  /* 移除选中�...
+L18229: port back_yanse
+L18226: " !important;\n                border: 1px solid "
+L18229: port back_yanse
+L18226: " !important;\n                border-radius: 3px;\n                font-size: 16px;\n    ...
+L18263: self ARGB_settings_box_id currentIndexChanged connect self on_ARGB_settings_box_id_selected
+L18264: set_weizhi addWidget self ARGB_id_lable Qt AlignRight ('alignment',)
+L18265: set_weizhi addWidget self ARGB_settings_box_id Qt AlignRight ('alignment',)
+L18273: set_fan_two addLayout zishibie_rgb_num
+L18274: set_fan_two addLayout set_dengzhu
+L18275: set_fan_two addLayout set_beilv
+L18276: set_fan_two addLayout set_fangxiang
+L18277: set_fan_two addLayout set_weizhi
+L18278: set_fan_two addStretch 1
+L18279: setting_layout addLayout set_fan_two
+L18290: QWidget self =>(fan_ten_widget
+L18294: self fan_ten_widget setFixedHeight 100
+L18297: self fan_ten_widget setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            border-radius: 10px;...
+L18303: [0] self =>(ARGB_FAN_devices
+L18304: [0] self =>(ARGB_FAN_SN_NUM
+L18305: <Code38 code object <listcomp> at 0x1e6da042c10, file Sync_light.py>, line 18305 "MainWindow.initUI.<locals>.<listcomp>" range 10 self =>(ARGB_FAN_devices_img
+L18306: <Code38 code object <listcomp> at 0x1e6da042cf0, file Sync_light.py>, line 18306 "MainWindow.initUI.<locals>.<listcomp>" range 10 self =>(ARGB_FAN_devices_img_xuanzhong
+L18307: <Code38 code object <listcomp> at 0x1e6da042dd0, file Sync_light.py>, line 18307 "MainWindow.initUI.<locals>.<listcomp>" range 10 self =>(ARGB_FAN_devices_img_none
+L18308: <Code38 code object <listcomp> at 0x1e6da042eb0, file Sync_light.py>, line 18308 "MainWindow.initUI.<locals>.<listcomp>" range 10 self =>(lable_fan_num
+L18310: QHBoxLayout =:(fan_devices_layout
+L18311: self fan_ten_widget setLayout fan_devices_layout
+L18313: range 10 =:(i
+L18314: QVBoxLayout =:(temp_h_layout
+L18315: QPushButton =:(fan_button
+L18316: QLabel self lable_fan_num i =:(temp_argb_num
+L18317: temp_argb_num setFixedHeight 18
+L18318: temp_argb_num setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18319: fan_button clicked connect self fan_index_clicked
+L18321: fan_button setIcon QIcon port file_path_img port file_path_img self ARGB_FAN_devices_img i
+L18322: fan_button setIconSize QtCore QSize 60 60
+L18323: fan_button setFixedSize 60 60
+L18325: port PID_COMPAY 5
+L18326: fan_button setIconSize QtCore QSize 80 55
+L18327: fan_button setFixedSize 80 55
+L18329: fan_button setStyleSheet "background-color: rgba(255, 255, 255, 0); border-radius: 30px; alignment: center;"
+L18331: fan_button setCheckable True
+L18332: fan_button setFocusPolicy Qt NoFocus
+L18333: self ARGB_FAN_devices append fan_button
+L18334: self ARGB_FAN_SN_NUM append temp_argb_num
+L18335: temp_h_layout addWidget fan_button 0
+L18336: temp_h_layout addWidget temp_argb_num 1 Qt AlignCenter ('alignment',)
+L18337: fan_devices_layout addLayout temp_h_layout
+L18340: fan_devices_layout addStretch 1
+L18348: QVBoxLayout =:(chuji_effect_layout
+L18350: QWidget self =>(chuji_effect_widget
+L18351: self chuji_effect_widget setLayout chuji_effect_layout
+L18353: self chuji_effect_widget setFixedHeight 330
+L18355: self chuji_effect_widget setStyleSheet "\n            background-color: rgba(255, 255, 255, 50);\n            border-radius: 10px...
+L18360: [0] self =>(chuji_effect_button
+L18361: [0] self =>(chuji_effect_button_name
+L18362: <Code38 code object <listcomp> at 0x1e6da042f90, file Sync_light.py>, line 18362 "MainWindow.initUI.<locals>.<listcomp>" range 12 self =>(chuji_effect_img
+L18363: <Code38 code object <listcomp> at 0x1e6da043070, file Sync_light.py>, line 18363 "MainWindow.initUI.<locals>.<listcomp>" range 12 self =>(chuji_effect_img_xuanzhong
+L18365: range 3 =:(i
+L18366: QHBoxLayout =:(temp_chuji_effect_layout
+L18367: range 4 =:(j
+L18368: QVBoxLayout =:(h_layout
+L18369: QPushButton =:(button
+L18370: QLabel port dengxiao_model_chuji_zh i 4 j =:(lable_chuji_name
+L18371: lable_chuji_name setFixedHeight 18
+L18372: lable_chuji_name setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 15px; "
+L18373: button setIcon QIcon port file_path_img port file_path_img self chuji_effect_img i 4 j
+L18374: button clicked connect self chuji_effect_changer
+L18375: button setCheckable True
+L18376: button setFocusPolicy Qt NoFocus
+L18377: button setIconSize QtCore QSize 160 81
+L18378: button setFixedSize 160 81
+L18379: button setStyleSheet "background-color: rgba(255, 255, 255, 0);"
+L18380: self chuji_effect_button append button
+L18381: self chuji_effect_button_name append lable_chuji_name
+L18382: h_layout addWidget button 10 Qt AlignCenter Qt AlignTop ('alignment',)
+L18383: h_layout addWidget lable_chuji_name 1 Qt AlignCenter Qt AlignBottom ('alignment',)
+L18384: temp_chuji_effect_layout addLayout h_layout
+L18385: chuji_effect_layout addLayout temp_chuji_effect_layout
+L18387: inner_layout addWidget self chuji_effect_widget Qt AlignTop ('alignment',)
+L18388: self chuji_effect_widget hide
+L18393: QHBoxLayout =:(effect_layout
+L18398: QWidget self =>(effect_widget
+L18399: self effect_widget setLayout effect_layout
+L18402: self effect_widget setFixedHeight 260
+L18405: self effect_widget setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            border-radius: 10px;...
+L18412: QVBoxLayout =:(effect_list_layout
+L18414: QLabel "灯效模式" self =>(effect_list_label
+L18415: self effect_list_label setFont self font
+L18416: self effect_list_label setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18420: QHBoxLayout =:(fan_chuan_layout
+L18422: fan_chuan_layout setContentsMargins 0 0 0 0
+L18423: [0] self =>(ARGB_FAN_chuan
+L18426: "img/ARGB/fan_chuan/1-1.png"
+L18427: "img/ARGB/fan_chuan/5-1.png"
+L18428: "img/ARGB/fan_chuan/4-1.png"
+L18429: "img/ARGB/fan_chuan/2-1.png"
+L18430: "img/ARGB/fan_chuan/3-1.png"
+L18431: "img/ARGB/fan_chuan/6-1.png"
+L18425: [6] self =>(ARGB_FAN_chuan_img
+L18434: "img/ARGB/fan_chuan/1-2.png"
+L18435: "img/ARGB/fan_chuan/5-2.png"
+L18436: "img/ARGB/fan_chuan/4-2.png"
+L18437: "img/ARGB/fan_chuan/2-2.png"
+L18438: "img/ARGB/fan_chuan/3-2.png"
+L18439: "img/ARGB/fan_chuan/6-2.png"
+L18433: [6] self =>(ARGB_FAN_chuan_img_xuanzhong
+L18441: range 6 =:(i
+L18442: QPushButton =:(fan_button
+L18443: fan_button clicked connect self fan_chuan_clicked
+L18445: fan_button setIcon QIcon port file_path_img port file_path_img self ARGB_FAN_chuan_img i
+L18446: fan_button setIconSize QtCore QSize 45 40
+L18447: fan_button setFixedSize 45 40
+L18448: fan_button setStyleSheet "background-color: rgba(255, 255, 255, 0); border-radius: 15px;"
+L18450: fan_button setCheckable True
+L18451: fan_button setFocusPolicy Qt NoFocus
+L18452: self ARGB_FAN_chuan append fan_button
+L18453: fan_chuan_layout addWidget fan_button Qt AlignLeft ('alignment',)
+L18454: fan_chuan_layout addStretch 1
+L18459: effect_list_layout setAlignment Qt AlignTop Qt AlignLeft
+L18464: QComboBox self =>(fan_effect_list
+L18466: self fan_effect_list setFocusPolicy Qt NoFocus
+L18467: self fan_effect_list setFont self font
+L18468: 255 0 255 255 255 1 2 3 4 5 6 255 7 8 9 255 255 255 255 255 [20] self =>(anyc_list
+L18469: self fan_effect_list addItems port dengxiao_model2_zh
+L18470: self fan_effect_list view setSpacing 5
+L18471: self fan_effect_list setStyleSheet "\n            QComboBox {\n                background-color: rgb(25, 78, 255);\n         ...
+L18496: self fan_effect_list setStyleSheet "\n            QComboBox {\n                background-color: rgb(32, 39, 48);\n          ...
+L18557: self fan_effect_list currentIndexChanged connect self fan_effect_list_changed
+L18561: QHBoxLayout =:(fan_button_all_layout
+L18562: QPushButton "同步应用" self =>(ARGB_FAN_all
+L18563: self ARGB_FAN_all setFocusPolicy Qt NoFocus
+L18564: self ARGB_FAN_all setFont self font
+L18565: self ARGB_FAN_all setStyleSheet
+L18566: "background-color: rgb(242, 244, 241);color: rgb(51, 51, 50);font-size: 16px;border-radius...
+L18565:
+L18574: self ARGB_FAN_all clicked connect self fan_ten_all_clicked
+L18575: QPushButton "合并应用" self =>(ARGB_FAN_sync_all
+L18576: self ARGB_FAN_sync_all setFocusPolicy Qt NoFocus
+L18577: self ARGB_FAN_sync_all setFont self font
+L18578: self ARGB_FAN_sync_all setStyleSheet
+L18579: "background-color: rgb(242, 244, 241);color: rgb(51, 51, 50);font-size: 16px;border-radius...
+L18578:
+L18587: self ARGB_FAN_sync_all clicked connect self fan_sync_all_clicked
+L18588: fan_button_all_layout addWidget self ARGB_FAN_all Qt AlignTop ('alignment',)
+L18589: fan_button_all_layout addWidget self ARGB_FAN_sync_all Qt AlignTop ('alignment',)
+L18590: fan_button_all_layout addStretch 1
+L18593: QHBoxLayout =:(fan_button_tese_layout
+L18594: [0] self =>(fan_buttons_tese
+L18595: [0] self =>(fan_lable_tese
+L18596: "img/fantasy1.svg" "img/fantasy19.svg" [2] self =>(fan_tese_img
+L18597: "img/fantasy1a.svg" "img/fantasy19a.svg" [2] self =>(fan_tese_img_xuanzhong
+L18598: range 2 =:(i
+L18599: None =:(lable
+L18600: i 0
+L18601: QLabel "同屏" =:(lable
+L18602: i 1
+L18603: QLabel "拾音" =:(lable
+L18604: lable setFont self font
+L18605: lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18606: QPushButton =:(button
+L18607: button setCheckable True
+L18608: button setFocusPolicy Qt NoFocus
+L18609: button clicked connect self fan_tese_clicked
+L18610: button setIcon QIcon port file_path_img port file_path_img self fan_tese_img i
+L18611: button setIconSize QtCore QSize 60 60
+L18613: button setStyleSheet "background-color: rgba(255, 255, 255, 0); border-radius: 30px;"
+L18614: self fan_buttons_tese append button
+L18615: self fan_lable_tese append lable
+L18616: fan_button_tese_layout addWidget lable Qt AlignLeft ('alignment',)
+L18617: fan_button_tese_layout addWidget button Qt AlignLeft ('alignment',)
+L18618: fan_button_tese_layout addStretch 1
+L18622: QHBoxLayout =:(fan_jiyimoshi_layout
+L18623: QLabel "记忆模式" self =>(jiyi_moshi
+L18624: self jiyi_moshi setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18625: SwitchButton self =>(jiyi_changer_switch
+L18626: self jiyi_changer_switch setChecked False
+L18627: self jiyi_changer_switch stateChanged connect self kaiji_jiyimoshi_changer
+L18629: fan_jiyimoshi_layout addWidget self jiyi_changer_switch
+L18630: fan_jiyimoshi_layout addWidget self jiyi_moshi
+L18631: fan_jiyimoshi_layout addStretch 1
+L18632: effect_list_layout addLayout fan_jiyimoshi_layout
+L18635: QHBoxLayout =:(fan_gudingmoshi_layout
+L18636: QLabel "固定模式" self =>(guding_moshi
+L18637: self guding_moshi setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18638: SwitchButton self =>(guding_changer_switch
+L18639: self guding_changer_switch setChecked False
+L18640: self guding_changer_switch stateChanged connect self kaiji_gudingmoshi_changer
+L18641: fan_gudingmoshi_layout addWidget self guding_changer_switch
+L18642: fan_gudingmoshi_layout addWidget self guding_moshi
+L18644: fan_gudingmoshi_layout addStretch 1
+L18645: effect_list_layout addLayout fan_gudingmoshi_layout
+L18648: QHBoxLayout =:(fan_kaijizijian_layout
+L18649: QLabel "开机自检" self =>(kaijizijian
+L18650: self kaijizijian setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18651: SwitchButton self =>(kaijizijian_changer_switch
+L18652: self kaijizijian_changer_switch setChecked False
+L18653: self kaijizijian_changer_switch stateChanged connect self kaijizijian_changer
+L18654: fan_kaijizijian_layout addWidget self kaijizijian_changer_switch
+L18655: fan_kaijizijian_layout addWidget self kaijizijian
+L18657: fan_kaijizijian_layout addStretch 1
+L18658: port PID_COMPAY 5
+L18659: effect_list_layout addLayout fan_kaijizijian_layout
+L18664: QVBoxLayout =:(effect_settings_layout
+L18665: QLabel "灯效设置" self =>(effect_settings_label
+L18666: self effect_settings_label setFont self font
+L18667: self effect_settings_label setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18671: QHBoxLayout =:(liusu
+L18673: QLabel "流速: " self =>(liusu_fan_lable
+L18674: self liusu_fan_lable setFont self font
+L18675: self liusu_fan_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px;"
+L18676: QSlider Qt Horizontal self =>(slider_fan_liusu
+L18677: self slider_fan_liusu setFocusPolicy Qt NoFocus
+L18678: self slider_fan_liusu setMinimum 0
+L18679: self slider_fan_liusu setMaximum 50
+L18680: self slider_fan_liusu setValue 20
+L18681: self slider_fan_liusu setTickInterval 1
+L18683: self slider_fan_liusu valueChanged connect self fan_liusu_changed
+L18684: self slider_fan_liusu setSingleStep 20
+L18687: self slider_fan_liusu setStyleSheet "\n            QSlider::groove:horizontal {\n                background-color: #f3f4f5;\n ...
+L18695: port xianshi_jianbian
+L18687: ";\n                height: 16px;\n                border-radius: 8px;\n            }\n\n ...
+L18695: port xianshi_jianbian
+L18687: ";\n                # border: 1px solid #FFF;\n                width: 16px;\n             ...
+L18710: QLabel "" self =>(liusu_fan_text_lable
+L18711: self liusu_fan_text_lable setFont self font
+L18712: self liusu_fan_text_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px;"
+L18713: liusu addWidget self liusu_fan_lable
+L18714: liusu addWidget self slider_fan_liusu
+L18715: liusu addWidget self liusu_fan_text_lable
+L18718: QHBoxLayout =:(fangxiang
+L18719: QLabel "方向: " self =>(fangxiang_fan_lable
+L18720: self fangxiang_fan_lable setFont self font
+L18721: self fangxiang_fan_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px;"
+L18722: fangxiang addWidget self fangxiang_fan_lable Qt AlignLeft ('alignment',)
+L18723: [0] self =>(fan_fangxiang_buttons
+L18726: range 2 =:(i
+L18727: QPushButton =:(button
+L18728: button setCheckable True
+L18729: button setFocusPolicy Qt NoFocus
+L18730: button clicked connect self fan_fangxiang_dengxiao_Clicked
+L18731: button setIcon QIcon port file_path_img port file_path_img self fan_fangxiang_img i
+L18732: button setIconSize QtCore QSize 40 40
+L18734: button setStyleSheet "background-color: rgba(255, 255, 255, 0); border-radius: 16px;"
+L18735: self fan_fangxiang_buttons append button
+L18736: fangxiang addWidget button Qt AlignLeft ('alignment',)
+L18737: fangxiang addStretch 1
+L18739: QHBoxLayout =:(fan_liangdu
+L18740: QLabel "亮度: " self =>(liangdu_fan_lable
+L18741: self liangdu_fan_lable setFont self font
+L18742: self liangdu_fan_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px;"
+L18743: QSlider Qt Horizontal self =>(slider_fan_liangdu
+L18744: self slider_fan_liangdu setMinimum 0
+L18745: self slider_fan_liangdu setMaximum 50
+L18746: self slider_fan_liangdu setValue 20
+L18747: self slider_fan_liangdu setTickInterval 1
+L18749: self slider_fan_liangdu setFocusPolicy Qt NoFocus
+L18750: self slider_fan_liangdu valueChanged connect self fan_liangdu_changed
+L18751: self slider_fan_liangdu setSingleStep 20
+L18754: self slider_fan_liangdu setStyleSheet "\n            QSlider::groove:horizontal {\n                background-color: #f3f4f5;\n ...
+L18762: port xianshi_jianbian
+L18754: ";\n                height: 16px;\n                border-radius: 8px;\n            }\n\n ...
+L18762: port xianshi_jianbian
+L18754: ";\n                # border: 1px solid #FFF;\n                width: 16px;\n             ...
+L18777: QLabel "100%" self =>(liangdu_fan_text_lable
+L18778: self liangdu_fan_text_lable setFont self font
+L18779: self liangdu_fan_text_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px;"
+L18780: fan_liangdu addWidget self liangdu_fan_lable
+L18781: fan_liangdu addWidget self slider_fan_liangdu
+L18782: fan_liangdu addWidget self liangdu_fan_text_lable
+L18785: QHBoxLayout =:(fan_yanse
+L18786: QLabel "颜色: " self =>(yanse_fan_lable
+L18787: self yanse_fan_lable setFont self font
+L18788: self yanse_fan_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px;"
+L18789: fan_yanse addWidget self yanse_fan_lable
+L18790: 255 0 0 [3] 0 255 0 [3] 0 0 255 [3] 255 255 0 [3] [4] self =>(fan_dengxiao_colors
+L18791: [0] self =>(fan_dengxiao_buttons
+L18792: range 4 =:(i
+L18793: QPushButton =:(button
+L18794: button setCheckable True
+L18795: button clicked connect self fan_colors_buttonClicked
+L18796: button setFixedSize 40 40
+L18797: button setFocusPolicy Qt NoFocus
+L18798: button setStyleSheet "background-color: rgb" tuple self fan_dengxiao_colors i "; border-radius: 20px;"
+L18799: self fan_dengxiao_buttons append button
+L18800: fan_yanse addWidget button
+L18803: QPushButton "调色板" self =>(button_fan_tiaose
+L18804: self button_fan_tiaose setFont self font
+L18805: self button_fan_tiaose setFocusPolicy Qt NoFocus
+L18806: self button_fan_tiaose setFixedSize 120 40
+L18807: self button_fan_tiaose setStyleSheet "background-color: rgb" (17, 78, 255) "; color: white; border-radius: 15px; font-size: 16px;"
+L18808: self button_fan_tiaose clicked connect self fan_tiaose
+L18809: fan_yanse addWidget self button_fan_tiaose
+L18810: fan_yanse addStretch 1
+L18812: effect_settings_layout addLayout liusu
+L18813: effect_settings_layout addLayout fangxiang
+L18814: effect_settings_layout addLayout fan_liangdu
+L18815: effect_settings_layout addLayout fan_yanse
+L18816: effect_settings_layout addStretch 1
+L18819: effect_layout addLayout effect_list_layout
+L18820: effect_layout addLayout effect_settings_layout
+L18823: effect_layout setStretch 0 4
+L18824: effect_layout setStretch 1 6
+L18835: QVBoxLayout =:(fan_config_layout
+L18838: QWidget self =>(fan_config_widget
+L18839: self fan_config_widget setLayout fan_config_layout
+L18842: self fan_config_widget setFixedHeight 160
+L18845: self fan_config_widget setStyleSheet "\n            background-color: rgba(255, 255, 255, 0);\n            border-radius: 10px;...
+L18851: QHBoxLayout =:(fan_device_layout
+L18852: QLabel "设备信息" self =>(fan_device_lable
+L18853: self fan_device_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18854: self fan_device_lable setFont self font
+L18855: QPushButton "重置设备" self =>(fan_device_rebotton
+L18856: self fan_device_rebotton setFixedWidth 100
+L18857: self fan_device_rebotton setFocusPolicy Qt NoFocus
+L18858: self fan_device_rebotton setFont self font
+L18859: self fan_device_rebotton setStyleSheet "background-color: rgb(255, 0, 0); color: rgb(255, 255, 255); font-size: 16px; border-radi...
+L18861: self fan_device_rebotton clicked connect self fan_device_reboot
+L18862: QLabel "稳定版" self =>(hex_ver_argb_lable
+L18863: self hex_ver_argb_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18864: SwitchButton self =>(hex_ver_argb_switch
+L18865: self hex_ver_argb_switch setChecked False
+L18866: self hex_ver_argb_switch stateChanged connect self argb_gong_wen_changer
+L18868: fan_device_layout addWidget self fan_device_lable
+L18869: fan_device_layout addWidget self fan_device_rebotton
+L18870: fan_device_layout addWidget self hex_ver_argb_lable
+L18871: fan_device_layout addWidget self hex_ver_argb_switch
+L18872: fan_device_layout addStretch 1
+L18874: QHBoxLayout =:(sn_layout
+L18875: QLabel "设备标识符: " self =>(ARGB_sn_lable
+L18876: self ARGB_sn_lable setFont self font
+L18877: self ARGB_sn_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18878: QLabel "获取失败" self =>(ARGB_sn_hex_lable
+L18879: self ARGB_sn_hex_lable setFont self font
+L18880: self ARGB_sn_hex_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18881: sn_layout addWidget self ARGB_sn_lable
+L18882: sn_layout addWidget self ARGB_sn_hex_lable
+L18883: sn_layout addStretch 1
+L18885: QHBoxLayout =:(hex_ver
+L18886: QLabel "当前固件版本: " self =>(ARGB_ver_lable
+L18887: self ARGB_ver_lable setFont self font
+L18888: self ARGB_ver_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18889: QLabel "获取失败" self =>(ARGB_ver_hex_lable
+L18890: self ARGB_ver_hex_lable setFont self font
+L18891: self ARGB_ver_hex_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18892: QLabel "    最新固件版本: " self =>(ARGB_ver_new_lable
+L18893: self ARGB_ver_new_lable setFont self font
+L18894: self ARGB_ver_new_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18895: QLabel "获取失败" self =>(ARGB_ver_hex_new_lable
+L18896: self ARGB_ver_hex_new_lable setFont self font
+L18897: self ARGB_ver_hex_new_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18898: QPushButton "  固件升级  " self =>(uploader_fan_button
+L18899: self uploader_fan_button setFont self font
+L18900: self uploader_fan_button setFocusPolicy Qt NoFocus
+L18901: self uploader_fan_button setStyleSheet "background-color: rgb(255, 0, 0); color: rgb(255, 255, 255); font-size: 16px; border-radi...
+L18903: self uploader_fan_button clicked connect self uploader_fan_void
+L18908: hex_ver addWidget self ARGB_ver_lable
+L18909: hex_ver addWidget self ARGB_ver_hex_lable
+L18910: hex_ver addWidget self ARGB_ver_new_lable
+L18911: hex_ver addWidget self ARGB_ver_hex_new_lable
+L18912: hex_ver addWidget self uploader_fan_button
+L18914: hex_ver addStretch 1
+L18916: QHBoxLayout =:(RF_433
+L18917: QLabel "遥控器配对状态：" self =>(ARGB_rf_lable
+L18918: self ARGB_rf_lable setFont self font
+L18919: self ARGB_rf_lable setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18921: QLabel "未配对" self =>(ARGB_rf_peidui_zhuangtai
+L18922: self ARGB_rf_peidui_zhuangtai setFont self font
+L18923: self ARGB_rf_peidui_zhuangtai setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; font-weight: bol...
+L18925: QLabel "配对码信息：" self =>(ARGB_rf_peidui_sn_config
+L18926: self ARGB_rf_peidui_sn_config setFont self font
+L18927: self ARGB_rf_peidui_sn_config setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; "
+L18929: QLabel "未配对" self =>(ARGB_rf_peidui_sn
+L18930: self ARGB_rf_peidui_sn setFont self font
+L18931: self ARGB_rf_peidui_sn setStyleSheet "background-color: rgba(255, 255, 255, 0); color: white; font-size: 16px; font-weight: bol...
+L18932: RF_433 addWidget self ARGB_rf_lable
+L18933: RF_433 addWidget self ARGB_rf_peidui_zhuangtai
+L18934: RF_433 addWidget self ARGB_rf_peidui_sn_config
+L18935: RF_433 addWidget self ARGB_rf_peidui_sn
+L18936: [0] self =>(rf_433_buttons
+L18937: "配对" "清除配对" "配对中..." [3] self =>(rf_433_name_zh
+L18938: "未配对" "配对中" "已配对" [3] self =>(rf_433_peidui
+L18939: range 3 =:(i
+L18940: QPushButton self rf_433_name_zh i =:(button
+L18941: button setCheckable True
+L18942: button setFocusPolicy Qt NoFocus
+L18943: button setFont self font
+L18944: button setStyleSheet
+L18945: "background-color: rgb(242, 244, 241);color: rgb(51, 51, 50);font-size: 16px;border-radius...
+L18944:
+L18953: button clicked connect self fan_rf_clicked
+L18954: self rf_433_buttons append button
+L18955: RF_433 addWidget button
+L18956: RF_433 addStretch
+L18960: fan_config_layout addLayout fan_device_layout
+L18961: fan_config_layout addLayout sn_layout
+L18962: fan_config_layout addLayout hex_ver
+L18963: fan_config_layout addLayout RF_433
+L18969: QGroupBox "硬件设置" self =>(yingjian_group
+L18970: self yingjian_group setFixedHeight 200
+L18971: self yingjian_group setStyleSheet "\n            QGroupBox {\n                color: white;\n                border: 3px sol...
+L18988: QVBoxLayout =:(yingjian_shezhi
+L18989: yingjian_shezhi addWidget self fan_config_dan_widget
+L18990: yingjian_shezhi addWidget self fan_ten_widget
+L18991: self yingjian_group setLayout yingjian_shezhi
+L18993: QGroupBox "开机灯效设置" self =>(kaiji_effect_group
+L18994: self kaiji_effect_group setFixedHeight 230
+L18995: self kaiji_effect_group setStyleSheet "\n            QGroupBox {\n                color: white;\n                border: 3px sol...
+L19012: QVBoxLayout =:(kaiji_effect_shezhi
+L19013: kaiji_effect_shezhi addWidget self effect_widget
+L19014: self kaiji_effect_group setLayout kaiji_effect_shezhi
+L19016: QGroupBox "硬件信息" self =>(yingjian_info_group
+L19017: self yingjian_info_group setFixedHeight 220
+L19018: self yingjian_info_group setStyleSheet "\n            QGroupBox {\n                color: white;\n                border: 3px sol...
+L19035: QVBoxLayout =:(yingjian_info_shezhi
+L19036: yingjian_info_shezhi addWidget self fan_config_widget
+L19037: self yingjian_info_group setLayout yingjian_info_shezhi
+L19040: QHBoxLayout =:(tongbu_effect_layout
+L19041: QWidget self =>(tongbu_effect_widget
+L19043: self tongbu_effect_widget setFixedHeight 650
+L19046: self tongbu_effect_widget setStyleSheet "\n            background-color: rgba(255, 0, 0, 0);\n            border-radius: 10px;\n  ...
+L19050: self tongbu_effect_widget setLayout tongbu_effect_layout
+L19051: self tongbu_effect_widget hide
+L19053: tongbu_effect_layout addWidget self tongbu_effect_H_widget 2
+L19056: tongbu_effect_layout addWidget self tongbu_effect_S_widget 1
+L19057: inner_layout addWidget self tongbu_effect_widget
+L19060: QHBoxLayout =:(yibu_effect_layout
+L19061: QWidget self =>(yibu_effect_widget
+L19063: self yibu_effect_widget setFixedHeight 700
+L19066: self yibu_effect_widget setStyleSheet "\n            background-color: rgba(255, 0, 0, 0);\n            border-radius: 10px;\n  ...
+L19070: self yibu_effect_widget setLayout yibu_effect_layout
+L19071: self yibu_effect_widget hide
+L19074: yibu_effect_layout addWidget self yibu_fan_widget 1
+L19075: yibu_effect_layout addWidget self yibu_fan_jimu_widget 1
+L19076: yibu_effect_layout addWidget self yibu_effect_H_widget 4
+L19077: yibu_effect_layout addWidget self yibu_effect_S_widget 2
+L19078: inner_layout addWidget self yibu_effect_widget
+L19081: inner_layout addWidget self yibu_baocun_widget
+L19084: QHBoxLayout =:(hebing_effect_layout
+L19085: QWidget self =>(hebing_effect_widget
+L19086: self hebing_effect_widget setFixedHeight 650
+L19087: self hebing_effect_widget setStyleSheet "\n            background-color: rgba(255, 0, 0, 0);\n            border-radius: 10px;\n  ...
+L19091: self hebing_effect_widget setLayout hebing_effect_layout
+L19092: self hebing_effect_widget hide
+L19094: hebing_effect_layout addWidget self hebing_effect_H_widget 2
+L19095: hebing_effect_layout addWidget self hebing_effect_S_widget 1
+L19096: inner_layout addWidget self hebing_effect_widget
+L19099: QVBoxLayout =:(fan_speed_changer_layout
+L19100: QWidget self =>(fan_speed_ten_widget
+L19101: self fan_speed_ten_widget setFixedHeight 700
+L19102: self fan_speed_ten_widget setStyleSheet "\n            background-color: rgba(255, 0, 0, 0);\n            border-radius: 10px;\n  ...
+L19106: self fan_speed_ten_widget setLayout fan_speed_changer_layout
+L19107: self fan_speed_ten_widget hide
+L19109: fan_speed_changer_layout addWidget self fan_speed_shoudong_group Qt AlignTop ('alignment',)
+L19110: fan_speed_changer_layout addWidget self fan_speed_zidong_group Qt AlignTop ('alignment',)
+L19111: inner_layout addWidget self fan_speed_ten_widget
+L19114: QVBoxLayout =:(new_changer_layout
+L19115: QWidget self =>(new_shezhi_yemian_widget
+L19116: self new_shezhi_yemian_widget setFixedHeight 700
+L19117: self new_shezhi_yemian_widget setStyleSheet "\n            background-color: rgba(255, 0, 0, 0);\n            border-radius: 10px;\n  ...
+L19121: self new_shezhi_yemian_widget setLayout new_changer_layout
+L19122: self new_shezhi_yemian_widget hide
+L19123: new_changer_layout addWidget self yingjian_group
+L19124: new_changer_layout addWidget self kaiji_effect_group
+L19125: new_changer_layout addWidget self yingjian_info_group
+L19126: inner_layout addWidget self new_shezhi_yemian_widget
+L19130: QHBoxLayout =:(fan_sync_effect
+L19132: QLabel "幻彩灯效: " self =>(huancai_fan_lable
+L19133: self huancai_fan_lable setStyleSheet "color: white; font-size: 16px; "
+L19134: fan_sync_effect addWidget self huancai_fan_lable
+L19136: [0] self =>(ARGB_SYNC_buttons
+L19137: "img/fantasy8.svg" "img/fantasy2.svg" "img/fantasy3.svg" "img/fantasy4.svg" "img/fantasy5.svg" "img/fantasy6.svg"
+L19138: "img/fantasy7.svg"
+L19137: [7] self =>(SYNC_img
+L19139: "img/fantasy8a.svg" "img/fantasy2a.svg" "img/fantasy3a.svg" "img/fantasy4a.svg" "img/fantasy5a.svg"
+L19140: "img/fantasy6a.svg"
+L19140: "img/fantasy7a.svg"
+L19139: [7] self =>(SYNC_img_xuanzhong
+L19141: range 7 =:(i
+L19142: QPushButton =:(button
+L19143: button setCheckable True
+L19144: button setFocusPolicy Qt NoFocus
+L19145: button clicked connect self button_sync_effect_Clicked
+L19146: button setIcon QIcon port file_path_img port file_path_img self SYNC_img i
+L19147: button setIconSize QtCore QSize 70 70
+L19148: button setFixedSize 70 70
+L19149: button setStyleSheet "border-radius: 35px;"
+L19150: self ARGB_SYNC_buttons append button
+L19151: fan_sync_effect addWidget button Qt AlignRight ('alignment',)
+L19155: QVBoxLayout =:(qun_sync_settings
+L19163: QHBoxLayout =:(rgb_fan_layout
+L19164: QLabel "拾音灯效: " self =>(shiyin_fan_lable
+L19165: self shiyin_fan_lable setStyleSheet "color: white; font-size: 16px; "
+L19166: rgb_fan_layout addWidget self shiyin_fan_lable
+L19168: [0] self =>(rgb_fan_shiyin_buttons
+L19169: "img/pickup1.svg" "img/pickup2.svg" "img/pickup3.svg" "img/pickup4.svg" "img/pickup5.svg" "img/pickup6.svg"
+L19170: "img/pickup7.svg"
+L19169: [7] self =>(rgb_fan_shiyin_img
+L19171: "img/pickup1a.svg" "img/pickup2a.svg" "img/pickup3a.svg" "img/pickup4a.svg" "img/pickup5a.svg"
+L19172: "img/pickup6a.svg"
+L19172: "img/pickup7a.svg"
+L19171: [7] self =>(rgb_fan_shiyin_img_xuanzhong
+L19173: range 7 =:(i
+L19174: QPushButton =:(button
+L19175: button setCheckable True
+L19176: button setFocusPolicy Qt NoFocus
+L19177: button clicked connect self rgb_fan_sound
+L19178: button setIcon QIcon port file_path_img port file_path_img self rgb_fan_shiyin_img i
+L19179: button setIconSize QtCore QSize 70 70
+L19180: button setFixedSize 70 70
+L19181: button setStyleSheet "border-radius: 35px;"
+L19182: self rgb_fan_shiyin_buttons append button
+L19183: rgb_fan_layout addWidget button Qt AlignRight ('alignment',)
+L19189: QHBoxLayout =:(fan_tongping
+L19190: QLabel "同屏灯效: " self =>(tongping_fan_lable
+L19191: self tongping_fan_lable setStyleSheet "color: white; font-size: 16px; "
+L19192: QPushButton self =>(fan_tongping_button
+L19193: self fan_tongping_button setIcon QIcon port file_path_img "img/fantasy1.svg"
+L19194: self fan_tongping_button setIconSize QtCore QSize 70 70
+L19195: self fan_tongping_button setFixedWidth 70
+L19196: self fan_tongping_button setFocusPolicy Qt NoFocus
+L19197: self fan_tongping_button setStyleSheet "border-radius: 35px;"
+L19198: self fan_tongping_button setCheckable True
+L19199: self fan_tongping_button clicked bool connect self rgb_fan_tongping
+L19210: fan_tongping addWidget self tongping_fan_lable Qt AlignLeft ('alignment',)
+L19211: fan_tongping addWidget self fan_tongping_button Qt AlignLeft ('alignment',)
+L19212: fan_tongping addStretch 1
+L19214: qun_sync_settings addLayout fan_liangdu
+L19215: qun_sync_settings addLayout fan_yanse
+L19219: inner_layout addLayout qun_sync_settings
+L19224: QHBoxLayout =:(tiaoseban
+L19227: QPushButton self =>(button1
+L19228: self button1 setFocusPolicy Qt NoFocus
+L19229: self button1 setIcon QIcon port file_path_img "img/my-effects-0.svg"
+L19230: self button1 setIconSize QtCore QSize 30 30
+L19231: self button1 setStyleSheet "border-radius: 40px;"
+L19234: QSlider Qt Horizontal self =>(slider_color
+L19235: self slider_color setFocusPolicy Qt NoFocus
+L19236: self slider_color setRange 0 359
+L19237: self slider_color setSliderPosition 200
+L19238: self slider_color valueChanged connect self update_color
+L19239: QColor =:(color
+L19240: color setHsv 200 255 255
+L19241: self slider_color setStyleSheet "\n                                        QSlider::groove:horizontal {\n                 ...
+L19264: color name
+L19241:
+L19265: self slider_color_mousePressEvent self slider_color =>(mousePressEvent
+L19266: tiaoseban addWidget self button1 Qt AlignLeft ('alignment',)
+L19267: tiaoseban addWidget self slider_color
+L19271: QPushButton "调色板" self =>(button_tiaose
+L19272: self button_tiaose setFocusPolicy Qt NoFocus
+L19273: self button_tiaose setFixedSize 80 40
+L19275: self button_tiaose setStyleSheet "background-color: rgb" (17, 78, 255) "; color: white; border-radius: 15px; font-size: 16px;"
+L19276: self button_tiaose clicked connect self dan_tiaose
+L19277: tiaoseban addWidget self button_tiaose
+L19281: QHBoxLayout =:(clocer_button_layout
+L19283: [0] self =>(buttons
+L19284: (255, 0, 0) (0, 255, 0) (0, 0, 255) (255, 255, 0) (255, 0, 255) (0, 255, 255)
+L19285: (255, 255, 255)
+L19284: [7] self =>(colors
+L19286: range 7 =:(i
+L19287: QPushButton =:(button
+L19288: button setCheckable True
+L19289: button clicked connect self buttonClicked
+L19290: button setFixedSize 40 40
+L19291: button setFocusPolicy Qt NoFocus
+L19292: button setStyleSheet "background-color: rgb" self colors i "; border-radius: 16px;"
+L19293: self buttons append button
+L19294: tiaoseban addWidget button
+L19301: QHBoxLayout =:(huagan
+L19302: QSlider Qt Horizontal self =>(slider
+L19303: self slider setFocusPolicy Qt NoFocus
+L19304: self slider setMinimum 1
+L19305: self slider setMaximum 100
+L19307: self slider setValue 100
+L19308: self slider setTickInterval 1
+L19309: self slider setTickPosition QSlider TicksBelow
+L19310: self slider setSingleStep 10
+L19313: self slider setStyleSheet "\n                                                    QSlider::groove:horizontal {\n     ...
+L19338: QPushButton self =>(button_light
+L19339: self button_light setFocusPolicy Qt NoFocus
+L19340: self button_light setIcon QIcon port file_path_img "img/auto-light.svg"
+L19341: self button_light setIconSize QtCore QSize 35 35
+L19342: self button_light setStyleSheet "border-radius: 40px;"
+L19343: huagan addWidget self button_light Qt AlignLeft ('alignment',)
+L19345: QLabel str self slider value "%" self =>(right_label
+L19346: self right_label setFont self font
+L19347: self right_label setStyleSheet "color: white; font-size: 16px;"
+L19348: self right_label setAlignment Qt AlignCenter
+L19349: self slider valueChanged connect self light_changed
+L19350: self slider_mousePressEvent self slider =>(mousePressEvent
+L19351: huagan addWidget self slider 2
+L19352: huagan addWidget self right_label
+L19359: False self =>(button_charge
+L19360: QLabel "同屏模式" self =>(label_tongping
+L19361: self label_tongping setFont self font
+L19362: self label_tongping setFixedWidth 73
+L19363: self label_tongping setFixedHeight 45
+L19364: self label_tongping setFocusPolicy Qt NoFocus
+L19365: self label_tongping setStyleSheet "color: white; font-size: 16px; "
+L19367: self label_tongping hide
+L19369: QHBoxLayout =:(tongping_layout
+L19370: tongping_layout setContentsMargins 62 0 0 0
+L19371: QPushButton self =>(button_tongping
+L19372: self button_tongping setIcon QIcon port file_path_img "img/fantasy1.svg"
+L19373: self button_tongping setIconSize QtCore QSize 70 70
+L19374: self button_tongping setFixedWidth 70
+L19375: self button_tongping setFocusPolicy Qt NoFocus
+L19376: self button_tongping setStyleSheet "border-radius: 35px;"
+L19377: self button_tongping setCheckable True
+L19378: self button_tongping clicked bool connect self toggle_icon
+L19379: QSlider Qt Horizontal self =>(slider_tongping_speed
+L19380: self slider_tongping_speed setFocusPolicy Qt NoFocus
+L19381: self slider_tongping_speed setMinimum 0
+L19382: self slider_tongping_speed setMaximum 100
+L19383: self slider_tongping_speed setValue port tp
+L19384: self slider_tongping_speed valueChanged connect self tongping_speed
+L19386: self slider_tongping_speed setStyleSheet "\n                                                            QSlider::groove:horizontal ...
+L19408: self slider_tongping_mousePressEvent self slider_tongping_speed =>(mousePressEvent
+L19409: QLabel "选择延迟" self =>(tongping_speed_lable
+L19410: self tongping_speed_lable setFont self font
+L19411: self tongping_speed_lable setStyleSheet "color: white; font-size: 16px;"
+L19412: QLabel str port tp "MS" self =>(tongping_text
+L19413: self tongping_text setFont self font
+L19414: self tongping_text setStyleSheet "color: white; font-size: 16px;"
+L19416: QComboBox self self =>(comboBox_tongpingmoshi
+L19417: self comboBox_tongpingmoshi setFocusPolicy Qt NoFocus
+L19418: self comboBox_tongpingmoshi addItems "游戏模式" "电影模式" [2]
+L19420: self comboBox_tongpingmoshi setCurrentIndex 0
+L19421: self comboBox_tongpingmoshi currentIndexChanged connect self comboBox_tongpingmoshi_changed
+L19423: QComboBox self self =>(comboBox_screen
+L19435: self comboBox_screen setCurrentIndex 0
+L19436: self comboBox_screen currentIndexChanged connect self comboBox_tongpingscreen_changed
+L19438: tongping_layout addWidget self button_tongping Qt AlignLeft ('alignment',)
+L19439: tongping_layout addWidget self tongping_speed_lable
+L19440: tongping_layout addWidget self slider_tongping_speed
+L19441: tongping_layout addWidget self tongping_text
+L19442: tongping_layout addWidget self comboBox_screen
+L19443: tongping_layout addWidget self comboBox_tongpingmoshi
+L19447: QHBoxLayout =:(huancai_layout
+L19448: huancai_layout setContentsMargins 50 0 0 0
+L19449: QHBoxLayout =:(huancai_layout_speed
+L19450: QLabel "幻彩模式" self =>(label_huancai
+L19451: self label_huancai setFont self font
+L19452: self label_huancai setFixedWidth 73
+L19453: self label_huancai setFixedHeight 45
+L19454: self label_huancai setStyleSheet "color: white; font-size: 16px; "
+L19456: QSlider Qt Horizontal self =>(slider_huancai_speed
+L19457: self slider_huancai_speed setFocusPolicy Qt NoFocus
+L19458: self slider_huancai_speed setMinimum 0
+L19459: self slider_huancai_speed setMaximum 100
+L19460: self slider_huancai_speed setValue 50
+L19461: self slider_huancai_speed valueChanged connect self huancai_speed
+L19463: self slider_huancai_speed setStyleSheet "\n                                                                    QSlider::groove:hor...
+L19485: self slider_huancai_mousePressEvent self slider_huancai_speed =>(mousePressEvent
+L19486: QLabel " " self =>(huancai_speed_text
+L19487: self huancai_speed_text setFont self font
+L19488: self huancai_speed_text setStyleSheet "color: white; font-size: 16px;"
+L19489: huancai_layout_speed addWidget self label_huancai Qt AlignLeft ('alignment',)
+L19490: huancai_layout_speed addWidget self slider_huancai_speed
+L19491: huancai_layout_speed addWidget self huancai_speed_text
+L19494: [0] self =>(huancai_buttons
+L19495: "img/fantasy8.svg" "img/fantasy2.svg" "img/fantasy3.svg" "img/fantasy4.svg" "img/fantasy5.svg" "img/fantasy6.svg" "img/fantasy7.svg" [7] self =>(huancai_img
+L19496: "img/fantasy8a.svg" "img/fantasy2a.svg" "img/fantasy3a.svg" "img/fantasy4a.svg" "img/fantasy5a.svg" "img/fantasy6a.svg" "img/fantasy7a.svg" [7] self =>(huancai_img_xuanzhong
+L19497: range 7 =:(i
+L19498: QPushButton =:(button
+L19499: button setCheckable True
+L19500: button setFocusPolicy Qt NoFocus
+L19501: button clicked connect self button_huancai_Clicked
+L19502: button setIcon QIcon port file_path_img port file_path_img self huancai_img i
+L19503: button setIconSize QtCore QSize 70 70
+L19504: button setFixedSize 70 70
+L19505: button setStyleSheet "border-radius: 35px;"
+L19506: self huancai_buttons append button
+L19507: huancai_layout addWidget button Qt AlignRight ('alignment',)
+L19510: QHBoxLayout =:(shiyin_layout
+L19511: shiyin_layout setContentsMargins 50 0 0 0
+L19512: QHBoxLayout =:(shiyin_layout_speed
+L19513: QLabel "拾音模式" self =>(label_shiyin
+L19514: self label_shiyin setFixedWidth 73
+L19515: self label_shiyin setFixedHeight 45
+L19516: self label_shiyin setFont self font
+L19517: self label_shiyin setStyleSheet "color: white; font-size: 16px; "
+L19519: QSlider Qt Horizontal self =>(slider_shiyin_speed
+L19520: self slider_shiyin_speed setFocusPolicy Qt NoFocus
+L19521: self slider_shiyin_speed setMinimum 0
+L19522: self slider_shiyin_speed setMaximum 100
+L19523: self slider_shiyin_speed setValue 50
+L19525: self slider_shiyin_speed setFixedWidth 600
+L19526: self slider_shiyin_speed valueChanged connect self shiyin_speed
+L19528: self slider_shiyin_speed setStyleSheet "\n                                                                            QSlider::gr...
+L19550: self slider_shiyin_mousePressEvent self slider_shiyin_speed =>(mousePressEvent
+L19551: QComboBox self self =>(box_shiyin
+L19552: self box_shiyin addItems "控制器拾音" "电脑拾音" [2]
+L19553: self box_shiyin setCurrentIndex 1
+L19554: self box_shiyin currentIndexChanged connect self Change_pickup_mode
+L19555: QPushButton self =>(button_diannao_colour1
+L19556: self button_diannao_colour1 setFixedSize 40 40
+L19557: self button_diannao_colour1 setStyleSheet "color: white; border-radius: 16px; font-size: 16px;"
+L19558: self button_diannao_colour1 clicked connect self button_shiyin_Clicked_diannao1
+L19560: QPushButton self =>(button_diannao_colour2
+L19561: self button_diannao_colour2 setFixedSize 40 40
+L19562: self button_diannao_colour2 setStyleSheet "color: white; border-radius: 16px; font-size: 16px;"
+L19564: self button_diannao_colour2 clicked connect self button_shiyin_Clicked_diannao2
+L19566: QSlider Qt Horizontal self =>(slider_color_diannao
+L19567: self slider_color_diannao setFocusPolicy Qt NoFocus
+L19568: self slider_color_diannao setRange 0 359
+L19569: self slider_color_diannao setSliderPosition 200
+L19570: self slider_color_diannao setFixedWidth 379
+L19571: self slider_color_diannao valueChanged connect self update_color_diannao
+L19572: QColor =:(color
+L19573: color setHsv 200 255 255
+L19574: self slider_color_diannao setStyleSheet "\n                                                QSlider::groove:horizontal {\n         ...
+L19597: color name
+L19574:
+L19602: QLabel "" self =>(shiyin_text
+L19603: self shiyin_text setFont self font
+L19604: self shiyin_text setStyleSheet "color: white; font-size: 16px;"
+L19607: shiyin_layout_speed addWidget self label_shiyin Qt AlignLeft ('alignment',)
+L19608: shiyin_layout_speed addWidget self box_shiyin Qt AlignLeft ('alignment',)
+L19609: shiyin_layout_speed addWidget self button_diannao_colour1 Qt AlignLeft ('alignment',)
+L19610: shiyin_layout_speed addWidget self button_diannao_colour2 Qt AlignLeft ('alignment',)
+L19611: shiyin_layout_speed addWidget self slider_color_diannao
+L19612: shiyin_layout_speed addWidget self shiyin_text
+L19613: shiyin_layout_speed addStretch 1
+L19617: [0] self =>(shiyin_buttons
+L19618: "img/pickup1.svg" "img/pickup2.svg" "img/pickup3.svg" "img/pickup4.svg" "img/pickup5.svg" "img/pickup6.svg" "img/pickup7.svg" [7] self =>(shiyin_img
+L19619: "img/pickup1a.svg" "img/pickup2a.svg" "img/pickup3a.svg" "img/pickup4a.svg" "img/pickup5a.svg" "img/pickup6a.svg" "img/pickup7a.svg" [7] self =>(shiyin_img_xuanzhong
+L19620: range 7 =:(i
+L19621: QPushButton =:(button
+L19622: button setCheckable True
+L19623: button setFocusPolicy Qt NoFocus
+L19624: button clicked connect self button_shiyin_Clicked
+L19625: button setIcon QIcon port file_path_img port file_path_img self shiyin_img i
+L19626: button setIconSize QtCore QSize 70 70
+L19627: button setFixedSize 70 70
+L19628: button setStyleSheet "border-radius: 35px;"
+L19629: self shiyin_buttons append button
+L19630: shiyin_layout addWidget button Qt AlignRight ('alignment',)
+L19635: inner_layout addStretch 1
+L19643: port PID_COMPAY 7
+L19644: "深圳市机甲师科技有限公司" =:(company_name
+L19646: "" =:(company_name
+L19648: QLabel company_name self =>(banquan_layble
+L19649: self banquan_layble setFont self font
+L19650: self banquan_layble setStyleSheet "color: rgba(200,200,200, 150); font-size: 16px; "
+L19651: port PID_COMPAY 7
+L19652: inner_layout addWidget self banquan_layble Qt AlignBottom Qt AlignRight ('alignment',)
+L19676: QLabel "内网模式" self =>(label_leiwang
+L19677: self label_leiwang setFixedWidth 90
+L19678: self label_leiwang setFixedHeight 30
+L19679: self label_leiwang setFont self font
+L19680: self label_leiwang setStyleSheet "color: rgba(255, 255, 255, 150); font-size: 20px; "
+L19687: right_layout addLayout right_top_layout 1
+L19689: right_layout addLayout right_bottom_layout 9
+L19690: main_layout addLayout right_layout 3
+L19693: print "已加载的语言" port language
+L19698: QButtonGroup self =:(button_group1
+L19699: button_group1 addButton self radio_button10
+L19700: button_group1 addButton self radio_button11
+L19701: button_group1 addButton self radio_button12
+L19703: QButtonGroup self =:(button_group2
+L19704: button_group2 addButton self radio_button13
+L19705: button_group2 addButton self radio_button14
+L19706: button_group2 addButton self radio_button15
+L19708: QButtonGroup self =:(button_group3
+L19709: button_group3 addButton self radio_button16
+L19710: button_group3 addButton self radio_button17
+L19711: button_group3 addButton self radio_button18
+L19713: QButtonGroup self =:(button_group4
+L19714: button_group4 addButton self radio_button19
+L19715: button_group4 addButton self radio_button20
+L19716: button_group4 addButton self radio_button21
+L19717: button_group4 addButton self radio_button39
+L19718: button_group4 addButton self radio_button22
+L19719: button_group4 addButton self radio_button23
+L19720: button_group4 addButton self radio_button24
+L19722: QButtonGroup self =:(button_group5
+L19723: button_group5 addButton self radio_button25
+L19724: button_group5 addButton self radio_button26
+L19726: QButtonGroup self =:(button_group6
+L19727: button_group6 addButton self radio_button27
+L19728: button_group6 addButton self radio_button28
+L19729: button_group6 addButton self radio_button29
+L19730: button_group6 addButton self radio_button38
+L19732: QButtonGroup self =:(button_group7
+L19733: button_group7 addButton self radio_button30
+L19734: button_group7 addButton self radio_button31
+L19738: button_group1 buttonClicked connect self rgb_r_changed
+L19739: button_group2 buttonClicked connect self rgb_g_changed
+L19740: button_group3 buttonClicked connect self rgb_b_changed
+L19741: button_group4 buttonClicked connect self on_current_index_changed2
+L19742: button_group5 buttonClicked connect self bianshu_screen
+L19743: button_group6 buttonClicked connect self rgb_1m_number
+L19744: button_group7 buttonClicked connect self on_current_index_changed1
+L19748: CustomDialog self =>(dialog
+L19751: Fan_updata_exe_hex_Dialog self =>(exe_uploader
+L19755: self tray_icon show
+L19756: self setLayout main_layout
+L19758: self activateWindow
+L19761: self yuyan_changer
+L19763: Fan_updata_Dialog self =>(Fan_updata
+L19766: lable_right_botem_mengban Overlay self right_label_effect self =>(overlay
+L19772: self overlay setGeometry QtCore QRect 0 0 898 790
+L19773: print self right_label_effect rect
+L19774: self overlay hide
+L19777: self box_shiyin hide
+L19778: self button_diannao_colour1 hide
+L19779: self button_diannao_colour2 hide
+L19780: self slider_color_diannao hide
+L19781: 1 self =>(devices_qun_button
+L19782: 1 self =>(qunkong
+L19783: 0 self =>(left_buttons
+L19784: 0 self =>(device_dan_button
+L19785: self qunkong_button setIcon QIcon port file_path_img "img/group_light_on.svg"
+L19786: self qunkong_button setStyleSheet
+L19787: "background-color: rgb(17, 78, 255); color: rgb(243, 244, 245); text-align: left; padding-...
+L19786:
+L19790: self device_settings_layout hide
+L19791: self settings_button_tab hide
+L19792: self lable_kong_name hide
+L19793: self device_name_lable hide
+L19794: self comboBox_screen hide
+L19795: self device_rename_button hide
+L19796: self tongping_speed_lable hide
+L19797: self comboBox_tongpingmoshi hide
+L19798: self slider_tongping_speed setEnabled True
+L19801: QTimer self =>(timer
+L19802: self timer timeout connect self update_device_list
+L19803: self timer start 200 None
+L16478: [0] .0
+L16478: =:(_
+L16478: "img/fan_off.svg"
+L16479: [0] .0
+L16479: =:(_
+L16479: "img/fan_off.svg"
+L18102: [0] .0
+L18102: =:(i
+L18102: str i
+L18155: [0] .0
+L18155: =:(i
+L18155: str i
+L18224: [0] .0
+L18224: =:(i
+L18224: str i
+L18305: [0] .0
+L18305: =:(_
+L18305: "img/fan_off.svg"
+L18306: [0] .0
+L18306: =:(_
+L18306: "img/fan_on.svg"
+L18307: [0] .0
+L18307: =:(_
+L18307: "img/fan_none.svg"
+L18308: [0] .0
+L18308: =:(i
+L18308: str i 1
+L18362: [0] .0
+L18362: =:(i
+L18362: "img/ARGB/N/" i 1 ".png"
+L18363: [0] .0
+L18363: =:(i
+L18363: "img/ARGB/Y/" i 1 ".png"

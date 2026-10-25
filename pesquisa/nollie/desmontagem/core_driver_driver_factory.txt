@@ -1,0 +1,233 @@
+== code <module> line 1 args=()
+    0 RESUME                     
+    2 SETUP_ANNOTATIONS          
+    4 LOAD_CONST                 '\n驱动工厂：根据 ``device_info`` 中的产品族派发到对应的驱动类。\n\n未来新增产品族时：\n    1. 在新文件中实现驱动类（持有一个 HidTransport，实现自己的 send_packet / 命令集）\n    2. 在 N_DEV_USB_CONFIG 新增设备条目，带上 ``"family": "<new_family>"``\n    3. 在下方 DRIVER_CLASSES 注册： ``"<new_family>": NewDriver``\n调用方继续使用 ``make_driver(device_info)``，无需任何改动。\n'
+    6 STORE_NAME                 __doc__
+    8 LOAD_CONST                 0
+   10 LOAD_CONST                 ('annotations',)
+   12 IMPORT_NAME                __future__
+   14 IMPORT_FROM                annotations
+   16 STORE_NAME                 annotations
+   18 POP_TOP                    
+   20 LOAD_CONST                 0
+   22 LOAD_CONST                 ('Any',)
+   24 IMPORT_NAME                typing
+   26 IMPORT_FROM                Any
+   28 STORE_NAME                 Any
+   30 POP_TOP                    
+   32 LOAD_CONST                 0
+   34 LOAD_CONST                 ('N_DEV_USB_CONFIG',)
+   36 IMPORT_NAME                app.core_driver.n_dev_config
+   38 IMPORT_FROM                N_DEV_USB_CONFIG
+   40 STORE_NAME                 N_DEV_USB_CONFIG
+   42 POP_TOP                    
+   44 LOAD_CONST                 0
+   46 LOAD_CONST                 ('NollieDriver',)
+   48 IMPORT_NAME                app.core_driver.n_usb_driver
+   50 IMPORT_FROM                NollieDriver
+   52 STORE_NAME                 NollieDriver
+   54 POP_TOP                    
+   56 LOAD_CONST                 "nollie"
+   58 LOAD_NAME                  NollieDriver
+   60 BUILD_MAP                  
+   62 STORE_NAME                 DRIVER_CLASSES
+   64 LOAD_CONST                 "dict[str, type]"
+   66 LOAD_NAME                  __annotations__
+   68 LOAD_CONST                 "DRIVER_CLASSES"
+   70 STORE_SUBSCR               
+   72 CACHE                      
+   74 LOAD_CONST                 ('device_info', 'dict', 'return', 'Any')
+   76 LOAD_CONST                 <Code311 code object make_driver at 0x20e38a4cec0, file app\core_driver\driver_factory.py>, line 25
+   78 MAKE_FUNCTION              annotation
+   80 STORE_NAME                 make_driver
+   82 LOAD_CONST                 None
+   84 RETURN_VALUE               
+  == code make_driver line 25 args=('device_info',)
+      0 RESUME                     
+      2 LOAD_FAST                  device_info
+      4 LOAD_METHOD                get
+      6 CACHE                      
+      8 CACHE                      
+     10 CACHE                      
+     12 CACHE                      
+     14 CACHE                      
+     16 CACHE                      
+     18 CACHE                      
+     20 CACHE                      
+     22 CACHE                      
+     24 CACHE                      
+     26 LOAD_CONST                 "device_name"
+     28 PRECALL                    
+     30 CACHE                      
+     32 CALL                       
+     34 CACHE                      
+     36 CACHE                      
+     38 CACHE                      
+     40 CACHE                      
+     42 STORE_FAST                 dev_name
+     44 LOAD_FAST                  dev_name
+     46 POP_JUMP_FORWARD_IF_TRUE   to 78
+     48 LOAD_GLOBAL                NULL + ValueError
+     50 CACHE                      
+     52 CACHE                      
+     54 CACHE                      
+     56 CACHE                      
+     58 CACHE                      
+     60 LOAD_CONST                 "device_info missing 'device_name'"
+     62 PRECALL                    
+     64 CACHE                      
+     66 CALL                       
+     68 CACHE                      
+     70 CACHE                      
+     72 CACHE                      
+     74 CACHE                      
+     76 RAISE_VARARGS              exception instance
+     78 LOAD_FAST                  device_info
+     80 LOAD_METHOD                get
+     82 CACHE                      
+     84 CACHE                      
+     86 CACHE                      
+     88 CACHE                      
+     90 CACHE                      
+     92 CACHE                      
+     94 CACHE                      
+     96 CACHE                      
+     98 CACHE                      
+    100 CACHE                      
+    102 LOAD_CONST                 "config"
+    104 PRECALL                    
+    106 CACHE                      
+    108 CALL                       
+    110 CACHE                      
+    112 CACHE                      
+    114 CACHE                      
+    116 CACHE                      
+    118 JUMP_IF_TRUE_OR_POP        to 122
+    120 BUILD_MAP                  
+    122 LOAD_METHOD                get
+    124 CACHE                      
+    126 CACHE                      
+    128 CACHE                      
+    130 CACHE                      
+    132 CACHE                      
+    134 CACHE                      
+    136 CACHE                      
+    138 CACHE                      
+    140 CACHE                      
+    142 CACHE                      
+    144 LOAD_CONST                 "family"
+    146 PRECALL                    
+    148 CACHE                      
+    150 CALL                       
+    152 CACHE                      
+    154 CACHE                      
+    156 CACHE                      
+    158 CACHE                      
+    160 STORE_FAST                 family
+    162 LOAD_FAST                  family
+    164 POP_JUMP_FORWARD_IF_TRUE   to 254
+    166 LOAD_GLOBAL                NULL + N_DEV_USB_CONFIG
+    168 CACHE                      
+    170 CACHE                      
+    172 CACHE                      
+    174 CACHE                      
+    176 CACHE                      
+    178 LOAD_ATTR                  get
+    180 CACHE                      
+    182 CACHE                      
+    184 CACHE                      
+    186 CACHE                      
+    188 LOAD_FAST                  dev_name
+    190 PRECALL                    
+    192 CACHE                      
+    194 CALL                       
+    196 CACHE                      
+    198 CACHE                      
+    200 CACHE                      
+    202 CACHE                      
+    204 JUMP_IF_TRUE_OR_POP        to 208
+    206 BUILD_MAP                  
+    208 STORE_FAST                 static_cfg
+    210 LOAD_FAST                  static_cfg
+    212 LOAD_METHOD                get
+    214 CACHE                      
+    216 CACHE                      
+    218 CACHE                      
+    220 CACHE                      
+    222 CACHE                      
+    224 CACHE                      
+    226 CACHE                      
+    228 CACHE                      
+    230 CACHE                      
+    232 CACHE                      
+    234 LOAD_CONST                 "family"
+    236 LOAD_CONST                 "nollie"
+    238 PRECALL                    
+    240 CACHE                      
+    242 CALL                       
+    244 CACHE                      
+    246 CACHE                      
+    248 CACHE                      
+    250 CACHE                      
+    252 STORE_FAST                 family
+    254 LOAD_GLOBAL                DRIVER_CLASSES
+    256 CACHE                      
+    258 CACHE                      
+    260 CACHE                      
+    262 CACHE                      
+    264 CACHE                      
+    266 LOAD_METHOD                get
+    268 CACHE                      
+    270 CACHE                      
+    272 CACHE                      
+    274 CACHE                      
+    276 CACHE                      
+    278 CACHE                      
+    280 CACHE                      
+    282 CACHE                      
+    284 CACHE                      
+    286 CACHE                      
+    288 LOAD_FAST                  family
+    290 PRECALL                    
+    292 CACHE                      
+    294 CALL                       
+    296 CACHE                      
+    298 CACHE                      
+    300 CACHE                      
+    302 CACHE                      
+    304 STORE_FAST                 driver_cls
+    306 LOAD_FAST                  driver_cls
+    308 POP_JUMP_FORWARD_IF_NOT_NONE to 354
+    310 LOAD_GLOBAL                NULL + ValueError
+    312 CACHE                      
+    314 CACHE                      
+    316 CACHE                      
+    318 CACHE                      
+    320 CACHE                      
+    322 LOAD_CONST                 "No driver registered for family: "
+    324 LOAD_FAST                  family
+    326 FORMAT_VALUE               !r
+    328 LOAD_CONST                 " (device="
+    330 LOAD_FAST                  dev_name
+    332 FORMAT_VALUE               
+    334 LOAD_CONST                 ")"
+    336 BUILD_STRING               
+    338 PRECALL                    
+    340 CACHE                      
+    342 CALL                       
+    344 CACHE                      
+    346 CACHE                      
+    348 CACHE                      
+    350 CACHE                      
+    352 RAISE_VARARGS              exception instance
+    354 PUSH_NULL                  
+    356 LOAD_FAST                  driver_cls
+    358 LOAD_FAST                  device_info
+    360 PRECALL                    
+    362 CACHE                      
+    364 CALL                       
+    366 CACHE                      
+    368 CACHE                      
+    370 CACHE                      
+    372 CACHE                      
+    374 RETURN_VALUE               

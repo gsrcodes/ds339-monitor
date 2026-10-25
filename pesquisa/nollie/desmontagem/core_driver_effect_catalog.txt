@@ -1,0 +1,377 @@
+== code <module> line 1 args=()
+    0 RESUME                     
+    2 SETUP_ANNOTATIONS          
+    4 LOAD_CONST                 "\n灯效协议目录（架构文档 Phase B5：协议知识只允许存在于 core_driver）。\n\n- NOLLIE_EFFECT_RAW / NOLLIE_START_EFFECT_RAW：原始灯效名表，\n  **列表下标 = 固件 fx_mode 枚举值**——增删/换序即改变全部已存配置的语义，\n  只能在与固件 Mode[] 表同步修改时动它。\n- EFFECT_WIDGET_VISIBILITY：各灯效可见控件真值表（Canvas 页控件显隐 与\n  Info 页画布总览共用）。\n显示名（tr 翻译）仍在 view 层 EffectName——Qt 翻译依赖 QObject 上下文。\n"
+    6 STORE_NAME                 __doc__
+    8 LOAD_CONST                 0
+   10 LOAD_CONST                 ('annotations',)
+   12 IMPORT_NAME                __future__
+   14 IMPORT_FROM                annotations
+   16 STORE_NAME                 annotations
+   18 POP_TOP                    
+   20 BUILD_LIST                 
+   22 LOAD_CONST                 ('Off', 'Solid', 'Breath', 'Scanning', 'Rainbow', 'Rainbow cycle', 'Meteor', 'Shake', 'Slowly wipe', 'Color wipe', 'Rainbow strip', 'Rainbow strip l', 'Wave', 'Sunny', 'Pull flower', 'Stackab1', 'Stackab2', 'Stackab3', 'Integration1', 'Integration2', 'Interchange', 'Bullets', 'Sequence', 'ColorFromPalette')
+   24 LIST_EXTEND                
+   26 STORE_NAME                 NOLLIE_EFFECT_RAW
+   28 BUILD_LIST                 
+   30 LOAD_CONST                 ('Light up', 'Color wipe', 'Slowly wipe', 'Pull flower', 'Stackab1', 'Stackab2', 'Stackab3', 'Bullets')
+   32 LIST_EXTEND                
+   34 STORE_NAME                 NOLLIE_START_EFFECT_RAW
+   36 LOAD_NAME                  frozenset
+   38 STORE_NAME                 _W
+   40 BUILD_MAP                  
+   42 LOAD_CONST                 "Off"
+   44 PUSH_NULL                  
+   46 LOAD_NAME                  _W
+   48 PRECALL                    
+   50 CACHE                      
+   52 CALL                       
+   54 CACHE                      
+   56 CACHE                      
+   58 CACHE                      
+   60 CACHE                      
+   62 MAP_ADD                    
+   64 LOAD_CONST                 "Solid"
+   66 PUSH_NULL                  
+   68 LOAD_NAME                  _W
+   70 BUILD_SET                  
+   72 LOAD_CONST                 frozenset({'brightness', 'vmap', 'color3', 'color1'})
+   74 SET_UPDATE                 
+   76 PRECALL                    
+   78 CACHE                      
+   80 CALL                       
+   82 CACHE                      
+   84 CACHE                      
+   86 CACHE                      
+   88 CACHE                      
+   90 MAP_ADD                    
+   92 LOAD_CONST                 "Breath"
+   94 PUSH_NULL                  
+   96 LOAD_NAME                  _W
+   98 BUILD_SET                  
+  100 LOAD_CONST                 frozenset({'brightness', 'color3', 'step', 'delay', 'vmap', 'color1'})
+  102 SET_UPDATE                 
+  104 PRECALL                    
+  106 CACHE                      
+  108 CALL                       
+  110 CACHE                      
+  112 CACHE                      
+  114 CACHE                      
+  116 CACHE                      
+  118 MAP_ADD                    
+  120 LOAD_CONST                 "Scanning"
+  122 PUSH_NULL                  
+  124 LOAD_NAME                  _W
+  126 BUILD_SET                  
+  128 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'vmap', 'color1'})
+  130 SET_UPDATE                 
+  132 PRECALL                    
+  134 CACHE                      
+  136 CALL                       
+  138 CACHE                      
+  140 CACHE                      
+  142 CACHE                      
+  144 CACHE                      
+  146 MAP_ADD                    
+  148 LOAD_CONST                 "Rainbow"
+  150 PUSH_NULL                  
+  152 LOAD_NAME                  _W
+  154 BUILD_SET                  
+  156 LOAD_CONST                 frozenset({'brightness', 'color3', 'step', 'delay', 'vmap'})
+  158 SET_UPDATE                 
+  160 PRECALL                    
+  162 CACHE                      
+  164 CALL                       
+  166 CACHE                      
+  168 CACHE                      
+  170 CACHE                      
+  172 CACHE                      
+  174 MAP_ADD                    
+  176 LOAD_CONST                 "Rainbow cycle"
+  178 PUSH_NULL                  
+  180 LOAD_NAME                  _W
+  182 BUILD_SET                  
+  184 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'vmap'})
+  186 SET_UPDATE                 
+  188 PRECALL                    
+  190 CACHE                      
+  192 CALL                       
+  194 CACHE                      
+  196 CACHE                      
+  198 CACHE                      
+  200 CACHE                      
+  202 MAP_ADD                    
+  204 LOAD_CONST                 "Meteor"
+  206 PUSH_NULL                  
+  208 LOAD_NAME                  _W
+  210 BUILD_SET                  
+  212 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'color2', 'vmap', 'color1'})
+  214 SET_UPDATE                 
+  216 PRECALL                    
+  218 CACHE                      
+  220 CALL                       
+  222 CACHE                      
+  224 CACHE                      
+  226 CACHE                      
+  228 CACHE                      
+  230 MAP_ADD                    
+  232 LOAD_CONST                 "Shake"
+  234 PUSH_NULL                  
+  236 LOAD_NAME                  _W
+  238 BUILD_SET                  
+  240 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'vmap', 'color1'})
+  242 SET_UPDATE                 
+  244 PRECALL                    
+  246 CACHE                      
+  248 CALL                       
+  250 CACHE                      
+  252 CACHE                      
+  254 CACHE                      
+  256 CACHE                      
+  258 MAP_ADD                    
+  260 LOAD_CONST                 "Slowly wipe"
+  262 PUSH_NULL                  
+  264 LOAD_NAME                  _W
+  266 BUILD_SET                  
+  268 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'color2', 'frame_delay', 'vmap', 'color1'})
+  270 SET_UPDATE                 
+  272 PRECALL                    
+  274 CACHE                      
+  276 CALL                       
+  278 CACHE                      
+  280 CACHE                      
+  282 CACHE                      
+  284 CACHE                      
+  286 MAP_ADD                    
+  288 LOAD_CONST                 "Color wipe"
+  290 PUSH_NULL                  
+  292 LOAD_NAME                  _W
+  294 BUILD_SET                  
+  296 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'color2', 'frame_delay', 'vmap', 'color1'})
+  298 SET_UPDATE                 
+  300 PRECALL                    
+  302 CACHE                      
+  304 CALL                       
+  306 CACHE                      
+  308 CACHE                      
+  310 CACHE                      
+  312 CACHE                      
+  314 MAP_ADD                    
+  316 LOAD_CONST                 "Rainbow strip"
+  318 PUSH_NULL                  
+  320 LOAD_NAME                  _W
+  322 BUILD_SET                  
+  324 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'vmap'})
+  326 SET_UPDATE                 
+  328 PRECALL                    
+  330 CACHE                      
+  332 CALL                       
+  334 CACHE                      
+  336 CACHE                      
+  338 CACHE                      
+  340 CACHE                      
+  342 MAP_ADD                    
+  344 LOAD_CONST                 "Rainbow strip l"
+  346 PUSH_NULL                  
+  348 LOAD_NAME                  _W
+  350 BUILD_SET                  
+  352 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'vmap'})
+  354 SET_UPDATE                 
+  356 PRECALL                    
+  358 CACHE                      
+  360 CALL                       
+  362 CACHE                      
+  364 CACHE                      
+  366 CACHE                      
+  368 CACHE                      
+  370 MAP_ADD                    
+  372 LOAD_CONST                 "Wave"
+  374 PUSH_NULL                  
+  376 LOAD_NAME                  _W
+  378 BUILD_SET                  
+  380 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'frame_delay', 'vmap', 'color1'})
+  382 SET_UPDATE                 
+  384 PRECALL                    
+  386 CACHE                      
+  388 CALL                       
+  390 CACHE                      
+  392 CACHE                      
+  394 CACHE                      
+  396 CACHE                      
+  398 MAP_ADD                    
+  400 LOAD_CONST                 "Sunny"
+  402 PUSH_NULL                  
+  404 LOAD_NAME                  _W
+  406 BUILD_SET                  
+  408 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'frame_delay', 'vmap', 'color1'})
+  410 SET_UPDATE                 
+  412 PRECALL                    
+  414 CACHE                      
+  416 CALL                       
+  418 CACHE                      
+  420 CACHE                      
+  422 CACHE                      
+  424 CACHE                      
+  426 MAP_ADD                    
+  428 LOAD_CONST                 "Pull flower"
+  430 PUSH_NULL                  
+  432 LOAD_NAME                  _W
+  434 BUILD_SET                  
+  436 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'frame_delay', 'vmap', 'color1'})
+  438 SET_UPDATE                 
+  440 PRECALL                    
+  442 CACHE                      
+  444 CALL                       
+  446 CACHE                      
+  448 CACHE                      
+  450 CACHE                      
+  452 CACHE                      
+  454 MAP_ADD                    
+  456 LOAD_CONST                 "Stackab1"
+  458 PUSH_NULL                  
+  460 LOAD_NAME                  _W
+  462 BUILD_SET                  
+  464 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'color2', 'frame_delay', 'vmap', 'color1'})
+  466 SET_UPDATE                 
+  468 PRECALL                    
+  470 CACHE                      
+  472 CALL                       
+  474 CACHE                      
+  476 CACHE                      
+  478 CACHE                      
+  480 CACHE                      
+  482 MAP_ADD                    
+  484 LOAD_CONST                 "Stackab2"
+  486 PUSH_NULL                  
+  488 LOAD_NAME                  _W
+  490 BUILD_SET                  
+  492 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'color2', 'frame_delay', 'vmap', 'color1'})
+  494 SET_UPDATE                 
+  496 PRECALL                    
+  498 CACHE                      
+  500 CALL                       
+  502 CACHE                      
+  504 CACHE                      
+  506 CACHE                      
+  508 CACHE                      
+  510 MAP_ADD                    
+  512 PUSH_NULL                  
+  514 LOAD_NAME                  _W
+  516 BUILD_SET                  
+  518 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'color2', 'frame_delay', 'vmap', 'color1'})
+  520 SET_UPDATE                 
+  522 PRECALL                    
+  524 CACHE                      
+  526 CALL                       
+  528 CACHE                      
+  530 CACHE                      
+  532 CACHE                      
+  534 CACHE                      
+  536 PUSH_NULL                  
+  538 LOAD_NAME                  _W
+  540 BUILD_SET                  
+  542 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'color2', 'frame_delay', 'vmap', 'color1'})
+  544 SET_UPDATE                 
+  546 PRECALL                    
+  548 CACHE                      
+  550 CALL                       
+  552 CACHE                      
+  554 CACHE                      
+  556 CACHE                      
+  558 CACHE                      
+  560 PUSH_NULL                  
+  562 LOAD_NAME                  _W
+  564 BUILD_SET                  
+  566 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'color2', 'frame_delay', 'vmap', 'color1'})
+  568 SET_UPDATE                 
+  570 PRECALL                    
+  572 CACHE                      
+  574 CALL                       
+  576 CACHE                      
+  578 CACHE                      
+  580 CACHE                      
+  582 CACHE                      
+  584 PUSH_NULL                  
+  586 LOAD_NAME                  _W
+  588 BUILD_SET                  
+  590 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'color2', 'frame_delay', 'vmap', 'color1'})
+  592 SET_UPDATE                 
+  594 PRECALL                    
+  596 CACHE                      
+  598 CALL                       
+  600 CACHE                      
+  602 CACHE                      
+  604 CACHE                      
+  606 CACHE                      
+  608 PUSH_NULL                  
+  610 LOAD_NAME                  _W
+  612 BUILD_SET                  
+  614 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'vmap', 'color1'})
+  616 SET_UPDATE                 
+  618 PRECALL                    
+  620 CACHE                      
+  622 CALL                       
+  624 CACHE                      
+  626 CACHE                      
+  628 CACHE                      
+  630 CACHE                      
+  632 PUSH_NULL                  
+  634 LOAD_NAME                  _W
+  636 BUILD_SET                  
+  638 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'delay', 'vmap', 'color1'})
+  640 SET_UPDATE                 
+  642 PRECALL                    
+  644 CACHE                      
+  646 CALL                       
+  648 CACHE                      
+  650 CACHE                      
+  652 CACHE                      
+  654 CACHE                      
+  656 PUSH_NULL                  
+  658 LOAD_NAME                  _W
+  660 BUILD_SET                  
+  662 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'blend', 'delay', 'palette', 'vmap'})
+  664 SET_UPDATE                 
+  666 PRECALL                    
+  668 CACHE                      
+  670 CALL                       
+  672 CACHE                      
+  674 CACHE                      
+  676 CACHE                      
+  678 CACHE                      
+  680 PUSH_NULL                  
+  682 LOAD_NAME                  _W
+  684 BUILD_SET                  
+  686 LOAD_CONST                 frozenset({'step', 'brightness', 'color1'})
+  688 SET_UPDATE                 
+  690 PRECALL                    
+  692 CACHE                      
+  694 CALL                       
+  696 CACHE                      
+  698 CACHE                      
+  700 CACHE                      
+  702 CACHE                      
+  704 LOAD_CONST                 ('Stackab3', 'Integration1', 'Integration2', 'Interchange', 'Bullets', 'Sequence', 'ColorFromPalette', 'Light up')
+  706 BUILD_CONST_KEY_MAP        
+  708 DICT_UPDATE                
+  710 STORE_NAME                 EFFECT_WIDGET_VISIBILITY
+  712 LOAD_CONST                 "dict[str, frozenset]"
+  714 LOAD_NAME                  __annotations__
+  716 LOAD_CONST                 "EFFECT_WIDGET_VISIBILITY"
+  718 STORE_SUBSCR               
+  720 CACHE                      
+  722 PUSH_NULL                  
+  724 LOAD_NAME                  _W
+  726 BUILD_SET                  
+  728 LOAD_CONST                 frozenset({'size', 'brightness', 'color3', 'step', 'blend', 'delay', 'color2', 'palette', 'frame_delay', 'vmap', 'color1'})
+  730 SET_UPDATE                 
+  732 PRECALL                    
+  734 CACHE                      
+  736 CALL                       
+  738 CACHE                      
+  740 CACHE                      
+  742 CACHE                      
+  744 CACHE                      
+  746 STORE_NAME                 ALL_EFFECT_WIDGETS
+  748 LOAD_CONST                 None
+  750 RETURN_VALUE               
