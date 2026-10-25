@@ -1,0 +1,10 @@
+# Texto sempre com LF (como os arquivos já estão); binários intocados
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.ico binary
+*.ttf binary
+*.dll binary
+*.exe binary
+*.sys binary
+*.cat binary

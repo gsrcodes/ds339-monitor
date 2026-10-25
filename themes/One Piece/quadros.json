@@ -1,0 +1,231 @@
+{
+  "segundosPorQuadro": 9,
+  "legendas": true,
+  "creditos": "Painéis de One Piece © Eiichiro Oda / Shueisha, via One Piece Wiki (onepiece.fandom.com, em inglês e alemão). Uso pessoal.",
+  "quadros": [
+    {
+      "arquivo": "op-painel-01",
+      "capitulo": "1",
+      "legenda": "Shanks dá um braço para salvar o Luffy",
+      "luz": "impacto",
+      "wiki": "https://onepiece.fandom.com/wiki/File:ShanksArm.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/a/ab/ShanksArm.png/revision/latest?cb=20240708013648"
+    },
+    {
+      "arquivo": "op-painel-02",
+      "capitulo": "1",
+      "legenda": "Shanks deixa o chapéu de palha com o Luffy",
+      "recorte": [
+        0,
+        0.2,
+        0,
+        0
+      ],
+      "wiki": "https://onepiece.fandom.com/de/wiki/Datei:Shanks_gibt_Luffy_den_Strohhut.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/f/f5/Shanks_gibt_Luffy_den_Strohhut.png/revision/latest?cb=20101223155135&path-prefix=de"
+    },
+    {
+      "arquivo": "op-painel-03",
+      "capitulo": "95",
+      "legenda": "Nami salta para o Going Merry",
+      "luz": "mare",
+      "wiki": "https://onepiece.fandom.com/de/wiki/Datei:Nami_springt_vom_Pier_auf_die_Going_Merry.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/f/f0/Nami_springt_vom_Pier_auf_die_Going_Merry.png/revision/latest?cb=20111205121113&path-prefix=de"
+    },
+    {
+      "arquivo": "op-painel-04",
+      "capitulo": "216",
+      "legenda": "A despedida da Vivi",
+      "luz": "despedida",
+      "wiki": "https://onepiece.fandom.com/de/wiki/Datei:Vivi_und_Karuh_verabschieden_sich.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/1/18/Vivi_und_Karuh_verabschieden_sich.png/revision/latest?cb=20110114231401&path-prefix=de"
+    },
+    {
+      "arquivo": "op-painel-05",
+      "capitulo": "225",
+      "legenda": "“Os sonhos das pessoas nunca acabam!”",
+      "luz": "impacto",
+      "wiki": "https://onepiece.fandom.com/wiki/File:Teach_Encourages_Luffy.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/f/f1/Teach_Encourages_Luffy.png/revision/latest?cb=20250818110607"
+    },
+    {
+      "arquivo": "op-painel-06",
+      "capitulo": "363",
+      "legenda": "Aqua Laguna engole Water 7",
+      "luz": "mare",
+      "recorte": [
+        0,
+        0.12,
+        0,
+        0.2
+      ],
+      "wiki": "https://onepiece.fandom.com/wiki/File:Aqua_Laguna_in_the_Manga.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/2/24/Aqua_Laguna_in_the_Manga.png/revision/latest?cb=20131114055418"
+    },
+    {
+      "arquivo": "op-painel-07",
+      "capitulo": "368",
+      "legenda": "Sogeking canta a sua canção",
+      "wiki": "https://onepiece.fandom.com/wiki/File:Sogeking%27s_Song.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/c/c8/Sogeking%27s_Song.png/revision/latest?cb=20180430063102"
+    },
+    {
+      "arquivo": "op-painel-08",
+      "capitulo": "390",
+      "legenda": "Luffy chega a Enies Lobby atrás da Robin",
+      "luz": "impacto",
+      "wiki": "https://onepiece.fandom.com/de/wiki/Datei:Luffy_redet_auf_Robin_ein_w%C3%A4hrend_die_ersten_aus_seiner_Bande_eintreffen.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/b/b2/Luffy_redet_auf_Robin_ein_w%C3%A4hrend_die_ersten_aus_seiner_Bande_eintreffen.png/revision/latest?cb=20121004143550&path-prefix=de"
+    },
+    {
+      "arquivo": "op-painel-09",
+      "capitulo": "502",
+      "legenda": "O soco no Dragão Celestial",
+      "luz": "impacto",
+      "wiki": "https://onepiece.fandom.com/wiki/File:Luffy_Punches_Charlos.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/d/db/Luffy_Punches_Charlos.png/revision/latest?cb=20250505035130"
+    },
+    {
+      "arquivo": "op-painel-10",
+      "capitulo": "551",
+      "legenda": "Barba Branca: “Meu filho amado está a salvo?”",
+      "luz": "haki",
+      "recorte": [
+        0,
+        0,
+        0,
+        0.42
+      ],
+      "wiki": "https://onepiece.fandom.com/wiki/File:Edward_Newgate_Manga_Infobox.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/d/d5/Edward_Newgate_Manga_Infobox.png/revision/latest?cb=20231028014555"
+    },
+    {
+      "arquivo": "op-painel-11",
+      "capitulo": "552",
+      "legenda": "Ace desafia o Barba Branca",
+      "recorte": [
+        0,
+        0,
+        0.17,
+        0
+      ],
+      "wiki": "https://onepiece.fandom.com/de/wiki/Datei:Ace_trifft_auf_Shirohige.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/1/1b/Ace_trifft_auf_Shirohige.png/revision/latest?cb=20100413204837&path-prefix=de"
+    },
+    {
+      "arquivo": "op-painel-12",
+      "capitulo": "564",
+      "legenda": "O Barba Branca inclina a ilha e o mar",
+      "luz": "tremor",
+      "wiki": "https://onepiece.fandom.com/wiki/File:Gura_Gura_Island_Quake.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/7/71/Gura_Gura_Island_Quake.png/revision/latest?cb=20150709004638"
+    },
+    {
+      "arquivo": "op-painel-13",
+      "capitulo": "574",
+      "legenda": "“Obrigado… por me amarem!”",
+      "luz": "despedida",
+      "recorte": [
+        0,
+        0,
+        0,
+        0.5
+      ],
+      "wiki": "https://onepiece.fandom.com/wiki/File:Ace%27s_Bloody_Death_in_the_Manga.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/f/f1/Ace%27s_Bloody_Death_in_the_Manga.png/revision/latest?cb=20240629133040"
+    },
+    {
+      "arquivo": "op-painel-14",
+      "capitulo": "579",
+      "legenda": "Shanks chega para pôr fim à guerra",
+      "luz": "haki",
+      "recorte": [
+        0,
+        0.04,
+        0,
+        0.2
+      ],
+      "wiki": "https://onepiece.fandom.com/wiki/File:Shanks_Arrives.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/0/04/Shanks_Arrives.png/revision/latest?cb=20220713144351"
+    },
+    {
+      "arquivo": "op-painel-15",
+      "capitulo": "654",
+      "legenda": "Os Chapéus de Palha chegam ao Novo Mundo",
+      "luz": "amanhecer",
+      "wiki": "https://onepiece.fandom.com/wiki/File:Straw_Hats_Arrive_in_the_New_World.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/7/7e/Straw_Hats_Arrive_in_the_New_World.png/revision/latest?cb=20240113182515"
+    },
+    {
+      "arquivo": "op-painel-16",
+      "capitulo": "742",
+      "legenda": "A careta do Usopp derruba a Sugar",
+      "luz": "impacto",
+      "wiki": "https://onepiece.fandom.com/wiki/File:Usopp_Scares_Sugar.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/a/ac/Usopp_Scares_Sugar.png/revision/latest?cb=20240818193809"
+    },
+    {
+      "arquivo": "op-painel-17",
+      "capitulo": "895",
+      "legenda": "Luffy x Katakuri: o último golpe",
+      "luz": "impacto",
+      "wiki": "https://onepiece.fandom.com/wiki/File:Luffy_and_Katakuri%27s_Final_Clash.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/9/91/Luffy_and_Katakuri%27s_Final_Clash.png/revision/latest?cb=20230703130830"
+    },
+    {
+      "arquivo": "op-painel-18",
+      "capitulo": "966",
+      "legenda": "Roger x Barba Branca",
+      "luz": "haki",
+      "wiki": "https://onepiece.fandom.com/wiki/File:Roger_vs._Newgate.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/5/5f/Roger_vs._Newgate.png/revision/latest?cb=20230227173858"
+    },
+    {
+      "arquivo": "op-painel-19",
+      "capitulo": "1036",
+      "legenda": "Zoro derruba o King",
+      "luz": "impacto",
+      "wiki": "https://onepiece.fandom.com/wiki/File:King_Defeated.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/c/ce/King_Defeated.png/revision/latest?cb=20230627031037"
+    },
+    {
+      "arquivo": "op-painel-20",
+      "capitulo": "1047",
+      "legenda": "Gear 5: Luffy agarra um raio contra o Kaido",
+      "luz": "tambores",
+      "wiki": "https://onepiece.fandom.com/wiki/File:Gomu_Gomu_No_Kaminari.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/c/c7/Gomu_Gomu_No_Kaminari.png/revision/latest?cb=20230904041545"
+    },
+    {
+      "arquivo": "op-painel-21",
+      "capitulo": "1060",
+      "legenda": "A tripulação ouve o sonho do Luffy",
+      "luz": "amanhecer",
+      "wiki": "https://onepiece.fandom.com/wiki/File:Straw_Hat_Crew_Reaction_To_Luffy_Dream.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/2/20/Straw_Hat_Crew_Reaction_To_Luffy_Dream.png/revision/latest?cb=20250916120717"
+    },
+    {
+      "arquivo": "op-painel-22",
+      "capitulo": "1092",
+      "legenda": "Kuma invade Mary Geoise para salvar a Bonney",
+      "luz": "impacto",
+      "wiki": "https://onepiece.fandom.com/wiki/File:Kuma_Attacks_Mary_Geoise.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/4/41/Kuma_Attacks_Mary_Geoise.png/revision/latest?cb=20250420155236"
+    },
+    {
+      "arquivo": "op-painel-23",
+      "capitulo": "1138",
+      "legenda": "O mural da Árvore Adão, em Elbaf",
+      "wiki": "https://onepiece.fandom.com/wiki/File:Elbaph_Adam_Tree_Mural.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/1/11/Elbaph_Adam_Tree_Mural.png/revision/latest?cb=20260628162907"
+    },
+    {
+      "arquivo": "op-painel-24",
+      "capitulo": "1164",
+      "legenda": "God Valley: Roger e Garp contra Rocks",
+      "luz": "haki",
+      "wiki": "https://onepiece.fandom.com/wiki/File:Demon_Rocks_Vs_Roger_and_Garp.png",
+      "imagem": "https://static.wikia.nocookie.net/onepiece/images/d/d8/Demon_Rocks_Vs_Roger_and_Garp.png/revision/latest?cb=20251102151038"
+    }
+  ]
+}

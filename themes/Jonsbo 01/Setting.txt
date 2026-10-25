@@ -1,0 +1,15 @@
+﻿name:339H01
+width:960
+height:376
+decoration.png:x@0,y@0,z@12,height@376,width@960
+Text:x@443,y@262,z@11,maxheight@80,maxwidth@500,FontSize@17,FontFamily@#站酷高端黑,Foreground@#FFFFFFFF,Title@,data@GPUTemp,unit@℃
+Text:x@280,y@264,z@10,maxheight@80,maxwidth@500,FontSize@17,FontFamily@#站酷高端黑,Foreground@#FFFFFFFF,IsDefaultText@true,data@GPU TEMP
+Text:x@39,y@264,z@9,maxheight@80,maxwidth@500,FontSize@17,FontFamily@#站酷高端黑,Foreground@#FFFFFFFF,IsDefaultText@true,data@CPU TEMP
+Text:x@202,y@263,z@8,maxheight@80,maxwidth@500,FontSize@17,FontFamily@#站酷高端黑,Foreground@#FFFFFFFF,Title@,data@CPUTemp,unit@℃
+BorderLine:x@277,y@222,z@7,maxheight@35,maxwidth@207,MaxNum@200,CornerRadius@0 0 0 0,Fill@#FF66BB17,BorderThicknes@2,BorderFill@#FFFFFF44,BackColor@#00000000,data@GPUTemp
+BorderLine:x@36,y@222,z@6,maxheight@35,maxwidth@207,MaxNum@200,CornerRadius@0 0 0 0,Fill@#FF66BB17,BorderThicknes@2,BorderFill@#FFFFFF44,BackColor@#00000000,data@CPUTemp
+Text:x@34,y@50,z@5,maxheight@80,maxwidth@500,FontSize@65,FontFamily@#站酷高端黑,Foreground@#FF66BB17,Title@TIME:,data@CurrentTimeShut
+Text:x@466,y@156,z@4,maxheight@80,maxwidth@500,FontSize@20,FontFamily@#站酷高端黑,Foreground@#FF66BB17,Title@,data@GpuUsage,unit@%
+Text:x@309,y@156,z@3,maxheight@80,maxwidth@500,FontSize@20,FontFamily@#站酷高端黑,Foreground@#FFFFFFFF,IsDefaultText@true,data@GPU Usage
+Text:x@37,y@155,z@2,maxheight@80,maxwidth@500,FontSize@20,FontFamily@#站酷高端黑,Foreground@#FFFFFFFF,IsDefaultText@true,data@CPU Usage
+Text:x@193,y@156,z@1,maxheight@80,maxwidth@500,FontSize@20,FontFamily@#站酷高端黑,Foreground@#FF66BB17,Title@,data@CpuUsage,unit@%

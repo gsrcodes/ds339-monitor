@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>false</SelfContained>
+    <AssemblyName>DS339Monitor</AssemblyName>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <RootNamespace>DS339Monitor</RootNamespace>
+    <Version>1.0.0</Version>
+
+    <!-- Runtime enxuto: o objetivo do projeto é gastar o mínimo de RAM/CPU. -->
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+    <TieredPGO>false</TieredPGO>
+    <UseSystemResourceKeys>true</UseSystemResourceKeys>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Temperatura/clock/potência de CPU e GPU. A CPU usa o driver PawnIO (precisa de admin). -->
+    <PackageReference Include="LibreHardwareMonitorLib" Version="0.9.6" />
+    <!-- Rastreamento de rede do Windows (ETW): com que servidor o jogo conversa, para o ping do Modo jogo. -->
+    <PackageReference Include="Microsoft.Diagnostics.Tracing.TraceEvent" Version="3.2.8" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40" />
+    <!-- Serial da tela do Pro Flow 360 (mesma versão que o LibreHardwareMonitor já puxa). -->
+    <PackageReference Include="System.IO.Ports" Version="10.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- SDK do chip MacroSilicon MS9132 (extraído do JONSBO-AIO). Depende só do libusb0.dll do driver. -->
+    <None Include="lib\MSDISPLAYSDKWRRAPER.dll" CopyToOutputDirectory="PreserveNewest" Link="MSDISPLAYSDKWRRAPER.dll" />
+    <None Include="themes\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <!-- Fontes do Modo Mangá (OFL): Dela Gothic One (onomatopeias) e Bangers (balões). -->
+    <None Include="fonts\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <!-- Painel de controle: a interface em HTML que o WebView2 desenha. -->
+    <None Include="ui\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="tools\PresentMon.exe" CopyToOutputDirectory="PreserveNewest" Link="tools\PresentMon.exe" />
+    <None Include="app.ico" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

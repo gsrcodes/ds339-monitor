@@ -1,0 +1,20 @@
+﻿name:339H04
+width:960
+height:376
+BorderLine:x@694,y@161,z@17,maxheight@25,maxwidth@185,MaxNum@100,CornerRadius@0 0 0 0,Fill@#FFFFAAD9,BorderThicknes@2,BorderFill@#FFFFAAD9,BackColor@#00000000,data@GpuUsage
+BorderLine:x@396,y@161,z@16,maxheight@25,maxwidth@185,MaxNum@100,CornerRadius@0 0 0 0,Fill@#FFFFAAD9,BorderThicknes@2,BorderFill@#FFFFAAD9,BackColor@#00000000,data@CpuUsage
+Text:x@763,y@306,z@15,maxheight@80,maxwidth@500,FontSize@20,FontFamily@#Square721 BT,Foreground@#FF16897E,Title@,data@HardDiskCapacity,unit@GB
+Text:x@451,y@306,z@14,maxheight@80,maxwidth@500,FontSize@20,FontFamily@#Square721 BT,Foreground@#FF16897E,Title@,data@MemorySize,unit@GB
+Text:x@778,y@256,z@13,maxheight@80,maxwidth@500,FontSize@18,FontFamily@#HarmonyOS Sans SC Medium,Foreground@#FF000000,Title@,data@GpuVoltage,unit@V
+Text:x@778,y@231,z@12,maxheight@80,maxwidth@500,FontSize@18,FontFamily@#HarmonyOS Sans SC Medium,Foreground@#FF000000,Title@,data@GpuTEC,unit@W
+Text:x@778,y@206,z@11,maxheight@80,maxwidth@500,FontSize@18,FontFamily@#HarmonyOS Sans SC Medium,Foreground@#FF000000,Title@,data@GpuFrequency,unit@MHZ
+Text:x@484,y@256,z@10,maxheight@80,maxwidth@500,FontSize@18,FontFamily@#HarmonyOS Sans SC Medium,Foreground@#FF000000,Title@,data@CpuVoltage,unit@V
+Text:x@484,y@231,z@9,maxheight@80,maxwidth@500,FontSize@18,FontFamily@#HarmonyOS Sans SC Medium,Foreground@#FF000000,Title@,data@CpuTEC,unit@W
+Text:x@484,y@206,z@8,maxheight@80,maxwidth@500,FontSize@18,FontFamily@#HarmonyOS Sans SC Medium,Foreground@#FF000000,Title@,data@CpuFrequency,unit@MHZ
+Text:x@786,y@104,z@7,maxheight@80,maxwidth@500,FontSize@40,FontFamily@#HarmonyOS Sans SC Medium,Foreground@#FFA5A5A5,Title@,data@GpuUsage,unit@%
+Text:x@488,y@106,z@6,maxheight@80,maxwidth@500,FontSize@40,FontFamily@#HarmonyOS Sans SC Medium,Foreground@#FFA5A5A5,Title@,data@CpuUsage,unit@%
+Text:x@631,y@106,z@5,maxheight@80,maxwidth@500,FontSize@30,FontFamily@#HarmonyOS Sans SC Medium,Foreground@#FF16A6A8,Title@,data@GPUTemp,unit@℃
+Text:x@332,y@106,z@4,maxheight@80,maxwidth@500,FontSize@30,FontFamily@#HarmonyOS Sans SC Medium,Foreground@#FF16A6A8,Title@,data@CPUTemp,unit@℃
+d3.png:x@0,y@0,z@3,height@376,width@960
+d2.png:x@0,y@0,z@2,height@376,width@960
+d1.png:x@0,y@0,z@1,height@376,width@960

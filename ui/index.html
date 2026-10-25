@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DS339 Monitor</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark"><svg viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="12" rx="2.2"/><path d="M8 20h8M12 16v4M7.5 12.5l2.5-3 2.5 2 3.5-4"/></svg></div>
+      <div class="brand-text">
+        <b>DS339 Monitor</b>
+        <small>Painel de controle</small>
+      </div>
+    </div>
+    <nav id="nav"></nav>
+    <div class="sidebar-foot">
+      <button id="all-off" class="power" type="button"></button>
+      <div class="status-line" id="status-line">Conectando…</div>
+    </div>
+  </aside>
+  <main id="page" tabindex="-1"></main>
+  <div id="toasts" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

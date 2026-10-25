@@ -1,0 +1,15 @@
+# Compilação
+bin/
+obj/
+publish/
+.vs/
+*.user
+
+# Dados da máquina (configuração, logs, marcadores) — ficam ao lado do programa publicado
+*.log
+*.flag
+config.json
+nollie-config-*.json
+
+# Cópias de segurança locais
+backups/

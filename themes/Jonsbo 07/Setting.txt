@@ -1,0 +1,15 @@
+﻿name:339H07
+width:960
+height:376
+Text:x@612,y@271,z@12,maxheight@80,maxwidth@500,FontSize@20,FontFamily@#HarmonyOS Sans SC,Foreground@#FFFFFFFF,Title@,data@GpuTEC,unit@W
+Text:x@612,y@242,z@11,maxheight@80,maxwidth@500,FontSize@20,FontFamily@#HarmonyOS Sans SC,Foreground@#FFFFFFFF,Title@,data@GpuFrequency,unit@MHZ
+Text:x@612,y@211,z@10,maxheight@80,maxwidth@500,FontSize@20,FontFamily@#HarmonyOS Sans SC,Foreground@#FFFFFFFF,Title@,data@GpuUsage,unit@%
+Text:x@800,y@135,z@9,maxheight@80,maxwidth@500,FontSize@20,FontFamily@#HarmonyOS Sans SC,Foreground@#FFFFFFFF,Title@,data@CpuTEC,unit@W
+Text:x@800,y@107,z@8,maxheight@80,maxwidth@500,FontSize@20,FontFamily@#HarmonyOS Sans SC,Foreground@#FFFFFFFF,Title@,data@CpuFrequency,unit@MHZ
+Text:x@800,y@76,z@7,maxheight@80,maxwidth@500,FontSize@20,FontFamily@#HarmonyOS Sans SC,Foreground@#FFFFFFFF,Title@,data@CpuUsage,unit@%
+Text:x@344,y@339,z@6,maxheight@80,maxwidth@500,FontSize@22,FontFamily@#HarmonyOS Sans SC,Foreground@#FF000000,Title@,data@CurrentDates
+Text:x@37,y@324,z@5,maxheight@80,maxwidth@500,FontSize@40,FontFamily@#HarmonyOS Sans SC,Foreground@#FFFFFFFF,Title@TIME ,data@CurrentTime
+Text:x@771,y@233,z@4,maxheight@80,maxwidth@500,FontSize@28,FontFamily@#HarmonyOS Sans SC Medium,Foreground@#FFFFFFFF,Title@,data@GPUTemp
+Text:x@534,y@99,z@3,maxheight@80,maxwidth@500,FontSize@28,FontFamily@#HarmonyOS Sans SC Medium,Foreground@#FFFFFFFF,Title@,data@CPUTemp
+d2.png:x@0,y@0,z@2,height@376,width@960
+d1.png:x@0,y@0,z@1,height@376,width@960
